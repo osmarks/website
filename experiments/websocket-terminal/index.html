@@ -1,0 +1,116 @@
+---
+title: Websocket Terminal
+slug: wsterm
+description: Type websocket URLs in the top bar and hit enter; type messages in the bottom bar, and also hit enter. Probably useful for some weirdly designed websocket services.
+---
+
+<div id="app"></div>
+<style>
+.messages li {
+    list-style-type: none;
+}
+
+.internal {
+    color: gray;
+}
+
+.user {
+    color: blue;
+}
+
+.user::before {
+    content: "> ";
+}
+
+.remote::before {
+    content: "< ";
+}
+
+#app input {
+    width: 100%;
+}
+</style>
+<script src="/assets/js/hyperapp.min.js"></script>
+<script src="/assets/js/hyperapp-html.min.js"></script>
+<script>
+const h = hyperappHtml;
+const push = (xs, x) => xs.concat([x]);
+
+const state = {
+    messages: [],
+    websocket: null
+};
+
+let windowVisible = true;
+let notify = false;
+
+window.onfocus = () => { windowVisible = true; notify = false; };
+window.onblur = () => { windowVisible = false; };
+
+const blinkTime = 1000;
+
+// Blink title a bit by adding then removing ***.
+setInterval(() => {
+    if (notify && !windowVisible) {
+        let title = document.title;
+        document.title = "*** " + title;
+        setTimeout(() => {
+            document.title = title;
+        }, blinkTime)
+    }
+}, blinkTime * 2);
+
+const actions = {
+    connect: value => (state, actions) => {
+        if (state.websocket != null && state.websocket.close) state.websocket.close();
+        let ws = new WebSocket(value);
+        ws.addEventListener("message", ev => {
+            actions.message([ev.data, "remote"]);
+            notify = true; // start notifications
+        });
+        ws.addEventListener("close", ev => actions.message(["Connection closed.", "internal"]));
+        ws.addEventListener("open", ev => actions.message(["Connected.", "internal"]));
+        return {websocket: ws}},
+    message: value => state => ({messages: push(state.messages, value)}),
+    send: value => state => {
+        if (state.websocket !== null && state.websocket.readyState === 1) {
+            state.websocket.send(value);
+        } else {
+            actions.message(["Not connected.", "internal"])
+        }
+    },
+    msgInput: event => (state, actions) => {
+        if (event.keyCode == 13) { // enter key
+            let val = event.target.value;
+            event.target.value = "";
+            actions.send(val);
+            actions.message([val, "user"]);
+        }
+    },
+    urlInput: event => (state, actions) => {
+        if (event.keyCode == 13) { // enter key
+            let val = event.target.value;
+            console.log(val);
+            actions.connect(val);
+        }
+    }
+};
+
+const cls = x => ({ class: x });
+
+const scrollDown = () => {
+    let scrollEl = document.scrollingElement;
+    scrollEl.scrollTop = scrollEl.scrollHeight;
+};
+
+const view = (state, actions) => h.div([
+    h.div([
+        h.input({ onkeyup: actions.urlInput, placeholder: "URL" })
+    ]),
+    h.ul({class: "messages", onupdate: (element, old) => scrollDown()}, state.messages.map(msg => 
+        h.li(cls(msg[1]), msg[0]))),
+    h.input({ onkeyup: actions.msgInput, placeholder: "Message" })
+]);
+
+const main = hyperapp.app(state, actions, view, document.getElementById("app"));
+</script>

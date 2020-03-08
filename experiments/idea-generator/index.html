@@ -1,0 +1,245 @@
+---
+title: Idea Generator
+slug: ideas
+description: Generates ideas. Terribly. Don't do them. These are not good ideas.
+---
+
+<noscript>
+    The Idea Generator requires JavaScript to function.
+</noscript>
+
+<div id="app">
+    <div id="out">ERROR</div>
+    <button onclick="set()">Randomize</button>
+</div>
+
+<script>
+    // Picks a random element from an array
+    function pickRandom(l) {
+        return l[Math.floor(Math.random() * l.length)];
+    }
+    
+    function genMany(f, times) {
+        return Array.apply(null, Array(times)).map(f);
+    }
+
+    // Makes an array by repeating "x" "times" times.
+    // Uses stackoverflow magic.
+    function repeat(x, times) { 
+        return genMany(function() { return x; }, times);
+    }
+    
+    // Weighted random: takes an array formatted as [[1, "a"], [2, "b"]], interprets first element of each pair as a weight, and then the second as a value
+    // Weights must be integers and should be small, or they'll eat all memory.
+    function pickWeightedRandom(arr) {
+        var longArray = arr.map(function(pair) {
+            return repeat(pair[1], pair[0]);
+        }).reduce(function(acc, x) {
+            return acc.concat(x);
+        });
+        return pickRandom(longArray);
+    }
+    
+    // Returns thing with given probability, otherwise an empty string
+    function addMaybe(probability, thing) {
+        return Math.random() < probability ? thing : "";
+    }
+    
+    var vowels = ["a", "e", "i", "o", "u"];
+    
+    // Correctly discriminates between a/an given the word coming after it
+    function connectorA(after) {
+        var firstLetter = after[0];
+        return vowels.indexOf(firstLetter) > -1 ? "an" : "a";
+    }
+    
+    // Fed to reduce in order to evaluate a pattern
+    function evalPatternReducer(output, current) {
+        var last = output[output.length - 1]; // Pick the previous output (this will be the one coming afterwards in the actual final output)
+        return output.concat([current(last)]);
+    }
+    
+    function randomize() {
+        if (Math.random() < 0.02) {
+            return pickRandom(others);
+        }
+        
+        return pickWeightedRandom(patterns).reduceRight(evalPatternReducer, []).reverse().join(" ");
+    }
+    
+    function set() {
+        document.getElementById("out").innerText = randomize();
+    }
+    
+    function applyConnector(prev) {
+        var c = pickRandom(connectors);
+        if (typeof c == "string") {
+            return c
+        } else {
+            return c(prev);
+        }
+    }
+    
+    function always(x) {
+        return function() {
+            return x
+        }
+    }
+    
+    var adverbActionAdjectiveNounPattern = [
+    function() { return addMaybe(0.3, pickRandom(adverbs)); },
+    function() { return pickRandom(actions); },
+    applyConnector,
+    function() { return addMaybe(0.5, pickRandom(adjectives)); },
+    function() { return pickRandom(things); }
+    ]
+    
+    var patterns = [
+    [4, adverbActionAdjectiveNounPattern],
+    [1, [always("do not")].concat(adverbActionAdjectiveNounPattern)],
+    [1, adverbActionAdjectiveNounPattern.concat([always("or else")])]
+    ];
+    
+    var things = [
+    "pancake",
+    "cat",
+    "app",
+    "idea generator",
+    "dog",
+    "idea",
+    "problem",
+    "chair",
+    "sandwich",
+    "ice cream",
+    "town",
+    "book",
+    "country",
+    "computer",
+    "duct tape",
+    "apple juice",
+    "cow",
+    "lamp",
+    "politician",
+    "car",
+    "chair",
+    "swivel chair",
+    "ethernet switch",
+    "radio",
+    "watermelon",
+    "point",
+    "data",
+    "spaceship",
+    "planet",
+    "moon",
+    "star",
+    "black hole",
+    "decagon",
+    "crate",
+    "javascript framework"
+    ];
+    
+    var adverbableAdjectives = [
+    "quick",
+    "slow",
+    "huge",
+    "large",
+    "great",
+    "awful",
+    "irritating",
+    "stupid",
+    "ideal",
+    "wonderful",
+    "brilliant",
+    "political",
+    "cool",
+    "orthogonal",
+    "strange",
+    "weird",
+    "excellent"
+    ]
+    
+    var otherAdjectives = [
+    "5-gigabit",
+    "tall",
+    "fast",
+    "small",
+    "triangular",
+    "octagonal",
+    "nonexistent",
+    "imaginary",
+    "hyperbolic"
+    ]
+    
+    var adjectives = adverbableAdjectives.concat(otherAdjectives);
+    
+    var otherAdverbs = [
+    ]
+
+    var adverbs = adverbableAdjectives.map(function(a) {return a + "ly";}).concat(otherAdverbs);
+    
+    var actions = [
+    "talk to",
+    "make",
+    "find",
+    "delete",
+    "meet",
+    "solve",
+    "sit on",
+    "eat",
+    "enlighten",
+    "believe in",
+    "change",
+    "take",
+    "study",
+    "use",
+    "visit",
+    "understand",
+    "read",
+    "travel to",
+    "buy",
+    "sell",
+    "encourage",
+    "argue with",
+    "load",
+    "fix",
+    "argue about",
+    "create"
+    ];
+    
+    var connectors = [
+    "your",
+    "my",
+    connectorA,
+    "the",
+    "someone's",
+    "another"
+    ]
+    
+    var optimalConfigurations = [
+    "Firefox 23 on a Difference Engine",
+    "manual HTTP over Telnet on a Pentium 3",
+    "NetPositive on Haiku (<0.6)",
+    "Vanadium 764 on an AlphaHoloCore P-series (> 150THz recommended)",
+    "a quantum cheeseputer",
+    "emulating a CPU on paper",
+    "a computer outside of the Matrix",
+    "an iPhone 2 (the Angular 3/PHP 6 version is required on this platform)",
+    "a computer with an x87 processor",
+    "a 1048576-bit device supporting the x186 architecture"
+    ]
+    
+    var others = [
+    "Protocol Omega has been activated.",
+    "Error. Out of 1s.",
+    "Don't believe his lies.",
+    "Error. You have broken the Internet.",
+    "They are coming for you. RUN!",
+    "Help, I'm trapped in an idea generator!",
+    "*** Prelude.undefined: matrix/src/Physics/SubquantumGravity.hs:1337",
+    "Please switch to " + pickRandom(optimalConfigurations) + " for an optimal experience.",
+    "User error. The user will be deleted.",
+    genMany(function() { return String.fromCharCode(Math.random() * 2048); }, 1024).join("")
+    ]
+    
+    set();
+</script>

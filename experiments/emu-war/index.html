@@ -1,0 +1,414 @@
+---
+title: Emu War
+description: Survive as long as possible against emus and other wildlife. Contributed by Aidan.
+---
+<span style="position: fixed">
+<span id="bar">
+</span>
+<span id="text">
+</span>
+</span>
+
+<div id="screen">
+</div>
+
+<div>
+<button onclick="lastIns='r';mainLoop()">←</button>
+<div style="display: inline-block"</div>
+<button onclick="lastIns='u';mainLoop()">↑</button>
+<button onclick="lastIns='d';mainLoop()">↓</button>
+</div>
+<button onclick="lastIns='l';mainLoop()">→</button>
+</div>
+
+<script type="text/javascript">
+
+const WIDTH = 30
+const HEIGHT = 20
+
+const genTable = (x, y, width, height) => {
+    let tbody = document.createElement("tbody")
+    tbody.style = "width:50%;display:block;margin:auto;font-size:0.75rem"
+
+    for (let row = 0; row < y; row++) {
+        let tr = document.createElement("tr")
+        for (let col = 0; col < x; col++) {
+            let th = document.createElement("th")
+            th.innerHTML = " "
+            th.style = "width:" + width + ";height:" + height
+            tr.appendChild(th)
+        }
+        tbody.appendChild(tr)
+    }
+
+    return tbody
+}
+
+const setPixel = (elem, x, y, val) => {
+    elem.childNodes[1].childNodes[y].childNodes[x].innerHTML = val
+}
+
+const fillScreen = (elem, width, height, text) => {
+    for (let x = 0; x < WIDTH; x++) {
+        for (let y = 0; y < HEIGHT; y++) {
+            setPixel(elem, x, y, text)
+        }
+    }
+}
+
+const writeToScreen = (elem, width, startx, starty, words) => {
+    let nletter = 0
+    let x = startx
+    let y = starty
+    while(nletter < words.length) {
+        if (words[nletter] == '\n') {
+            y++
+            x=0
+            nletter++
+            continue
+        }
+        if (x >= width) {
+            y++
+            x=0
+        }
+        if (words[nletter] == ' ' && x==0) {
+            nletter++
+            continue
+        }
+
+        setPixel(elem, x, y, words[nletter])
+        x++
+        nletter++
+    }
+}
+
+const say = (elem, text) => {
+    elem.innerHTML += "<br>" + text
+}
+
+const clear = (elem) => {
+    elem.innerHTML = ""
+}
+
+const clamp = (x, max, min) => {
+    if (x >= max) return max
+    else if (x <= min) return min
+    else return x
+}
+
+let screen = document.getElementById("screen")
+let saybox = document.getElementById("text")
+let bar = document.getElementById("bar")
+
+screen.style = "font-size:1rem;font-family:monospace"
+let tablescreen = genTable(WIDTH, HEIGHT, "1rem", "1.125rem")
+screen.appendChild(tablescreen)
+
+const startDesc = document.createElement("div")
+screen.appendChild(startDesc)
+
+startDesc.innerHTML = `Welcome to Aidan's RPG thing!
+<br>
+You are an intrepid explorer who got lost in a cavernous cavern, infested with all sorts of dangerous critters, from rats to\nmighty ogres.
+<br>
+You cannot survive, but how many foes will you take with you?
+<br>
+Use WASD or buttons to move and attack, and 'r' to\nrestart.
+<br>
+Press W, A, S or D to begin.`
+
+const enemy_icons = ["I", "K", "S", "E", "O", "R"]
+const enemy_names = ["ibis", "kestrel", "spider", "emu", "ogre", "rat"]
+const enemy_hp =        [50, 30, 20, 80, 150, 15]
+const enemy_dmg_min =   [04, 02, 02, 05, 005, 02]
+const enemy_dmg_range = [05, 15, 05, 20, 015, 05]
+const enemy_reward =    [03, 02, 01, 04, 005, 01]
+
+const START_STR = 10
+
+let hp = 500
+let str = 0
+let score = 0
+let turns = 0
+let x = Math.floor(WIDTH / 2)
+let y = Math.floor(HEIGHT / 2)
+let lastIns = ""
+let base_dmg = 10
+
+let enemies = []
+let bonuses = []
+
+const restart = () => {
+    hp = 500
+    str = 0
+    score = 0
+    turns = 0
+    x = Math.floor(WIDTH / 2)
+    y = Math.floor(HEIGHT / 2)
+    lastIns = ""
+    base_dmg = 10
+
+    enemies = []
+    bonuses = []
+
+    clear(bar)
+    clear(saybox)
+    fillScreen(screen, WIDTH, HEIGHT, " ")
+    startDesc.style.display = "block"
+    tablescreen.style.display = "none"
+}
+
+restart()
+
+const BONUS_HP = 128
+const BONUS_STR = 8
+const MAX_BONUS = 8
+const MAX_ENEMY = 24
+const BASE_SCALE_FACTOR = 0.5
+
+const gameOverMessage = "GAME OVER!"
+
+let modif = 1
+const calcModif = () => {
+    modif = str / START_STR + 1
+}
+
+const encounter = (enemy_id) => {
+    let enemy_dmg_done = Math.floor(enemy_dmg_min[enemy_id] + Math.random() * enemy_dmg_range[enemy_id] * modif)
+    say(saybox, "A " + enemy_names[enemy_id] + " attacked and did " + enemy_dmg_done + " damage!")
+    hp -= enemy_dmg_done
+}
+
+const spawnEnemy = (x, y, id) => {
+    enemies.push({
+        x: x,
+        y: y,
+        id: id,
+        hp: Math.floor(enemy_hp[id] * modif),
+    })
+}
+
+const spawnBonus = (x, y, hp, str, icon) => {
+    bonuses.push({
+        x: x,
+        y: y,
+        hp: hp,
+        str: str,
+        icon: icon,
+    })
+}
+
+const drawEnemy = (enemy_index) => {
+    const enemy = enemies[enemy_index]
+    setPixel(screen, enemy.x, enemy.y, enemy_icons[enemy.id])
+}
+
+const drawBonus = (bonus_index) => {
+    const bonus = bonuses[bonus_index]
+    setPixel(screen, bonus.x, bonus.y, bonus.icon)
+}
+
+const pickupBonus = (bonus_index) => {
+    const bonus = bonuses[bonus_index]
+    if (bonus.x == x && bonus.y == y) {
+        hp += bonus.hp
+        str += bonus.str
+        base_dmg += Math.floor(bonus.str * BASE_SCALE_FACTOR)
+        say(saybox, "Gained " + bonus.hp + "hp and " + bonus.str + "str from pickup!")
+        return true
+    }
+    return false
+}
+
+const drawPlayer = () => {
+    setPixel(screen, x, y, "@")
+}
+
+const checkCollision = (enemy_index) => {
+    let enemy = enemies[enemy_index]
+    for (let i = 0; i < enemies.length; i++) {
+        if (i == enemy_index) continue
+        let other = enemies[i]
+        if (other.x == enemy.x && other.y == enemy.y) return true
+    }
+    return (enemy.x == x && enemy.y == y)
+}
+
+const getEnemy = (x, y) => {
+    for (let i = 0; i < enemies.length; i++) {
+        let other = enemies[i]
+        if (other.x == x && other.y == y) return i
+    }
+    return -1
+}
+
+const canAttackPlayer = (enemy_index) => {
+    let enemy = enemies[enemy_index]
+    return enemy.x == x && enemy.y == y
+}
+
+const moveEnemy = (enemy_index) => {
+    let enemy = enemies[enemy_index]
+    let px = enemy.x
+    let py = enemy.y
+    let dx = x - enemy.x
+    let dy = y - enemy.y
+    if (Math.random() > 0.75 || dx*dx + dy*dy > 36) {
+        dx = Math.random() - 0.5
+        dy = Math.random() - 0.5
+    }
+    if (Math.abs(dx) > Math.abs(dy)) {
+        enemy.x += Math.sign(dx)
+    } else {
+        enemy.y += Math.sign(dy)
+    }
+
+    enemy.x = clamp(enemy.x, WIDTH-1, 0)
+    enemy.y = clamp(enemy.y, HEIGHT-1, 0)
+
+    if (canAttackPlayer(enemy_index)) {
+        encounter(enemies[enemy_index].id)
+    }
+}
+
+const attack = (enemy_index) => {
+    let done_dmg = base_dmg + Math.floor(Math.random() * (str + START_STR))
+    enemies[enemy_index].hp -= done_dmg
+    if (enemies[enemy_index].hp > 0) {
+        say(saybox, "Attacked " + enemy_names[enemies[enemy_index].id] + " and did " + done_dmg + " damage! It now has " + enemies[enemy_index].hp + "hp!")
+    }
+}
+
+const handleInput = (ins) => {
+    let lookX = x
+    let lookY = y
+    if (ins == "u") {
+        lookY += -1
+    } else if (ins == "d") {
+        lookY += 1
+    } else if (ins == "l") {
+        lookX += 1
+    } else {
+        lookX += -1
+    }
+
+    lookX = clamp(lookX, WIDTH-1, 0)
+    lookY = clamp(lookY, WIDTH-1, 0)
+
+    let id = getEnemy(lookX, lookY)
+    if (id == -1) {
+        x = lookX
+        y = lookY
+    } else {
+        attack(id)
+        if (enemies[id].hp < 0) {
+            say(saybox, "Killed a " + enemy_names[enemies[id].id] + " gaining " + enemy_reward[enemies[id].id] + "str!")
+            str += enemy_reward[enemies[id].id]
+            base_dmg += Math.floor(enemy_reward[enemies[id].id] * BASE_SCALE_FACTOR)
+            enemies.splice(id, 1)
+            x = lookX
+            y = lookY
+            score++
+        }
+    }
+}
+
+const mainLoop = () => {
+    if (hp <= 0) {
+        return
+    }
+    turns++
+
+    fillScreen(screen, WIDTH, HEIGHT, ".")
+    startDesc.style.display = "none"
+    tablescreen.style.display = "block"
+
+    clear(saybox)
+    calcModif()
+    handleInput(lastIns)
+
+    for (let i = 0; i < enemies.length; i++) {
+        let origX = enemies[i].x
+        let origY = enemies[i].y
+        moveEnemy(i)
+        if (checkCollision(i)) {
+            enemies[i].x = origX
+            enemies[i].y = origY
+        }
+        if (canAttackPlayer(i)) {
+            encounter(enemies[i].id)
+        }
+        drawEnemy(i)
+    }
+
+    let toDel = []
+    for (let i = 0; i < bonuses.length; i++) {
+        if (pickupBonus(i)) {
+            toDel.push(i)
+        }
+        drawBonus(i)
+    }
+    for (let i = 0; i < toDel.length; i++) {
+        bonuses.splice(toDel[i], 1)
+    }
+
+    let freqModif = 1 / (0.5*str / START_STR + 1)
+    if (Math.random() > 0.8 * freqModif && enemies.length <= MAX_ENEMY) {
+        let randID = Math.floor(Math.random() * enemy_icons.length)
+        let randX = Math.floor(Math.random() * WIDTH)
+        let randY = Math.floor(Math.random() * HEIGHT)
+        spawnEnemy(randX, randY, randID)
+    }
+
+    if (Math.random() > 0.75 && bonuses.length <= MAX_BONUS) {
+        let randHP = Math.floor(Math.random() * BONUS_HP)
+        let randStr = Math.floor(Math.random() * BONUS_STR)
+        let randX = Math.floor(Math.random() * WIDTH)
+        let randY = Math.floor(Math.random() * HEIGHT)
+        spawnBonus(randX, randY, randHP, randStr, "?")
+    }
+
+    drawPlayer()
+    clear(bar)
+    say(bar, "HP: " + hp + " Str: " + (str + START_STR) + " Base dmg: " + base_dmg)
+    say(bar, "Vanquished " + score + " foes.")
+    say(bar, "Turn " + turns)
+
+    if (hp <= 0) {
+        if ("points" in window) {
+            if (score >= 10) { points.unlockAchievement("emuwar10") }
+            points.updateMetric("foesVanquished", function(x) { return x + score }, 0)
+            points.updateMetric("deaths", function(x) { return x + 1 }, 0)
+        }
+        clear(saybox)
+        say(saybox, gameOverMessage + " Press R to restart.")
+        writeToScreen(screen, WIDTH, Math.floor(WIDTH/2 - gameOverMessage.length/2), Math.floor(HEIGHT/2)-1, gameOverMessage)
+    }
+}
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 65) { // A
+        lastIns = 'r'
+    } else if(event.keyCode == 87) { // W
+        lastIns = 'u'
+    } else if(event.keyCode == 68) { // D
+        lastIns = 'l'
+    } else if(event.keyCode == 83) { // S
+        lastIns = 'd'
+    } else if(event.keyCode == 82) {
+        restart()
+        return
+    } else {
+        return
+    }
+    mainLoop()
+});
+
+function asyncDoLoop(fn) {
+    setTimeout(() => {
+        fn()
+        setTimeout(() => asyncDoLoop(fn), 0)
+    })
+}
+
+</script>

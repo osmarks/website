@@ -1,0 +1,25 @@
+extends layout.pug
+
+block content
+    main
+        h2 Blog
+        p.
+            Stuff I say, conveniently accessible on the internet.
+        ul.blog
+            each post in posts
+                li
+                    a.title(href=`/${post.slug}/`)= post.title
+                    span= ` `
+                    span.description!= post.description
+
+        h2 Experiments
+        p.
+            Various random somewhat useless web projects I have put together over many years. Made with at least four different JS frameworks.
+        ul.experiments
+            each experiment in experiments
+                li
+                    a.title(href=`/${experiment.slug}/`)= experiment.title
+                    span= ` `
+                    span.description!= experiment.description
+
+        p Get updates to the blog (not experiments) in your favourite RSS reader using the <a href="/rss.xml">RSS feed</a>.

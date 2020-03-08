@@ -1,0 +1,22 @@
+---
+title: You Are Probably Offline
+comments: off
+---
+<p>If you're seeing this page and this message, then:
+<ul>
+    <li>you are offline.</li>
+    <li>this site is offline.</li>
+    <li>the "internet" connection on your end or this site's is limited somehow and so you can't connect.</li>
+    <li>you decided to look at the source or something and found this page.</li>
+    <li>the Earth has been destroyed or nuclear war has occured, threatening the integrity of the DNS system.</li>
+    <li>Contingency Iota has been initiated.</li>
+    <li>your browser is being weird.</li>
+    <li>I broke something somewhere quite badly.</li>
+    <li>your internet connection is too high-latency - the timeout on requests is 5 seconds.</li>
+    <li>???</li>
+</ul>
+This site uses a service worker to provide a limited offline mode, but it doesn't work for everything (dynamic pages, ones requiring a bit of server logic, the comments system, pages which haven't been cached), so you are being shown this instead.
+</p>
+<script defer>
+window.addEventListener("load", function() { if ("points" in window) { points.unlockAchievement("offline") }})
+</script>

@@ -1,0 +1,85 @@
+---
+title: Lorem Ipsum
+slug: lorem
+description: Lorem Ipsum (latin-like placeholder text)... FOREVER.
+---
+
+<style>
+	body {
+		overflow-y: scroll;
+		overflow-x: hidden;
+		position: relative;
+	}
+	
+	#marker {
+		width: 1px;
+		height: 1px;
+		
+		position: absolute;
+		bottom: 10vh;
+	}
+	
+	#text {
+		padding-left: 2vw;
+		padding-right: 2vw;
+		padding-top: 2vw;
+	}
+</style>
+
+<div id="text"></div>
+
+<script src="/assets/js/lorem.js"></script>
+<script src="/assets/js/infiscroll.js"></script>
+<script>
+	var textEl = document.querySelector("#text");
+	var count = 0;
+
+	function pickRandom(l) {
+        return l[Math.floor(Math.random() * l.length)];
+    }
+
+	var extra = [
+		"Protocol Omega has been activated.",
+    	"Error. Out of 1s.",
+    	"Don't believe his lies.",
+    	"I have the only antidote.",
+    	"They are coming for you.",
+    	"Help, I'm trapped in an infinite scroll webpage!",
+	];
+	
+	function throttle (callback, limit) {
+    	var wait = false;
+    	return function () {
+        	if (!wait) {
+            	callback.call();
+            	wait = true;
+            	setTimeout(function () {
+        	     	wait = false;
+    	    	}, limit);
+	    	}
+    	}
+	}
+
+	var count = 0
+	var unaddedCount = 0
+	var handlePoints = throttle(function() {
+		if (count >= 400) { points.unlockAchievement("lorem400") }
+		points.updateMetric("loremParagraphs", function(x) { return x + unaddedCount }, 0).then(function() { unaddedCount = 0 })
+	}, 300)
+
+	window.addEventListener("load", function() {
+		infiscroll(function() {
+			if (Math.random() > 0.02) {
+				textEl.appendChild(document.createTextNode(" " + Lorem.createText(1, Lorem.TYPE.PARAGRAPH)))
+			} else {
+				textEl.appendChild(document.createTextNode(" " + pickRandom(extra)))
+			}
+			count++
+			unaddedCount++
+			console.log("Scrolled down, generating lorem.", count);
+			if ("points" in window) {
+				handlePoints()
+			}
+		}, "30vh", textEl, 10);
+	})
+</script>

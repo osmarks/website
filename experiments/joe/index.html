@@ -1,0 +1,26 @@
+---
+title: JHLT
+description: Tells you how late Joe's homework is.
+---
+
+<div id="timer"></div>
+<script src="/assets/js/moment.min.js"></script>
+<script>
+var joe = moment("2017-03-23T09:15:00");
+var el = document.getElementById("timer");
+
+function format(dur) {
+	return "Joe's homework is " +
+	     + dur.years() + " years " 
+	     + dur.months() + " months "
+		 + dur.days() + " days "
+		 + dur.hours() + " hours "
+	     + dur.minutes() + " minutes "
+         + dur.seconds() + " seconds late.";
+}
+
+setInterval(function() {
+	var diff = moment.duration(-joe.diff(moment()));
+	el.innerText = format(diff);
+}, 1000);
+</script>

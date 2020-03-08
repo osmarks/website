@@ -1,0 +1,36 @@
+---
+title: Arbitrary Points
+description: Collect Arbitrary Points and achievements by doing things on this website! See how many you have! Do nothing with them because you can't! This is the final form of gamification.
+slug: points
+---
+
+<div id="app">
+    <noscript>You need JS on for this to work. I really don't know what you expected at this point.</noscript>
+</div>
+<div class="smallinfo">All Arbitrary Points data is stored and processed only on your device. 
+There is no serverside component whatsoever.
+If you don't like this regardless, you can bug me to implement an off switch, attempt to ignore it, or use Internet Explorer 6.
+Ideas for features and achievements and whatever else wanted and may be accepted.
+This is very easy to meddle with using the browser console, as I haven't tried to prevent that, but if you cheat all the time you may ruin any fun this might have brought.
+</div>
+
+<script src="/assets/js/mithril.js"></script>
+<script>
+if (!("Promise" in window)) {
+    document.getElementById("app").innerHTML = "Your browser is seemingly too outdated for this to work. Sorry! Try installing/updating Firefox."
+}
+</script>
+<script defer src="./index.js">
+</script>
+<style>
+button {
+    border: 1px solid black;
+    background: lightgray;
+    border-radius: 0;
+    padding: 0.5em;
+}
+
+.metricname {
+    padding-right: 1em;
+}
+</style>

@@ -1,0 +1,38 @@
+mixin nav-item(url, name)
+    a(href=url)= name
+
+doctype html
+html(lang="en")
+    head
+        title= `${title} @ ${name}`
+        script(src="/assets/js/page.js", defer=true)
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        if description
+            meta(name="description", content=description)
+        link(rel="manifest", href="/assets/manifest.webmanifest")
+        link(rel="shortcut icon", href="/assets/images/icon.png", type="image/png")
+        style= css
+        if comments !== "off"
+            script(src=`https://${domain}/isso/js/embed.min.js`,async=true,data-isso=`https://${domain}/isso/`)
+    body
+        nav
+            a(href="/")
+                img.logo(src="/assets/images/logo.svg")
+            +nav-item("/", "Index")
+            +nav-item(`https://status.${domain}/`, "Status")
+            +nav-item(`https://i.${domain}/`, "Images")
+            block nav-items
+        .header
+            h1.page-title= title
+            if updated
+                h3= `Updated ${renderDate(updated)}`
+            if created
+                h3= `Created ${renderDate(created)}`
+            if description
+                em.description!= description
+        block content
+
+        if comments !== "off"
+            .isso
+                section(id="isso-thread")

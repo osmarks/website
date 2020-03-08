@@ -1,0 +1,15 @@
+.stack-box {
+	text-align: center;
+	border: solid 1px black;
+	min-width: 30vmin;
+	max-width: 30vmin; /* will normally be dynamically set */
+	line-height: 30vmin;
+	height: 30vmin;
+	font-size: 7vmin;
+	margin: -1px; /* make edges join neatly */
+}
+
+#input {
+	width: 100%;
+	font-size: 2em;
+}

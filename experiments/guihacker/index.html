@@ -1,0 +1,47 @@
+---
+title: GUIHacker
+comments: off
+description: <a href="https://github.com/osmarks/guihacker">My fork</a> of GUIHacker. Possibly the only version actually on the web right now since the original website is down.
+---
+<style>
+    @font-face {
+        font-family: 'Source Code Pro';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Source Code Pro'), local('SourceCodePro-Regular'), 
+    }
+    
+    body {
+        font-family: 'Source Code Pro', 'Fira Code', 'Inconsolata', 'Courier New', 'Courier', monospace;
+        background: #000;
+        color:  #00FF00;
+        margin: 0;
+        display: block;
+    }
+    canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .bars-and-stuff{
+        left: 66.6%;
+    }
+    
+    .output-console {
+        position: fixed;
+        overflow: hidden;
+    }
+    p{margin:0}
+
+    nav {
+        display: none;
+    }
+
+    .description {
+        display: none;
+    }
+</style>
+<canvas class='hacker-3d-shiz'></canvas>
+<canvas class='bars-and-stuff'></canvas>
+<div class="output-console"></div>
+<script src="/assets/js/h4xx0r.js"></script>

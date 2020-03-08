@@ -1,0 +1,71 @@
+---
+title: AutoScorer
+description: Automatic score keeper, designed for handling Monopoly money.
+slug: scorer
+---
+
+<div id="app">
+	<input type="number" v-model.number="startingScore">
+	<input type="text" v-model="newPlayerName">
+	<button @click="players.push(newPlayerName)">Add</button>
+
+	<ul>
+		<li
+			is="player"
+			v-for="(player, idx) in players"
+			:key="player"
+			:title="player"
+			:name="player"
+			:start-score="startingScore"
+			@delete="players.splice(idx, 1)">
+		</li>
+	</ul>
+</div>
+
+<script src="/assets/js/vue.js"></script>
+
+<script type="text/x-template" id="score-template">
+	<div class="score">
+		<input v-model.number="score" type="number">
+		
+		<button @click="decrement">-</button>
+		<input v-model.number="change" type="number">
+		<button @click="increment">+</button>
+	</div>
+</script>
+
+<script>
+	Vue.component("score", {
+		props: ["startScore"],
+		data: function() {
+			return {
+				change: 1, 
+				score: this.startScore,
+			};
+		},
+		template: "#score-template",
+		methods: {
+			increment: function() {
+				this.score += this.change;
+			},
+			
+			decrement: function() {
+				this.score -= this.change;
+			}
+		}
+	});
+	
+	Vue.component("player", {
+		props: ["startScore", "name"],
+		template: '<div class="player"><h1 class="player-name">{{name}}</h1><score :startScore="startScore"></score><button @click="$emit(\'delete\')">Delete</button></div>'
+	});
+	
+	var vm = new Vue({
+		el: "#app",
+		data: {
+			players: [],
+			startingScore: 0,
+			newPlayerName: "Name Here"
+		}
+	});
+</script>

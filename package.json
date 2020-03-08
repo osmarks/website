@@ -1,0 +1,19 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "Static site generation code for my website.",
+  "main": "index.js",
+  "dependencies": {
+    "dayjs": "^1.8.19",
+    "fs-extra": "^8.1.0",
+    "gray-matter": "^4.0.2",
+    "handlebars": "^4.7.2",
+    "markdown-it": "^10.0.0",
+    "mustache": "^4.0.0",
+    "nanoid": "^2.1.10",
+    "pug": "^2.0.4",
+    "ramda": "^0.26.1",
+    "stylus": "^0.54.7"
+  },
+  "license": "MIT"
+}
