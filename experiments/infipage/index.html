@@ -111,10 +111,10 @@ url: /infipage/p
         var canonical = encodeBignum(page)
         if (canonical !== afterSlash) {
             console.log(canonical, afterSlash, "Mismatch!")
-            window.location.href = `/infipage/${canonical}`
+            window.location.href = "/infipage/" + canonical
         }
-        prev.href = encodeBignum(page.minus(1))
-        next.href = encodeBignum(page.plus(1))
+        prev.href = "/infipage/" + encodeBignum(page.minus(1))
+        next.href = "/infipage/" + encodeBignum(page.plus(1))
         pagecount.innerText = "Page " + pageString
     }
     loadPage()
