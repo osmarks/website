@@ -98,7 +98,7 @@ url: /infipage/p
     var prev = document.querySelector("#prev"), next = document.querySelector("#next"), count = document.querySelector("#pagecount"), main = document.querySelector("#main"), error = document.querySelector("#error")
     function loadPage() {
         try {
-            var afterSlash = /infipage\/([A-Za-z0-9_=-]*)/.exec(window.location.pathname)[1]
+            var afterSlash = /infipage\/([A-Za-z0-9_~.:@-]*)/.exec(window.location.pathname)[1]
             page = decodeBignum(afterSlash)
         } catch(e) {
             console.warn("Page Number Decode Failure")
