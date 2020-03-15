@@ -41,7 +41,8 @@ const ignorePaths = [
 const shouldRespond = req => {
     if (req.method !== "GET") { return false } // do not respond to non-GET requests
     if (!req.url.startsWith(self.location.origin)) { return false } // do not respond to cross-origin requests
-    const path = new URL(req.url).pathname
+    const parsedURL = new URL(req.url)
+    const path = parsedURL.pathname
     for (ignorePath of ignorePaths) {
         if (path.startsWith(ignorePath)) { return false }
     }

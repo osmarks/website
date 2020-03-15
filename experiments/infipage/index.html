@@ -1,7 +1,7 @@
 ---
 title: Infipage
 description: Outdoing all other websites with <b>INFINITE PAGES!</b>
-url: /infipage/0
+url: /infipage/p
 ---
 <style>
     #prev, #next {
@@ -41,6 +41,7 @@ url: /infipage/0
 <script>
     Big.PE = Infinity
     Big.DP = 0
+    Big.RM = 0
     
     // From MDN somewhere
     if (!String.prototype.startsWith) {
@@ -49,105 +50,12 @@ url: /infipage/0
         };
     }
 
-    if (!String.prototype.repeat) {
-        String.prototype.repeat = function(times) {
-            return new Array(num + 1).join(this);
-        };
-    }
-    
-    function encodeRLEArray(input) {
-        var encoding = [];
-        var prev, count, i;
-        for (count = 1, prev = input[0], i = 1; i < input.length; i++) {
-            if (input[i] != prev || count == 35) {
-                encoding.push([count, prev])
-                count = 1
-                prev = input[i]
-            }
-            else { 
-                count++
-            }
-        }
-        encoding.push([count, prev])
-        return encoding
-    }
-
-    function encodeRLEString(rleArr) {
-        var out = ""
-        rleArr.forEach(function(pair) {
-            out += pair[0].toString(36) + pair[1]
-        })
-        return out
-    }
-
-    /*function encodeRLEString2(rleArr) {
-        var out = ""
-        rleArr.forEach(function(pair) {
-            var count = pair[0]
-            var char = pair[1]
-            if (count !== 1) {
-                out += "." + count.toString(36) + char
-            } else {
-                out += char
-            }
-        })
-        return out
-    }*/
-
-    function decodeRLEArray(arr) {
-        var out = ""
-        arr.forEach(function(pair) {
-            out += pair[1].repeat(pair[0])
-        })
-        return out
-    }
-
-    function decodeRLEPair(r) {
-        return [ parseInt(r[0], 36), r[1] ]
-    }
-
-    function decodeRLEString(str) {
-        var results = []
-        var re = /[0-9a-z][0-9A-Za-z_-]/g
-        var match
-        while (match = re.exec(str)) {
-            results.push(decodeRLEPair(match[0]))
-        }
-        return results
-    }
-
-    function encodeRLE(str) {
-        return encodeRLEString(encodeRLEArray(str))
-    }
-
-    function decodeRLE(str) {
-        return decodeRLEArray(decodeRLEString(str))
-    }
-
-    function b64e(str) {
-        return btoa(str).replace(/\+/g, "_").replace(/\//g, "-")
-    }
-    
-    function b64d(b64) {
-        return atob(b64.replace(/_/g, "+").replace(/\-/g, "/"))
-    }
-    
-    var base = Big(256)
-    var basediv2 = base.div(2)
-
-    function addEncoding(arr, func) {
-        return arr.concat(arr.map(func))
-    }
-
-    function findShortest(arr) {
-        return arr.reduce(function(prev, now) {
-            if (typeof prev === "string") {
-                return now.length < prev.length ? now : prev
-            } else {
-                return now
-            }
-        }, null)
-    }
+    // not quite base64 alphabet
+    var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstvuwxyz0123456789-_~.:@"
+    var alphabetMapping = {}
+    for (var i = 0; i < alphabet.length; i++) { alphabetMapping[alphabet[i]] = i }
+    console.log("alphabet is", alphabet, "chars")
+    var base = Big(alphabet.length)
 
     function encodeBignum(b) {
         var out = ""
@@ -157,38 +65,28 @@ url: /infipage/0
         var byte = 0
         while (!curr.eq(0)) {
             var now = curr.mod(base)
-            out += String.fromCharCode(+now)
-            // Attempt to emulate an actual bitshift
+            out += alphabet[+now]
             curr = curr.div(base)
-            if (now.gte(basediv2)) { curr = curr.minus(1) }
         }
         var start = b.s === -1 ? "n" : "p"
-        var b64 = start + b64e(out)
-        var decimal = b.toString()
-        var possibilities = [b64, decimal]
-        possibilities = addEncoding(possibilities, function(x) { return "r" + encodeRLE(x) })
-        return findShortest(possibilities)
+        return start + out
     }
     
     function decodeBignum(str) {
-        if (str.startsWith("r")) {
-            return decodeBignum(decodeRLE(str.substring(1)))
-        }
-
         // If string is not tagged with its sign, it's just a regular number
+        // backward compatibility only
         if (!str.startsWith("n") && !str.startsWith("p")) {
             return Big(str)
         }
         
         var start = str.substring(0, 1)
         
-        var bin = b64d(str.substring(1))
+        var main = str.substring(1)
         var out = Big(0)
-        // Split string into bytes
-        var bytes = bin.split("").map(function(x) { return x.charCodeAt(0) })
-        // Add each byte to string, multiplied by 2 ^ its position in string
-        bytes.forEach(function(byte, exponent) {
-            var thisByte = Big(byte).times(base.pow(exponent))
+        var bvals = main.split("").map(function(x) { return alphabetMapping[x] })
+        // Add each char's value to string, multiplied by the base to the power of its position in string
+        bvals.forEach(function(val, position) {
+            var thisByte = Big(val).times(base.pow(position))
             out = out.plus(thisByte)
         })
         if (start === "n") { out = out.times(-1) }
@@ -200,7 +98,7 @@ url: /infipage/0
     var prev = document.querySelector("#prev"), next = document.querySelector("#next"), count = document.querySelector("#pagecount"), main = document.querySelector("#main"), error = document.querySelector("#error")
     function loadPage() {
         try {
-            var afterSlash = /infipage\/([A-Za-z0-9_=-]+)/.exec(window.location.pathname)[1]
+            var afterSlash = /infipage\/([A-Za-z0-9_=-]*)/.exec(window.location.pathname)[1]
             page = decodeBignum(afterSlash)
         } catch(e) {
             console.warn("Page Number Decode Failure")
@@ -217,12 +115,13 @@ url: /infipage/0
         }
         prev.href = encodeBignum(page.minus(1))
         next.href = encodeBignum(page.plus(1))
-        pagecount.innerText = "Page " + page.toString()
+        pagecount.innerText = "Page " + pageString
     }
     loadPage()
     if ("ontouchstart" in window) { main.classList.add("mobile") }
 </script>
 <script>
+// interface with arbitrary points
 window.addEventListener("load", function() {
     if ("points" in window) { 
         console.log("running update")
