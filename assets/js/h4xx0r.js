@@ -13,32 +13,54 @@ jargonWords = {
       ["TCP", "HTTP", "SDD", "RAM", "GB", "CSS", "SSL", "AGP", "SQL", "FTP", "PCI", "AI", "ADP",
        "RSS", "XML", "EXE", "COM", "HDD", "THX", "SMTP", "SMS", "USB", "PNG", "PHP", "UDP", 
        "TPS", "RX", "ASCII", "CD-ROM", "CGI", "CPU", "DDR", "DHCP", "BIOS", "IDE", "IP", "MAC", 
-       "MP3", "AAC", "PPPoE", "SSD", "SDRAM", "VGA", "XHTML", "Y2K", "GUI", "EPS"], 
+       "MP3", "AAC", "PPPoE", "SSD", "SDRAM", "VGA", "XHTML", "Y2K", "GUI", "EPS", "SATA", "SAS",
+        "VM", "LAN", "DRAM", "L3", "L2", "DNS", "UEFI", "UTF-8", "DDOS"], 
    adjectives:
       ["auxiliary", "primary", "back-end", "digital", "open-source", "virtual", "cross-platform",
        "redundant", "online", "haptic", "multi-byte", "bluetooth", "wireless", "1080p", "neural",
        "optical", "solid state", "mobile", "unicode", "backup", "high speed", "56k", "analog", 
-       "fiber optic", "central", "visual", "ethernet", "Griswold"], 
+       "fiber optic", "central", "visual", "ethernet", "Griswold", "binary", "ternary",
+       "secondary", "web-scale", "persistent", "Java"
+    ], 
    nouns:
       ["driver", "protocol", "bandwidth", "panel", "microchip", "program", "port", "card", 
        "array", "interface", "system", "sensor", "firewall", "hard drive", "pixel", "alarm", 
        "feed", "monitor", "application", "transmitter", "bus", "circuit", "capacitor", "matrix", 
        "address", "form factor", "array", "mainframe", "processor", "antenna", "transistor", 
        "virus", "malware", "spyware", "network", "internet", "field", "acutator", "tetryon",
-       "beacon", "resonator"], 
+       "beacon", "resonator", "diode", "oscillator", "vertex", "shader", "cache", "platform",
+       "hyperlink", "device", "encryption", "node", "headers", "botnet", "applet", "satellite",
+        "Unix", "byte"], 
    participles:
       ["backing up", "bypassing", "hacking", "overriding", "compressing", "copying", "navigating", 
        "indexing", "connecting", "generating", "quantifying", "calculating", "synthesizing", 
        "inputting", "transmitting", "programming", "rebooting", "parsing", "shutting down", 
        "injecting", "transcoding", "encoding", "attaching", "disconnecting", "networking",
        "triaxilating", "multiplexing", "interplexing", "rewriting", "transducing",
-       "acutating", "polarising"
+       "acutating", "polarising", "diffracting", "modulating", "demodulating", "vectorizing",
+       "compiling", "jailbreaking", "proxying", "Linuxing"
 ]};
 
 // Generates a random piece of jargon
 function jargon() {
-    let raw = choose(jargonWords.participles) + " " + choose(jargonWords.adjectives) + " " +
-        choose(jargonWords.acronyms) + " " + choose(jargonWords.nouns);
+    var choice = Math.random()
+    if (choice > 0.5) {
+        var thing = choose(jargonWords.adjectives) + " " + choose(jargonWords.acronyms)
+    } else if (choice > 0.1) {
+        var thing = choose(jargonWords.acronyms) + " " + choose(jargonWords.adjectives)
+    } else {
+        var thing = choose(jargonWords.adjectives) + " " + choose(jargonWords.acronyms) + " " + choose(jargonWords.nouns)
+    }
+    thing += " " + choose(jargonWords.nouns)
+    if (Math.random() > 0.3) {
+        var raw = choose(jargonWords.participles) + " " + thing
+    } else {
+        var raw = thing + " " + choose(jargonWords.participles)
+            .replace("overriding", "overriden")
+            .replace("shutting", "shut")
+            .replace("ying", "ied")
+            .replace("ing", "ed")
+    }
     return raw.capitalizeFirstLetter()
 }
 
@@ -147,19 +169,34 @@ function GuiHacker(){
     }
 
     // Console stuff
-    this.responses      = [
-                            'Authorizing ',
-                            'Authorized...',
-                            'Access Granted..',
-                            'Going Deeper....',
-                            'Compression Complete.',
-                            'Compilation of Data Structures Complete..',
-                            'Entering Security Console...',
-                            'Encryption Unsuccesful Attempting Retry...',
-                            'Waiting for response...',
-                            '....Searching...',
-                            'Calculating Space Requirements '
-                            ];
+    this.responses = [
+        'Authorizing ',
+        'Authorized...',
+        'Access Granted..',
+        'Going Deeper....',
+        'Compression Complete.',
+        'Compilation of Data Structures Complete..',
+        'Entering Security Console...',
+        'Encryption Unsuccesful Attempting Retry...',
+        'Waiting for response...',
+        '....Searching...',
+        'Calculating Space Requirements',
+        "nmap 192.168.1.0/24 -p0-65535",
+        "Rescanning Databases...",
+        "Hacking all IPs simultaneously...",
+        "All webs down, activating proxy",
+        "rm -rf --no-preserve-root /",
+        "Hacking military satellite network...",
+        "Guessing password...",
+        "Trying 'password123'",
+        "Activating Extra Monitors...",
+        "Typing Faster...",
+        "Checking StackOverflow",
+        "Locating crossbows...",
+        "Enabling algorithms and coding",
+        "Collapsing Subdirectories...",
+        "Enabling Ping Wall..."
+    ];
     this.isProcessing = false;
     this.processTime = 0;
     this.lastProcess = 0;
