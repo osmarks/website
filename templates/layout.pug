@@ -14,11 +14,11 @@ html(lang="en")
         link(rel="shortcut icon", href="/assets/images/icon.png", type="image/png")
         style= css
         if comments !== "off"
-            script(src=`https://${domain}/isso/js/embed.min.js`,async=true,data-isso=`https://${domain}/isso/`)
+            script(src=`https://${domain}/isso/js/embed.min.js`, async=true, data-isso=`https://${domain}/isso/`)
     body
         nav
             a(href="/")
-                img.logo(src="/assets/images/logo.svg")
+                img.logo(src="/assets/images/logo.svg", alt="logo")
             +nav-item("/", "Index")
             +nav-item(`https://status.${domain}/`, "Status")
             +nav-item(`https://i.${domain}/`, "Images")
