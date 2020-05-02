@@ -22,7 +22,7 @@ if ("serviceWorker" in navigator) {
 }
 
 // https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript
-const hash = function(str, seed = 0) {
+const hashString = function(str, seed = 0) {
     let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed
     for (let i = 0, ch; i < str.length; i++) {
         ch = str.charCodeAt(i)
@@ -34,7 +34,7 @@ const hash = function(str, seed = 0) {
     return 4294967296 * (2097151 & h2) + (h1>>>0)
 }
 
-const colHash = (str, saturation = 100, lightness = 70) => `hsl(${hash(str) % 360}, ${saturation}%, ${lightness}%)`
+const colHash = (str, saturation = 100, lightness = 70) => `hsl(${hashString(str) % 360}, ${saturation}%, ${lightness}%)`
 
 // Arbitrary Points code, wrapped in an IIFE to not pollute the global environment much more than it already is
 window.points = (() => {
@@ -110,6 +110,12 @@ window.points = (() => {
             conditions: "posting a comment",
             points: 30.5,
             description: "You (probably, the detection isn't 100% accurate) posted a comment! Enjoy expressing your opinion (or random meaningless message) to random internet people!"
+        },
+        aprilFools: {
+            title: "April Folly",
+            conditions: "visiting on April Fools' Day",
+            description: "Enjoy being... April Fooled? Good luck getting this, speedrunners.",
+            points: 16.0303
         }
     }
 
@@ -244,6 +250,11 @@ window.points = (() => {
         }
         if (metrics.get("pagesVisited") > 64) {
             unlockAchievement("pagesVisited64")
+        }
+        const now = new Date()
+        if (now.getUTCMonth() === 3 && now.getUTCDate() === 1) {
+        //if (now.getUTCMonth() === 2 && now.getUTCDate() === 22) {
+            unlockAchievement("aprilFools")
         }
     })
 

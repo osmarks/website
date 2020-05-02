@@ -35,7 +35,9 @@ self.addEventListener("activate", event => {
 
 const ignorePaths = [
     "/isso",
-    "/infipage"
+    "/infipage",
+    "/wsthing",
+    "/random-stuff"
 ]
 
 const shouldRespond = req => {
