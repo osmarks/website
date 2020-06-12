@@ -4,7 +4,7 @@ const fse = require("fs-extra")
 const MarkdownIt = require("markdown-it")
 const pug = require("pug")
 const path = require("path")
-const matter = require('gray-matter')
+const matter = require("gray-matter")
 const mustache = require("mustache")
 const globalData = require("./global.json")
 const stylus = require("stylus")
@@ -21,6 +21,7 @@ const root = path.join(__dirname, "..")
 const templateDir = path.join(root, "templates")
 const experimentDir = path.join(root, "experiments")
 const blogDir = path.join(root, "blog")
+const errorPagesDir = path.join(root, "error")
 const assetsDir = path.join(root, "assets")
 const outDir = path.join(root, "out")
 
@@ -54,7 +55,7 @@ const loadDir = async (dir, func) => {
     return out
 }
 
-const applyTemplate = async (template, input, getOutput, options) => {
+const applyTemplate = async (template, input, getOutput, options = {}) => {
     const page = parseFrontMatter(await readFile(input))
     if (options.processMeta) { options.processMeta(page.data) }
     if (options.processContent) { page.content = options.processContent(page.content) }
@@ -85,11 +86,19 @@ const processExperiments = templates => {
 
 const processBlog = templates => {
     return loadDir(blogDir, async (file, basename) => {
-        return applyTemplate(templates.blogPost, file, async page => {
+        return applyTemplate(templates.experiment, file, async page => {
             const out = path.join(outDir, page.data.slug)
             await fse.ensureDir(out)
             return path.join(out, "index.html")
         }, { processMeta: meta => { meta.slug = meta.slug || removeExtension(basename) }, processContent: renderMarkdown })
+    })
+}
+
+const processErrorPages = templates => {
+    return loadDir(errorPagesDir, async (file, basename) => {
+        return applyTemplate(templates.experiment, file, async page => {
+            return path.join(outDir, basename)
+        })
     })
 }
 
@@ -123,6 +132,7 @@ const run = async () => {
     const experimentsList = R.sortBy(x => x.title, R.values(await processExperiments(templates)))
     const blogList = R.sortBy(x => x.updated ? -x.updated.valueOf() : 0, R.values(await processBlog(templates)))
     await processAssets(templates)
+    await processErrorPages(templates)
 
     const index = templates.index({ ...globalData, title: "Index", experiments: experimentsList, posts: blogList })
     await fsp.writeFile(path.join(outDir, "index.html"), index)

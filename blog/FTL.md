@@ -42,3 +42,6 @@ updated: 08/03/2020
 * Don't jump to stores if you don't have things to sell or lots of scrap. You're missing out on scrap you might otherwise get (this is called "opportunity cost").
 * Don't expect to win all the time or even particularly often. FTL is a roguelike. It's designed to be played repeatedly, not won all of the time, and involves heavy randomness.
 * Ships' starting weapons are actually generally pretty good, often using less power and/or firing faster than purchaseable alternatives.
+* The Burst Laser II (and its rough equivalent, the Flak I) are very good and should be obtained where possible.
+* Destroying enemy medbays/clonebays is beneficial if you plan to kill their crew.
+* Level 2 teleporters are apparently fast enough to teleport your crew onto an airless ship and teleport them off before they die from the lack of oxygen.

@@ -1,0 +1,56 @@
+---
+title: 404
+---
+
+<style>
+    @keyframes useless {
+        0% {
+            background-color: red;
+            transform: rotate(0deg);
+        }
+        14% {
+            background-color: orange;
+        }
+        28% {
+            background-color: yellow;
+        }
+        42% {
+            background-color: green;
+        }
+        56% {
+            background-color: blue;
+        }
+        70% {
+            background-color: indigo;
+        }
+        84% {
+            background-color: purple;
+        }
+        100% {
+            background-color: red;
+            transform: rotate(360deg);
+        }
+    }
+    
+    #useless {
+        width: 10vmax;
+        height: 10vmax;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5%;
+        animation: infinite linear 5s useless;
+        margin-top: 10%;
+        min-width: 5em;
+        min-height: 5em;
+        
+        color: black;
+        cursor: pointer;
+    }
+</style>
+
+<center>
+    The page you have requested was not found. Please go to a different one which actually exists, or the index page.
+    If you clicked a link on this site and got here, this is a bug and you should report it.
+    <a href="/" class="no-underline"><div id="useless">osmarks.tk</div></a>
+</center>
