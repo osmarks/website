@@ -14,12 +14,11 @@ description: Survive as long as possible against emus and other wildlife. Contri
 
 <div>
 <button onclick="lastIns='r';mainLoop()">←</button>
-<div style="display: inline-block"</div>
 <button onclick="lastIns='u';mainLoop()">↑</button>
 <button onclick="lastIns='d';mainLoop()">↓</button>
-</div>
 <button onclick="lastIns='l';mainLoop()">→</button>
 </div>
+<input type="checkbox" id="legacy-mode"><label>Legacy bounds checking mode</label>
 
 <script type="text/javascript">
 
@@ -279,6 +278,8 @@ const attack = (enemy_index) => {
     }
 }
 
+const legacyMode = () => document.getElementById("legacy-mode").checked
+
 const handleInput = (ins) => {
     let lookX = x
     let lookY = y
@@ -293,7 +294,7 @@ const handleInput = (ins) => {
     }
 
     lookX = clamp(lookX, WIDTH-1, 0)
-    lookY = clamp(lookY, WIDTH-1, 0)
+    lookY = clamp(lookY, (legacyMode() ? WIDTH : HEIGHT) - 1, 0)
 
     let id = getEnemy(lookX, lookY)
     if (id == -1) {
