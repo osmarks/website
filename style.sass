@@ -1,0 +1,70 @@
+body
+    margin: 0
+    font-family: 'Fira Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+a
+    text-decoration: none
+
+nav
+    display: flex
+    align-items: center
+
+    padding: 1em
+    margin-bottom: 0.5em
+    background: black
+
+    .logo
+        width: 1.5em
+        height: 1.5em
+
+    a, img
+        margin-right: 0.5em
+        
+    @for $i from 1 through 3
+        a:nth-child(#{$i})
+            color: hsl(90 + ($i * 30), 100%, 80%)
+
+h1, h2, h3, h4, h5, h6
+    margin: 0
+    font-weight: 400
+
+main, .header
+    margin-left: 1em
+    margin-right: 1em
+
+// for easier viewing on big screen devices, narrow the width of text
+main.blog-post
+    max-width: 40em
+
+main
+    margin-top: 1em
+
+ul
+    list-style-type: square
+    padding-left: 1em
+
+.isso
+    padding: 1em
+
+.achievements
+    position: fixed
+    bottom: 0
+    left: 0
+    .achievement
+        cursor: pointer
+
+.achievement
+    border: 1px solid black
+    margin: 0.5em
+    padding: 0.5em
+    max-width: 40em
+
+    .title
+        font-weight: 500
+    .conditions
+        font-style: italic
+
+.smallinfo
+    font-size: 0.8em
+    margin-top: 0.5em
+    margin-bottom: 0.5em
