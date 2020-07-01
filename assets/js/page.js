@@ -298,3 +298,13 @@ window.points = (() => {
         setMetric
     }
 })()
+
+const customStyle = localStorage.getItem("user-stylesheet")
+let customStyleEl = null
+if (customStyle) {
+    customStyleEl = document.createElement("style")
+    customStyleEl.appendChild(document.createTextNode(customStyle))
+    customStyleEl.onload = () => console.log("Loaded custom styles")
+    customStyleEl.id = "custom-style"
+    document.head.appendChild(customStyleEl)
+}

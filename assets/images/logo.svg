@@ -1,5 +1,6 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg viewBox="0 0 384 384" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100%" height="100%" style="fill: black; stroke-width: 0;" shape-rendering="crispEdges"></rect>
     <rect x="0" y="0" width="128" height="128" shape-rendering="crispEdges" style="fill: none; stroke-width: 0;"></rect>
     <rect x="128" y="0" width="128" height="128" shape-rendering="crispEdges" style="fill: white; stroke-width: 0;"></rect>
     <rect x="256" y="0" width="128" height="128" shape-rendering="crispEdges" style="fill: none; stroke-width: 0;"></rect>

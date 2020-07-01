@@ -21,8 +21,8 @@ nav
         margin-right: 0.5em
         
     @for $i from 1 through 3
-        a:nth-child(#{$i})
-            color: hsl(90 + ($i * 30), 100%, 80%)
+        a:nth-child(#{$i + 1})
+            color: hsl(180 + ($i * 30), 100%, 80%)
 
 h1, h2, h3, h4, h5, h6
     margin: 0
@@ -35,6 +35,7 @@ main, .header
 // for easier viewing on big screen devices, narrow the width of text
 main.blog-post
     max-width: 40em
+    text-align: justify
 
 main
     margin-top: 1em

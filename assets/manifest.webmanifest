@@ -3,19 +3,33 @@
     "lang": "en",
     "name": "{{{name}}}",
     "scope": "/",
-    "display": "browser",
+    "display": "minimal-ui",
     "start_url": "https://{{domain}}/",
     "short_name": "{{domain}}",
-    "theme_color": "transparent",
     "description": "{{siteDescription}}",
     "orientation": "any",
-    "background_color": "transparent",
-    "related_applications": "",
-    "prefer_related_applications": "false",
     "icons": [
         {
-            "src": "/assets/images/icon.png?reloadyoustupidicon=4",
+            "src": "/assets/images/logo96.png",
             "sizes": "96x96"
+        },
+        {
+            "src": "/assets/images/logo192.png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/assets/images/logo384.png",
+            "sizes": "384x384"
+        },
+        {
+            "src": "/assets/images/logo768.png",
+            "sizes": "768x768"
+        },
+        {
+            "src": "/assets/images/logo.svg",
+            "sizes": "512x512"
         }
-    ]
+    ],
+    "theme_color": "#000000",
+    "background_color": "#000000"
 }
