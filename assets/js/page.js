@@ -116,6 +116,18 @@ window.points = (() => {
             conditions: "visiting on April Fools' Day",
             description: "Enjoy being... April Fooled? Good luck getting this, speedrunners.",
             points: 16.0303
+        },
+        heavgame1: {
+            title: "Pastaphysical Futility",
+            conditions: "Annoying the narrator of Heavpoot's Game",
+            description: "Irritating the narrator with control of your reality is rarely a good choice. In this case it definitely wasn't.",
+            points: 34.04
+        },
+        heavgame2: {
+            title: "(insert meaningful secret O5 councily thing here)",
+            conditions: "Solving the puzzle in Heavpoot's Game",
+            description: `You... did something or other and somehow found the "black moon" thing and guessed/found the answer to the puzzle there, so enjoy this achievement, O6-3234234!`,
+            points: 41.5824
         }
     }
 

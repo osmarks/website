@@ -30,8 +30,6 @@ const handleTab = ev => {
     }
 }
 
-const inputOnCreate = vnode => { vnode.dom.value = currentStyle }
-
 const App = {
     view: () => m("", [
         m("em", "Due to browser limitations, this currently cannot tell you about errors or warnings in your stylesheet. You can check your browser console for these, probably."),
@@ -41,7 +39,7 @@ const App = {
             m("button", { onclick: applyStyles }, "Apply"),
             m("button", { onclick: removeStyles }, "Remove")
         ]),
-        m("textarea.style-input", { oncreate: inputOnCreate, oninput: ev => { currentStyle = ev.target.value }, onkeydown: handleTab }),
+        m("textarea.style-input", { oncreate: vnode => { vnode.dom.value = currentStyle }, oninput: ev => { currentStyle = ev.target.value }, onkeydown: handleTab }),
     ])
 }
 
