@@ -21,7 +21,7 @@ const metricDisplayInfo = {
     commentsPosted: { name: "Comments posted", units: "comment" },
     greatestInfipage: { name: "Largest infipage visited" },
     heavpootLocations: { name: "Heavpoot's Game states", units: "state" },
-    heavpootDeaths: { name: "Heavpoot's Game deaths", units: "deaths" }
+    heavpootDeaths: { name: "Heavpoot's Game deaths", units: "death" }
 }
 
 const displayMetric = metric => {
