@@ -32,6 +32,11 @@ description: It is pitch black (if you ignore all of the lighting). You are like
             points.unlockAchievement(name)
         }
     }
+    function updateMetric(name, fn, def) {
+        if ("points" in window) {
+            points.updateMetric(name, fn, def)
+        }
+    }
     var state="start"; // SPOILERS SPOILERS OH GOD SPOILERS OH GOD SPOILERS
     var game={
         "start":["hi you are level 3³³ ersearcher in the scp floundation. whatdo?",["173","go to SCP-173s chamber"],["antimemetics","go to the antimemetics division"],["start-2","keep going somewhere"],["blackmoonhowl","Does the black moon howl?","v"]],
@@ -115,8 +120,12 @@ description: It is pitch black (if you ignore all of the lighting). You are like
         return res
     }
     function c(st){
+        updateMetric("heavpootLocations", function(x) { return x + 1 }, 0)
         if (st == "dontquestionit") { unlockAchievement("heavgame1") }
         if (st == "blackmoondecode") { unlockAchievement("heavgame2") }
+        if (st == "blackmoondeath" || st == "6094" || st == "173" || st == "lacerated" || st == "traitor") {
+            updateMetric("heavpootDeaths", function(x) { return x + 1 }, 0)
+        }
         if (st=="blackmoonno"){
             redacted=""
         }

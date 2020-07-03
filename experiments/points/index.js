@@ -16,10 +16,12 @@ const metricDisplayInfo = {
     timeSpent: { name: "Time spent", units: "second" },
     achievements: { name: "Achievements" },
     foesVanquished: { name: "Foes vanquished", units: "foe" },
-    deaths: { name: "Deaths", units: "death" },
+    deaths: { name: "Emu War Deaths", units: "death" },
     loremParagraphs: { name: "Lorem Ipsum paragraphs seen", units: "paragraph" },
     commentsPosted: { name: "Comments posted", units: "comment" },
-    greatestInfipage: { name: "Largest infipage visited" }
+    greatestInfipage: { name: "Largest infipage visited" },
+    heavpootLocations: { name: "Heavpoot's Game states", units: "state" },
+    heavpootDeaths: { name: "Heavpoot's Game deaths", units: "deaths" }
 }
 
 const displayMetric = metric => {
