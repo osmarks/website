@@ -120,6 +120,11 @@ description: It is pitch black (if you ignore all of the lighting). You are like
         if (st=="blackmoonno"){
             redacted=""
         }
+        if (st=="blackmoondeath"||st=="6094"||st=="173"||st=="lacerated"||st=="traitor"){
+            if ("points" in window) {
+                points.updateMetric("heavGameDeaths", function(currentMetricValue) { return currentMetricValue+1 }, default)
+            }
+        }
         state=st
         o.innerHTML="<p>"+game[st][0]+"</p>"
         for (var i=1;i<game[st].length;i++){
