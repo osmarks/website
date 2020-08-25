@@ -174,7 +174,9 @@ globalData.renderDate = date => date.format("DD/MM/YYYY")
 
 const runOpenring = async () => {
     // wildly unsafe but only runs on input from me anyway
-    const out = await util.promisify(childProcess.exec)(`./openring -n6 ${globalData.feeds.map(x => "-s " + x).join(" ")} < openring.html`)
+    const arg = `./openring -n6 ${globalData.feeds.map(x => '-s "' + x + '"').join(" ")} < openring.html`
+    console.log(arg)
+    const out = await util.promisify(childProcess.exec)(arg)
     console.log(out.stderr)
     return out.stdout
 }
