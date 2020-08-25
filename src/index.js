@@ -13,7 +13,8 @@ const customParseFormat = require("dayjs/plugin/customParseFormat")
 const nanoid = require("nanoid")
 const htmlMinifier = require("html-minifier").minify
 const terser = require("terser")
-const { minify } = require("html-minifier")
+const util = require("util")
+const childProcess = require("child_process")
 
 dayjs.extend(customParseFormat)
 
@@ -140,28 +141,43 @@ const processAssets = async templates => {
     const outAssets = path.join(outDir, "assets")
     await fse.ensureDir(outAssets)
 
-    applyTemplate(templates.experiment, path.join(assetsDir, "offline.html"), () => path.join(outAssets, "offline.html"), {})
-
     // Write out the web manifest after templating it using somewhat misapplied frontend templating stuff 
-    const manifest = mustache.render(await readFile(path.join(assetsDir, "manifest.webmanifest")), globalData)
-    await fsp.writeFile(path.join(outAssets, "manifest.webmanifest"), manifest)
+    const runManifest = async () => {
+        const m = mustache.render(await readFile(path.join(assetsDir, "manifest.webmanifest")), globalData)
+        fsp.writeFile(path.join(outAssets, "manifest.webmanifest"), m)
+    }
+
+    const runJS = async () => {
+        const jsDir = path.join(assetsDir, "js")
+        const jsOutDir = path.join(outAssets, "js")
+        await Promise.all((await fsp.readdir(jsDir)).map(async file => {
+            const fullpath = path.join(jsDir, file)
+            await minifyJSFile(await readFile(fullpath), file, path.join(jsOutDir, file))
+        }))
+
+        const serviceWorker = mustache.render(await readFile(path.join(assetsDir, "sw.js")), globalData)
+        await minifyJSFile(serviceWorker, "sw.js", path.join(outDir, "sw.js"))
+    }
 
     const copyAsset = subpath => fse.copy(path.join(assetsDir, subpath), path.join(outAssets, subpath))
     // Directly copy images, JS, CSS
-    await Promise.all([await copyAsset("images"), await copyAsset("css")])
-    
-    const jsDir = path.join(assetsDir, "js")
-    const jsOutDir = path.join(outAssets, "js")
-    await Promise.all((await fsp.readdir(jsDir)).map(async file => {
-        const fullpath = path.join(jsDir, file)
-        await minifyJSFile(await readFile(fullpath), file, path.join(jsOutDir, file))
-    }))
-
-    const serviceWorker = mustache.render(await readFile(path.join(assetsDir, "sw.js")), globalData)
-    await minifyJSFile(serviceWorker, "sw.js", path.join(outDir, "sw.js"))
+    await Promise.all([
+        copyAsset("images"), 
+        copyAsset("css"), 
+        runManifest,
+        runJS,
+        applyTemplate(templates.experiment, path.join(assetsDir, "offline.html"), () => path.join(outAssets, "offline.html"), {})
+    ])
 }
 
 globalData.renderDate = date => date.format("DD/MM/YYYY")
+
+const runOpenring = async () => {
+    // wildly unsafe but only runs on input from me anyway
+    const out = await util.promisify(childProcess.exec)(`./openring -n6 ${globalData.feeds.map(x => "-s " + x).join(" ")} < openring.html`)
+    console.log(out.stderr)
+    return out.stdout
+}
 
 const run = async () => {
     const css = await sass.renderSync({
@@ -172,12 +188,17 @@ const run = async () => {
     globalData.css = css
 
     const templates = await loadDir(templateDir, async fullPath => pug.compile(await readFile(fullPath), { filename: fullPath }))
-    const experimentsList = R.sortBy(x => x.title, R.values(await processExperiments(templates)))
-    const blogList = R.sortBy(x => x.updated ? -x.updated.valueOf() : 0, R.values(await processBlog(templates)))
-    await processAssets(templates)
-    await processErrorPages(templates)
+    const [exp, blg, opr, ..._] = await Promise.all([
+        processExperiments(templates), 
+        processBlog(templates),
+        runOpenring(),
+        processAssets(templates), 
+        processErrorPages(templates)
+    ])
+    const experimentsList = R.sortBy(x => x.title, R.values(exp))
+    const blogList = R.sortBy(x => x.updated ? -x.updated.valueOf() : 0, R.values(blg))
 
-    const index = templates.index({ ...globalData, title: "Index", experiments: experimentsList, posts: blogList })
+    const index = templates.index({ ...globalData, title: "Index", experiments: experimentsList, posts: blogList, openring: opr })
     await fsp.writeFile(path.join(outDir, "index.html"), index)
 
     const rssFeed = templates.rss({ ...globalData, items: blogList, lastUpdate: new Date() })
