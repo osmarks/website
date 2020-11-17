@@ -1,0 +1,48 @@
+---
+title: RPNCalc v4
+slug: rpncalc4
+description: Reverse Polish Notation calculator, version 4 - increasingly esoteric and incomprehensible. Contributed by Aidan.
+---
+<style>
+textarea {
+    width: 100%;
+    height: 30%;
+}
+code {
+    background-color:rgb(230, 230, 230);
+    padding: 0 0.125rem;
+}
+</style>
+<textarea id="inbox"></textarea>
+<button id="step">step</button>
+<button id="play">play</button>
+<button id="load">load</button>
+<input type="checkbox" id="use-std" name="use-std" checked>
+<label for="use-std">use stdlib?</label>
+<pre id="insbox"></pre>
+<pre id="outbox"></pre>
+<script src="./main.js" type="module"></script>
+<h3>documentation</h3>
+<p>use <code>(name; value)</code> to define something. the definition can be recursive. <code>value</code> is executed and <code>name</code> is set to the final state of the stack, i.e. <code>(name; 1 3)</code> is possible</p>
+<p>use <code>'</code> to push instead of apply to the stack, e.g. <code>'(a -> a)</code>. This is useful for lazyness, i.e. <code>'(->lazy evaluated thing)</code></p>
+<ul>
+<li><code>+, -, *, /, ^, sqrt</code>: mathematical operations</li>
+<li><code>==</code>: equality (automatically derived for all types); returns <code>a b -> a</code> if true, <code>a b -> b</code> if false</li>
+<li><code>typeof</code>: returns the type of the object</li>
+<li><code>pair, fst, snd</code>: pairs two objects, gets first or second item of pair</li>
+<li><code>tuple</code>: used like <code>... 3 tuple</code>; creates an n tuple of n items on the stack</li>
+<li><code>!!</code>: index into a tuple</li>
+<li><code>len</code>: length of a tuple</li>
+</ul>
+<h3>stdlib</h3>
+<ul>
+<li><code>stop; "stop</code></li>
+<li><code>inv; x -> 1 x /</code></li>
+<li><code>fold; x acc fn -> acc '(-> x acc fn 'fn fold) 'x \"stop ==</code></li>
+<li><code>range; x y -> x '(->x x 1 + y range) 'x y ==</code></li>
+<li><code>listthen; fn -> (internal; x acc -> '(->acc fn) '(->x acc pair internal) x stop ==) 0 tuple internal</code></li>
+<li><code>list; (a -> a) listthen</code></li>
+<li><code>lmap; list fn -> list '(->list fst fn list snd 'fn lmap pair) list 0 tuple ==</code></li>
+<li><code>unlist; l -> (internal; list -> '(->) '(->list fst list snd internal) list 0 tuple ==) stop l internal</code></li>
+<li><code>map; fn -> '(l->l 'fn lmap unlist) listthen</code></li>
+</ul>

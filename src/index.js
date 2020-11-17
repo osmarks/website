@@ -178,7 +178,7 @@ const runOpenring = async () => {
     console.log(arg)
     const out = await util.promisify(childProcess.exec)(arg)
     console.log(out.stderr)
-    return out.stdout
+    return minifyHTML(out.stdout)
 }
 
 const run = async () => {

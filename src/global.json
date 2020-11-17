@@ -8,7 +8,8 @@
         "https://slatestarcodex.com/feed/",
         "https://www.rifters.com/crawl/?feed=rss2",
         "https://drewdevault.com/feed.xml",
-        "https://www.giantitp.com/comics/oots.rss",
-        "https://qntm.org/rss.php"
+        "https://qntm.org/rss.php",
+        "https://aphyr.com/posts.atom",
+        "https://os.phil-opp.com/rss.xml"
     ]
 }

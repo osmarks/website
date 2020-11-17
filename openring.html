@@ -2,9 +2,7 @@
 <section class="atl">
     {{range .Articles}}
     <div class="art">
-        <h4>
-            <a href="{{.Link}}" target="_blank" rel="noopener">{{.Title}}</a>
-        </h4>
+        <a class="ttl" href="{{.Link}}" target="_blank" rel="noopener">{{.Title}}</a>
         <p class="sum">{{.Summary}}</p>
         <small class="src">
             via <a href="{{.SourceLink}}">{{.SourceTitle}}</a>
