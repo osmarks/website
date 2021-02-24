@@ -38,7 +38,8 @@ const ignorePaths = [
     "/infipage",
     "/wsthing",
     "/random-stuff",
-    "/radio"
+    "/radio",
+    "/ystat"
 ]
 
 const shouldRespond = req => {

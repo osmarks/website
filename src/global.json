@@ -1,11 +1,11 @@
 {
     "name": "Oliver's Website",
-    "domain": "osmarks.tk",
+    "domain": "osmarks.net",
     "siteDescription": "Whimsical uselessness available conveniently online.",
     "feeds": [
         "https://blogs.sciencemag.org/pipeline/feed",
         "https://www.rtl-sdr.com/feed/",
-        "https://slatestarcodex.com/feed/",
+        "https://astralcodexten.substack.com/feed",
         "https://www.rifters.com/crawl/?feed=rss2",
         "https://drewdevault.com/feed.xml",
         "https://qntm.org/rss.php",
