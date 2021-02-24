@@ -4,6 +4,7 @@
   "description": "Static site generation code for my website.",
   "main": "index.js",
   "dependencies": {
+    "chalk": "^4.1.0",
     "dayjs": "^1.8.28",
     "fs-extra": "^8.1.0",
     "gray-matter": "^4.0.2",
