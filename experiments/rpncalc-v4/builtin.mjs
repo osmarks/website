@@ -81,12 +81,10 @@ const addDefn = (name, args, fn) => {
     }
 }
 
-const add = (args) => [{type:"num", val:args[0] + args[1]}];
-const sub = (args) => [{type:"num", val:args[0] - args[1]}];
-const div = (args) => [{type:"num", val:args[0] / args[1]}];
-const mult = (args) => [{type:"num", val:args[0] * args[1]}];
-const pow = (args) => [{type:"num", val:Math.pow(args[0], args[1])}];
-const root = (args) => [{type:"num", val:Math.sqrt(args[0])}];
+const addBinopDefn = (name, op) => addDefn(name, ["num", "num"], args => [{ type: "num", val: op(args[0], args[1]) }])
+const addUnopDefn = (name, op) => addDefn(name, ["num"], args => [{ type: "num", val: op(args[0]) }])
+const addConstDefn = (name, val) => addDefn(name, [], args => [{ type: "num", val }])
+
 const type = (args) => [{type:"type", val:args[0].type}];
 const pair = (args) => [{type:"pair", val:{fst:args[0], snd:args[1]}}];
 const fst = (args) => [args[0].fst];
@@ -103,12 +101,19 @@ const eq = (args) => {
     }
 }
 
-addDefn("+", ["num", "num"], add);
-addDefn("-", ["num", "num"], sub);
-addDefn("/", ["num", "num"], div);
-addDefn("*", ["num", "num"], mult);
-addDefn("^", ["num", "num"], pow);
-addDefn("sqrt", ["num"], root);
+addBinopDefn("+", (x, y) => x + y)
+addBinopDefn("-", (x, y) => x - y)
+addBinopDefn("/", (x, y) => x / y)
+addBinopDefn("*", (x, y) => x * y)
+addBinopDefn("%", (x, y) => x % y)
+addBinopDefn("^", Math.pow)
+addBinopDefn("atan2", Math.atan2)
+for (const func of ["abs", "floor", "log", "asin", "acos", "atan", "sin", "cos", "tan", "exp", "cbrt", "ceil", "sqrt"]) {
+    addUnopDefn(func, Math[func])
+}
+addConstDefn("e", Math.E)
+addConstDefn("pi", Math.PI)
+
 addDefn("==", 4, eq);
 addDefn("pair", 2, pair);
 addDefn("fst", ["pair"], fst);
@@ -126,3 +131,5 @@ addRPNDefn("list", "'(a -> a) listthen");
 addRPNDefn("lmap", "(list fn -> list '(->list fst fn list snd 'fn lmap pair) list 0 tuple ==)");
 addRPNDefn("unlist", "(l -> (internal; list -> '(->) '(->list fst list snd internal) list 0 tuple ==) stop l internal)");
 addRPNDefn("map", "fn -> '(l->l 'fn lmap unlist) listthen");
+addRPNDefn("hypot", "(a b -> a a * b b * + sqrt)")
+addRPNDefn("swap", "(a b -> b a)")

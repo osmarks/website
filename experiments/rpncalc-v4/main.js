@@ -81,6 +81,8 @@ play.onclick = _ => {
     input = null;
 }
 
+// TODO: Actually deal with horrible XSS problems. It seems to be safe for now due to string literals being bad, at least.
+// It may be possible to do JSF[REDACTED]k-style things to get around this, though.
 stepb.onclick = _ => {
     if (state === null) {
         return;
@@ -98,11 +100,23 @@ stepb.onclick = _ => {
         if (!(pos.start === 0 && pos.end === 0)) {
             insbox.innerHTML = highlight(input, pos.start, pos.end, "green");
         }
-        if (state.stacks.length > 1) {
-            outbox.innerHTML = "... " + prettyprint(state.stacks[state.stacks.length-1]);
-        } else {
-            outbox.innerHTML = prettyprint(state.stacks[0]);
+        let out = []
+        let emptyCounter = 0
+        for (const stack of state.stacks) {
+            if (stack.length === 0) {
+                emptyCounter += 1
+            } else {
+                if (emptyCounter !== 0) {
+                    out.push(`[empty x${emptyCounter}]`)
+                    emptyCounter = 0
+                }
+                out.push(prettyprint(stack))
+            }
         }
+        if (emptyCounter !== 0) {
+            out.push(`[empty x${emptyCounter}]`)
+        }
+        outbox.innerHTML = out.join("<br>")
     }
 }
 
