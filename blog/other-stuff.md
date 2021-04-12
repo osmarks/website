@@ -37,7 +37,7 @@ Obviously this is just stuff *I* like; you might not like it, which isn't really
 * [The Combat Codes](https://www.goodreads.com/book/show/27790093-the-combat-codes) by Alexander Darwin. Similar to Ender's Game, but with MMA, basically, and I am bad at describing things.
 * [Schlock Mercenary](https://www.schlockmercenary.com/), a *very* long-running space opera webcomic. It's been running for something like 20 years, and the art and such improve over time.
 * [Freefall](http://freefall.purrsia.com/), a hard-science-fiction webcomic.
-* [Mage Errant](https://www.goodreads.com/series/252085-mage-errant) - a moderately-long-by-now fantasy series with a really interesting world.
+* [Mage Errant](https://www.goodreads.com/series/252085-mage-errant) - a moderately-long-by-now fantasy series with a very vibrant world, and which actually considers the geopolitical implications of there being beings around ("Great Powers") able to act as one-man armies.
 * [Arcane Ascension](https://www.goodreads.com/series/201441-arcane-ascension) - fun progression fantasy series with (... like most of these, actually) worldbuilding I like and good characters. I have only read the first two, since I'm writing this just as the third came out
 
 Special mentions (i.e. "I haven't gotten around to reading these but they are well-reviewed and sound interesting") to:

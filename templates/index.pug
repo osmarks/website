@@ -5,21 +5,22 @@ block content
         h2 Blog
         p.
             Stuff I say, conveniently accessible on the internet.
-        ul.blog
+        div.blog
             each post in posts
-                li
-                    a.title(href=`/${post.slug}/`)= post.title
-                    span= ` `
-                    span.description!= post.description
+                div(style=`background: ${post.bgcol}; border: 1px solid ${post.bordercol}`)
+                    div
+                        a.title(href=`/${post.slug}/`)= post.title
+                    small= renderDate(post.updated)
+                    div.description!= post.description
 
         h2 Experiments
         p.
             Various random somewhat useless web projects I have put together over many years. Made with at least four different JS frameworks.
-        ul.experiments
+        div.experiments
             each experiment in experiments
-                li
-                    a.title(href=`/${experiment.slug}/`)= experiment.title
-                    span= ` `
+                div(style=`background: ${experiment.bgcol}; border: 1px solid ${experiment.bordercol}`)
+                    div
+                        a.title(href=`/${experiment.slug}/`)= experiment.title
                     span.description!= experiment.description
 
         p Get updates to the blog (not experiments) in your favourite RSS reader using the <a href="/rss.xml">RSS feed</a>.

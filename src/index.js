@@ -16,6 +16,7 @@ const terser = require("terser")
 const util = require("util")
 const childProcess = require("child_process")
 const chalk = require("chalk")
+const crypto = require("crypto")
 
 dayjs.extend(customParseFormat)
 
@@ -29,6 +30,38 @@ const outDir = path.join(root, "out")
 
 const buildID = nanoid()
 globalData.buildID = buildID
+
+const hexPad = x => Math.round(x).toString(16).padStart(2, "0")
+function hslToRgb(h, s, l) {
+    var r, g, b;
+
+    if (s == 0) {
+        r = g = b = l; // achromatic
+    } else {
+            function hue2rgb(p, q, t) {
+            if (t < 0) t += 1;
+            if (t > 1) t -= 1;
+            if (t < 1/6) return p + (q - p) * 6 * t;
+            if (t < 1/2) return q;
+            if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+            return p;
+        }
+
+        var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        var p = 2 * l - q;
+
+        r = hue2rgb(p, q, h + 1/3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1/3);
+    }
+
+    return `#${hexPad(r * 255)}${hexPad(g * 255)}${hexPad(b * 255)}`
+}
+const hashColor = (x, s, l) => {
+    const buf = crypto.createHash("md5").update(x).digest()
+    const hue = (buf[0] + 256 * buf[1]) % 360
+    return hslToRgb(hue / 360, s, l)
+}
 
 const removeExtension = x => x.replace(/\.[^/.]+$/, "")
 
@@ -100,6 +133,8 @@ const applyTemplate = async (template, input, getOutput, options = {}) => {
     return page.data
 }
 
+const addColors = R.map(x => ({ ...x, bgcol: hashColor(x.title, 0.5, 0.85), bordercol: hashColor(x.title, 0.7, 0.6) }))
+
 const processExperiments = async () => {
     const templates = globalData.templates
     const experiments = await loadDir(experimentDir, (subdirectory, basename) => {
@@ -120,7 +155,7 @@ const processExperiments = async () => {
             { processMeta: meta => { meta.slug = meta.slug || basename }})
     })
     console.log(chalk.yellow(`${Object.keys(experiments).length} experiments`))
-    globalData.experiments = R.sortBy(x => x.title, R.values(experiments))
+    globalData.experiments = addColors(R.sortBy(x => x.title, R.values(experiments)))
 }
 
 const processBlog = async () => {
@@ -133,7 +168,7 @@ const processBlog = async () => {
         }, { processMeta: meta => { meta.slug = meta.slug || removeExtension(basename) }, processContent: renderMarkdown })
     })
     console.log(chalk.yellow(`${Object.keys(blog).length} blog entries`))
-    globalData.blog = R.sortBy(x => x.updated ? -x.updated.valueOf() : 0, R.values(blog))
+    globalData.blog = addColors(R.sortBy(x => x.updated ? -x.updated.valueOf() : 0, R.values(blog)))
 }
 
 const processErrorPages = () => {
