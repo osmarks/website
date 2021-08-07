@@ -19,4 +19,4 @@ If you are in fact in the UK, I hope this has convinced you to do something abou
 
 Update (19/07/2021): also consider reading [this](https://boingboing.net/2012/01/10/lockdown.html), which addresses this sort of thing as a result of more general problems.
 
-Update (06/08/2021): [oh look, Apple just did the client-side scanning thing](https://appleprivacyletter.com/)
+Update (06/08/2021): [Oh look, Apple just did the client-side scanning thing](https://appleprivacyletter.com/). I do not think this sets a good precedent; this is the most obviously defensible usecase for this technology, and now future extensions can just be portrayed as a natural extension of it.
