@@ -9,8 +9,8 @@ rss(version='2.0')
 
         each item in items
             item
-            title= item.title
-            description= item.description
-            link= `https://${domain}/${item.slug}`
-            if item.updated
-                pubDate= item.updated.toDate().toUTCString()
+                title= item.title
+                description= item.description
+                link= `https://${domain}/${item.slug}`
+                if item.updated
+                    pubDate= item.updated.toDate().toUTCString()

@@ -14,13 +14,26 @@ jargonWords = {
        "RSS", "XML", "EXE", "COM", "HDD", "THX", "SMTP", "SMS", "USB", "PNG", "PHP", "UDP", 
        "TPS", "RX", "ASCII", "CD-ROM", "CGI", "CPU", "DDR", "DHCP", "BIOS", "IDE", "IP", "MAC", 
        "MP3", "AAC", "PPPoE", "SSD", "SDRAM", "VGA", "XHTML", "Y2K", "GUI", "EPS", "SATA", "SAS",
-        "VM", "LAN", "DRAM", "L3", "L2", "DNS", "UEFI", "UTF-8", "DDOS"], 
+       "VM", "LAN", "DRAM", "L3", "L2", "DNS", "UEFI", "UTF-8", "DDOS", "HDMI", "GPU", "RSA", "AES",
+       "L7", "ISO", "HTTPS", "SSH", "SIMD", "GNU", "PDF", "LPDDR5", "ARM", "RISC", "CISC", "802.11",
+       "5G", "LTE", "3GPP", "MP4", "2FA", "RCE", "JBIG2", "ISA", "PCIe", "NVMe", "SHA", "QR", "CUDA",
+       "IPv4", "IPv6", "ARP", "DES", "IEEE", "NoSQL", "UTF-16", "ADSL", "ABI", "TX", "HEVC", "AVC",
+       "AV1", "ASLR", "ECC", "HBA", "HAL", "SMT", "RPC", "JIT", "LCD", "LED", "MIME", "MIMO", "LZW",
+       "LGA", "OFDM", "ORM", "PCRE", "POP3", "SMTP", "802.3", "PSU", "RGB", "VLIW", "VPS", "VPN",
+       "XMPP", "IRC", "GNSS"], 
    adjectives:
       ["auxiliary", "primary", "back-end", "digital", "open-source", "virtual", "cross-platform",
-       "redundant", "online", "haptic", "multi-byte", "bluetooth", "wireless", "1080p", "neural",
+       "redundant", "online", "haptic", "multi-byte", "Bluetooth", "wireless", "1080p", "neural",
        "optical", "solid state", "mobile", "unicode", "backup", "high speed", "56k", "analog", 
        "fiber optic", "central", "visual", "ethernet", "Griswold", "binary", "ternary",
-       "secondary", "web-scale", "persistent", "Java"
+       "secondary", "web-scale", "persistent", "Java", "cloud", "hyperscale", "seconday", "cloudscale",
+       "software-defined", "hyperconverged", "x86", "Ethernet", "WiFi", "4k", "gigabit", "neuromorphic",
+       "sparse", "machine learning", "authentication", "multithreaded", "statistical", "nonlinear",
+       "photonic", "streaming", "concurrent", "memory-safe", "C", "electromagnetic", "nanoscale",
+       "high-level", "low-level", "distributed", "accelerated", "base64", "purely functional",
+       "serial", "parallel", "compute", "graphene", "recursive", "denormalized", "orbital",
+       "networked", "autonomous", "applicative", "acausal", "hardened", "category-theoretic",
+       "ultrasonic"
     ], 
    nouns:
       ["driver", "protocol", "bandwidth", "panel", "microchip", "program", "port", "card", 
@@ -30,7 +43,14 @@ jargonWords = {
        "virus", "malware", "spyware", "network", "internet", "field", "acutator", "tetryon",
        "beacon", "resonator", "diode", "oscillator", "vertex", "shader", "cache", "platform",
        "hyperlink", "device", "encryption", "node", "headers", "botnet", "applet", "satellite",
-        "Unix", "byte"], 
+       "Unix", "byte", "Web 3", "metaverse", "microservice", "ultrastructure", "subsystem",
+       "call stack", "gate", "filesystem", "file", "database", "bitmap", "Bloom filter", "tensor",
+       "hash table", "tree", "optics", "silicon", "hardware", "uplink", "script", "tunnel",
+       "server", "barcode", "exploit", "vulnerability", "backdoor", "computer", "page",
+       "regex", "socket", "platform", "IP", "compiler", "interpreter", "nanochip", "certificate",
+       "API", "bitrate", "acknowledgement", "layout", "satellite", "shell", "MAC", "PHY", "VLAN",
+       "SoC", "assembler", "interrupt", "directory", "display", "functor", "bits", "logic",
+       "sequence", "procedure", "subnet", "invariant", "monad", "endofunctor", "borrow checker"], 
    participles:
       ["backing up", "bypassing", "hacking", "overriding", "compressing", "copying", "navigating", 
        "indexing", "connecting", "generating", "quantifying", "calculating", "synthesizing", 
@@ -38,7 +58,11 @@ jargonWords = {
        "injecting", "transcoding", "encoding", "attaching", "disconnecting", "networking",
        "triaxilating", "multiplexing", "interplexing", "rewriting", "transducing",
        "acutating", "polarising", "diffracting", "modulating", "demodulating", "vectorizing",
-       "compiling", "jailbreaking", "proxying", "Linuxing"
+       "compiling", "jailbreaking", "proxying", "Linuxing", "quantizing", "multiplying",
+       "scanning", "interpreting", "routing", "rerouting", "tunnelling", "randomizing",
+       "underwriting", "accessing", "locating", "rotating", "invoking", "utilizing",
+       "normalizing", "hijacking", "integrating", "type-checking", "uploading", "downloading",
+       "allocating", "receiving", "decoding"
 ]};
 
 // Generates a random piece of jargon
@@ -56,6 +80,7 @@ function jargon() {
         var raw = choose(jargonWords.participles) + " " + thing
     } else {
         var raw = thing + " " + choose(jargonWords.participles)
+            .replace("writing", "wrote")
             .replace("overriding", "overriden")
             .replace("shutting", "shut")
             .replace("ying", "ied")
@@ -195,7 +220,18 @@ function GuiHacker(){
         "Locating crossbows...",
         "Enabling algorithms and coding",
         "Collapsing Subdirectories...",
-        "Enabling Ping Wall..."
+        "Enabling Ping Wall...",
+        "Obtaining sunglasses...",
+        "Rehashing hashes.",
+        "Randomizing numbers.",
+        "Greening text...",
+        "Accessing system32",
+        "'); DROP DATABASE system;--",
+        "...Nesting VPNs...",
+        "Opening Wireshark.",
+        "Breaking fifth wall....",
+        "Flipping arrows and applying yoneda lemma",
+        "Rewriting in Rust"
     ];
     this.isProcessing = false;
     this.processTime = 0;
@@ -274,7 +310,9 @@ function scaryNum() {
     }
 }
 
-GuiHacker.prototype.consoleOutput = function(){
+var accessDenied = document.querySelector(".accessdenied")
+
+GuiHacker.prototype.consoleOutput = function(initiatedByTyping){
     var textEl = document.createElement('p');
 
     if(this.isProcessing){
@@ -282,6 +320,9 @@ GuiHacker.prototype.consoleOutput = function(){
         textEl.textContent += scaryNum() + " ";
         if(Date.now() > this.lastProcess + this.processTime){
             this.isProcessing = false;
+        }
+        if (initiatedByTyping) {
+            this.processTime -= 500
         }
     }else{
         var commandType = ~~(Math.random()*4);
@@ -301,6 +342,9 @@ GuiHacker.prototype.consoleOutput = function(){
     }
 
     var outputConsole = settings.outputConsole;
+    if (outputConsole.childNodes.length > 1000) {
+        outputConsole.removeChild(outputConsole.firstChild)
+    }
     outputConsole.scrollTop = outputConsole.scrollHeight;
     outputConsole.appendChild(textEl);
 
@@ -312,7 +356,7 @@ GuiHacker.prototype.consoleOutput = function(){
     }
 
     var self = this;
-    setTimeout(function(){self.consoleOutput();}, ~~(Math.random()*200));
+    if (!initiatedByTyping) { setTimeout(function(){self.consoleOutput();}, ~~(Math.random()*200)) };
 };
 
 
@@ -347,7 +391,7 @@ if (hash){
 }
 
 var adjustCanvas = function(){
-    if(settings.gui){
+    if(settings.gui) {
         settings.canvas.width = (window.innerWidth/3)*2;
         settings.canvas.height = window.innerHeight / 3;
 
@@ -362,13 +406,24 @@ var adjustCanvas = function(){
         settings.vpy = settings.canvas.height / 2;
 
         settings.ctx.strokeStyle = settings.ctxBars.strokeStyle = settings.ctxBars.fillStyle = settings.color;
-    }else{
+    } else {
         document.querySelector(".hacker-3d-shiz").style.display = "none";
         document.querySelector(".bars-and-stuff").style.display = "none";
     }
-        document.body.style.color = settings.color;
-    }(),
-    guiHacker = new GuiHacker(settings);
+    document.body.style.color = settings.color;
+}
+guiHacker = new GuiHacker(settings);
 
 
-window.addEventListener('resize', adjustCanvas);
+window.addEventListener("resize", adjustCanvas)
+window.addEventListener("keydown", ev => {
+    if (ev.key === "d" && ev.altKey) {
+        console.log("denying access")
+        accessDenied.style.display = accessDenied.style.display === "none" ? "block" : "none"
+        ev.preventDefault()
+    }
+    else if (Math.random() > 0.8) {
+        guiHacker.consoleOutput(true)
+    }
+})
+adjustCanvas()
