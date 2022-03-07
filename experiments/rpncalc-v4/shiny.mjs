@@ -121,7 +121,16 @@ const doIns = (ins, state, handler) => {
     }
 }
 
+let hasDoneAchievement = false
+
 export const step = (state, handler, showIns, maxdepth) => {
+    if (!hasDoneAchievement && state.stacks.length > 100) {
+        if ("points" in window) {
+            points.then(points => points.unlockAchievement("rpnv4recursion"))
+        }
+        hasDoneAchievement = true
+    }
+
     if (state.stacks.length > maxdepth) {
         throw 'max recursion depth exceeded'
     }

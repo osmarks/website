@@ -619,6 +619,9 @@ description: A game about... apioforms... by Heavpoot.
             }
             console.log(kills)
             if (localStorage.tutorial=="true"&&kills>30){
+                if ("points" in window) {
+                    points.then(points => points.unlockAchievement("apioformGame"))
+                }
                 localStorage.tutorial=false
                 kills=0
             }

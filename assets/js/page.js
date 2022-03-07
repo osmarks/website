@@ -1,7 +1,6 @@
-// https://github.com/jakearchibald/idb-keyval/blob/master/dist/idb-keyval-iife.min.js
-// This is small enough that I decided to just embed it directly here to save hassle and network bandwidth.
-const idbk=function(e){"use strict";class t{constructor(e="keyval-store",t="keyval"){this.storeName=t,this._dbp=new Promise((r,n)=>{const o=indexedDB.open(e,1);o.onerror=(()=>n(o.error)),o.onsuccess=(()=>r(o.result)),o.onupgradeneeded=(()=>{o.result.createObjectStore(t)})})}
-    _withIDBStore(e,t){return this._dbp.then(r=>new Promise((n,o)=>{const s=r.transaction(this.storeName,e);s.oncomplete=(()=>n()),s.onabort=s.onerror=(()=>o(s.error)),t(s.objectStore(this.storeName))}))}}let r;function n(){return r||(r=new t),r}return e.Store=t,e.get=function(e,t=n()){let r;return t._withIDBStore("readonly",t=>{r=t.get(e)}).then(()=>r.result)},e.set=function(e,t,r=n()){return r._withIDBStore("readwrite",r=>{r.put(t,e)})},e.del=function(e,t=n()){return t._withIDBStore("readwrite",t=>{t.delete(e)})},e.clear=function(e=n()){return e._withIDBStore("readwrite",e=>{e.clear()})},e.keys=function(e=n()){const t=[];return e._withIDBStore("readonly",e=>{(e.openKeyCursor||e.openCursor).call(e).onsuccess=function(){this.result&&(t.push(this.result.key),this.result.continue())}}).then(()=>t)},e}({});
+// I cannot be bothered to set up a bundler
+// https://www.npmjs.com/package/idb
+!function(e,t){t(window.idb={})}(this,(function(e){"use strict";let t,n;const r=new WeakMap,o=new WeakMap,s=new WeakMap,i=new WeakMap,a=new WeakMap;let c={get(e,t,n){if(e instanceof IDBTransaction){if("done"===t)return o.get(e);if("objectStoreNames"===t)return e.objectStoreNames||s.get(e);if("store"===t)return n.objectStoreNames[1]?void 0:n.objectStore(n.objectStoreNames[0])}return f(e[t])},set:(e,t,n)=>(e[t]=n,!0),has:(e,t)=>e instanceof IDBTransaction&&("done"===t||"store"===t)||t in e};function d(e){return e!==IDBDatabase.prototype.transaction||"objectStoreNames"in IDBTransaction.prototype?(n||(n=[IDBCursor.prototype.advance,IDBCursor.prototype.continue,IDBCursor.prototype.continuePrimaryKey])).includes(e)?function(...t){return e.apply(p(this),t),f(r.get(this))}:function(...t){return f(e.apply(p(this),t))}:function(t,...n){const r=e.call(p(this),t,...n);return s.set(r,t.sort?t.sort():[t]),f(r)}}function u(e){return"function"==typeof e?d(e):(e instanceof IDBTransaction&&function(e){if(o.has(e))return;const t=new Promise(((t,n)=>{const r=()=>{e.removeEventListener("complete",o),e.removeEventListener("error",s),e.removeEventListener("abort",s)},o=()=>{t(),r()},s=()=>{n(e.error||new DOMException("AbortError","AbortError")),r()};e.addEventListener("complete",o),e.addEventListener("error",s),e.addEventListener("abort",s)}));o.set(e,t)}(e),n=e,(t||(t=[IDBDatabase,IDBObjectStore,IDBIndex,IDBCursor,IDBTransaction])).some((e=>n instanceof e))?new Proxy(e,c):e);var n}function f(e){if(e instanceof IDBRequest)return function(e){const t=new Promise(((t,n)=>{const r=()=>{e.removeEventListener("success",o),e.removeEventListener("error",s)},o=()=>{t(f(e.result)),r()},s=()=>{n(e.error),r()};e.addEventListener("success",o),e.addEventListener("error",s)}));return t.then((t=>{t instanceof IDBCursor&&r.set(t,e)})).catch((()=>{})),a.set(t,e),t}(e);if(i.has(e))return i.get(e);const t=u(e);return t!==e&&(i.set(e,t),a.set(t,e)),t}const p=e=>a.get(e);const l=["get","getKey","getAll","getAllKeys","count"],D=["put","add","delete","clear"],b=new Map;function v(e,t){if(!(e instanceof IDBDatabase)||t in e||"string"!=typeof t)return;if(b.get(t))return b.get(t);const n=t.replace(/FromIndex$/,""),r=t!==n,o=D.includes(n);if(!(n in(r?IDBIndex:IDBObjectStore).prototype)||!o&&!l.includes(n))return;const s=async function(e,...t){const s=this.transaction(e,o?"readwrite":"readonly");let i=s.store;return r&&(i=i.index(t.shift())),(await Promise.all([i[n](...t),o&&s.done]))[0]};return b.set(t,s),s}c=(e=>({...e,get:(t,n,r)=>v(t,n)||e.get(t,n,r),has:(t,n)=>!!v(t,n)||e.has(t,n)}))(c),e.deleteDB=function(e,{blocked:t}={}){const n=indexedDB.deleteDatabase(e);return t&&n.addEventListener("blocked",(()=>t())),f(n).then((()=>{}))},e.openDB=function(e,t,{blocked:n,upgrade:r,blocking:o,terminated:s}={}){const i=indexedDB.open(e,t),a=f(i);return r&&i.addEventListener("upgradeneeded",(e=>{r(f(i.result),e.oldVersion,e.newVersion,f(i.transaction))})),n&&i.addEventListener("blocked",(()=>n())),a.then((e=>{s&&e.addEventListener("close",(()=>s())),o&&e.addEventListener("versionchange",(()=>o()))})).catch((()=>{})),a},e.unwrap=p,e.wrap=f}));
 
 // attempt to register service worker
 if ("serviceWorker" in navigator) {
@@ -37,7 +36,7 @@ const hashString = function(str, seed = 0) {
 const colHash = (str, saturation = 100, lightness = 70) => `hsl(${hashString(str) % 360}, ${saturation}%, ${lightness}%)`
 
 // Arbitrary Points code, wrapped in an IIFE to not pollute the global environment much more than it already is
-window.points = (() => {
+window.points = (async () => {
     const achievementInfo = {
         test: {
             title: "Test",
@@ -128,8 +127,80 @@ window.points = (() => {
             conditions: "Solving the puzzle in Heavpoot's Game",
             description: `You... did something or other and somehow found the "black moon" thing and guessed/found the answer to the puzzle there, so enjoy this achievement, O6-3234234!`,
             points: 41.5824
+        },
+        tttWinai1:{
+            title: "Beginner's Luck",
+            conditions: `Beat "AI" 1 on Tic-Tac-Toe`,
+            description: "Congratulations on beating a slightly aware random number generator.",
+            points: 23
+        },
+        tttWinai2:{
+            title: "Superior Algorithms",
+            conditions: `Beat "AI" 2 on Tic-Tac-Toe`,
+            description: "Nonsarcastic congratulations on beating the near-optimal minimax agent.",
+            points: 46
+        },
+        apioformGame: {
+            title: "Relativistic apiohydromagnetoplasmodynamic cryomemetics",
+            conditions: "Finish the Apioform Game tutorial",
+            description: "You have braved the complete lack of guidance or a description in the Apioform Game and apioformed many apioforms.",
+            points: 40
+        },
+        rpnv4recursion: {
+            title: "You are doing it right",
+            conditions: "Recurse to a stack depth of 100 or more on RPNCalc v4",
+            description: "For using RPNCalcV4 as it is meant to be used - highly, highly recursively.",
+            points: 18.324
         }
     }
+
+    const [oldMetrics, oldPoints] = await Promise.all([idb.openDB("arbitrary-metrics"), idb.openDB("arbitrary-points")])
+    const getMetrics = async () => {
+        const metrics = {}
+        const tx = oldMetrics.transaction("metrics", "readonly")
+        for (const key of await tx.store.getAllKeys()) {
+            metrics[key] = await tx.store.get(key)
+        }
+        return metrics
+    }
+    const getPointsData = async () => {
+        const data = {}
+        const tx = oldPoints.transaction("data", "readonly")
+        for (const key of await tx.store.getAllKeys()) {
+            data[key] = await tx.store.get(key)
+        }
+        return data
+    }
+    const [metrics, pointsData] = await Promise.all([getMetrics(), getPointsData()])
+    await Promise.all([oldMetrics.close(), oldPoints.close()])
+    const db = await idb.openDB("arbitrary-data", 1, {
+        async upgrade(db, oldVersion, newVersion, tx) {
+            if (!oldVersion || oldVersion < 1) {
+                // create metrics, KV, achievements stores
+                db.createObjectStore("kv")
+                db.createObjectStore("metrics")
+                db.createObjectStore("achievements", {
+                    keyPath: "id"
+                })
+                for (const [key, value] of Object.entries(metrics)) {
+                    await tx.objectStore("metrics").put(value, key)
+                }
+                for (const achievement of (pointsData["achievements"] || [])) {
+                    await tx.objectStore("achievements").put(achievement)
+                }
+            }
+            await tx.done
+        },
+        blocked() {
+            console.warn("Database error (older version open)")
+        },
+        blocking() {
+            window.location.reload()
+        },
+        terminated() {
+            console.warn("Database error (unexpectedly closed)")
+        },
+    });
 
     const e = (cls, parent, content) => {
         const element = document.createElement("div")
@@ -155,32 +226,24 @@ window.points = (() => {
         })
     }
 
-    const metricsStore = new idbk.Store("arbitrary-metrics", "metrics")
-    const dataStore = new idbk.Store("arbitrary-points", "data")
-
     const fireUpdatedEvent = () => document.dispatchEvent(new Event("points-update"))
 
-    let pointsCount
+    let achievementsList
 
-    const getPoints = async () => {
-        if (pointsCount) { return pointsCount }
-        let value = await idbk.get("points", dataStore)
-        if (value === undefined) {
-            await idbk.set("points", 0, dataStore)
-            value = 0
-        }
-        pointsCount = value
-        return value
+    const getAchievements = async tx => {
+        if (achievementsList) { return achievementsList }
+        if (!tx) { tx = db.transaction("achievements", "readonly") }
+        achievementsList = await tx.objectStore("achievements").getAll()
+        return achievementsList
     }
 
-    const updateStoredValue = async (store, name, fn, def) => {
-        const newValue = fn(await idbk.get(name, store) || def)
-        await idbk.set(name, newValue, store)
-        return newValue
-    }
+    const getPoints = async () => (await getAchievements()).map(a => a.points).reduce((x, y) => x + y, 0)
 
     const updateMetric = async (name, fn, def) => {
-        const newValue = await updateStoredValue(metricsStore, name, fn, def)
+        const tx = db.transaction("metrics", "readwrite")
+        const init = await tx.store.get(name) || def
+        const newValue = fn(init)
+        await tx.store.put(newValue, name)
         switch (name) {
         case "achievements":
             if (newValue === 1) {
@@ -190,12 +253,6 @@ window.points = (() => {
         }
         return newValue
     }
-    const incrementPoints = inc => {
-        pointsCount += inc
-        updateStoredValue(dataStore, "points", x => x + inc, 0)
-        fireUpdatedEvent()
-    }
-
     // increment pages visited count, since this should be run when a page is visited
     updateMetric("pagesVisited", x => x + 1, 0)
 
@@ -205,35 +262,32 @@ window.points = (() => {
         updateMetric("timeSpent", x => x + (elapsedMs / 1000), 0)
     }
 
-    const setMetric = (metric, value) => idbk.set(metric, value, metricsStore)
-
     const readAllMetrics = async () => {
-        const keys = await idbk.keys(metricsStore)
         const out = new Map()
-        await Promise.all(keys.map(async k => {
-            out.set(k, await idbk.get(k, metricsStore))
-        }))
+        const tx = db.transaction("metrics", "readonly")
+        for (const key of await tx.store.getAllKeys()) {
+            out.set(key, await tx.store.get(key))
+        }
         return out
     }
 
     const reset = async () => {
-        pointsCount = 0
+        const tx = db.transaction(["achievements", "metrics"], "readwrite")
+        for (const achievement of await tx.objectStore("achievements").getAllKeys()) {
+            await tx.objectStore("achievements").delete(achievement)
+        }
+        for (const metric of await tx.objectStore("metrics").getAllKeys()) {
+            await tx.objectStore("metrics").delete(metric)
+        }
         achievementsList = []
-        await idbk.clear(metricsStore)
-        await idbk.clear(dataStore)
+        // fireUpdatedEvent()
+        // called when achievement is unlocked there anyway
         await unlockAchievement("reset")
     }
 
-    let achievementsList
-    const getAchievements = async () => {
-        if (achievementsList) { return achievementsList }
-        const value = await idbk.get("achievements", dataStore) || []
-        achievementsList = value
-        return value
-    }
-
     const unlockAchievement = async id => {
-        const achievementsUnlocked = await getAchievements()
+        const tx = db.transaction("achievements", "readwrite")
+        const achievementsUnlocked = await getAchievements(tx)
         if (achievementsUnlocked.filter(a => a.id === id).length > 0) { return "already unlocked" }
         const info = achievementInfo[id]
         if (!info) { throw new Error("Achievement not recognized") }
@@ -245,11 +299,10 @@ window.points = (() => {
             page: window.location.pathname,
             points: info.points
         }
-        achievementsList = achievementsList.concat([item])
+        achievementsList.push(item)
         await Promise.all([
-            idbk.set("achievements", achievementsList, dataStore),
             updateMetric("achievements", x => x + 1, 0),
-            incrementPoints(info.points)
+            tx.objectStore("achievements").put(item),
         ])
 
         fireUpdatedEvent()
@@ -303,11 +356,9 @@ window.points = (() => {
         updateMetric,
         readAllMetrics,
         getPoints,
-        incrementPoints,
         unlockAchievement,
         getAchievements,
-        achievementInfo,
-        setMetric
+        achievementInfo
     }
 })()
 

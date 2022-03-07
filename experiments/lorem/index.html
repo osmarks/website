@@ -63,8 +63,8 @@ description: Lorem Ipsum (latin-like placeholder text), eternally. Somehow peopl
 	var count = 0
 	var unaddedCount = 0
 	var handlePoints = throttle(function() {
-		if (count >= 400) { points.unlockAchievement("lorem400") }
-		points.updateMetric("loremParagraphs", function(x) { return x + unaddedCount }, 0).then(function() { unaddedCount = 0 })
+		if (count >= 400) { points.then(p => p.unlockAchievement("lorem400")) }
+		points.then(p => p.updateMetric("loremParagraphs", function(x) { return x + unaddedCount }, 0).then(function() { unaddedCount = 0 }))
 	}, 300)
 
 	window.addEventListener("load", function() {

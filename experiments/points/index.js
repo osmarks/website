@@ -24,6 +24,12 @@ const metricDisplayInfo = {
     heavpootDeaths: { name: "Heavpoot's Game deaths", units: "death" }
 }
 
+for (const opponent of ["ai1", "ai2"]) {
+    for (const result of ["Wins", "Losses", "Draws"]) {
+        metricDisplayInfo[`ttt${result}${opponent}`] = { name: `${result} against ${opponent.toUpperCase()}`, units: "game" }
+    }
+}
+
 const displayMetric = metric => {
     let name = metric[0]
     let value = metric[1]
@@ -40,7 +46,7 @@ const displayMetric = metric => {
 const Metrics = {
     metrics: null,
     load: async () => {
-        Metrics.metrics = await points.readAllMetrics()
+        Metrics.metrics = await (await points).readAllMetrics()
         m.redraw()
     },
     view: () => m("p", Metrics.metrics === null ? "Loading..." : m("table.metrics", Array.from(Metrics.metrics.entries()).map(displayMetric)))
@@ -61,9 +67,10 @@ const renderAchievement = a =>
 const Achievements = {
     achievements: [],
     load: async () => {
-        const raw = await points.getAchievements()
+        let rpoints = await points
+        const raw = await rpoints.getAchievements()
         Achievements.achievements = raw.map(ach => {
-            const info = points.achievementInfo[ach.id]
+            const info = rpoints.achievementInfo[ach.id]
             const out = {
                 title: ach.id || "???",
                 description: `Unrecognized achievement ${ach.id}.`,
@@ -82,15 +89,15 @@ const Achievements = {
 const reset = async () => {
     if (prompt(`This will reset your points, achievements and metrics. If you are sure, please type "yes I am definitely sure".`) === "yes I am definitely sure") {
         if (confirm("Are you really very sure?")) {
-            await points.reset()
-            window.location.reload()
+            await (await points).reset()
+            //window.location.reload()
         }
     }
 }
 
 let pointsCount = "[loading...]"
 
-const reloadPoints = async () => { pointsCount = await points.getPoints() }
+const reloadPoints = async () => { pointsCount = await (await points).getPoints() }
 
 const App = {
     view: () => m("div", [
@@ -107,6 +114,6 @@ Metrics.load()
 reloadPoints()
 Achievements.load()
 
-points.unlockAchievement("visitArbitraryPoints")
+points.then(points => points.unlockAchievement("visitArbitraryPoints"))
 
 document.addEventListener("points-update", () => { reloadPoints(); Achievements.load() })

@@ -377,9 +377,9 @@ const mainLoop = () => {
 
     if (hp <= 0) {
         if ("points" in window) {
-            if (score >= 10) { points.unlockAchievement("emuwar10") }
-            points.updateMetric("foesVanquished", function(x) { return x + score }, 0)
-            points.updateMetric("deaths", function(x) { return x + 1 }, 0)
+            if (score >= 10) { points.then(points => points.unlockAchievement("emuwar10")) }
+            points.then(points => points.updateMetric("foesVanquished", function(x) { return x + score }, 0))
+            points.then(points => points.updateMetric("deaths", function(x) { return x + 1 }, 0))
         }
         clear(saybox)
         say(saybox, gameOverMessage + " Press R to restart.")

@@ -29,12 +29,12 @@ description: It is pitch black (if you ignore all of the lighting). You are like
 <script>
     function unlockAchievement(name) {
         if ("points" in window) {
-            points.unlockAchievement(name)
+            points.then(points => points.unlockAchievement(name))
         }
     }
     function updateMetric(name, fn, def) {
         if ("points" in window) {
-            points.updateMetric(name, fn, def)
+            points.then(points => points.updateMetric(name, fn, def))
         }
     }
     var state="start"; // SPOILERS SPOILERS OH GOD SPOILERS OH GOD SPOILERS

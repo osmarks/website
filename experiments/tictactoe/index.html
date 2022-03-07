@@ -321,6 +321,10 @@ slug: tictactoe
         </script>
         <script>
             // copyright (2022 CE) © © © osmarks.net hypercomputational tetrational metahexagonal industrial - unsigned integer division
+
+            let achievementEligiblity = true
+            let lastOpponent = null
+
             var workerGlue = `
             onmessage = event => {
                 var [policy, ...args] = event.data
@@ -407,6 +411,23 @@ slug: tictactoe
                             info.removeEventListener("click", el)
                         }
                         info.addEventListener("click", el)
+                        if (achievementEligiblity && opponentIsAI()) {
+                            if ("points" in window) {
+                                let opp = lastOpponent
+                                points.then(points => {
+                                    if (winner === 1) {
+                                        points.unlockAchievement(`tttWin${opp}`)
+                                        points.updateMetric(`tttWins${opp}`, x => x + 1, 0)
+                                    } else if (winner === 2) { 
+                                        points.updateMetric(`tttLosses${opp}`, x => x + 1, 0)
+                                    } else if (isDraw) {
+                                        points.updateMetric(`tttDraws${opp}`, x => x + 1, 0)
+                                    }
+                                })
+                            }
+                        }
+                        achievementEligiblity = true
+                        lastOpponent = null
                         gameOver = true
                     })
                     return true
@@ -462,6 +483,10 @@ slug: tictactoe
                 if (isNaN(coord) || typeof coord != "number" || start != "cell") { return }
                 if (grid[coord]) { return }
                 if (!onTurn(coord) && opponentIsAI()) {
+                    if (lastOpponent && lastOpponent !== opponent.value) {
+                        achievementEligiblity = false
+                    }
+                    lastOpponent = opponent.value
                     worker.postMessage([opponent.value, grid, currentPlayer])
                 }
             }

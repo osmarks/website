@@ -125,11 +125,11 @@ url: /infipage/p
 window.addEventListener("load", function() {
     if ("points" in window) { 
         console.log("running update")
-        points.updateMetric("greatestInfipage", function(current) {
+        points.then(points => points.updateMetric("greatestInfipage", function(current) {
             console.log("updated", current, pageString)
             if (!current || page.abs().gt(Big(current))) { return pageString }
             else { return current }
-        })
+        }))
     }
 })
 </script>
