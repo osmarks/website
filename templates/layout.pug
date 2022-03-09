@@ -11,14 +11,15 @@ html(lang="en")
         if description
             meta(name="description", content=description)
         link(rel="manifest", href="/assets/manifest.webmanifest")
-        link(rel="shortcut icon", href="/assets/images/logo96inv.png", type="image/png")
+        link(rel="shortcut icon", href="/assets/images/logo256.png", type="image/png")
         style!= css
         if comments !== "off"
             script(src=`https://${domain}/isso/js/embed.min.js`, async=true, data-isso=`https://${domain}/isso/`)
     body
         nav
-            a(href="/")
-                img.logo(src="/assets/images/logo.svg", alt="")
+            a.logocont(href="/")
+                img.logo(src="/assets/images/logo256.png", alt="osmarks.net logo")
+                .logotext osmarks
             +nav-item("/", "Index")
             +nav-item(`https://status.${domain}/`, "Status")
             +nav-item(`https://i.${domain}/`, "Images")

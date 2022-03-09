@@ -4,8 +4,8 @@ const cacheName = `${siteVersion}-v1`
 const precache = [
     offlinePage,
     "/index.html",
-    "/assets/images/logo.svg",
-    "/assets/images/icon.png",
+    "/assets/images/logo256.png",
+    //"/assets/images/icon.png",
     "/assets/js/page.js",
     "/points/index.html",
     "/points/index.js",
