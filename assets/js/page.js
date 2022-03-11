@@ -154,27 +154,33 @@ window.points = (async () => {
         }
     }
 
-    const [oldMetrics, oldPoints] = await Promise.all([idb.openDB("arbitrary-metrics"), idb.openDB("arbitrary-points")])
-    const getMetrics = async () => {
-        const metrics = {}
-        const tx = oldMetrics.transaction("metrics", "readonly")
-        for (const key of await tx.store.getAllKeys()) {
-            metrics[key] = await tx.store.get(key)
+    let [metrics, pointsData] = [{}, {}]
+    try {
+        const [oldMetrics, oldPoints] = await Promise.all([idb.openDB("arbitrary-metrics"), idb.openDB("arbitrary-points")])
+        const getMetrics = async () => {
+            const metrics = {}
+            const tx = oldMetrics.transaction("metrics", "readonly")
+            for (const key of await tx.store.getAllKeys()) {
+                metrics[key] = await tx.store.get(key)
+            }
+            return metrics
         }
-        return metrics
-    }
-    const getPointsData = async () => {
-        const data = {}
-        const tx = oldPoints.transaction("data", "readonly")
-        for (const key of await tx.store.getAllKeys()) {
-            data[key] = await tx.store.get(key)
+        const getPointsData = async () => {
+            const data = {}
+            const tx = oldPoints.transaction("data", "readonly")
+            for (const key of await tx.store.getAllKeys()) {
+                data[key] = await tx.store.get(key)
+            }
+            return data
         }
-        return data
+        [metrics, pointsData] = await Promise.all([getMetrics(), getPointsData()])
+        await Promise.all([oldMetrics.close(), oldPoints.close()])
+    } catch(e) {
+        console.warn("old achievements not loaded due to", e)
     }
-    const [metrics, pointsData] = await Promise.all([getMetrics(), getPointsData()])
-    await Promise.all([oldMetrics.close(), oldPoints.close()])
     const db = await idb.openDB("arbitrary-data", 1, {
         async upgrade(db, oldVersion, newVersion, tx) {
+            console.log("migrating", oldVersion, newVersion)
             if (!oldVersion || oldVersion < 1) {
                 // create metrics, KV, achievements stores
                 db.createObjectStore("kv")
