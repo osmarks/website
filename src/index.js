@@ -133,7 +133,7 @@ const applyTemplate = async (template, input, getOutput, options = {}) => {
     return page.data
 }
 
-const addColors = R.map(x => ({ ...x, bgcol: hashColor(x.title, 0.5, 0.85), bordercol: hashColor(x.title, 0.7, 0.6) }))
+const addColors = R.map(x => ({ ...x, bgcol: hashColor(x.title, 0.7, 0.85) }))
 
 const processExperiments = async () => {
     const templates = globalData.templates
@@ -230,13 +230,21 @@ const genServiceWorker = async () => {
 }
 const copyAsset = subpath => fse.copy(path.join(assetsDir, subpath), path.join(outAssets, subpath))
 
+const doImages = async () => {
+    copyAsset("images")
+    globalData.images = {}
+    for (const image of await fse.readdir(path.join(assetsDir, "images"), { encoding: "utf-8" })) {
+        globalData.images[image.split(".").slice(0, -1).join(".")] = "/assets/images/" + image
+    }
+}
+
 const tasks = {
     errorPages: { deps: ["pagedeps"], fn: processErrorPages },
     templates: { deps: [], fn: loadTemplates },
     pagedeps: { deps: ["templates", "css"] },
     css: { deps: [], fn: compileCSS },
     writeBuildID: { deps: [], fn: writeBuildID },
-    index: { deps: ["openring", "pagedeps", "blog", "experiments"], fn: index },
+    index: { deps: ["openring", "pagedeps", "blog", "experiments", "images"], fn: index },
     openring: { deps: [], fn: runOpenring },
     rss: { deps: ["blog"], fn: genRSS },
     blog: { deps: ["pagedeps"], fn: processBlog },
@@ -245,7 +253,7 @@ const tasks = {
     manifest: { deps: ["assetsDir"], fn: genManifest },
     minifyJS: { deps: ["assetsDir"], fn: minifyJSTask },
     serviceWorker: { deps: [], fn: genServiceWorker },
-    images: { deps: ["assetsDir"], fn: () => copyAsset("images") },
+    images: { deps: ["assetsDir"], fn: doImages },
     offlinePage: { deps: ["assetsDir", "pagedeps"], fn: () => applyTemplate(globalData.templates.experiment, path.join(assetsDir, "offline.html"), () => path.join(outAssets, "offline.html"), {}) },
     assets: { deps: ["manifest", "minifyJS", "serviceWorker", "images"] },
     main: { deps: ["writeBuildID", "index", "errorPages", "assets", "experiments", "blog", "rss"] }

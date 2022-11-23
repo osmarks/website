@@ -7,21 +7,27 @@ block content
             Stuff I say, conveniently accessible on the internet.
         div.blog
             each post in posts
-                div(style=`background: ${post.bgcol}; border: 1px solid ${post.bordercol}`)
+                .imbox(style=`background: ${post.bgcol}`)
+                    if images.hasOwnProperty(post.slug)
+                        img(src=images[post.slug])
                     div
-                        a.title(href=`/${post.slug}/`)= post.title
-                    small= renderDate(post.updated)
-                    div.description!= post.description
+                        div
+                            a.title(href=`/${post.slug}/`)= post.title
+                        small= renderDate(post.updated)
+                        div.description!= post.description
 
         h2 Experiments
         p.
             Various random somewhat useless web projects I have put together over many years. Made with at least four different JS frameworks.
         div.experiments
             each experiment in experiments
-                div(style=`background: ${experiment.bgcol}; border: 1px solid ${experiment.bordercol}`)
+                .imbox(style=`background: ${experiment.bgcol}`)
+                    if images.hasOwnProperty(experiment.slug)
+                        img(src=images[experiment.slug])
                     div
-                        a.title(href=`/${experiment.slug}/`)= experiment.title
-                    span.description!= experiment.description
+                        div
+                            a.title(href=`/${experiment.slug}/`)= experiment.title
+                        span.description!= experiment.description
 
         p Get updates to the blog (not experiments) in your favourite RSS reader using the <a href="/rss.xml">RSS feed</a>.
         p View some of my projects (and whatever else) at 

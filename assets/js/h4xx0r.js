@@ -81,6 +81,7 @@ function jargon() {
     } else {
         var raw = thing + " " + choose(jargonWords.participles)
             .replace("writing", "wrote")
+            .replace("breaking", "broken")
             .replace("overriding", "overriden")
             .replace("shutting", "shut")
             .replace("ying", "ied")

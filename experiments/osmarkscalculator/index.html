@@ -1,0 +1,75 @@
+---
+title: osmarkscalculator
+description: Unholy horrors moved from the depths of my projects directory to your browser. Theoretically, this is a calculator. Good luck using it.
+---
+<textarea id="program" style="width: 100%; resize: vertical" rows="5"></textarea>
+<pre id="output"></pre>
+<button id="go">Go</button>
+<button id="clear">Clear Context</button>
+<select id="examples">
+</select>
+<script>
+    const examples = {
+        "blank": "",
+        "factorial": `Fac[n] = Fac[n-1]*n
+Fac[0] = 1
+Fac[17]
+`,
+        "expand": "(a+b)*(c+d)*(e+f)*(g+h)",
+        "expand2": "(a+b)^3*(b+c)-d",
+        "fibonacci": `Fib[n] = Fib[n-1] + Fib[n-2] 
+Fib[0] = 0 
+Fib[1] = 1 
+Fib[6]
+`,
+        "predicate": `IsEven[x] = 0
+IsEven[x#Eq[Mod[x, 2], 0]] = 1
+IsEven[3] - IsEven[4]`,
+        "derivative": `D[3*x^3 + 6*x, x]`,
+        "simplify": `x^a/x^(a+1)`,
+        "simplify2": "Negate[a+b] + b",
+        "arith": `(12+55)^3-75+16/(2*2)+5+3*4`,
+        "subst": "Subst[x=4, x+4+4+4+4]"
+    }
+    const examplesSelector = document.querySelector("#examples")
+    const program = document.querySelector("#program")
+    for (const name of Object.keys(examples)) {
+        const opt = document.createElement("option")
+        opt.value = name
+        opt.appendChild(document.createTextNode(name))
+        examplesSelector.appendChild(opt)
+    }
+    examplesSelector.addEventListener("change", () => {
+        program.value = examples[examplesSelector.value]
+    })
+    var worker = new Worker("osmarkscalculator.js")
+    const forceKill = () => {
+        console.warn("Force-terminating worker.")
+        worker.terminate()
+        worker = new Worker("osmarkscalculator.js")
+    }
+    const write = data => {
+        const out = document.querySelector("#output")
+        while (out.firstChild) { out.removeChild(out.firstChild) }
+        out.appendChild(document.createTextNode(data))
+    }
+    document.querySelector("#go").addEventListener("click", () => {
+        console.log(program.value)
+        write("Running...")
+        worker.postMessage(["run", program.value])
+        var timeout = setTimeout(() => {
+            forceKill()
+            write("Execution timeout")
+        }, 5000)
+        worker.onmessage = ev => {
+            const [status, result, time] = ev.data
+            if (status === "ok") {
+                write(result + `\nin ${time}ms`)
+            } else {
+                write("Internal error: " + result + `\nin ${time}ms`)
+            }
+            clearInterval(timeout)
+        }
+    })
+    document.querySelector("#clear").addEventListener("click", () => worker.postMessage(["deinit"]))
+</script>

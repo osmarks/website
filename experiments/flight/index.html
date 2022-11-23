@@ -1,0 +1,240 @@
+---
+title: Flying Thing
+description: Fly an ominous flying square around above some ground! Includes special relativity!
+---
+<style>
+	body {
+		box-sizing: border-box;
+		font-family: 'Fira Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	}
+
+	#controls {
+		border: 1px solid blue;
+		padding: 1em;
+		margin: 1em;
+	}
+	#controls select {
+		border: 1px solid blue;
+		padding: 0.2em;
+	}
+	#container {
+		display: flex;
+	}
+</style>
+<div id="container">
+<canvas id="thing" width=800 height=800></canvas>
+<div id="controls-container">
+<div id="controls">
+	<label><select name="mechanics"><option>Relativistic</option><option>Newtonian</option><option>Aristotlean</option></select> Mechanics</label><br>
+	<label><select name="ground"><option>Noise</option><option>Time-Varying</option><option>Flat</option><option>Triangles</option><option>Catenary</option></select> Ground</label><br>
+	<label><select name="controls"><option>Absolute Orientation</option><option>Relative Orientation</option></select> Controls</label><br>
+	<label><select name="restitution"><option>1</option><option>&lt; 1</option><option>&gt; 1</option></select> e</label><br>
+	<label><select name="gravity"><option>Normal</option><option>High</option><option>Off</option></select> Gravity</label>
+</div>
+</div>
+</div>
+<script>
+var settings = {}
+for (const input of document.querySelectorAll("#controls input, #controls select")) {
+	const read = () => { settings[input.getAttribute("name")] = input.getAttribute("type") === "checkbox" ? input.checked : input.value }
+	read()
+	input.addEventListener("input", read)
+}
+
+var ctx = window.thing.getContext("2d")
+
+const angleToVec = theta => [Math.cos(theta), Math.sin(theta)]
+const zipWith = (f, xs, ys) => xs.map((x, i) => f(x, ys[i]))
+const sum = xs => xs.reduce((a, y) => a + y, 0)
+const vecAdd = (a, b) => zipWith((x, y) => x + y, a, b)
+const hadamardProduct = (a, b) => zipWith((x, y) => x * y, a, b)
+const scalarMult = (a, n) => a.map(x => x * n)
+const dotProduct = (a, b) => sum(hadamardProduct(a, b))
+const vecLength = a => Math.sqrt(sum(a.map(x => x ** 2)))
+const normalize = a => scalarMult(a, 1/vecLength(a))
+function vsub(x, y) { return vecAdd(x, scalarMult(y, -1)) }
+function derivativeApproximation(f, a) {
+	var delta = 0.000001
+	return (f(a + delta) - f(a)) / delta
+}
+const rotate90CW = ([x, y]) => [y, -x]
+
+var pixelDimensions = [window.thing.width, window.thing.height]
+var position = [0.5, 0.5]
+var velocity = [0, 0]
+
+var keys = {}
+
+window.onkeydown = ev => {
+	keys[ev.key] = true
+}
+window.onkeyup = ev => {
+	keys[ev.key] = false
+}
+
+const toScreen = v => hadamardProduct(v, pixelDimensions)
+
+function draw(start, end, color) {
+	ctx.fillStyle = color
+	var start = toScreen(start)
+	var end = toScreen(end)
+	ctx.fillRect(start[0], start[1], end[0] - start[0], end[1] - start[1])
+}
+
+function drawLine(color, start, ...points) {
+	ctx.lineWidth = 2
+	ctx.strokeStyle = color
+	ctx.beginPath()
+	var s = toScreen(start)
+	ctx.moveTo(s[0], s[1])
+	for (const point of points) {
+		var p = toScreen(point)
+		ctx.lineTo(p[0], p[1])
+	}
+	ctx.stroke()
+}
+
+var SPEED_OF_LIGHT = 0.01
+const gamma = v => (1 - (v/SPEED_OF_LIGHT)**2) ** (-0.5)
+const gammaDerivative = v => (v/(SPEED_OF_LIGHT**2))*((1-(v/SPEED_OF_LIGHT)**2)**(-1.5))
+
+const noiseSeed = Math.random() * (2**32-1)
+const hash = (str, seed = 0) => {
+	let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed
+	for (let i = 0, ch; i < str.length; i++) {
+		ch = str.charCodeAt(i)
+		h1 = Math.imul(h1 ^ ch, 2654435761)
+		h2 = Math.imul(h2 ^ ch, 1597334677)
+	}
+	h1 = Math.imul(h1 ^ (h1>>>16), 2246822507) ^ Math.imul(h2 ^ (h2>>>13), 3266489909)
+	h2 = Math.imul(h2 ^ (h2>>>16), 2246822507) ^ Math.imul(h1 ^ (h1>>>13), 3266489909)
+	return 4294967296 * (2097151 & h2) + (h1>>>0)
+}
+
+const cartesianProduct = (xs, ys) => xs.flatMap(x => ys.map(y => [x, y]))
+const gradients = cartesianProduct([-1, -0.5, 0.5, 1], [-1, -0.5, 0.5, 1]).map(normalize)
+const gradientFor = (x, y) => gradients[hash(x+"."+y, noiseSeed) % gradients.length]
+
+const interpolate = (a0, a1, w) => (a1 - a0) * (3.0 - w * 2.0) * w * w + a0
+const perlin = (x, y) => {
+	const i = Math.floor(x), j = Math.floor(y)
+	const u = x - i, v = y - j
+	const n00 = dotProduct(gradientFor(i, j), [u, v])
+	const n01 = dotProduct(gradientFor(i + 1, j), [u - 1, v])
+	const n10 = dotProduct(gradientFor(i, j + 1), [u, v - 1])
+	const n11 = dotProduct(gradientFor(i + 1, j + 1), [u - 1, v - 1])
+	return interpolate(interpolate(n00, n01, u), interpolate(n10, n11, u), v)
+}
+
+const GROUND_FUNCTIONS = {
+	"Time-Varying": x => perlin(x * 10, x * 10 + Date.now() / 10000) * 0.25 + 0.75,
+	"Noise": x => perlin(x * 10, x * 10) * 0.25 + 0.75,
+	"Flat": x => 0.75,
+	"Triangles": x => 0.25*(Math.abs(10*x-Math.floor(10*x)-0.5)) + 0.75,
+	"Catenary": x => 1.3-Math.cosh(x-0.5)*0.5
+}
+const E_COEFFICIENTS = {
+	"1": 1,
+	"< 1": 0.5,
+	"> 1": 1.5
+}
+const GRAVITY = {
+	"Normal": 0.0001,
+	"High": 0.0005,
+	"Off": 0
+}
+
+var direction = -Math.PI/2
+
+var lastTime
+var SIMITERS = 1
+function loop(timestamp) {
+	if (lastTime) {
+		var timestep = timestamp - lastTime
+		var scaling = 0.5 * timestep / 16.666666666666666666666666666666666666666
+		lastTime = timestamp
+	} else {
+		requestAnimationFrame(loop)
+		lastTime = timestamp
+		return
+	}
+	var groundFunc = GROUND_FUNCTIONS[settings.ground]
+	var reldir = settings.controls === "Relative Orientation"
+	const scale = x => scalarMult(x, scaling)
+	draw([0, 0], [1, 1], "black")
+	ctx.fillStyle = "gray"
+	for (let i = 0; i < pixelDimensions[0]; i++) {
+		var gameX = i / pixelDimensions[0]
+		var gameH = groundFunc(gameX)
+		var pixelH = gameH * pixelDimensions[1]
+		ctx.fillRect(i, pixelH, 1, pixelDimensions[1] - pixelH)
+	}
+	drawLine("green", position, vecAdd(position, scalarMult(velocity, 20)))
+	if (reldir) {
+		drawLine("blue", position, vecAdd(position, scalarMult(angleToVec(direction), 0.05)))
+	}
+	draw(vsub(position, [-0.005, -0.005]), vsub(position, [0.005, 0.005]), "white")
+
+	scaling /= SIMITERS
+	for (var i = 0; i < SIMITERS; i++) {
+		position = vecAdd(scale(velocity), position)
+		var force = [0, GRAVITY[settings.gravity]]
+		if (keys["w"]) {
+			if (reldir) {
+				force = vecAdd(force, scalarMult(angleToVec(direction), 0.001))
+			} else {
+				force = vecAdd(force, [0, -0.001])
+			}
+		}
+		if (keys["a"]) {
+			if (reldir) {
+				direction -= 0.05
+			} else {
+				force = vecAdd(force, [-0.0005, 0])
+			}
+		}
+		if (keys["d"]) {
+			if (reldir) {
+				direction += 0.05
+			} else {
+				force = vecAdd(force, [0.0005, 0])
+			}
+		}
+		if (keys["s"]) {
+			if (reldir) {
+				force = vecAdd(force, scalarMult(angleToVec(direction), -0.0005))
+			} else { 
+				force = vecAdd(force, [0, 0.0005])
+			}
+		}
+		var divisor = settings.mechanics === "Relativistic" ? gamma(vecLength(velocity)) ** 3 : 1 //gamma(vecLength(velocity)) + gammaDerivative(vecLength(velocity)) * vecLength(velocity)
+		if (isNaN(divisor)) {
+			console.log("luminal limit exceeded, resetting")
+			divisor = 1
+			velocity = [0, 0]
+		}
+		var velocityChange = scalarMult(scale(force), 1/divisor)
+		//console.log(gamma(vecLength(velocity)), velocity, velocityChange)
+		if (settings.mechanics === "Aristotlean") {
+			velocity = scalarMult(velocityChange, 60)
+		} else {
+			velocity = vecAdd(velocity, velocityChange)
+		}
+		if (position[1] > 1) { position[1] = 0 }
+		if (position[1] < 0) { position[1] = 1 }
+		if (position[0] > 1) { position[0] = 0 }
+		if (position[0] < 0) { position[0] = 1 }
+		//console.log(GROUND(position[0]), position[0])
+		if (position[1] > groundFunc(position[0])) {
+			var groundVector = normalize([1, derivativeApproximation(groundFunc, position[0])])
+			var normalVector = rotate90CW(groundVector)
+			velocity = vecAdd(scalarMult(groundVector, dotProduct(velocity, groundVector)), 
+			scalarMult(normalVector, -E_COEFFICIENTS[settings.restitution] * dotProduct(velocity, normalVector)))
+			position[1] = groundFunc(position[0])
+		}
+	}
+	requestAnimationFrame(loop)
+}
+
+requestAnimationFrame(loop)
+</script>

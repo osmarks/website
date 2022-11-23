@@ -71,7 +71,7 @@ const getResponse = async req => {
     }
     try {
         console.log("Requesting", req.url)
-        const response = await fetchWithTimeout(req.clone(), 5000)
+        const response = await fetchWithTimeout(req.clone(), 10000)
         if (response.status < 400) {
             console.log("Caching request to", req.url)
             cache.put(req, response.clone())
