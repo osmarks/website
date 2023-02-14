@@ -17,6 +17,7 @@ const util = require("util")
 const childProcess = require("child_process")
 const chalk = require("chalk")
 const crypto = require("crypto")
+const uuid = require("uuid")
 
 dayjs.extend(customParseFormat)
 
@@ -133,7 +134,8 @@ const applyTemplate = async (template, input, getOutput, options = {}) => {
     return page.data
 }
 
-const addColors = R.map(x => ({ ...x, bgcol: hashColor(x.title, 0.7, 0.85) }))
+const addColors = R.map(x => ({ ...x, bgcol: hashColor(x.title, 1, 0.9) }))
+const addGuids = R.map(x => ({ ...x, guid: uuid.v5(`${x.lastUpdate}:${x.slug}`, "9111a1fc-59c3-46f0-9ab4-47c607a958f2") }))
 
 const processExperiments = async () => {
     const templates = globalData.templates
@@ -168,7 +170,7 @@ const processBlog = async () => {
         }, { processMeta: meta => { meta.slug = meta.slug || removeExtension(basename) }, processContent: renderMarkdown })
     })
     console.log(chalk.yellow(`${Object.keys(blog).length} blog entries`))
-    globalData.blog = addColors(R.sortBy(x => x.updated ? -x.updated.valueOf() : 0, R.values(blog)))
+    globalData.blog = addGuids(addColors(R.sortBy(x => x.updated ? -x.updated.valueOf() : 0, R.values(blog))))
 }
 
 const processErrorPages = () => {
@@ -201,12 +203,26 @@ const loadTemplates = async () => {
     globalData.templates = await loadDir(templateDir, async fullPath => pug.compile(await readFile(fullPath), { filename: fullPath }))
 }
 const runOpenring = async () => {
+    try {
+        var cached = JSON.parse(await fsp.readFile("cache.json", {encoding: "utf8"}))
+    } catch(e) {
+        console.log(chalk.keyword("orange")("Failed to load cache:"), e)
+    }
+    if (cached && (Date.now() - cached.time) < (60 * 60 * 1000)) {
+        console.log(chalk.keyword("orange")("Loading Openring data from cache"))
+        return cached.data
+    }
+    globalData.openring = "bee"
     // wildly unsafe but only runs on input from me anyway
     const arg = `./openring -n6 ${globalData.feeds.map(x => '-s "' + x + '"').join(" ")} < openring.html`
     console.log(chalk.keyword("orange")("Openring:") + " " + arg)
     const out = await util.promisify(childProcess.exec)(arg)
     console.log(chalk.keyword("orange")("Openring:") + "\n" + out.stderr.trim())
     globalData.openring = minifyHTML(out.stdout)
+    await fsp.writeFile("cache.json", JSON.stringify({
+        time: Date.now(),
+        data: globalData.openring
+    }))
 }
 const genRSS = async () => {
     const rssFeed = globalData.templates.rss({ ...globalData, items: globalData.blog, lastUpdate: new Date() })

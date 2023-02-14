@@ -10,14 +10,15 @@
     "gray-matter": "^4.0.2",
     "handlebars": "^4.7.6",
     "html-minifier": "^4.0.0",
-    "markdown-it": "^10.0.0",
+    "markdown-it": "^13.0.1",
     "markdown-it-footnote": "^3.0.3",
     "mustache": "^4.0.1",
     "nanoid": "^2.1.11",
     "pug": "^3.0.2",
     "ramda": "^0.26.1",
     "sass": "^1.26.8",
-    "terser": "^4.8.0"
+    "terser": "^4.8.0",
+    "uuid": "^9.0.0"
   },
   "license": "MIT"
 }

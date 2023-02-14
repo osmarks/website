@@ -3,6 +3,7 @@ title: "'Problem Solving' Tasks and Computer Science"
 description: Is solving Sudoku and similar puzzles by hand really useful in building computer science ability? We don't think so.
 slug: csproblem
 created: 20/05/2020
+uodated: 28/01/2023
 ---
 
 *Co-written with Aidan, developer of [Emu War](/emu-war). He did most of it.*
@@ -27,3 +28,7 @@ These puzzles are demonstrably a different class of problem to designing algorit
 However, although modern computers are extremely fast, and able to solve many common 'computational thinking' tasks orders of magnitude faster than humans, humans are still in control, for this simple reason: *computers cannot program other computers*.
 Since computers can do 'computational skills' tasks easily, but cannot (yet) solve the problems of computer science itself, we can conclude that these are entirely different categories of problem.
 In other words, learning to do 'computational skills' problems does not help you become a computer scientist, it helps you become a computer - and one easily outdone by a real computer at these tasks.
+
+Update (28/01/2023 CE):
+
+It only took a year after this was written for [OpenAI Codex](https://openai.com/blog/openai-codex/) to become reasonably competent at programming. Oops. And I didn't actually think to update this until now, when I happened to be reviewing it. Regardless, I think the relevant argument still holds up, inasmuch as even today's language models still aren't that great at "thinky" programming tasks, and mostly serve to reveal how much stupid glue code we have to write.

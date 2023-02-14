@@ -242,6 +242,9 @@ function GuiHacker(){
     this.consoleOutput();
 }
 
+var progressBar = document.querySelector(".progress")
+var barProgress = 1
+
 GuiHacker.prototype.render = function(){
     var ctx = settings.ctx,
         canvas = settings.canvas,
@@ -289,6 +292,15 @@ GuiHacker.prototype.render = function(){
         barVal.sineVal+=barVal.freq;
         barVal.val+=Math.sin(barVal.sineVal*Math.PI/2)*5;
         ctxBars.fillRect(i+5,canvasBars.height,15,-barVal.val);
+    }
+
+    barProgress += 0.0001
+    if (barProgress < 1) {
+        progressBar.style.display = "block"
+        progressBar.style.backgroundImage = `linear-gradient(to right, green, green ${barProgress * 100}%, black ${barProgress * 100}%, black 100%)`
+        progressBar.innerHTML = `${Math.floor(barProgress * 100)}%`
+    } else {
+        progressBar.style.display = "none"
     }
 
     var self = this;
@@ -422,6 +434,10 @@ window.addEventListener("keydown", ev => {
         console.log("denying access")
         accessDenied.style.display = accessDenied.style.display === "none" ? "block" : "none"
         ev.preventDefault()
+    }
+    if (ev.key === "p" && ev.altKey) {
+        console.log("activating ominous progress bar")
+        barProgress = 0
     }
     else if (Math.random() > 0.8) {
         guiHacker.consoleOutput(true)
