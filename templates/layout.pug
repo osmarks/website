@@ -12,6 +12,7 @@ html(lang="en")
             meta(name="description", content=description)
         link(rel="manifest", href="/assets/manifest.webmanifest")
         link(rel="shortcut icon", href="/assets/images/logo256.png", type="image/png")
+        meta(content=`https://${domain}/assets/images/logo256.png`, property="og:image")
         style!= css
         if comments !== "off"
             script(src=`https://${domain}/isso/js/embed.min.js`, async=true, data-isso=`https://${domain}/isso/`)
