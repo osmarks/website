@@ -188,7 +188,7 @@ globalData.renderDate = date => date.format("DD/MM/YYYY")
 
 const writeBuildID = () => fsp.writeFile(path.join(outDir, "buildID.txt"), buildID)
 const index = async () => {
-    const index = globalData.templates.index({ ...globalData, title: "Index", posts: globalData.blog })
+    const index = globalData.templates.index({ ...globalData, title: "Index", posts: globalData.blog, description: globalData.siteDescription })
     await fsp.writeFile(path.join(outDir, "index.html"), index)
 }
 const compileCSS = async () => {

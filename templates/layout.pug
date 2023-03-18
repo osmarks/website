@@ -21,8 +21,9 @@ html(lang="en")
                 img.logo(src="/assets/images/logo256.png", alt="osmarks.net logo")
                 .logotext osmarks
             +nav-item("/", "Index")
-            +nav-item(`https://status.${domain}/`, "Status")
+            +nav-item(`https://mse.${domain}/`, "Meme Search Engine v1.1")
             +nav-item(`https://i.${domain}/`, "Images")
+            +nav-item("https://github.com/osmarks/website", "Contribute")
             block nav-items
         .header
             h1.page-title= title
