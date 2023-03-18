@@ -21,10 +21,10 @@ html(lang="en")
             a.logocont(href="/")
                 img.logo(src="/assets/images/logo256.png", alt="osmarks.net logo")
                 .logotext osmarks
-            +nav-item("/", "Index")
-            +nav-item(`https://mse.${domain}/`, "Meme Search Engine v1.1")
+            +nav-item(`https://mse.${domain}/`, "Meme Search")
             +nav-item(`https://i.${domain}/`, "Images")
             +nav-item("https://github.com/osmarks/website", "Contribute")
+            +nav-item(`https://b.${domain}`, "Microblog")
             block nav-items
         .header
             h1.page-title= title
