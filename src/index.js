@@ -67,7 +67,7 @@ const hashColor = (x, s, l) => {
 const removeExtension = x => x.replace(/\.[^/.]+$/, "")
 
 const readFile = path => fsp.readFile(path, { encoding: "utf8" })
-const md = new MarkdownIt().use(require("markdown-it-footnote"))
+const md = new MarkdownIt({ html: true }).use(require("markdown-it-footnote"))
 const minifyHTML = x => htmlMinifier(x, {
     collapseWhitespace: true,
     sortAttributes: true,
