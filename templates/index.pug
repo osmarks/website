@@ -4,7 +4,7 @@ block content
     main
         h2 Blog
         p.
-            Stuff I say, conveniently accessible on the internet.
+            Read my opinions via the internet.
         div.blog
             each post in posts
                 .imbox(style=`background: ${post.bgcol}`)
@@ -13,12 +13,12 @@ block content
                     div
                         div
                             a.title(href=`/${post.slug}/`)= post.title
-                        small= renderDate(post.updated)
+                        span.deemph= `${renderDate(post.created)} / ${metricPrefix(post.wordCount, "")} words`
                         div.description!= post.description
 
         h2 Experiments
         p.
-            Various random somewhat useless web projects I have put together over many years. Made with at least four different JS frameworks.
+            Various web projects I have put together over many years. Made with at least four different JS frameworks. Some of them are bad.
         div.experiments
             each experiment in experiments
                 .imbox(style=`background: ${experiment.bgcol}`)
@@ -30,8 +30,11 @@ block content
                         span.description!= experiment.description
 
         p Get updates to the blog (not experiments) in your favourite RSS reader using the <a href="/rss.xml">RSS feed</a>.
-        p View some of my projects (and whatever else) at 
+        p View some of my projects at 
             a(href=`https://git.${domain}/`) my git hosting.
 
         .ring!= openring
         iframe(src="https://george.gh0.pw/embed.cgi?gollark", style="border:none;width:100%;height:50px", title="Acquiesce to GEORGE.")
+
+block under-title
+    h2= name

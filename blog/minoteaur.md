@@ -2,20 +2,8 @@
 title: Minoteaur
 description: The history of the feared note-taking application.
 created: 06/06/2023
+updated: 28/08/2023
 ---
-<style>
-    .caption {
-        width: calc(100% - 2em);
-        background: lightgray;
-        border: 1px solid black;
-        padding: 1em;
-        margin: -1px;
-    }
-    .caption img {
-        width: 100%;
-    }
-</style>
-
 If you've talked to me, you've probably heard of Minoteaur.
 It was conceptualized in 2019, when I determined that it was a good idea to take notes on things in a structured way, looked at all existing software, and was (as usual, since all software is terrible; I will probably write about this at some point) vaguely unsatisifed by it.
 I don't actually remember the exact details, since I don't have notes on this which I can find, but this was around the time when Roam Research leaked into the tech noösphere, and I was interested in and generally agreed with the ideas of graph-structured note-taking applications, with easy and fast flat organization.
@@ -63,7 +51,7 @@ It "mostly worked" at the level of Minoteaur 1, but also proved annoying to work
 
 When I got sufficiently annoyed by that again, I rewrote it in Nim for [Minoteaur 6](https://git.osmarks.net/osmarks/minoteaur).
 Nim is sort of how I would design a programming language, both in the sense that it makes a lot of nice decisions I agree with (extensive metaprogramming, style insensitivity) and in that it's somewhat quirky and I don't understand why some things happen (particularly with memory management, for which it has seemingly several different incompatible systems which can be switched between at compile time).
-It has enough working libraries for things like SQLite and webservers that I thought it worth trying anyway, and it was indeed the most functional Minoteaur at the time, incorporating good SQLite-based search, backlinks, a mostly functional UI, partly style-insensitive links, a reasonably robust parser, and a decent UI, and even DokuWiki-like drafts in the editor (a feature I end up using quite often due to things like accidentally closing or refreshing pages).
+It has enough working libraries for things like SQLite and webservers that I thought it worth trying anyway, and it was indeed the most functional Minoteaur at the time, incorporating good SQLite-based search, backlinks, a mostly functional UI, partly style-insensitive links, a reasonably robust parser, a decent UI, and even DokuWiki-like drafts in the editor (a feature I end up using quite often due to things like accidentally closing or refreshing pages).
 However, I got annoyed again by the server-rendered design, the terrible, terrible code I had to write to directly bind to a C-based GFM library (I think I at least managed to make it not segfault, even though I don't know why), and probably some things I forgot, leading to the *next* version.
 
 <div class="caption">
@@ -82,7 +70,7 @@ However, I got annoyed again by the server-rendered design, the terrible, terrib
 Python is my go-to language for rapid prototyping, i.e. writing poor-quality code very quickly, so it made some sense for me to rewrite in that next in 2021.
 Minoteaur 7 was a short-lived variant using server rendering, which was rapidly replaced by Minoteaur 7.1, which used a frontend web framework called Svelte for its UI.
 It contained many significant departures from all previous Minoteaurs, mostly for the better: notably, it finally incorporated indirection for pages.
-While all previous implementations had just stored pages under their (somewhat normalized) title, I decided that not structuring it that way would be advantageous to allow pages to be renamed and referred to by multiple names, so instead pages have a unique, fixed ID and several switchable names.
+While all previous implementations had just stored pages under their (somewhat normalized) title, I decided that not structuring it that way would be advantageous in order to allow pages to be renamed and referred to by multiple names, so instead pages have a unique, fixed ID and several switchable names.
 This introduced the minor quirk that all Markdown parsing and rendering was done on the backend, which was not really how I'd usually do things but did actually make a good deal of the code simpler (since it is necessary to parse things there to generate plaintext for search).
 As a search mechanism, I also (since Python made this actually practical) used deep-learning-based semantic search (using [Sentence Transformers](https://www.sbert.net/)) rather than the term-based mechanisms in SQLite.
 This was actually quite easy to do thanks to the hard work of library developers, although I did write my own in-memory vector index for no clear reason, and frequently worked quite well (surfacing relevant content even if it didn't contain the right keywords) but with some unreliability (keyword matches were not always found).
@@ -135,9 +123,11 @@ It can, however:
 Should you actually use it?
 Probably not: while it works reliably enough for me, this is because I am accustomed to its strangeness and deliberately designed it to my requirements rather than anyone else's, sometimes in ways which are very hard to change now (for example, adding things like pen drawings would be really hard structurally, and while there was a Minoteaur 8 prototype with a different architecture which would have made that easier, it was worse to write most code for so I didn't go ahead with that), and can rewrite and debug it easily enough if I have to.
 Other people cannot.
-I am not writing this in order to convince people to switch over (that would create suppot requests) but to provide context and show off my technical achievement, such as it is.
+I am not writing this in order to convince people to switch over (that would create support requests) but to provide context and show off my technical achievement, such as it is.
 
 ## Future directions
 
 While it works as-is, mostly, active real-world use has given me ideas about how it could be better.
-At this time, I'm mostly interested in improving the search mechanism to include phrase queries, negative queries and exact match queries, better integration with external tools (for example, with some engineering effort I could move Anki card specifications into notes and not have to maintain that separately), and a structured data mechanism for attaching machine-readable content to pages.
+~~At this time, I'm mostly interested in improving the search mechanism to include phrase queries, negative queries and exact match queries, better integration with external tools (for example, with some engineering effort I could move Anki card specifications into notes and not have to maintain that separately), and a structured data mechanism for attaching machine-readable content to pages.~~
+
+I actually did add some of these. The search mechanism does now allow "exact" and "negative" queries, although it still has some brokenness I intend to fix at some point, and there's a fully featured structured data mechanism. Pages can have a list of key/value pairs attached (numeric or textual) and can then be queried by those using a few operators in the search.

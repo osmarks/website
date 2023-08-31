@@ -25,13 +25,23 @@ html(lang="en")
             +nav-item(`https://i.${domain}/`, "Images")
             +nav-item("https://github.com/osmarks/website", "Contribute")
             +nav-item(`https://b.${domain}`, "Microblog")
+            +nav-item(`https://status.${domain}`, "Status")
+            +nav-item(`https://r.${domain}/login`, "Login")
             block nav-items
         .header
             h1.page-title= title
-            if updated
-                h3= `Updated ${renderDate(updated)}`
-            if created
-                h3= `Created ${renderDate(created)}`
+            block under-title
+            h3.deemph
+                if updated
+                    span= `Updated ${renderDate(updated)}`
+                    if created || wordCount
+                        span= " / "
+                if created
+                    span= `Created ${renderDate(created)}`
+                    if wordCount
+                        span= " / "
+                if wordCount 
+                    span= `${metricPrefix(wordCount, "")} words`
             if description
                 em.description!= description
         block content

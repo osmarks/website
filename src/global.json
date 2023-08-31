@@ -1,7 +1,22 @@
 {
     "name": "osmarks' website",
     "domain": "osmarks.net",
-    "siteDescription": "osmarks is all. osmarks is everywhere. osmarks is truth. osmarks is light. osmarks is on the internet, on this website!",
+    "taglines": [
+        "I can be trusted with computational power and hyperstitious memetic warfare.",
+        "Wheels are turning. Wheels within wheels within wheels.",
+        "The Internet.",
+        "If you're reading this, we own your soul.",
+        "The future is already here - it's just not evenly distributed.",
+        "I don't always believe in things, but when I do, I believe in them alphabetically.",
+        "In which I'm very annoyed at a wide range of abstract concepts.",
+        "Now with handmade artisanal 1 bits!",
+        "What part of ∀f ∃g (f (x,y) = (g x) y) did you not understand?",
+        "Semi-trained quasi-professionals.",
+        "Proxying NVMe cloud-scale hyperlink...",
+        "There's nothing in the rulebook that says a golden retriever can't construct a self-intersecting non-convex regular polygon.",
+        "Part of the solution, not the precipitate.",
+        "If you can't stand the heat, get out of the server room."
+    ],
     "feeds": [
         "https://blogs.sciencemag.org/pipeline/feed",
         "https://www.rtl-sdr.com/feed/",
@@ -11,5 +26,6 @@
         "https://qntm.org/rss.php",
         "https://aphyr.com/posts.atom",
         "https://os.phil-opp.com/rss.xml"
-    ]
+    ],
+    "dateFormat": "YYYY-MM-DD"
 }

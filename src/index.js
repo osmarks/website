@@ -32,6 +32,9 @@ const outDir = path.join(root, "out")
 const buildID = nanoid()
 globalData.buildID = buildID
 
+const randomPick = xs => xs[Math.floor(Math.random() * xs.length)]
+globalData.siteDescription = randomPick(globalData.taglines)
+
 const hexPad = x => Math.round(x).toString(16).padStart(2, "0")
 function hslToRgb(h, s, l) {
     var r, g, b;
@@ -67,7 +70,14 @@ const hashColor = (x, s, l) => {
 const removeExtension = x => x.replace(/\.[^/.]+$/, "")
 
 const readFile = path => fsp.readFile(path, { encoding: "utf8" })
-const md = new MarkdownIt({ html: true }).use(require("markdown-it-footnote"))
+const anchor = require("markdown-it-anchor")
+const md = new MarkdownIt({ html: true })
+    .use(require("markdown-it-footnote"))
+    .use(anchor, {
+        permalink: anchor.permalink["headerLink"]({
+            symbol: "§"
+        })
+    })
 const minifyHTML = x => htmlMinifier(x, {
     collapseWhitespace: true,
     sortAttributes: true,
@@ -127,14 +137,17 @@ const loadDir = async (dir, func) => {
 
 const applyTemplate = async (template, input, getOutput, options = {}) => {
     const page = parseFrontMatter(await readFile(input))
-    if (options.processMeta) { options.processMeta(page.data) }
-    if (options.processContent) { page.content = options.processContent(page.content) }
+    if (options.processMeta) { options.processMeta(page.data, page) }
+    if (options.processContent) { page.originalContent = page.content; page.content = options.processContent(page.content) }
     const rendered = template({ ...globalData, ...page.data, content: page.content })
     await fsp.writeFile(await getOutput(page), minifyHTML(rendered))
+    page.data.full = page
     return page.data
 }
 
-const addColors = R.map(x => ({ ...x, bgcol: hashColor(x.title, 1, 0.9) }))
+const addColor = x => {
+    x.bgcol = hashColor(x.title, 1, 0.9)
+}
 const addGuids = R.map(x => ({ ...x, guid: uuid.v5(`${x.lastUpdate}:${x.slug}`, "9111a1fc-59c3-46f0-9ab4-47c607a958f2") }))
 
 const processExperiments = async () => {
@@ -154,10 +167,12 @@ const processExperiments = async () => {
                 }))
                 return path.join(out, "index.html")
             },
-            { processMeta: meta => { meta.slug = meta.slug || basename }})
+            { processMeta: meta => {
+                meta.slug = meta.slug || basename
+                addColor(meta) }})
     })
     console.log(chalk.yellow(`${Object.keys(experiments).length} experiments`))
-    globalData.experiments = addColors(R.sortBy(x => x.title, R.values(experiments)))
+    globalData.experiments = R.sortBy(x => x.title, R.values(experiments))
 }
 
 const processBlog = async () => {
@@ -167,10 +182,14 @@ const processBlog = async () => {
             const out = path.join(outDir, page.data.slug)
             await fse.ensureDir(out)
             return path.join(out, "index.html")
-        }, { processMeta: meta => { meta.slug = meta.slug || removeExtension(basename) }, processContent: renderMarkdown })
+        }, { processMeta: (meta, page) => {
+            meta.slug = meta.slug || removeExtension(basename)
+            meta.wordCount = page.content.split(/\s+/).map(x => x.trim()).filter(x => x).length
+            addColor(meta)
+        }, processContent: renderMarkdown })
     })
     console.log(chalk.yellow(`${Object.keys(blog).length} blog entries`))
-    globalData.blog = addGuids(addColors(R.sortBy(x => x.updated ? -x.updated.valueOf() : 0, R.values(blog))))
+    globalData.blog = addGuids(R.sortBy(x => x.updated ? -x.updated.valueOf() : 0, R.values(blog)))
 }
 
 const processErrorPages = () => {
@@ -184,7 +203,15 @@ const processErrorPages = () => {
 
 const outAssets = path.join(outDir, "assets")
 
-globalData.renderDate = date => date.format("DD/MM/YYYY")
+globalData.renderDate = date => date.format(globalData.dateFormat)
+const metricPrefixes = ["", "k", "M", "G", "T", "P", "E", "Z", "Y"]
+const applyMetricPrefix = (x, unit) => {
+    let log = Math.log10(x)
+    let exp = x !== 0 ? Math.floor(log / 3) : 0
+    let val = x / Math.pow(10, exp * 3)
+    return (exp !== 0 ? val.toFixed(3 - (log - exp * 3)) : val) + metricPrefixes[exp] + unit
+}
+globalData.metricPrefix = applyMetricPrefix
 
 const writeBuildID = () => fsp.writeFile(path.join(outDir, "buildID.txt"), buildID)
 const index = async () => {
@@ -248,6 +275,9 @@ const copyAsset = subpath => fse.copy(path.join(assetsDir, subpath), path.join(o
 
 const doImages = async () => {
     copyAsset("images")
+    copyAsset("titillium-web.woff2")
+    copyAsset("titillium-web-semibold.woff2")
+    copyAsset("share-tech-mono.woff2")
     globalData.images = {}
     for (const image of await fse.readdir(path.join(assetsDir, "images"), { encoding: "utf-8" })) {
         globalData.images[image.split(".").slice(0, -1).join(".")] = "/assets/images/" + image
