@@ -2,7 +2,7 @@
 title: On Phones
 description: My (probably unpopular in general but... actually likely fairly popular amongst this site's intended audience) opinions on smartphones today.
 slug: phones
-created: 16/08/2017
+created: 01/06/2018
 updated: 24/01/2020
 ---
 * Why notches? WHY? Just because Apple used them doesn't mean every single manufacturer needs to start making their screens have ugly black bits on them.

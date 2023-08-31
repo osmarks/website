@@ -3,7 +3,7 @@ title: Not Everyone Must "Code"
 description: Why I think that government programs telling everyone to "code" are pointless.
 slug: nemc
 updated: 09/02/2020
-created: 16/08/2017
+created: 14/08/2018
 ---
 
 Imagine that some politician said "Cars are an important part of our modern economy. Many jobs involve cars. Therefore, all students must learn how to build cars; we will be adding it to the curriculum."
