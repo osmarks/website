@@ -27,7 +27,7 @@ While wrong people believe that better software involves more code, I, as an enl
 </div>
 
 After deciding that I really did need something which actually worked even if it wasn't perfect, I settled on... installing [DokuWiki](https://www.dokuwiki.org/dokuwiki) - while a PHP application and not particularly modern featurewise, it was known to be robust, supported *most* of what I wanted, and basically worked.
-I even dabbled in the horrors of PHP to make some tweaks and plugins I wanted work.
+I even dabbled in the horrors of PHP to make some tweaks and plugins I wanted work.[^1]
 
 However, the dream of Minoteaur had not yet died.
 Prototypes were developed and reengineered for new, exciting Minoteaurs based on Node.js, SQLite3 and single-page application technologies, to implement a more TiddlyWiki-like UI with multiple pages open at once and offer generally better interactivity.
@@ -50,7 +50,7 @@ Rust having advanced somewhat since the days of Minoteaur 4, it uses asynchronou
 It "mostly worked" at the level of Minoteaur 1, but also proved annoying to work on, especially since the Markdown parsing mechanisms are quite annoying (none of the Markdown parsing libraries are particularly easy to *extend*, but `pulldown-cmark` returns an event stream, so I had to write some somewhat terrible code to streamingly process that and count up `[`s and `]`s, which actually then got rewritten to only *partly* do the weird streaming parsing and to mostly hand it off to regexes).
 
 When I got sufficiently annoyed by that again, I rewrote it in Nim for [Minoteaur 6](https://git.osmarks.net/osmarks/minoteaur).
-Nim is sort of how I would design a programming language, both in the sense that it makes a lot of nice decisions I agree with (extensive metaprogramming, style insensitivity) and in that it's somewhat quirky and I don't understand why some things happen (particularly with memory management, for which it has seemingly several different incompatible systems which can be switched between at compile time).
+Nim is sort of how I would design a programming language, both in the sense that it makes a lot of nice decisions I agree with (extensive metaprogramming, style insensitivity) and in that it's somewhat quirky and I don't understand why some things happen (particularly with memory management, for which it has seemingly several different incompatible systems which can be switched between at compile time[^2]).
 It has enough working libraries for things like SQLite and webservers that I thought it worth trying anyway, and it was indeed the most functional Minoteaur at the time, incorporating good SQLite-based search, backlinks, a mostly functional UI, partly style-insensitive links, a reasonably robust parser, a decent UI, and even DokuWiki-like drafts in the editor (a feature I end up using quite often due to things like accidentally closing or refreshing pages).
 However, I got annoyed again by the server-rendered design, the terrible, terrible code I had to write to directly bind to a C-based GFM library (I think I at least managed to make it not segfault, even though I don't know why), and probably some things I forgot, leading to the *next* version.
 
@@ -68,7 +68,7 @@ However, I got annoyed again by the server-rendered design, the terrible, terrib
 </div>
 
 Python is my go-to language for rapid prototyping, i.e. writing poor-quality code very quickly, so it made some sense for me to rewrite in that next in 2021.
-Minoteaur 7 was a short-lived variant using server rendering, which was rapidly replaced by Minoteaur 7.1, which used a frontend web framework called Svelte for its UI.
+Minoteaur 7 was a short-lived variant using server rendering, which was rapidly replaced by Minoteaur 7.1, which used a frontend web framework called Svelte for its UI[^3].
 It contained many significant departures from all previous Minoteaurs, mostly for the better: notably, it finally incorporated indirection for pages.
 While all previous implementations had just stored pages under their (somewhat normalized) title, I decided that not structuring it that way would be advantageous in order to allow pages to be renamed and referred to by multiple names, so instead pages have a unique, fixed ID and several switchable names.
 This introduced the minor quirk that all Markdown parsing and rendering was done on the backend, which was not really how I'd usually do things but did actually make a good deal of the code simpler (since it is necessary to parse things there to generate plaintext for search).
@@ -119,6 +119,7 @@ It can, however:
 * store files, and use them as icons for pages for easy recognition (mostly in search results).
 * work on phones, somewhat (it was pretty difficult to reliably detect phones as opposed to vertical monitors, and when I got it to work it broke again after my monitor layout changed and Firefox handled it weirdly).
 * run JS on the serverside as part of Markdown processing, in lieu of a plugin API (I had to ship the interpreter anyway for KaTeX).
+* associate structured data (text or numbers) with pages, and run queries based on that.
 
 Should you actually use it?
 Probably not: while it works reliably enough for me, this is because I am accustomed to its strangeness and deliberately designed it to my requirements rather than anyone else's, sometimes in ways which are very hard to change now (for example, adding things like pen drawings would be really hard structurally, and while there was a Minoteaur 8 prototype with a different architecture which would have made that easier, it was worse to write most code for so I didn't go ahead with that), and can rewrite and debug it easily enough if I have to.
@@ -131,3 +132,9 @@ While it works as-is, mostly, active real-world use has given me ideas about how
 ~~At this time, I'm mostly interested in improving the search mechanism to include phrase queries, negative queries and exact match queries, better integration with external tools (for example, with some engineering effort I could move Anki card specifications into notes and not have to maintain that separately), and a structured data mechanism for attaching machine-readable content to pages.~~
 
 I actually did add some of these. The search mechanism does now allow "exact" and "negative" queries, although it still has some brokenness I intend to fix at some point, and there's a fully featured structured data mechanism. Pages can have a list of key/value pairs attached (numeric or textual) and can then be queried by those using a few operators in the search.
+
+[^1]: I think this was just nice syntax for superscript/subscript formatting which I ultimately realized could just be replaced by TeX, and some ugly hacks to stop it complaining when I upgraded to PHP 8.
+
+[^2]: Apparently it [standardized on](https://nim-lang.org/docs/mm.html) reference counting with cycle detection now.
+
+[^3]: I use this for most new projects now. It's very pleasant to use, and apparently quite fast, which I value to some extent.

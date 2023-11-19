@@ -18,11 +18,17 @@ updated: 24/01/2020
 It's now the future (2023) and things have actually improved slightly in some ways but generally remained about the same:
 
 * Notches mostly gave way to punch-hole cutouts for cameras, which are somewhat more tolerable.
-* Manufacturers have started offering longer software service lifespans, and Project Treble has had the convenient effect of making it possible to run GSIs on all new devices. While I think this means you don't get updates to vendor firmware components, you can at least get OS-level security updates.
-* Battery technology has incrementally improved over the years and SoCs are getting made on better processes with better core designs. This has, of course, been mostly cancelled out by dumber software or something, but you can get a few devices with really good battery capabilities.
+* Manufacturers have started offering longer software service lifespans, and Project Treble has had the convenient effect of making it possible to run GSIs on all new devices. While I think this means you don't get updates to vendor firmware components, you can at least get OS-level security updates[^1].
+* Battery technology has incrementally improved over the years and SoCs are getting made on better processes with better core designs. This has, of course, been mostly cancelled out by dumber software or something[^2], but you can get a few devices with really good battery capabilities.
 * Headphone jacks and micro-SD card slots remain mostly gone, but it turns out that wireless headphones are good now and flash is cheap enough that most phones ship with lots of storage anyway.
-* A few highly niche products with physical keyboards still exist. Unfortunately, they're bad in every area aside from having the keyboards so I don't have one.
+* A few highly niche products with physical keyboards still exist. Unfortunately, they're bad in every area aside from having the keyboards so I don't have one[^3].
 * Displays are still unreasonably large on most products I guess. At least they can make them much brighter and unnecessarily high-resolution.
 * Everyone wants high-refresh-rate displays now. I am told that once you get used to them you can't go back, so I'm avoiding them in order to be able to keep using cheaper display tech.
 * We have 5G now, which allows me to use up my entire data plan in mere *minutes* (assuming the theoretical maximum link rate is achieved, which will never actually happen). I've heard that it's simpler and neater internally, but I don't trust telecoms people to ever get this right.
 * Foldable phones are cool but I dislike, both aesthetically and for reasons of durability, compromising the solid-brick-of-microelectronics nature of modern phones with (large) mechanical parts, and don't really get the usecase.
+
+[^1]: Assuming Android doesn't drop compatibility with something the vendor code does. I think it actually does that quite a lot. I do not agree with most of Android's design decisions.
+
+[^2]: It's funny and sad to read old phone reviews which praise the performance of devices running single low-IPC cores at 1GHz or so.
+
+[^3]: The most practical right now, inasmuch as BlackBerry/TCL haven't released anything relevant in years, is the [Unihertz Titan (Pocket)](https://www.unihertz.com/products/titan-pocket). It has some cool features aside from the keyboard, but it also has awful cameras, an undersized-by-my-current-standards battery, a bad LCD display, and a MediaTek SoC (according to legend, they're worse at GPL compliance so custom ROMs are lacking).
