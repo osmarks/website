@@ -1,4 +1,10 @@
 extends layout.pug
 
 block content
-    main.blog-post!= content
+    .sidenotes-container
+        main.blog-post!= content
+        .sidenotes
+
+block under-title
+    if draft
+        h1 DRAFT

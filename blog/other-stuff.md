@@ -50,14 +50,15 @@ Obviously this is just stuff *I* like; you might not like it, which isn't really
   * Egan has short story anthologies which I have also read and recommend.
 * [Stories of Your Life and Others](https://www.goodreads.com/book/show/223380.Stories_of_Your_Life_and_Others) - just very good short stories. Chiang has written a sequel, [Exhalation](https://www.goodreads.com/book/show/41160292-exhalation), which I also entirely recommend.
   * He also write [Arrival](https://www.goodreads.com/book/show/32200035-arrival). I like this but not the movie, since the movie's scriptwriters clearly did not understand what was going on.
-* [A Hero's War](https://m.fictionpress.com/s/3238329/1/A-Hero-s-War) - bootstrapping industrialization in a setting with magic. Unfortunately, unfinished and seems likely to remain that way.
+* [A Hero's War](https://fictionpress.com/s/3238329/1/A-Hero-s-War) - bootstrapping industrialization in a setting with magic. Unfortunately, unfinished and seems likely to remain that way.
 * [Snow Crash](https://www.goodreads.com/book/show/40651883-snow-crash) - a fun action story even though I don't take the tangents into Sumerian mythology (?) very seriously.
   * Since this list was written, I think it became notorious for introducing the "metaverse" as pushed by Facebook now. This is very silly. Everyone who is paying attention knows that the real metaverse is Roblox.
 * [Limitless](https://en.wikipedia.org/wiki/Limitless_(TV_series)) (the movie is also decent) - actually among the least bad depictions of superhuman intelligence I've seen in media, and generally funny.
-* [Pantheon](https://en.wikipedia.org/wiki/Pantheon_(TV_series)) - unfortunately cancelled and pulled from streaming (for tax purposes somehow?) and thus hard to watch, but one of about three TV series I've seen on the subject of brain uploads, and I think the smartest. Some day I want my own ominous giant cube of servers in Norway.
+* [Pantheon](https://en.wikipedia.org/wiki/Pantheon_(TV_series)) - ~~unfortunately cancelled and pulled from streaming (for tax purposes somehow?) and thus hard to watch,~~ apparently uncancelled and hosted by Amazon now?! Still hard to watch. One of about three TV series I've seen on the subject of brain uploads, and I think the smartest, not that this is a very high bar since it's frequently quite silly (they repeatedly talk about how uploads are just data which can be copied, and then forget this every time it would be useful). Some day I want my own ominous giant cube of servers in Norway.
 * [Mark of the Fool](https://www.goodreads.com/series/346305-mark-of-the-fool) - somewhat standardly D&D-like world, but the characters are well-written and take reasonable decisions.
 * [Nice Dragons Finish Last](https://www.goodreads.com/series/128485-heartstrikers) - enjoyable urban fantasy.
 * [Street Cultivation](https://www.goodreads.com/series/287542-street-cultivation) - again, sane characters who do not make obviously stupid decisions for plot reasons.
+* [Nexus](https://www.goodreads.com/book/show/13642710-nexus) - somewhat dumb plot (I think; I read it a while ago and am not far through a reread now) but very cool transhumanist technology.
 
 Special mentions (i.e. "I haven't gotten around to reading these but they are well-reviewed and sound interesting") to:
 * [The Divine Cities](https://www.goodreads.com/series/159695-the-divine-cities) by Robert Jackson Bennet.
@@ -72,6 +73,6 @@ Special mentions (i.e. "I haven't gotten around to reading these but they are we
   * "house of suns is really very good, you should read" - baidicoot/Aidan, creator of the world-renowned [Emu War](/emu-war) game
 * [Singularity Sky](https://www.goodreads.com/book/show/81992.Singularity_Sky) by Charlie Stross.
 
-If you want EPUB versions of the free web serial stuff here for your e-reader, there are tools to generate those, or you can contact me for a copy.
+If you want EPUB versions of the free web serials here for your e-reader, there are tools to generate those, or you can contact me for a copy.
 
-You can suggest other possibly-good stuff in the comments and I may add it to an extra section, and pointlessly complain there or [by email](mailto:osmarks@protonmail.com) if you don't like some of this. Please tell me if any links are dead.
+You can suggest other possibly-good stuff in the comments and I may add it to an extra section, and pointlessly complain there or [by email](mailto:me@osmarks.net) if you don't like some of this. Please tell me if any links are dead.

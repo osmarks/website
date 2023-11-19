@@ -18,6 +18,10 @@ const childProcess = require("child_process")
 const chalk = require("chalk")
 const crypto = require("crypto")
 const uuid = require("uuid")
+const sqlite = require("better-sqlite3")
+const axios = require("axios")
+const msgpack = require("@msgpack/msgpack")
+const esbuild = require("esbuild")
 
 dayjs.extend(customParseFormat)
 
@@ -28,6 +32,7 @@ const blogDir = path.join(root, "blog")
 const errorPagesDir = path.join(root, "error")
 const assetsDir = path.join(root, "assets")
 const outDir = path.join(root, "out")
+const srcDir = path.join(root, "src")
 
 const buildID = nanoid()
 globalData.buildID = buildID
@@ -189,7 +194,7 @@ const processBlog = async () => {
         }, processContent: renderMarkdown })
     })
     console.log(chalk.yellow(`${Object.keys(blog).length} blog entries`))
-    globalData.blog = addGuids(R.sortBy(x => x.updated ? -x.updated.valueOf() : 0, R.values(blog)))
+    globalData.blog = addGuids(R.filter(x => !x.draft, R.sortBy(x => x.updated ? -x.updated.valueOf() : 0, R.values(blog))))
 }
 
 const processErrorPages = () => {
@@ -214,51 +219,76 @@ const applyMetricPrefix = (x, unit) => {
 globalData.metricPrefix = applyMetricPrefix
 
 const writeBuildID = () => fsp.writeFile(path.join(outDir, "buildID.txt"), buildID)
+
 const index = async () => {
     const index = globalData.templates.index({ ...globalData, title: "Index", posts: globalData.blog, description: globalData.siteDescription })
     await fsp.writeFile(path.join(outDir, "index.html"), index)
 }
-const compileCSS = async () => {
-    const css = sass.renderSync({
-        data: await readFile(path.join(root, "style.sass")),
-        outputStyle: "compressed",
-        indentedSyntax: true
-    }).css
-    globalData.css = css
+
+const cache = sqlite("cache.sqlite3")
+cache.exec("CREATE TABLE IF NOT EXISTS cache (k TEXT NOT NULL PRIMARY KEY, v BLOB NOT NULL, ts INTEGER NOT NULL)")
+const writeCacheStmt = cache.prepare("INSERT OR REPLACE INTO cache VALUES (?, ?, ?)")
+const readCacheStmt = cache.prepare("SELECT * FROM cache WHERE k = ?")
+const readCache = (k, maxAge=null, ts=null) => {
+    const row = readCacheStmt.get(k)
+    if (!row) return
+    if ((maxAge && row.ts < (Date.now() - maxAge) || (ts && row.ts != ts))) return
+    return msgpack.decode(row.v)
 }
-const loadTemplates = async () => {
-    globalData.templates = await loadDir(templateDir, async fullPath => pug.compile(await readFile(fullPath), { filename: fullPath }))
+const writeCache = (k, v, ts=Date.now()) => {
+    const enc = msgpack.encode(v)
+    writeCacheStmt.run(k, Buffer.from(enc.buffer, enc.byteOffset, enc.byteLength), ts)
 }
+
+const fetchMicroblog = async () => {
+    const cached = readCache("microblog", 60*60*1000)
+    if (cached) { globalData.microblog = cached; return }
+    const posts = (await axios({ url: globalData.microblogSource, headers: { "Accept": 'application/ld+json; profile="https://www.w3.org/ns/activitystreams"' } })).data.orderedItems
+    globalData.microblog = posts.slice(0, 6).map(post => minifyHTML(globalData.templates.activitypub({
+        ...globalData,
+        permalink: post.object.id,
+        date: dayjs(post.object.published),
+        content: post.object.content,
+        bgcol: hashColor(post.object.id, 1, 0.9)
+    })))
+    writeCache("microblog", globalData.microblog)
+}
+
 const runOpenring = async () => {
-    try {
-        var cached = JSON.parse(await fsp.readFile("cache.json", {encoding: "utf8"}))
-    } catch(e) {
-        console.log(chalk.keyword("orange")("Failed to load cache:"), e)
-    }
-    if (cached && (Date.now() - cached.time) < (60 * 60 * 1000)) {
-        console.log(chalk.keyword("orange")("Loading Openring data from cache"))
-        return cached.data
-    }
-    globalData.openring = "bee"
+    const cached = readCache("openring", 60*60*1000)
+    if (cached) { globalData.openring = cached; return }
     // wildly unsafe but only runs on input from me anyway
     const arg = `./openring -n6 ${globalData.feeds.map(x => '-s "' + x + '"').join(" ")} < openring.html`
     console.log(chalk.keyword("orange")("Openring:") + " " + arg)
     const out = await util.promisify(childProcess.exec)(arg)
     console.log(chalk.keyword("orange")("Openring:") + "\n" + out.stderr.trim())
     globalData.openring = minifyHTML(out.stdout)
-    await fsp.writeFile("cache.json", JSON.stringify({
-        time: Date.now(),
-        data: globalData.openring
-    }))
+    writeCache("openring", globalData.openring)
 }
+
+const compileCSS = async () => {
+    const css = sass.renderSync({
+        data: await readFile(path.join(srcDir, "style.sass")),
+        outputStyle: "compressed",
+        indentedSyntax: true
+    }).css
+    globalData.css = css
+}
+
+const loadTemplates = async () => {
+    globalData.templates = await loadDir(templateDir, async fullPath => pug.compile(await readFile(fullPath), { filename: fullPath }))
+}
+
 const genRSS = async () => {
     const rssFeed = globalData.templates.rss({ ...globalData, items: globalData.blog, lastUpdate: new Date() })
     await fsp.writeFile(path.join(outDir, "rss.xml"), rssFeed)
 }
+
 const genManifest = async () => {
     const m = mustache.render(await readFile(path.join(assetsDir, "manifest.webmanifest")), globalData)
     fsp.writeFile(path.join(outAssets, "manifest.webmanifest"), m)
 }
+
 const minifyJSTask = async () => {
     const jsDir = path.join(assetsDir, "js")
     const jsOutDir = path.join(outAssets, "js")
@@ -267,10 +297,22 @@ const minifyJSTask = async () => {
         await minifyJSFile(await readFile(fullpath), file, path.join(jsOutDir, file))
     }))
 }
+
+const compilePageJSTask = async () => {
+    await esbuild.build({
+        entryPoints: [ path.join(srcDir, "page.js") ],
+        bundle: true,
+        outfile: path.join(outAssets, "js/page.js"),
+        minify: true,
+        sourcemap: true
+    })
+}
+
 const genServiceWorker = async () => {
     const serviceWorker = mustache.render(await readFile(path.join(assetsDir, "sw.js")), globalData)
     await minifyJSFile(serviceWorker, "sw.js", path.join(outDir, "sw.js"))
 }
+
 const copyAsset = subpath => fse.copy(path.join(assetsDir, subpath), path.join(outAssets, subpath))
 
 const doImages = async () => {
@@ -279,9 +321,37 @@ const doImages = async () => {
     copyAsset("titillium-web-semibold.woff2")
     copyAsset("share-tech-mono.woff2")
     globalData.images = {}
-    for (const image of await fse.readdir(path.join(assetsDir, "images"), { encoding: "utf-8" })) {
-        globalData.images[image.split(".").slice(0, -1).join(".")] = "/assets/images/" + image
-    }
+    await Promise.all(
+        (await fse.readdir(path.join(assetsDir, "images"), { encoding: "utf-8" })).map(async image => {
+            if (image.endsWith(".original")) { // generate alternative formats
+                const stripped = image.replace(/\.original$/).split(".").slice(0, -1).join(".")
+                globalData.images[stripped] = {}
+                const fullPath = path.join(assetsDir, "images", image)
+                const stat = await fse.stat(fullPath)
+                const writeFormat = async (name, ext, mime, cmd, supplementaryArgs) => {
+                    let bytes = readCache(`images/${stripped}/${name}`, null, stat.mtimeMs)
+                    const destFilename = stripped + ext
+                    const destPath = path.join(outAssets, "images", destFilename)
+                    if (!bytes) {
+                        console.log(chalk.keyword("orange")(`Compressing image ${stripped} (${name})`))
+                        await util.promisify(childProcess.execFile)(cmd, supplementaryArgs.concat([
+                            fullPath,
+                            destPath
+                        ]))
+                        writeCache(`images/${stripped}/${name}`, await fsp.readFile(destPath), stat.mtimeMs)
+                    } else {
+                        await fsp.writeFile(destPath, bytes)
+                    }
+                    
+                    globalData.images[stripped][mime] = "/assets/images/" + destFilename
+                }
+                await writeFormat("avif", ".avif", "image/avif", "avifenc", ["-s", "0", "-q", "20"])
+                await writeFormat("jpeg-scaled", ".jpg", "_fallback", "convert", ["-resize", "25%", "-format", "jpeg"])
+            } else {
+                globalData.images[image.split(".").slice(0, -1).join(".")] = "/assets/images/" + image
+            }
+        })
+    )
 }
 
 const tasks = {
@@ -290,18 +360,20 @@ const tasks = {
     pagedeps: { deps: ["templates", "css"] },
     css: { deps: [], fn: compileCSS },
     writeBuildID: { deps: [], fn: writeBuildID },
-    index: { deps: ["openring", "pagedeps", "blog", "experiments", "images"], fn: index },
+    index: { deps: ["openring", "pagedeps", "blog", "experiments", "images", "fetchMicroblog"], fn: index },
     openring: { deps: [], fn: runOpenring },
     rss: { deps: ["blog"], fn: genRSS },
     blog: { deps: ["pagedeps"], fn: processBlog },
+    fetchMicroblog: { deps: [], fn: fetchMicroblog },
     experiments: { deps: ["pagedeps"], fn: processExperiments },
     assetsDir: { deps: [], fn: () => fse.ensureDir(outAssets) },
     manifest: { deps: ["assetsDir"], fn: genManifest },
     minifyJS: { deps: ["assetsDir"], fn: minifyJSTask },
+    compilePageJS: { deps: ["assetsDir"], fn: compilePageJSTask },
     serviceWorker: { deps: [], fn: genServiceWorker },
     images: { deps: ["assetsDir"], fn: doImages },
     offlinePage: { deps: ["assetsDir", "pagedeps"], fn: () => applyTemplate(globalData.templates.experiment, path.join(assetsDir, "offline.html"), () => path.join(outAssets, "offline.html"), {}) },
-    assets: { deps: ["manifest", "minifyJS", "serviceWorker", "images"] },
+    assets: { deps: ["manifest", "minifyJS", "serviceWorker", "images", "compilePageJS"] },
     main: { deps: ["writeBuildID", "index", "errorPages", "assets", "experiments", "blog", "rss"] }
 }
 

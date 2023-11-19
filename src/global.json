@@ -18,7 +18,7 @@
         "If you can't stand the heat, get out of the server room."
     ],
     "feeds": [
-        "https://blogs.sciencemag.org/pipeline/feed",
+        "https://www.science.org/blogs/pipeline/feed",
         "https://www.rtl-sdr.com/feed/",
         "https://astralcodexten.substack.com/feed",
         "https://www.rifters.com/crawl/?feed=rss2",
@@ -27,5 +27,6 @@
         "https://aphyr.com/posts.atom",
         "https://os.phil-opp.com/rss.xml"
     ],
-    "dateFormat": "YYYY-MM-DD"
+    "dateFormat": "YYYY-MM-DD",
+    "microblogSource": "https://b.osmarks.net/outbox"
 }

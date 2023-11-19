@@ -1,9 +1,23 @@
 mixin nav-item(url, name)
     a(href=url)= name
 
+mixin image(src)
+    if typeof src === "string"
+        img(src=src)
+    else
+        picture
+            each val, key in src
+                if key == "_fallback"
+                    img(src=val)
+                else
+                    source(srcset=val, type=key)
+
 doctype html
 html(lang="en")
     head
+        link(rel="preload", href="/assets/share-tech-mono.woff2", as="font", crossorigin="anonymous")
+        link(rel="preload", href="/assets/titillium-web-semibold.woff2", as="font", crossorigin="anonymous")
+        link(rel="preload", href="/assets/titillium-web.woff2", as="font", crossorigin="anonymous")
         title= `${title} @ ${name}`
         script(src="/assets/js/page.js", defer=true)
         meta(charset="UTF-8")

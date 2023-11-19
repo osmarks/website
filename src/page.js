@@ -1,6 +1,5 @@
-// I cannot be bothered to set up a bundler
-// https://www.npmjs.com/package/idb
-!function(e,t){t(window.idb={})}(this,(function(e){"use strict";let t,n;const r=new WeakMap,o=new WeakMap,s=new WeakMap,i=new WeakMap,a=new WeakMap;let c={get(e,t,n){if(e instanceof IDBTransaction){if("done"===t)return o.get(e);if("objectStoreNames"===t)return e.objectStoreNames||s.get(e);if("store"===t)return n.objectStoreNames[1]?void 0:n.objectStore(n.objectStoreNames[0])}return f(e[t])},set:(e,t,n)=>(e[t]=n,!0),has:(e,t)=>e instanceof IDBTransaction&&("done"===t||"store"===t)||t in e};function d(e){return e!==IDBDatabase.prototype.transaction||"objectStoreNames"in IDBTransaction.prototype?(n||(n=[IDBCursor.prototype.advance,IDBCursor.prototype.continue,IDBCursor.prototype.continuePrimaryKey])).includes(e)?function(...t){return e.apply(p(this),t),f(r.get(this))}:function(...t){return f(e.apply(p(this),t))}:function(t,...n){const r=e.call(p(this),t,...n);return s.set(r,t.sort?t.sort():[t]),f(r)}}function u(e){return"function"==typeof e?d(e):(e instanceof IDBTransaction&&function(e){if(o.has(e))return;const t=new Promise(((t,n)=>{const r=()=>{e.removeEventListener("complete",o),e.removeEventListener("error",s),e.removeEventListener("abort",s)},o=()=>{t(),r()},s=()=>{n(e.error||new DOMException("AbortError","AbortError")),r()};e.addEventListener("complete",o),e.addEventListener("error",s),e.addEventListener("abort",s)}));o.set(e,t)}(e),n=e,(t||(t=[IDBDatabase,IDBObjectStore,IDBIndex,IDBCursor,IDBTransaction])).some((e=>n instanceof e))?new Proxy(e,c):e);var n}function f(e){if(e instanceof IDBRequest)return function(e){const t=new Promise(((t,n)=>{const r=()=>{e.removeEventListener("success",o),e.removeEventListener("error",s)},o=()=>{t(f(e.result)),r()},s=()=>{n(e.error),r()};e.addEventListener("success",o),e.addEventListener("error",s)}));return t.then((t=>{t instanceof IDBCursor&&r.set(t,e)})).catch((()=>{})),a.set(t,e),t}(e);if(i.has(e))return i.get(e);const t=u(e);return t!==e&&(i.set(e,t),a.set(t,e)),t}const p=e=>a.get(e);const l=["get","getKey","getAll","getAllKeys","count"],D=["put","add","delete","clear"],b=new Map;function v(e,t){if(!(e instanceof IDBDatabase)||t in e||"string"!=typeof t)return;if(b.get(t))return b.get(t);const n=t.replace(/FromIndex$/,""),r=t!==n,o=D.includes(n);if(!(n in(r?IDBIndex:IDBObjectStore).prototype)||!o&&!l.includes(n))return;const s=async function(e,...t){const s=this.transaction(e,o?"readwrite":"readonly");let i=s.store;return r&&(i=i.index(t.shift())),(await Promise.all([i[n](...t),o&&s.done]))[0]};return b.set(t,s),s}c=(e=>({...e,get:(t,n,r)=>v(t,n)||e.get(t,n,r),has:(t,n)=>!!v(t,n)||e.has(t,n)}))(c),e.deleteDB=function(e,{blocked:t}={}){const n=indexedDB.deleteDatabase(e);return t&&n.addEventListener("blocked",(()=>t())),f(n).then((()=>{}))},e.openDB=function(e,t,{blocked:n,upgrade:r,blocking:o,terminated:s}={}){const i=indexedDB.open(e,t),a=f(i);return r&&i.addEventListener("upgradeneeded",(e=>{r(f(i.result),e.oldVersion,e.newVersion,f(i.transaction))})),n&&i.addEventListener("blocked",(()=>n())),a.then((e=>{s&&e.addEventListener("close",(()=>s())),o&&e.addEventListener("versionchange",(()=>o()))})).catch((()=>{})),a},e.unwrap=p,e.wrap=f}));
+const idb = require("idb")
+const { solve } = require("yalps")
 
 // attempt to register service worker
 if ("serviceWorker" in navigator) {
@@ -34,6 +33,7 @@ const hashString = function(str, seed = 0) {
 }
 
 const colHash = (str, saturation = 100, lightness = 70) => `hsl(${hashString(str) % 360}, ${saturation}%, ${lightness}%)`
+window.colHash = colHash
 
 // Arbitrary Points code, wrapped in an IIFE to not pollute the global environment much more than it already is
 window.points = (async () => {
@@ -368,6 +368,144 @@ window.points = (async () => {
     }
 })()
 
+const footnotes = document.querySelector(".footnotes")
+const sidenotes = document.querySelector(".sidenotes")
+if (sidenotes) {
+    const codeblocks = document.querySelectorAll("pre.hljs")
+    const article = document.querySelector("main.blog-post")
+    while (footnotes.firstChild) {
+        sidenotes.appendChild(footnotes.firstChild)
+    }
+    const footnoteItems = sidenotes.querySelectorAll(".footnote-item")
+
+    const sum = xs => xs.reduce((a, b) => a + b, 0)
+    const arrayOf = (n, x) => new Array(n).fill(x)
+    const BORDER = 16
+    const sidenotesAtSide = () => getComputedStyle(sidenotes).paddingLeft !== "0px"
+    let rendered = false
+    const relayout = forceRedraw => {
+        // sidenote column width is static: no need to redo positioning on resize unless no positions applied
+        if (sidenotesAtSide()) {
+            if (rendered && !forceRedraw) return
+            // sidenote vertical placement algorithm
+            const snRect = sidenotes.getBoundingClientRect()
+            const articleRect = article.getBoundingClientRect()
+            const exclusions = [[-Infinity, Math.max(articleRect.top, snRect.top)]]
+            for (const codeblock of codeblocks) {
+                const codeblockRect = codeblock.getBoundingClientRect()
+                if (codeblockRect.width !== 0) { // collapsed
+                    exclusions.push([codeblockRect.top - BORDER, codeblockRect.top + codeblockRect.height + BORDER])
+                }
+            }
+            // convert unusable regions into list of usable regions
+            const inclusions = []
+            for (const [start, end] of exclusions) {
+                if (inclusions.length) inclusions[inclusions.length - 1].end = start - snRect.top
+                inclusions.push({ start: end - snRect.top, contents: [] })
+            }
+            inclusions[inclusions.length - 1].end = Infinity
+            const notes = []
+            // read off sidenotes to place
+            for (const item of footnoteItems) {
+                const itemRect = item.getBoundingClientRect()
+                const link = article.querySelector(`#${item.id.replace(/^fn/, "fnref")}`)
+                const linkRect = link.getBoundingClientRect()
+                item.style.position = "absolute"
+                item.style.left = getComputedStyle(sidenotes).paddingLeft
+                item.style.marginBottom = item.style.marginTop = `${BORDER / 2}px`
+                notes.push({
+                    item,
+                    height: itemRect.height + BORDER,
+                    target: linkRect.top - snRect.top
+                })
+            }
+            // preliminary placement: place in valid regions going down
+            for (const note of notes) {
+                const index = inclusions.findLastIndex(inc => (inc.start + note.height) < note.target)
+                const next = inclusions.slice(index)
+                    .findIndex(inc => (sum(inc.contents.map(x => x.height)) + note.height) < (inc.end - inc.start))
+                inclusions[index + next].contents.push(note)
+            }
+            // TODO: try simple moves between regions? might be useful sometimes
+            // place within region and apply styles
+            for (const inc of inclusions) {
+                const regionNotes = inc.contents
+                if (regionNotes.length > 0) {
+                    const variables = {}
+                    const constraints = {}
+                    if (inc.end !== Infinity) {
+                        const heights = regionNotes.map(note => note.height)
+                        constraints["sum_gaps"] = { max: inc.end - inc.start - sum(heights) }
+                    }
+                    regionNotes.forEach((note, i) => {
+                        variables[`distbound_${i}`] = {
+                            "distsum": 1,
+                            [`distbound_${i}_offset`]: 1,
+                            [`distbound_${i}_offset_neg`]: 1
+                        }
+
+                        const heightsum = sum(regionNotes.slice(0, i).map(x => x.height))
+                        const baseoffset = heightsum - note.target
+
+                        // WANT: distbound_i >= placement_i - target_i AND distbound_i <= target_i - placement_i
+                        // distbound_i >= gapsum_i + heightsum_i - target_i
+                        
+                        // distbound_i_offset = distbound_i - gapsum_i
+                        // so distbound_i_offset >= heightsum_i - target_i
+                        // implies distbound_i - gapsum_i >= heightsum_i - target_i
+                        // (as required)
+
+                        // distbound_i + gapsum_i >= heightsum_i - target_i
+
+                        constraints[`distbound_${i}_offset`] = { min: baseoffset }
+                        constraints[`distbound_${i}_offset_neg`] = { min: -baseoffset }
+
+                        constraints[`gap_${i}`] = { min: 0 }
+                        const G_i_var = { "sum_gaps": 1 }
+                        for (let j = i; j <= regionNotes.length; j++) G_i_var[`distbound_${j}_offset`] = -1
+                        for (let j = i; j < regionNotes.length; j++) G_i_var[`distbound_${j}_offset_neg`] = 1
+                        variables[`gap_${i}`] = G_i_var
+                    })
+                    const model = {
+                        direction: "minimize",
+                        objective: "distsum",
+                        constraints,
+                        variables
+                    }
+                    const solution = solve(model, { includeZeroVariables: true })
+                    if (solution.status !== "optimal") {
+                        // implode
+                        solution.variables = []
+                        console.warn("Sidenote layout failed", solution.status)
+                    }
+                    const solutionVars = new Map(solution.variables)
+                    let position = 0
+                    regionNotes.forEach((note, i) => {
+                        position += solutionVars.get(`gap_${i}`) || 0
+                        note.item.style.top = position + "px"
+                        position += note.height
+                    })
+                }
+            }
+            rendered = true
+        } else {
+            for (const item of sidenotes.querySelectorAll(".footnote-item")) {
+                item.style.position = "static"
+            }
+            rendered = false
+        }
+    }
+
+    window.onresize = relayout
+    window.onload = relayout
+    document.querySelectorAll("summary").forEach(x => {
+        x.addEventListener("click", () => {
+            setTimeout(() => relayout(true), 0)
+        })
+    })
+    window.relayout = relayout
+}
+
 const customStyle = localStorage.getItem("user-stylesheet")
 let customStyleEl = null
 if (customStyle) {
@@ -377,3 +515,5 @@ if (customStyle) {
     customStyleEl.id = "custom-style"
     document.head.appendChild(customStyleEl)
 }
+window.customStyleEl = customStyleEl
+window.customStyle = customStyle

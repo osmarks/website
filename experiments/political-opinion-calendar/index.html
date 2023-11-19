@@ -1,0 +1,128 @@
+---
+title: Political Opinion Calendar
+description: Instead of wasting time thinking of the best political opinion to hold, simply pick them pseudorandomly per day with this tool.
+slug: polcal
+---
+<script src="/assets/js/mithril.js"></script>
+<script src="/assets/js/date-fns.js"></script>
+<style>
+    .calday {
+        padding: 1em;
+        margin: 0;
+        border: none;
+    }
+    #app table {
+        border-collapse: collapse;
+    }
+    .opinion {
+        font-style: italic;
+    }
+    #app button, #app input {
+        font-size: 1.25em;
+    }
+</style>
+<div id="app">
+
+</div>
+<script>
+    const STORAGE_KEY = "political-opinion-calendar"
+
+    const now = new Date(Date.now()) // JavaScript "irl"
+    var month = now.getMonth() + 1
+    var year = now.getFullYear()
+
+    const readSave = () => {
+        try {
+            const result = JSON.parse(localStorage.getItem(STORAGE_KEY))
+            if (!result || !Array.isArray(result) || !result.every(x => typeof x.opinion === "string" && typeof x.weight === "number")) { return }
+            return result
+        } catch(e) {
+            console.error(e, "load failed")
+        }
+    }
+
+    var opinions = readSave() || [{ weight: 1, opinion: "" }]
+
+    const writeSave = () => {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(opinions))
+    }
+
+    const hash = (str, seed = 0) => {
+        let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed
+        for (let i = 0, ch; i < str.length; i++) {
+            ch = str.charCodeAt(i)
+            h1 = Math.imul(h1 ^ ch, 2654435761)
+            h2 = Math.imul(h2 ^ ch, 1597334677)
+        }
+        h1 = Math.imul(h1 ^ (h1>>>16), 2246822507) ^ Math.imul(h2 ^ (h2>>>13), 3266489909)
+        h2 = Math.imul(h2 ^ (h2>>>16), 2246822507) ^ Math.imul(h1 ^ (h1>>>13), 3266489909)
+        return 4294967296 * (2097151 & h2) + (h1>>>0)
+    }
+
+    function incMonth(by) {
+        month += by
+        if (month < 1) {
+            month = 12 - month
+            year--
+        } else if (month > 12) {
+            month = month - 12
+            year++
+        }
+    }
+
+    function displayMonth(year, month) {
+        var opinionLookup = []
+        for (const opinion of opinions) {
+            for (var i = 0; i < opinion.weight; i++) {
+                opinionLookup.push(opinion.opinion)
+            }
+        }
+
+        var init = dateFns.addMonths(dateFns.addYears(0, year - 1970), month - 1)
+        var offset = dateFns.getDay(init) - 1
+        var weekinit = dateFns.subDays(init, offset >= 0 ? offset : 6)
+        var rows = [
+            m("tr.calweek.calhead", ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map(x => m("th.calday", x)))
+        ]
+        outer: for (var i = 0; i < 6; i++) {
+            var row = []
+            for (var j = 0; j < 7; j++) {
+                var x = dateFns.addDays(dateFns.addWeeks(weekinit, i), j)
+                if (x > init && dateFns.getMonth(x) + 1 !== month && dateFns.getDate(x) >= 7) { break outer }
+                var opindex = hash(`${dateFns.getYear(x)}-${dateFns.getMonth(x)}-${dateFns.getDate(x)}`) % opinionLookup.length
+                var opinion = opinionLookup.length > 0 ? opinionLookup[opindex] : "no opinion"
+                row.push(m("td.calday", { style: `background: hsl(${hash(opinion) % 360}deg, 100%, 60%); opacity: ${dateFns.getMonth(x) + 1 === month ? "1": "0.5"}`  }, [
+                    m(".date", dateFns.getDate(x)),
+                    m(".opinion", opinion)
+                ]))
+            }
+            rows.push(m("tr.calweek", row))
+        }
+        return rows
+    }
+
+    m.mount(document.querySelector("#app"), {
+        view: function() {
+            return [
+                m("", [
+                    m("h1", "Political Opinions"),
+                    m("ul", 
+                        opinions.map((opinion, index) => m("li", [
+                            m("button", { onclick: () => opinions.splice(index, 1) }, "-"),
+                            m("input[type=number]", { value: opinion.weight, min: 1, max: 100, oninput: ev => { opinions[index].weight = Math.min(ev.target.value, 100); writeSave() } }),
+                            m("input", { value: opinion.opinion, oninput: ev => { opinions[index].opinion = ev.target.value; writeSave() }, placeholder: "Political opinion..." })
+                        ]))
+                    ),
+                    m("button", { onclick: () => opinions.push({ opinion: "", weight: 1 }) }, "+")
+                ]),
+                m("", [
+                    m("h1", "Calendar"),
+                    m("h2", `${year}-${month}`),
+                    m("button", { onclick: () => incMonth(-1) }, "-"),
+                    m("button", { onclick: () => incMonth(1) }, "+"),
+                    m("table", displayMonth(year, month))
+                ]),
+            ]
+        }
+    })
+</script>

@@ -9,12 +9,19 @@ block content
             each post in posts
                 .imbox(style=`background: ${post.bgcol}`)
                     if images.hasOwnProperty(post.slug)
-                        img(src=images[post.slug])
+                        +image(images[post.slug])
                     div
                         div
                             a.title(href=`/${post.slug}/`)= post.title
-                        span.deemph= `${renderDate(post.created)} / ${metricPrefix(post.wordCount, "")} words`
+                        div.deemph= `${renderDate(post.created)} / ${metricPrefix(post.wordCount, "")} words`
                         div.description!= post.description
+
+        h2 Microblog
+        p.
+            Short-form observations.
+        div.microblog
+            each entry in microblog
+                != entry
 
         h2 Experiments
         p.
@@ -23,7 +30,7 @@ block content
             each experiment in experiments
                 .imbox(style=`background: ${experiment.bgcol}`)
                     if images.hasOwnProperty(experiment.slug)
-                        img(src=images[experiment.slug])
+                        +image(images[experiment.slug])
                     div
                         div
                             a.title(href=`/${experiment.slug}/`)= experiment.title
