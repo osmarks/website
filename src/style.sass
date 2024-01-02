@@ -84,9 +84,12 @@ main
     margin-right: $content-margin
     &.fullwidth
         width: calc($content-width + $sidenotes-width + 1.5 * $content-margin)
+        margin-left: auto
+        margin-right: auto
 
 .blog, .experiments, .atl, .microblog
-    margin: -0.5em
+    margin-left: -0.5em
+    margin-right: -0.5em
     margin-bottom: 0
     display: flex
     flex-wrap: wrap
@@ -197,8 +200,6 @@ blockquote
         margin-right: $content-margin
     .footnotes-sep
         display: block
-    main
-        width: 100%
 
 @media (min-width: calc(2 * $content-margin + $content-width + $sidenotes-width + $navbar-width))
     body
@@ -221,6 +222,9 @@ blockquote
         overflow-x: auto
     .sidenotes-container
         flex-grow: 1
+    main.fullwidth
+        margin-left: $content-margin
+        margin-right: $content-margin
 
 @media (prefers-color-scheme: dark)
     body
