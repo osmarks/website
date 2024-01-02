@@ -370,9 +370,9 @@ window.points = (async () => {
 
 const footnotes = document.querySelector(".footnotes")
 const sidenotes = document.querySelector(".sidenotes")
-if (sidenotes) {
+if (sidenotes && footnotes) {
     const codeblocks = document.querySelectorAll("pre.hljs")
-    const article = document.querySelector("main.blog-post")
+    const article = document.querySelector(".content")
     while (footnotes.firstChild) {
         sidenotes.appendChild(footnotes.firstChild)
     }

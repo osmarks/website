@@ -31,35 +31,41 @@ html(lang="en")
         if comments !== "off"
             script(src=`https://${domain}/isso/js/embed.min.js`, async=true, data-isso=`https://${domain}/isso/`)
     body
-        nav
-            a.logocont(href="/")
-                img.logo(src="/assets/images/logo256.png", alt="osmarks.net logo")
-                .logotext osmarks
-            +nav-item(`https://mse.${domain}/`, "Meme Search")
-            +nav-item(`https://i.${domain}/`, "Images")
-            +nav-item("https://github.com/osmarks/website", "Contribute")
-            +nav-item(`https://b.${domain}`, "Microblog")
-            +nav-item(`https://status.${domain}`, "Status")
-            +nav-item(`https://r.${domain}/login`, "Login")
-            block nav-items
-        .header
-            h1.page-title= title
-            block under-title
-            h3.deemph
-                if updated
-                    span= `Updated ${renderDate(updated)}`
-                    if created || wordCount
-                        span= " / "
-                if created
-                    span= `Created ${renderDate(created)}`
-                    if wordCount
-                        span= " / "
-                if wordCount 
-                    span= `${metricPrefix(wordCount, "")} words`
-            if description
-                em.description!= description
-        block content
+        .nav-container
+            nav
+                a.logocont(href="/")
+                    img.logo(src="/assets/images/logo256.png", alt="osmarks.net logo")
+                    .logotext osmarks
+                +nav-item(`https://mse.${domain}/`, "Meme Search")
+                +nav-item(`https://i.${domain}/`, "Images")
+                +nav-item("https://github.com/osmarks/website", "Contribute")
+                +nav-item(`https://b.${domain}`, "Microblog")
+                +nav-item(`https://status.${domain}`, "Status")
+                +nav-item(`https://r.${domain}/login`, "Login")
+                block nav-items
+        .sidenotes-container
+            main(class=!haveSidenotes ? "fullwidth" : "")
+                .header
+                    h1.page-title= title
+                    block under-title
+                    h3.deemph
+                        if updated
+                            span= `Updated ${renderDate(updated)}`
+                            if created || wordCount
+                                span= " / "
+                        if created
+                            span= `Created ${renderDate(created)}`
+                            if wordCount
+                                span= " / "
+                        if wordCount 
+                            span= `${metricPrefix(wordCount, "")} words`
+                    if description
+                        em.description!= description
+                block content
 
-        if comments !== "off"
-            .isso
-                section(id="isso-thread")
+                if comments !== "off"
+                    .isso
+                        section(id="isso-thread")
+
+            if haveSidenotes
+                .sidenotes

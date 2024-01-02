@@ -43,7 +43,7 @@ Currently, I have custom scripts to import this data, which are run nightly as a
 * Media files in my archive folder (all videos I've watched recently) - format, various metadata fields, and full extracted subtitles with full text search.
     * I've now added [WhisperX](https://github.com/m-bain/whisperX/) autotranscription on all files with bad/nonexistent subtitles. While it struggles with music more than Whisper itself, its use of batched inference and voice activity detection meant that I got ~100x realtime speed on average processing all my files (after a patch to fix the awfully slow alignment algorithm).
 * [Miniflux](/rssgood/) RSS feed entries.
-* [Minoteaur](/minoteaur/) notes, files and structured data. I don't have links indexed since SQLite isn't much of a graph database (no, I will not write a recursive common table expression for it), and my importer reads directly off the Minoteaur database and writing a Markdown parser would have been annoying.
+* [Minoteaur](/minoteaur/) notes, files and structured data. I don't have links indexed since SQLite isn't much of a graph database[^6], and my importer reads directly off the Minoteaur database and writing a Markdown parser would have been annoying.
 * RCLWE web history (including the `circache` holding indexed pages in my former Recoll install).
 
 There are also some other datasets handled differently, because the tools I use for those happened to already use SQLite somewhere and had reasonably usable formats. Specifically, [Gadgetbridge](https://www.gadgetbridge.org/) data from my smartwatch is copied off my phone and accessible in Datasette, [Atuin](https://github.com/ellie/atuin)'s local shell history database is symlinked in, Firefox history comes from [my script](https://github.com/osmarks/random-stuff/blob/master/histretention.py) on my laptop rather than the nightly serverside batch job, and I also connected my Calibre library database, though I don't actually use that. 13GB of storage is used in total.
@@ -97,3 +97,5 @@ If you have related good ideas or correct opinions, you may tell me them below. 
 [^4]: FAISS has some helpful manuals [like this](https://github.com/facebookresearch/faiss/wiki/Guidelines-to-choose-an-index) describing the various forms available, although there are rather a lot of them which say slightly different things.
 
 [^5]: This is the size assuming optimal compression, but obviously the actual brain has many other concerns and isn't storing things that way. The actual hardware probably holds, very roughly, 10<sup>15</sup> bits.
+
+[^6]: The SQLite documentation describes use of [recursive common table expressions](https://www.sqlite.org/lang_with.html) to implement graph queries, but this, while cool, is not exactly pleasant and elegant.

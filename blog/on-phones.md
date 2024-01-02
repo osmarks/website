@@ -8,7 +8,7 @@ updated: 24/01/2020
 * Why notches? WHY? Just because Apple used them doesn't mean every single manufacturer needs to start making their screens have ugly black bits on them.
 * Really, why Apple at all? They sell uncustomisable and locked-down stuff at higher and higher prices with fewer and fewer nice-to-haves (e.g. headphone jacks) each year. And the vendor lock-in (Lightning headphones, iVersionsOfMostOtherSoftware) is also bad.
 * It would be nice to *not* have battery life ruined to get slightly slimmer phones.
-* The complete lack of updates after a year or so is annoying. Custom ROMs kind of fix this but many aren't available (or even aren't possible due to locked bootloaders) on many devices. This is probably just planned obsolecence.
+* The complete lack of updates after a year or so is annoying. Custom ROMs kind of fix this but many aren't available (or even aren't possible due to locked bootloaders) on many devices[^4]. This is probably just planned obsolecence.
 * Most of the stuff manufacturers preload (their own UI skinning, apps) is just useless bloat. Especially the preloaded, unremovable, probably-spying-on-you Facebook apps which are annoyingly common.
 * The lack of SD card slots is, again, probably just planned obsolecence.
 * Proper physical QWERTY keyboards would be nice, though as they're such a niche feature that's probably never going to happen except on a few phones.
@@ -32,3 +32,5 @@ It's now the future (2023) and things have actually improved slightly in some wa
 [^2]: It's funny and sad to read old phone reviews which praise the performance of devices running single low-IPC cores at 1GHz or so.
 
 [^3]: The most practical right now, inasmuch as BlackBerry/TCL haven't released anything relevant in years, is the [Unihertz Titan (Pocket)](https://www.unihertz.com/products/titan-pocket). It has some cool features aside from the keyboard, but it also has awful cameras, an undersized-by-my-current-standards battery, a bad LCD display, and a MediaTek SoC (according to legend, they're worse at GPL compliance so custom ROMs are lacking).
+
+[^4]: Also, they don't fix the firmware, which probably has horrible security problems in it.

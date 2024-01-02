@@ -1,6 +1,7 @@
 $sidenotes-width: 20rem
 $content-margin: 1rem
 $content-width: 40rem
+$navbar-width: 20rem
     
 @font-face
     font-family: 'Titillium Web'
@@ -72,19 +73,20 @@ h1, h2, h3, h4, h5, h6
     font-weight: 600
     a
         text-decoration: none !important
-        color: inherit
-
-main, .header
-    margin-left: $content-margin
-    margin-right: $content-margin
+        color: inherit    
 
 // for easier viewing on big screen devices, narrow the width of text
 // also make links a bit more distinct
-main.blog-post
-    max-width: $content-width
+main
+    max-width: 100%
+    width: $content-width
     text-align: justify
+    margin-left: $content-margin
+    margin-right: $content-margin
     a
         text-decoration: underline
+    &.fullwidth
+        width: calc($content-width + $sidenotes-width + 1.5 * $content-margin)
 
 .blog, .experiments, .atl, .microblog
     margin: -0.5em
@@ -100,9 +102,6 @@ main.blog-post
 
 .microblog > div
     flex: 1 1 30%
-
-main
-    margin-top: 1em
 
 ul
     list-style-type: square
@@ -202,3 +201,24 @@ blockquote
         margin-right: $content-margin
     .footnotes-sep
         display: block
+
+@media (min-width: calc(2 * $content-margin + $content-width + $sidenotes-width + $navbar-width))
+    body
+        display: flex
+    .nav-container
+        flex-grow: 1
+    nav
+        display: block
+        > a, .logocont
+            display: block
+            margin-right: 0
+        width: $navbar-width
+        font-size: 1.5em
+        text-align: right
+        margin-bottom: 0
+        box-sizing: border-box
+        top: 0
+        position: sticky
+        margin-left: auto
+    .sidenotes-container
+        flex-grow: 1

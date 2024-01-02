@@ -191,6 +191,7 @@ const processBlog = async () => {
             meta.slug = meta.slug || removeExtension(basename)
             meta.wordCount = page.content.split(/\s+/).map(x => x.trim()).filter(x => x).length
             addColor(meta)
+            meta.haveSidenotes = true
         }, processContent: renderMarkdown })
     })
     console.log(chalk.yellow(`${Object.keys(blog).length} blog entries`))

@@ -1,9 +1,7 @@
 extends layout.pug
 
 block content
-    .sidenotes-container
-        main.blog-post!= content
-        .sidenotes
+    div.content.blog-post!= content
 
 block under-title
     if draft
