@@ -87,13 +87,15 @@ main
     margin-left: $content-margin
     margin-right: $content-margin
     &.fullwidth
-        width: calc($content-width + $sidenotes-width + 1.5 * $content-margin)
+        width: calc($content-width + $sidenotes-width + -0.5 * $content-margin)
         margin-left: auto
         margin-right: auto
+        padding-left: $content-margin
+        padding-right: $content-margin
 
 .blog, .experiments, .atl, .microblog
-    margin-left: -0.5em
-    margin-right: -0.5em
+    margin-left: -1rem
+    margin-right: -1rem
     margin-bottom: 0
     display: flex
     flex-wrap: wrap
