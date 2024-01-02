@@ -66,11 +66,13 @@ function hslToRgb(h, s, l) {
 
     return `#${hexPad(r * 255)}${hexPad(g * 255)}${hexPad(b * 255)}`
 }
-const hashColor = (x, s, l) => {
-    const buf = crypto.createHash("md5").update(x).digest()
-    const hue = (buf[0] + 256 * buf[1]) % 360
-    return hslToRgb(hue / 360, s, l)
+const hashBG = (cls, i) => {
+    const buf = crypto.createHash("md5").update(cls).digest()
+    const base = (buf[0] + 256 * buf[1]) % 360
+    const hue = (base + i * 37) % 360
+    return `background: ${hslToRgb(hue / 360, 1, 0.9)}; background: hsl(${hue}deg, var(--autocol-saturation), var(--autocol-lightness))`
 }
+globalData.hashBG = hashBG
 
 const removeExtension = x => x.replace(/\.[^/.]+$/, "")
 
@@ -150,9 +152,6 @@ const applyTemplate = async (template, input, getOutput, options = {}) => {
     return page.data
 }
 
-const addColor = x => {
-    x.bgcol = hashColor(x.title, 1, 0.9)
-}
 const addGuids = R.map(x => ({ ...x, guid: uuid.v5(`${x.lastUpdate}:${x.slug}`, "9111a1fc-59c3-46f0-9ab4-47c607a958f2") }))
 
 const processExperiments = async () => {
@@ -174,7 +173,7 @@ const processExperiments = async () => {
             },
             { processMeta: meta => {
                 meta.slug = meta.slug || basename
-                addColor(meta) }})
+            }})
     })
     console.log(chalk.yellow(`${Object.keys(experiments).length} experiments`))
     globalData.experiments = R.sortBy(x => x.title, R.values(experiments))
@@ -190,7 +189,6 @@ const processBlog = async () => {
         }, { processMeta: (meta, page) => {
             meta.slug = meta.slug || removeExtension(basename)
             meta.wordCount = page.content.split(/\s+/).map(x => x.trim()).filter(x => x).length
-            addColor(meta)
             meta.haveSidenotes = true
         }, processContent: renderMarkdown })
     })
@@ -243,16 +241,22 @@ const writeCache = (k, v, ts=Date.now()) => {
 
 const fetchMicroblog = async () => {
     const cached = readCache("microblog", 60*60*1000)
-    if (cached) { globalData.microblog = cached; return }
-    const posts = (await axios({ url: globalData.microblogSource, headers: { "Accept": 'application/ld+json; profile="https://www.w3.org/ns/activitystreams"' } })).data.orderedItems
-    globalData.microblog = posts.slice(0, 6).map(post => minifyHTML(globalData.templates.activitypub({
+    if (cached) {
+        globalData.microblog = cached
+    } else {
+        const posts = (await axios({ url: globalData.microblogSource, headers: { "Accept": 'application/ld+json; profile="https://www.w3.org/ns/activitystreams"' } })).data.orderedItems
+        writeCache("microblog", posts)
+        globalData.microblog = posts
+    }
+    
+    globalData.microblog = globalData.microblog.slice(0, 6).map((post, i) => minifyHTML(globalData.templates.activitypub({
         ...globalData,
         permalink: post.object.id,
         date: dayjs(post.object.published),
         content: post.object.content,
-        bgcol: hashColor(post.object.id, 1, 0.9)
+        i
     })))
-    writeCache("microblog", globalData.microblog)
+    
 }
 
 const runOpenring = async () => {
@@ -365,7 +369,7 @@ const tasks = {
     openring: { deps: [], fn: runOpenring },
     rss: { deps: ["blog"], fn: genRSS },
     blog: { deps: ["pagedeps"], fn: processBlog },
-    fetchMicroblog: { deps: [], fn: fetchMicroblog },
+    fetchMicroblog: { deps: ["templates"], fn: fetchMicroblog },
     experiments: { deps: ["pagedeps"], fn: processExperiments },
     assetsDir: { deps: [], fn: () => fse.ensureDir(outAssets) },
     manifest: { deps: ["assetsDir"], fn: genManifest },
