@@ -72,7 +72,6 @@ h1, h2, h3, h4, h5, h6
     margin: 0
     font-weight: 600
     a
-        text-decoration: none !important
         color: inherit    
 
 // for easier viewing on big screen devices, narrow the width of text
@@ -83,8 +82,6 @@ main
     text-align: justify
     margin-left: $content-margin
     margin-right: $content-margin
-    a
-        text-decoration: underline
     &.fullwidth
         width: calc($content-width + $sidenotes-width + 1.5 * $content-margin)
 
@@ -96,7 +93,6 @@ main
     > div
         min-width: 20em
         background: #eee
-        margin: 0.5em
         padding: 1em
         flex: 1 1 20%
 
@@ -201,6 +197,8 @@ blockquote
         margin-right: $content-margin
     .footnotes-sep
         display: block
+    main
+        width: 100%
 
 @media (min-width: calc(2 * $content-margin + $content-width + $sidenotes-width + $navbar-width))
     body
@@ -220,5 +218,31 @@ blockquote
         top: 0
         position: sticky
         margin-left: auto
+        overflow-x: auto
     .sidenotes-container
         flex-grow: 1
+
+@media (prefers-color-scheme: dark)
+    body
+        background: black
+        color: white
+
+    nav
+        background: #333
+
+    .ring .art
+        background: #444
+
+    .achievement
+        color: black
+
+    a
+        color: lightblue
+        &:visited
+            color: mediumorchid
+
+    .autocol
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) !important
+
+    .caption
+        background: #333

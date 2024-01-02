@@ -7,7 +7,7 @@ block content
             Read my opinions via the internet.
         div.blog
             each post in posts
-                .imbox(style=`background: ${post.bgcol}`)
+                .autocol.imbox(style=`background: ${post.bgcol}`)
                     if images.hasOwnProperty(post.slug)
                         +image(images[post.slug])
                     div
@@ -28,7 +28,7 @@ block content
             Various web projects I have put together over many years. Made with at least four different JS frameworks. Some of them are bad.
         div.experiments
             each experiment in experiments
-                .imbox(style=`background: ${experiment.bgcol}`)
+                .autocol.imbox(style=`background: ${experiment.bgcol}`)
                     if images.hasOwnProperty(experiment.slug)
                         +image(images[experiment.slug])
                     div
