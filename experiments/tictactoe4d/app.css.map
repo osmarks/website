@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../app.css"],
+  "sourcesContent": [".layer {\n    margin: 1em;\n    border: 1px solid #666;\n    display: inline-block;\n}\n.cell {\n    display: flex;\n    flex-direction: column;\n}\n.slot {\n    width: 2rem;\n    height: 2rem;\n    display: inline-block;\n    border: 1px solid #aaa;\n    font-size: 0.5em;\n}\n.slot-1 {\n    background: blue;\n}\n.slot-2 {\n    background: red;\n}\n.board {\n    display: flex;\n}\n.row {\n    display: flex;\n}\n.highlight {\n    width: 50%;\n    height: 50%;\n    top: 25%;\n    left: 25%;\n    position: relative;\n}\n.abspos-indicator {\n    height: 100%;\n    background-size: cover;\n}"],
+  "mappings": "AAAA,CAAC,MAAD,OACY,IACR,OAAQ,IAAI,MAAM,KAClB,QAAS,YACb,CACA,CAAC,KACG,QAAS,KACT,eAAgB,MACpB,CACA,CAAC,KACG,MAAO,KACP,OAAQ,KACR,QAAS,aACT,OAAQ,IAAI,MAAM,KAClB,UAAW,IACf,CACA,CAAC,OACG,WAAY,IAChB,CACA,CAAC,OACG,WAAY,GAChB,CACA,CAAC,MAGD,CAAC,IAFG,QAAS,IACb,CAIA,CAAC,UACG,MAAO,IACP,OAAQ,IACR,IAAK,IACL,KAAM,IACN,SAAU,QACd,CACA,CAAC,iBACG,OAAQ,KACR,gBAAiB,KACrB",
+  "names": []
+}

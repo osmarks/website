@@ -1,0 +1,2 @@
+.layer{margin:1em;border:1px solid #666;display:inline-block}.cell{display:flex;flex-direction:column}.slot{width:2rem;height:2rem;display:inline-block;border:1px solid #aaa;font-size:.5em}.slot-1{background:#00f}.slot-2{background:red}.board,.row{display:flex}.highlight{width:50%;height:50%;top:25%;left:25%;position:relative}.abspos-indicator{height:100%;background-size:cover}
+/*# sourceMappingURL=app.css.map */

@@ -151,6 +151,12 @@ window.points = (async () => {
             conditions: "Recurse to a stack depth of 100 or more on RPNCalc v4",
             description: "For using RPNCalcV4 as it is meant to be used - highly, highly recursively.",
             points: 18.324
+        },
+        ttt4Win: {
+            title: "Shape Rotator",
+            conditions: "Win 4D Tic-Tac-Toe",
+            description: "You won a game of 4D Tic-Tac-Toe against our highly advanced artificial intelligence, showing your utter comprehension of 4D space.",
+            points: 37.9
         }
     }
 
@@ -407,21 +413,21 @@ if (sidenotes && footnotes) {
             const notes = []
             // read off sidenotes to place
             for (const item of footnoteItems) {
-                const itemRect = item.getBoundingClientRect()
                 const link = article.querySelector(`#${item.id.replace(/^fn/, "fnref")}`)
                 const linkRect = link.getBoundingClientRect()
                 item.style.position = "absolute"
                 item.style.left = getComputedStyle(sidenotes).paddingLeft
-                item.style.marginBottom = item.style.marginTop = `${BORDER / 2}px`
+                item.style.paddingBottom = item.style.paddingTop = `${BORDER / 2}px`
+                const itemRect = item.getBoundingClientRect()
                 notes.push({
                     item,
-                    height: itemRect.height + BORDER,
+                    height: itemRect.height,
                     target: linkRect.top - snRect.top
                 })
             }
             // preliminary placement: place in valid regions going down
             for (const note of notes) {
-                const index = inclusions.findLastIndex(inc => (inc.start + note.height) < note.target)
+                const index = Math.max(inclusions.findLastIndex(inc => (inc.start + note.height) < note.target), 0)
                 const next = inclusions.slice(index)
                     .findIndex(inc => (sum(inc.contents.map(x => x.height)) + note.height) < (inc.end - inc.start))
                 inclusions[index + next].contents.push(note)
@@ -505,6 +511,22 @@ if (sidenotes && footnotes) {
     })
     window.relayout = relayout
 }
+
+const fixDetailsSummary = () => {
+    const el = document.getElementById(window.location.hash.slice(1))
+    var parent = el
+    if (!el) return
+    while (parent.parentElement) {
+        if (parent.nodeName === "DETAILS") {
+            parent.setAttribute("open", true)
+        }
+        parent = parent.parentElement
+    }
+    el.scrollIntoView()
+}
+
+window.addEventListener("hashchange", fixDetailsSummary)
+fixDetailsSummary()
 
 const customStyle = localStorage.getItem("user-stylesheet")
 let customStyleEl = null

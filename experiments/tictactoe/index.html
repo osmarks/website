@@ -360,6 +360,8 @@ slug: tictactoe
             function render() {
                 var html = ""
                 for (var l = 0; l < size; l++) {
+                    if (l == 2) html += `</div>`
+                    if (l == 0 || l == 2) html += `<div class="ctr">`
                     html += '<div class="layer">'
                     for (var r = 0; r < size; r++) {
                         html += '<div class="row">'
@@ -373,6 +375,7 @@ slug: tictactoe
                         }
                         html += '</div>'
                     }
+                    if (l == 3) html += `</div>`
                     html += '</div>'
                 }
                 screen.innerHTML = html

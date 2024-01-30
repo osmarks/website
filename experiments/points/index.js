@@ -21,13 +21,17 @@ const metricDisplayInfo = {
     commentsPosted: { name: "Comments posted", units: "comment" },
     greatestInfipage: { name: "Largest infipage visited" },
     heavpootLocations: { name: "Heavpoot's Game states", units: "state" },
-    heavpootDeaths: { name: "Heavpoot's Game deaths", units: "death" }
+    heavpootDeaths: { name: "Heavpoot's Game deaths", units: "death" },
 }
 
 for (const opponent of ["ai1", "ai2"]) {
     for (const result of ["Wins", "Losses", "Draws"]) {
         metricDisplayInfo[`ttt${result}${opponent}`] = { name: `${result} against ${opponent.toUpperCase()}`, units: "game" }
     }
+}
+
+for (const result of ["Wins", "Losses", "Draws"]) {
+    metricDisplayInfo[`ttt4${result}`] = { name: `${result} in 4D Tic-Tac-Toe`, units: "game" }
 }
 
 const displayMetric = metric => {
