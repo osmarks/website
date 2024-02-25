@@ -2,7 +2,7 @@ extends layout.pug
 
 block content
     div.content
-        h2 Blog
+        h2.section-header Blog
         p.
             Read my opinions via the internet.
         div.blog
@@ -16,14 +16,14 @@ block content
                         div.deemph= `${renderDate(post.created)} / ${metricPrefix(post.wordCount, "")} words`
                         div.description!= post.description
 
-        h2 Microblog
+        h2.section-header Microblog
         p.
             Short-form observations.
         div.microblog
             each entry in microblog
                 != entry
 
-        h2 Experiments
+        h2.section-header Experiments
         p.
             Various web projects I have put together over many years. Made with at least four different JS frameworks. Some of them are bad.
         div.experiments

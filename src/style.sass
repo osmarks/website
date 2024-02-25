@@ -42,6 +42,10 @@ pre, code, .deemph
 a
     text-decoration: none
 
+.blog-post a, .sidenotes a
+    text-decoration: underline
+
+
 nav
     display: flex
     align-items: center
@@ -49,7 +53,7 @@ nav
     padding: 1em
     margin-bottom: 0.5em
     background: black
-    overflow-x: scroll
+    overflow-x: auto
     font-size: 1.1em
 
     .logo
@@ -76,7 +80,11 @@ h1, h2, h3, h4, h5, h6
     margin: 0
     font-weight: 600
     a
-        color: inherit    
+        color: inherit
+        text-decoration: none !important
+
+summary h1, summary h2
+    display: inline
 
 // for easier viewing on big screen devices, narrow the width of text
 // also make links a bit more distinct
@@ -168,11 +176,11 @@ button, select, input, textarea, .textarea
         font-weight: 600
 
 .caption
-    width: calc(100% - 2em)
+    width: calc(100% - 3em)
     background: lightgray
     border: 1px solid black
     padding: 1em
-    margin: -1px
+    margin: 0.5em
     img, picture
         width: 100%
 
@@ -180,6 +188,15 @@ blockquote
     padding-left: 0.4rem
     border-left: 0.4rem solid black
     margin-left: 0.2rem
+
+.wider
+    width: calc(100vw - 2 * $content-margin)
+    max-width: 80em
+    min-width: 40em
+    > *
+        min-width: 40em
+    position: relative
+    z-index: 1
 
 .microblog p
     margin: 0
@@ -192,6 +209,9 @@ blockquote
     min-width: $sidenotes-width
     padding-left: 1.5rem
     position: relative
+    p
+        margin: 0
+
 .footnotes-sep
     display: none
 .footnotes-list
@@ -249,7 +269,7 @@ blockquote
     a
         color: lightblue
         &:visited
-            color: mediumorchid
+            color: #e17701
 
     .caption
         background: #333
@@ -260,3 +280,23 @@ blockquote
 
     nav .logocont
         color: white
+
+.sidenotes img
+    width: 100%
+    max-width: 15em
+    display: block
+
+.hoverdefn
+    text-decoration-style: dotted
+    text-decoration-line: underline
+
+.section-header
+    margin-top: 0.5em
+
+table
+    border-collapse: collapse
+    td, th
+        border: 1px solid gray
+        padding: 0.4em
+    th
+        white-space: nowrap
