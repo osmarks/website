@@ -63,9 +63,9 @@ html(lang="en")
                         em.description!= description
                 block content
 
-                if comments !== "off"
-                    .isso
-                        section(id="isso-thread")
-
             if haveSidenotes
                 .sidenotes
+
+            if comments !== "off"
+                main(class=!haveSidenotes ? "fullwidth isso" : "isso")
+                    section(id="isso-thread")
