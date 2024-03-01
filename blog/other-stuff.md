@@ -2,7 +2,7 @@
 title: Other things you may like
 description: A nonexhaustive list of... content/media... which I like and which you may also be interested in as a visitor of my site.
 created: 11/06/2020
-updated: 30/08/2023
+updated: 01/03/2024
 slug: otherstuff
 ---
 I'm excluding music from this because music preferences seem to be even more varied between the people I interact with than other stuff.
@@ -58,16 +58,20 @@ Obviously this is just stuff *I* like; you might not like it, which isn't really
 * [Mark of the Fool](https://www.goodreads.com/series/346305-mark-of-the-fool) - somewhat standardly D&D-like world, but the characters are well-written and take reasonable decisions.
 * [Nice Dragons Finish Last](https://www.goodreads.com/series/128485-heartstrikers) - enjoyable urban fantasy.
 * [Street Cultivation](https://www.goodreads.com/series/287542-street-cultivation) - again, sane characters who do not make obviously stupid decisions for plot reasons.
-* [Nexus](https://www.goodreads.com/book/show/13642710-nexus) - somewhat dumb plot (I think; I read it a while ago and am not far through a reread now) but very cool transhumanist technology.
+* [Nexus](https://www.goodreads.com/book/show/13642710-nexus) - somewhat dumb plot but very cool transhumanist technology.
+* [The Divine Cities](https://www.goodreads.com/series/159695-the-divine-cities) - I like any[^1] fiction about killing God, and this has great characterization and a creatively exotic setting too. I haven't actually finished City of Miracles though.
+* [The Machineries of Empire](https://www.goodreads.com/series/160439-the-machineries-of-empire) - also a cool unique setting, although I do feel like it has some issues with pacing, and the vaguely mathematical setting annoys me because the few pieces of specific maths are wrong.
+* [The Freeze-Frame Revolution](https://www.goodreads.com/book/show/36510759-the-freeze-frame-revolution) - interesting ideas and surprisingly cognizant of AI safety concerns for its time. Annoyingly short, but it *is* a novella.
+* [Bastion](https://www.goodreads.com/book/show/59521676-bastion) - great worldbuilding, somewhat annoying characters (though they improve somewhat).
+* [Dogs of War](https://www.goodreads.com/book/show/35827220-dogs-of-war) - pretty good scifi, though I am not sure it's very "thought-provoking" as some reviewers claim inasmuch as the ethical questions in it are not very hard.
+* [Lexicon](https://www.goodreads.com/book/show/16158596-lexicon) - fun, though I think the connection to data privacy issues is poorly done, perhaps because it's from 2013 and this feels outdated.
 
 Special mentions (i.e. "I haven't gotten around to reading these but they are well-reviewed and sound interesting") to:
-* [The Divine Cities](https://www.goodreads.com/series/159695-the-divine-cities) by Robert Jackson Bennet.
 * [Children of Time](https://www.goodreads.com/book/show/25499718-children-of-time) by Adrian Tchaikovsky.
 * [The Murderbot Diaries](https://www.goodreads.com/series/191900-the-murderbot-diaries) by Martha Wells.
 * [Codex Alera](https://www.goodreads.com/series/45545-codex-alera) by Jim Butcher.
 * [Digitesque](https://www.goodreads.com/series/183319-digitesque) by Guerric Haché.
 * [This Is How You Lose The Time War](https://www.goodreads.com/book/show/43352954-this-is-how-you-lose-the-time-war) by Amal El-Mohtar, Max Gladstone.
-* [The Machineries of Empire](https://www.goodreads.com/series/160439-the-machineries-of-empire) by Yoon Ha Lee.
 * [The Books of Babel](https://www.goodreads.com/series/127130-the-books-of-babel) by Josiah Bancroft.
 * [House of Suns](https://www.goodreads.com/book/show/1126719.House_of_Suns) by Alastair Reynolds.
   * "house of suns is really very good, you should read" - baidicoot/Aidan, creator of the world-renowned [Emu War](/emu-war) game
@@ -76,3 +80,5 @@ Special mentions (i.e. "I haven't gotten around to reading these but they are we
 If you want EPUB versions of the free web serials here for your e-reader, there are tools to generate those, or you can contact me for a copy.
 
 You can suggest other possibly-good stuff in the comments and I may add it to an extra section, and pointlessly complain there or [by email](mailto:me@osmarks.net) if you don't like some of this. Please tell me if any links are dead.
+
+[^1]: Not really.
