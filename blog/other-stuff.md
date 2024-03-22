@@ -2,7 +2,7 @@
 title: Other things you may like
 description: A nonexhaustive list of... content/media... which I like and which you may also be interested in as a visitor of my site.
 created: 11/06/2020
-updated: 01/03/2024
+updated: 22/03/2024
 slug: otherstuff
 ---
 I'm excluding music from this because music preferences seem to be even more varied between the people I interact with than other stuff.
@@ -65,6 +65,10 @@ Obviously this is just stuff *I* like; you might not like it, which isn't really
 * [Bastion](https://www.goodreads.com/book/show/59521676-bastion) - great worldbuilding, somewhat annoying characters (though they improve somewhat).
 * [Dogs of War](https://www.goodreads.com/book/show/35827220-dogs-of-war) - pretty good scifi, though I am not sure it's very "thought-provoking" as some reviewers claim inasmuch as the ethical questions in it are not very hard.
 * [Lexicon](https://www.goodreads.com/book/show/16158596-lexicon) - fun, though I think the connection to data privacy issues is poorly done, perhaps because it's from 2013 and this feels outdated.
+* [Thresholder](https://www.royalroad.com/fiction/60396/thresholder) - a "jumpchain" story done very well.
+* [Luminous](https://www.goodreads.com/book/show/156782.Luminous)/[Oceanic](https://www.goodreads.com/book/show/6741362-oceanic)/[Instantiation](https://www.goodreads.com/book/show/50641444-instantiation) and other Greg Egan short stories - great high-concept scifi; I think Egan works better at short story length than full novels, though the only novel from him I have actually read is [Schild's Ladder](https://www.goodreads.com/book/show/156780.Schild_s_Ladder).
+* [The Lost Books of the Odyssey](https://www.goodreads.com/book/show/2199365.The_Lost_Books_of_the_Odyssey) - same author as Void Star so my notes about the prose apply. An interesting take on the mythology and at times even rather funny.
+* [Accelerando](https://www.antipope.org/charlie/blog-static/fiction/accelerando/accelerando.html) - the best fictional depiction of the posthuman technocapital singularity I'm aware of.
 
 Special mentions (i.e. "I haven't gotten around to reading these but they are well-reviewed and sound interesting") to:
 * [Children of Time](https://www.goodreads.com/book/show/25499718-children-of-time) by Adrian Tchaikovsky.
@@ -76,6 +80,8 @@ Special mentions (i.e. "I haven't gotten around to reading these but they are we
 * [House of Suns](https://www.goodreads.com/book/show/1126719.House_of_Suns) by Alastair Reynolds.
   * "house of suns is really very good, you should read" - baidicoot/Aidan, creator of the world-renowned [Emu War](/emu-war) game
 * [Singularity Sky](https://www.goodreads.com/book/show/81992.Singularity_Sky) by Charlie Stross.
+* [Zones of Thought](https://www.goodreads.com/series/52585-zones-of-thought) by Vernor Vinge.
+* [Cradle](https://www.goodreads.com/series/192821-cradle) by Will Wight.
 
 If you want EPUB versions of the free web serials here for your e-reader, there are tools to generate those, or you can contact me for a copy.
 

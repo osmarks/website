@@ -29,7 +29,7 @@ html(lang="en")
         meta(content=`https://${domain}/assets/images/logo256.png`, property="og:image")
         style!= css
         if comments !== "off"
-            script(src=`https://${domain}/isso/js/embed.min.js`, async=true, data-isso=`https://${domain}/isso/`)
+            script(src=`https://${domain}/rsapi/static/comments.js`, async=true)
     body
         .nav-container
             nav
@@ -68,4 +68,4 @@ html(lang="en")
 
             if comments !== "off"
                 main(class=!haveSidenotes ? "fullwidth isso" : "isso")
-                    section(id="isso-thread")
+                    section(id="comments-wrapper")

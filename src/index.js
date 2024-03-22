@@ -272,11 +272,13 @@ const runOpenring = async () => {
 }
 
 const compileCSS = async () => {
-    const css = sass.renderSync({
+    let css = sass.renderSync({
         data: await readFile(path.join(srcDir, "style.sass")),
         outputStyle: "compressed",
         indentedSyntax: true
     }).css
+    css += "\n"
+    css += await fsp.readFile(path.join(srcDir, "comments.css"))
     globalData.css = css
 }
 
