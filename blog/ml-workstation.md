@@ -2,6 +2,7 @@
 title: So You Want A Cheap ML Workstation
 description: How to run local AI slightly more cheaply than with a prebuilt system. Somewhat opinionated.
 created: 25/02/2024
+updated: 26/03/2024
 slug: mlrig
 ---
 
@@ -56,6 +57,8 @@ As you can probably now infer, I recommend using recent consumer hardware, which
 VRAM capacity doesn't affect performance until it runs out, at which point you will incur heavy penalties from swapping and/or moving part of your workload to the CPU. Memory bandwidth is generally limiting with large models and small batch sizes (e.g. online LLM inference for chatbots[^5]), and compute the bottleneck for training and some inference (e.g. Stable Diffusion and some other vision models)[^6]. Within a GPU generation, these generally scale together, but between generations bandwidth usually grows slower than compute. Between Ampere (RTX 3XXX) and Ada Lovelace (RTX 4XXX) it has in some cases gone *down*[^7].
 
 As VRAM effectively upper-bounds practical workloads, it's best to get the cards Nvidia generously deigns to give outsized amounts of VRAM for their compute performance, unless you're sure of what you want to run. This usually means a RTX 3060 (12GB), RTX 3090 or RTX 4090. RTX 3090s are readily available used far below the official retail prices, and are a good choice if you're mostly concerned with inference, since their memory bandwidth is almost the same as a 4090's, but 4090s have over twice as much compute on paper and (in non-memory-bound scenarios) also bear this out in practice.
+
+Native BF16 support is important too, but Ampere and Ada Lovelace both have this. It looks like RDNA3 (AMD) does, even.
 
 ### Multi-GPU
 
@@ -112,7 +115,7 @@ One forward pass of an LLM with FP16 weights conveniently also requires loading 
 
 ### Scaling up
 
-It's possible to have more GPUs without going straight to an expensive "real" GPU server or large workstation and the concomitant costs, but this is very much off the beaten path. Standard consumer platforms do not have enough PCIe lanes for more than two (reasonably) or four (unreasonably), so <span class="hoverdefn" title="High-End DeskTop">HEDT</span> or server hardware is necessary. HEDT is mostly dead and new server hardware increasingly expensive and divergent from desktop platforms, so it's most feasible to buy older server hardware, for which automated compatibility checkers and convenient part choice lists aren't available. The only well-documented build I've seen is [this one](https://nonint.com/2022/05/30/my-deep-learning-rig/), which uses 7 GPUs and an AMD EPYC Rome platform (~2019) in an open-frame case designed for miners, although I think [Tinyboxes](https://tinygrad.org/) are intended to be similar.
+It's possible to have more GPUs without going straight to an expensive "real" GPU server or large workstation and the concomitant costs, but this is very much off the beaten path. Standard consumer platforms do not have enough PCIe lanes for more than two (reasonably) or four (unreasonably), so <span class="hoverdefn" title="High-End DeskTop">HEDT</span> or server hardware is necessary. HEDT is mostly dead and new server hardware increasingly expensive and divergent from desktop platforms, so it's most feasible to buy older server hardware, for which automated compatibility checkers and convenient part choice lists aren't available. The first well-documented build I saw was [this one](https://nonint.com/2022/05/30/my-deep-learning-rig/), which uses 7 GPUs and an AMD EPYC Rome platform (~2019) in an open-frame case designed for miners, although I think [Tinyboxes](https://tinygrad.org/) are intended to be similar. Recently, [this](https://www.mov-axbx.com/wopr/wopr_concept.html) was published, which is roughly the same except for using 4090s and a newer server platform. They propose using server power supplies (but didn't do it themselves), which is a smart idea - I had not considered the fact that you could get adapter boards for their edge connectors.
 
 They describe somewhat horrifying electrical engineering problems due to using several power supplies together, and custom cooling modifications. While doable, all this requires much more expertise than just assembling a standard desktop from a normal part list. Your other option is to take an entire old server and install GPUs in it, but most are not designed for consumer GPUs and will not easily fit or power them. I've also been told that some of them have inflexible firmware and might have issues running unexpected PCIe cards or different fan configurations.
 </details>
