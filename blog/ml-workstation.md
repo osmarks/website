@@ -37,10 +37,9 @@ Intel GPUs have good matrix multiplication accelerators, but their most powerful
 
 Many unwary buyers have fallen for the siren song of increasingly cheap used Nvidia Tesla GPUs, since they offer very large VRAM pools at very low cost. However, these are a bad choice unless you *only* need that VRAM. The popular Tesla K80 is 9 years old, with lacking driver support, no FP16, extremely lacking general performance, high power consumption, and no modern optimization efforts, and it's not actually one GPU - it's two on a single card, so you have to deal with parallelizing anything big across GPUs. The next-generation Tesla M40 has similar problems, although it is a single GPU rather than two, and the P40 is not much different, though instead of *no* FP16 it has *unusably slow* FP16[^14]. Even a Tesla P100 is lacking in compute performance compared to newer generations. Datacentre cards newer than that are not available cheaply. There's also some complexity with cooling, since they're designed for server airflow with separate fans, unlike a consumer GPU.[^13]
 
-<div class="caption">
-    <img src="/assets/images/tesla-k80.jpg">
-    <div>It may look innocent, but it is a menace to unaware hobbyists.</div>
-</div>
+::: captioned src=/assets/images/tesla-k80.jpg
+It may look innocent, but it is a menace to unaware hobbyists.
+:::
 
 ### Do not buy workstation cards
 
@@ -72,10 +71,9 @@ GPUs are pretty power-hungry. PCPartPicker will make a good estimate of maximum 
 
 If you're concerned about reducing your power bill, Ada Lovelace GPUs are generally much more efficient than Ampere due to their newer manufacturing process. You can also power-limit your GPU using `nvidia-smi -pl [power limit in watts]` (note that this must be run each boot in some way): this does reduce performance, but nonlinearly.
 
-<div class="caption">
-    <img src="/assets/images/rtx-4090-power-scaling.webp">
-    <div>Thanks to "snowy χατγιρλ/acc" on #off-topic for the benchmark. Other GPUs will have different behaviour. This is something of a worst case though - you'll lose less to power limits in real workloads.</div>
-</div>
+::: captioned src=/assets/images/rtx-4090-power-scaling.webp
+Thanks to "snowy χατγιρλ/acc" on #off-topic for the benchmark. Other GPUs will have different behaviour. This is something of a worst case though - you'll lose less to power limits in real workloads.
+:::
 
 ## Other components
 

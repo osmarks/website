@@ -3,6 +3,9 @@ $content-margin: 1rem
 $content-width: 40rem
 $navbar-width: 20rem
 
+*
+    box-sizing: border-box
+
 :root
     --autocol-lightness: 80%
     --autocol-saturation: 100%
@@ -167,7 +170,6 @@ button, select, input, textarea, .textarea
     display: flex
     img, picture
         padding-right: 1em
-        height: 8em
         width: 8em
 
     .title
@@ -175,13 +177,15 @@ button, select, input, textarea, .textarea
         font-weight: 600
 
 .caption
-    width: calc(100% - 3em)
     background: lightgray
     border: 1px solid black
     padding: 1em
-    margin: 0.5em
+    margin-bottom: 0.5em
+    margin-top: 0.5em
     img, picture
         width: 100%
+    p
+        margin: 0
 
 blockquote
     padding-left: 0.4rem
@@ -216,6 +220,7 @@ blockquote
 .footnotes-list
     text-align: justify
 @media (max-width: calc(2 * $content-margin + $content-width + $sidenotes-width))
+    // minwidth 1-pane layout
     .sidenotes
         min-width: auto
         width: auto
@@ -229,6 +234,7 @@ blockquote
         display: block
 
 @media (min-width: calc(2 * $content-margin + $content-width + $sidenotes-width + $navbar-width))
+    // fullwidth 3-pane layout
     body
         display: flex
     .nav-container

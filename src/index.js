@@ -76,9 +76,42 @@ globalData.hashBG = hashBG
 
 const removeExtension = x => x.replace(/\.[^/.]+$/, "")
 
+const mdutils = MarkdownIt().utils
+const renderContainer = (tokens, idx) => {
+    let opening = true
+    if (tokens[idx].type === "container__close") {
+        let nesting = 0
+        for (; tokens[idx].type !== "container__open" && nesting !== 1; idx--) {
+            nesting += tokens[idx].nesting
+        }
+        opening = false
+    }
+    const m = tokens[idx].info.trim().split(" ");
+    const blockType = m[0]
+
+    const options = {}
+    for (const arg of m.slice(1)) {
+        const [k, v] = arg.split("=", 2)
+        options[k] = v ?? true
+    }
+
+    if (opening) {
+        if (blockType === "captioned") {
+            const link = `<a href="${md.utils.escapeHtml(options.src)}">`
+            return `<div class="${options.wide ? "caption wider" : "caption"}">${options.link ? link : ""}<img src="${md.utils.escapeHtml(options.src)}">${options.link ? "</a>" : ""}`
+        }
+    } else {
+        if (blockType === "captioned") {
+            return `</div>`
+        }
+    }
+    throw new Error(`unrecognized blockType ${blockType}`)
+}
+
 const readFile = path => fsp.readFile(path, { encoding: "utf8" })
 const anchor = require("markdown-it-anchor")
 const md = new MarkdownIt({ html: true })
+    .use(require("markdown-it-container"), "", { render: renderContainer, validate: params => true })
     .use(require("markdown-it-footnote"))
     .use(anchor, {
         permalink: anchor.permalink["headerLink"]({
@@ -332,10 +365,9 @@ const doImages = async () => {
         (await fse.readdir(path.join(assetsDir, "images"), { encoding: "utf-8" })).map(async image => {
             if (image.endsWith(".original")) { // generate alternative formats
                 const stripped = image.replace(/\.original$/).split(".").slice(0, -1).join(".")
-                globalData.images[stripped] = {}
                 const fullPath = path.join(assetsDir, "images", image)
                 const stat = await fse.stat(fullPath)
-                const writeFormat = async (name, ext, mime, cmd, supplementaryArgs) => {
+                const writeFormat = async (name, ext, cmd, supplementaryArgs, suffix="") => {
                     let bytes = readCache(`images/${stripped}/${name}`, null, stat.mtimeMs)
                     const destFilename = stripped + ext
                     const destPath = path.join(outAssets, "images", destFilename)
@@ -350,10 +382,15 @@ const doImages = async () => {
                         await fsp.writeFile(destPath, bytes)
                     }
                     
-                    globalData.images[stripped][mime] = "/assets/images/" + destFilename
+                    return "/assets/images/" + destFilename
                 }
-                await writeFormat("avif", ".avif", "image/avif", "avifenc", ["-s", "0", "-q", "20"])
-                await writeFormat("jpeg-scaled", ".jpg", "_fallback", "convert", ["-resize", "25%", "-format", "jpeg"])
+                const avif = await writeFormat("avif", ".avif", "avifenc", ["-s", "0", "-q", "20"], " 2x")
+                const avifc = await writeFormat("avif-compact", ".c.avif", path.join(srcDir, "avif_compact.sh"), [])
+                const jpeg = await writeFormat("jpeg-scaled", ".jpg", "_fallback", "convert", ["-resize", "25%", "-format", "jpeg"])
+                globalData.images[stripped] = [
+                    ["image/avif", `${avifc}, ${avif} 2x`],
+                    ["_fallback", jpeg]
+                ]
             } else {
                 globalData.images[image.split(".").slice(0, -1).join(".")] = "/assets/images/" + image
             }

@@ -417,7 +417,7 @@ if (sidenotes && footnotes) {
                 const linkRect = link.getBoundingClientRect()
                 item.style.position = "absolute"
                 item.style.left = getComputedStyle(sidenotes).paddingLeft
-                item.style.paddingBottom = item.style.paddingTop = `${BORDER / 2}px`
+                item.style.paddingBottom = item.style.paddingTop = item.style.paddingRight = `${BORDER / 2}px`
                 const itemRect = item.getBoundingClientRect()
                 notes.push({
                     item,
@@ -427,7 +427,7 @@ if (sidenotes && footnotes) {
             }
             // preliminary placement: place in valid regions going down
             for (const note of notes) {
-                const index = Math.max(inclusions.findLastIndex(inc => (inc.start + note.height) < note.target), 0)
+                const index = Math.max(inclusions.findLastIndex(inc => inc.start < note.target), 0)
                 const next = inclusions.slice(index)
                     .findIndex(inc => (sum(inc.contents.map(x => x.height)) + note.height) < (inc.end - inc.start))
                 inclusions[index + next].contents.push(note)
@@ -510,6 +510,11 @@ if (sidenotes && footnotes) {
         })
     })
     window.relayout = relayout
+    document.querySelectorAll("img").forEach(x => {
+        x.addEventListener("load", () => {
+            setTimeout(() => relayout(true), 0)
+        })
+    })
 }
 
 const fixDetailsSummary = () => {

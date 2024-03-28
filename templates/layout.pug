@@ -6,11 +6,11 @@ mixin image(src)
         img(src=src)
     else
         picture
-            each val, key in src
-                if key == "_fallback"
-                    img(src=val)
+            each pair in src
+                if pair[0] == "_fallback"
+                    img(src=pair[1])
                 else
-                    source(srcset=val, type=key)
+                    source(srcset=pair[1], type=pair[0])
 
 doctype html
 html(lang="en")

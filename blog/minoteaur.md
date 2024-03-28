@@ -21,10 +21,9 @@ As usually happens with sufficiently large projects which I can't neatly complet
 It did, at least, get away with supporting its capabilities using impressively little code.
 While wrong people believe that better software involves more code, I, as an enlightened programmer, recognize that you should write as little code as possible, as more code means more bugs *and* more work to write and maintain it.
 
-<div class="caption">
-    <img src="/assets/images/minoteaur_1_1.png">
-    <div>Self-replicating Minoteaur pages on the legacy public Minoteaur. I can no longer actually get it to run, so I don't have any other images.</div>
-</div>
+::: captioned src=/assets/images/minoteaur_1_1.png
+Self-replicating Minoteaur pages on the legacy public Minoteaur. I can no longer actually get it to run, so I don't have any other images.
+:::
 
 After deciding that I really did need something which actually worked even if it wasn't perfect, I settled on... installing [DokuWiki](https://www.dokuwiki.org/dokuwiki) - while a PHP application and not particularly modern featurewise, it was known to be robust, supported *most* of what I wanted, and basically worked.
 I even dabbled in the horrors of PHP to make some tweaks and plugins I wanted work.[^1]
@@ -34,10 +33,9 @@ Prototypes were developed and reengineered for new, exciting Minoteaurs based on
 Unfortunately, despite the nicer interface and actually-useful Markdown preview mode, these proved frustrating to work on, due to the usual difficulties of maintaining consistency between client code with persistent state and a server which also has persistent state, and I ultimately consigned Minoteaur 2 and 3 to the depths of my project folder in mid-2020.
 It was also somewhat slow, due to the overhead of parsing Markdown into a parse tree and then rendering that parse tree to virtual DOM and then rendering virtual DOM to actual DOM nodes.
 
-<div class="caption">
-    <img src="/assets/images/minoteaur_2.png">
-    <div>Minoteaur 2's multitasking UI was ultimately abandoned in favour of just using native browser tabs or windows.</div>
-</div>
+::: captioned src=/assets/images/minoteaur_2.png
+Minoteaur 2's multitasking UI was ultimately abandoned in favour of just using native browser tabs or windows.
+:::
 
 While researching for this I thought that Minoteaur 4 didn't actually exist because of accidents with the numbering scheme, but it turns out that it does, but it's actually Minoteaur 1.5.
 I had vague memories of a prototype Rust backend for use with a single-page application (with a vaguely RESTful API rather than the usual tightly-coupled RPC designs I use) which I had assumed was developed after the Node.js ones, but it was actually made significantly before those in late 2019.
@@ -54,18 +52,15 @@ Nim is sort of how I would design a programming language, both in the sense that
 It has enough working libraries for things like SQLite and webservers that I thought it worth trying anyway, and it was indeed the most functional Minoteaur at the time, incorporating good SQLite-based search, backlinks, a mostly functional UI, partly style-insensitive links, a reasonably robust parser, a decent UI, and even DokuWiki-like drafts in the editor (a feature I end up using quite often due to things like accidentally closing or refreshing pages).
 However, I got annoyed again by the server-rendered design, the terrible, terrible code I had to write to directly bind to a C-based GFM library (I think I at least managed to make it not segfault, even though I don't know why), and probably some things I forgot, leading to the *next* version.
 
-<div class="caption">
-    <img src="/assets/images/minoteaur_6.png">
-    <div>The Minoteaur 6 "two-pane" editor UI.</div>
-</div>
-<div class="caption">
-    <img src="/assets/images/minoteaur_6_2.png">
-    <div>Its search mechanism worked, but with some UI problems.</div>
-</div>
-<div class="caption">
-    <img src="/assets/images/minoteaur_6_3.png">
-    <div>Minoteaur 6 had an extensive login fallback system.</div>
-</div>
+::: captioned src=/assets/images/minoteaur_6.png
+The Minoteaur 6 "two-pane" editor UI.
+:::
+::: captioned src=/assets/images/minoteaur_6_2.png
+Its search mechanism worked, but with some UI problems.
+:::
+::: captioned src=/assets/images/minoteaur_6_3.png
+Minoteaur 6 had an extensive login fallback system.
+:::
 
 Python is my go-to language for rapid prototyping, i.e. writing poor-quality code very quickly, so it made some sense for me to rewrite in that next in 2021.
 Minoteaur 7 was a short-lived variant using server rendering, which was rapidly replaced by Minoteaur 7.1, which used a frontend web framework called Svelte for its UI[^3].
@@ -77,14 +72,12 @@ This was actually quite easy to do thanks to the hard work of library developers
 It also got the furthest yet in terms of general usability, mostly because I implemented file upload, which I think is necessary for any useful notes software (you do, at the very least, want to be able to add and reference images).
 Ultimately, for some reason I forgot (I think mostly database management this time), I decided that I disliked the code and rewrote it yet again, leading to Minoteaur 8.
 
-<div class="caption">
-    <img src="/assets/images/minoteaur_7.png">
-    <div>Minoteaur 7.1 introduced a new UI style and more effectively used the width of standard horizontal screens with the search sidebar. It also incorporated page icons for the first time.</div>
-</div>
-<div class="caption">
-    <img src="/assets/images/minoteaur_7_1.png">
-    <div>An earlier prototype displaying its search capabilities.</div>
-</div>
+::: captioned src=/assets/images/minoteaur_7.png
+Minoteaur 7.1 introduced a new UI style and more effectively used the width of standard horizontal screens with the search sidebar. It also incorporated page icons for the first time.
+:::
+::: captioned src=/assets/images/minoteaur_7_1.png
+An earlier prototype displaying its search capabilities.
+:::
 
 [Minoteaur 8](https://github.com/osmarks/minoteaur-8) was a rewrite in Rust again, starting in February 2022, using much of the frontend code from Minoteaur 7.1 but with a completely different backend but with a similar architecture, apart from the fact that instead of using SQLite directly and "sensibly", it uses it to store persistent versions of objects (revisions, pageviews or pages) for which live copies and indices are held in memory.
 Since notes aren't really *that* big, I worked out that even under pessimistic assumptions the RAM requirements would be lower than those of the JS/Python interpreter processes running previous Minoteaurs, which were not particularly large anyway (more on this in my future writing on how all software is terrible), and this made a lot of the code simpler due to not having to limit data structures to what SQLite supports and not having to deal with async IO for read operations.
@@ -92,14 +85,12 @@ Since notes aren't really *that* big, I worked out that even under pessimistic a
 Despite considerable success in making it work to the same extent as previous Minoteaurs (files, search, backlinks, Markdown, etc) and even somewhat further (nicer Markdown syntax, and a three-pane UI), development was mysteriously halted for a while in March and nonmysteriously (some inconsistencies in how context for backlinks versus for search worked which felt annoying to fix) in July after I picked it back up.
 This April, I happened to look again for some reason, and found that the problem was actually easy if reframed slightly, then did everything else I wanted for usability parity with my DokuWiki install over the course of three days, wrote an import and DokuWiki migration script, redid some of the syntax for more reliable parsing, and finally transitioned away from DokuWiki after slightly less than 4 years.
 
-<div class="caption">
-    <img src="/assets/images/minoteaur_8.png">
-    <div>Minoteaur's Minoteaur page.</div>
-</div>
-<div class="caption">
-    <img src="/assets/images/minoteaur_8_0.png">
-    <div>To allow discovery of interesting content you may have forgotten, Minoteaur incorporates a random pages list.</div>
-</div>
+::: captioned src=/assets/images/minoteaur_8.png
+Minoteaur's Minoteaur page.
+:::
+::: captioned src=/assets/images/minoteaur_8_0.png
+To allow discovery of interesting content you may have forgotten, Minoteaur incorporates a random pages list.
+:::
 
 ## So what does it actually do?
 

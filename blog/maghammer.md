@@ -50,29 +50,24 @@ There are also some other datasets handled differently, because the tools I use 
 
 This is some of what the UI looks like - it is much like a standard Datasette install with a few extra UI elements and some style tweaks I made:
 
-<div class="caption">
-    <img src="/assets/images/maghammer_1.png">
-    <div>Viewing browser history through the table view. This is not great on narrower screens. I'm intending to reengineer this a little at some point.</div>
-</div>
-<div class="caption">
-    <img src="/assets/images/maghammer_2.png">
-    <div>The redone search-all interface. My plugin makes clickable links pointing to my media server.</div>
-</div>
-<div class="caption">
-    <img src="/assets/images/maghammer_3.png">
-    <div>The front page, listing databases and tables and with the search bar.</div>
-</div>
+::: captioned src=/assets/images/maghammer_1.png
+Viewing browser history through the table view. This is not great on narrower screens. I'm intending to reengineer this a little at some point.
+:::
+::: captioned src=/assets/images/maghammer_2.png
+The redone search-all interface. My plugin makes clickable links pointing to my media server.
+:::
+::: captioned src=/assets/images/maghammer_3.png
+The front page, listing databases and tables and with the search bar.
+:::
 
 Being built out of a tool intended for quantitative data processing means that I can, as I mentioned, do some quantitative data processing. While I could in principle do things like count shell/browser history entries by date, this isn't very interesting, and the cooler datasets are logs from my watch (heart rate and step count), although I haven't gotten around to producing nice aggregates from these, and the manually written structured data entries from my journal. For the reasons described earlier I write up a lot of information in journal entries each day, including machine-readable standardized content. I haven't backfilled this for all entries as it requires a lot of work to read through them and write up the tags, but even with only fairly recent entries usable it's still provided significant insight.
 
-<div class="caption">
-    <img src="/assets/images/maghammer_4.png">
-    <div>A simple aggregate query of my notes' structured data. Redacted for privacy.</div>
-</div>
-<div class="caption">
-    <img src="/assets/images/maghammer_5.png">
-    <div>Not actually a very helpful format.</div>
-</div>
+::: captioned src=/assets/images/maghammer_4.png
+A simple aggregate query of my notes' structured data. Redacted for privacy.
+:::
+::: captioned src=/assets/images/maghammer_5.png
+Not actually a very helpful format.
+:::
 
 While it's not part of the same system, [Meme Search Engine](https://mse.osmarks.net/) is undoubtedly useful to me for rapidly finding images (memetic images) I need or want - so much so that I have a separate internal instance run on my miscellaneous-images-and-screenshots folder. Nobody else seems to even be trying - while there are a lot of demos of CLIP image search engines on GitHub, and I think one with the OpenAI repository, I'm not aware of *production* implementations with the exception of [clip-retrieval](https://github.com/rom1504/clip-retrieval) and the LAION index deployment, and one iPhone app shipping a distilled CLIP. There's not anything like a user-friendly desktop app, which confuses me somewhat, since there's clearly demand amongst people I talked to. Regardless of the reason, this means that Meme Search Engine is quite possibly the world's most advanced meme search tool (since I bothered to design a nice-to-use query UI and online reindexing), although I feel compelled to mention someone's [somewhat horrifying iPhone OCR cluster](https://findthatmeme.com/blog/2023/01/08/image-stacks-and-iphone-racks-building-an-internet-scale-meme-search-engine-Qzrz7V6T.html). Meme Search Engine is not very well-integrated but I usually know which dataset I want to retrieve from anyway.
 
