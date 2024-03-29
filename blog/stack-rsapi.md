@@ -6,9 +6,14 @@ slug: srsapi
 ---
 The original [Site tech stack](/stack/) article (updated since release somewhat as hardware has improved and software been replaced) covers the basic workings of the public-facing website. However, I run *other* things, some of which are interesting to talk about! I have a number of services for personal use running on the same infrastructure, and several non-web-facing but public services. Here's the latest edition of the handy diagram I made in Graphviz:
 
+<details>
+<summary><h2>Expand</h2></summary>
+
 ::: captioned src=/assets/images/rsapi_diagram_5_alay.png wide link
 This used to be done manually in draw.io, before it became intractable to run the layouts by hand. You may want to open it in fullscreen.
 :::
+
+</details>
 
 This is split into several boxes indicating the various servers several subsystems run on. As I mention in the comments of the old article, I have a physical server running the actual compute tasks (`protagonism`), but a <span class="hoverdefn" title="Virtual Private Server (cloud VM)">VPS</span> (`procyon`) is where your HTTP requests are initially going. Since it tends to have better uptime[^1], it also runs the [uptime monitoring system](https://status.osmarks.net/) onstat3, my [Discord bot](https://github.com/osmarks/autobotrobot), and a few other directly network-facing things: osmarksDNS[^3], an <span class="hoverdefn" title="Internet Relay Chat (the Discord of the 1990s)">IRC</span> server ([APIONET](https://apionet.gh0.pw/)) and smtp2rss.
 
@@ -35,7 +40,7 @@ The RSAPI imports section.
 
 RSAPI has a wide range of functions, having grown from a short Flask application which served [fortunes](https://wiki.archlinux.org/title/Fortune) to [PotatOS](https://potatos.madefor.cc/) by accretion of additional capabilities as they were needed. The exact history has been lost to the halcyon days of poor version control and backups, but it was built in roughly this order:
 
-* Initial version built: served fortunes and [https://schlockmercenary.fandom.com/wiki/The_Seventy_Maxims_of_Maximally_Effective_Mercenaries](https://schlockmercenary.fandom.com/wiki/The_Seventy_Maxims_of_Maximally_Effective_Mercenaries) over HTTP.
+* Initial version built: served fortunes and [Seventy Maxims of Maximally Effective Mercenaries](https://schlockmercenary.fandom.com/wiki/The_Seventy_Maxims_of_Maximally_Effective_Mercenaries) over HTTP.
 * "Currently playing" support for my internet radio server, via integration with MPD.
 * youtube-dl web frontend and very basic login.
 * IRC bot for server status and MPD status.
