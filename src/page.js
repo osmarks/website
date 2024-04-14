@@ -532,12 +532,10 @@ const fixDetailsSummary = () => {
     const el = document.getElementById(window.location.hash.slice(1))
     var parent = el
     if (!el) return
-    console.log("got", el)
     if (el.classList.contains("footnote-item")) {
         if (previousHighlight) {
             previousHighlight.classList.remove("hl1")
         }
-        console.log("is footnote item", el)
         el.classList.add("hl1")
         previousHighlight = el
     }
