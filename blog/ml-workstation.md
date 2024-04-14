@@ -2,7 +2,7 @@
 title: So You Want A Cheap ML Workstation
 description: How to run local AI slightly more cheaply than with a prebuilt system. Somewhat opinionated.
 created: 25/02/2024
-updated: 26/03/2024
+updated: 14/04/2024
 slug: mlrig
 ---
 
@@ -61,7 +61,7 @@ Native BF16 support is important too, but Ampere and Ada Lovelace both have this
 
 ### Multi-GPU
 
-You can run two graphics cards in a consumer system without any particularly special requirements - just make sure your power supply [can handle it](#power-consumption) and that you get a mainboard with PCIe slots with enough spacing between them. Each GPU will run with 8 PCIe lanes, via PCIe bifurcation. Any parallelizable workload which fits onto a single card should work at almost double speed with data parallelism, and larger models can be loaded across both via pipeline or tensor parallelism. Note that the latter requires fast interconnect between the GPUs. To spite users[^9], only the RTX 3090 has NVLink, which provides about 50GB/s (each direction) between GPUs[^8], and only workstation GPUs have PCIe P2P enabled, which reduces latency and increases bandwidth when using standard PCIe between two GPUs. However, you can get away without either of these if you don't need more than about 12GB/s (each direction) between GPUs, which I am told you usually don't.
+You can run two graphics cards in a consumer system without any particularly special requirements - just make sure your power supply [can handle it](#power-consumption) and that you get a mainboard with PCIe slots with enough spacing between them. Each GPU will run with 8 PCIe lanes, via PCIe bifurcation. Any parallelizable workload which fits onto a single card should work at almost double speed with data parallelism, and larger models can be loaded across both via pipeline or tensor parallelism. Note that the latter requires fast interconnect between the GPUs. To spite users[^9], only the RTX 3090 has NVLink, which provides about 50GB/s (each direction) between GPUs[^8], and only workstation GPUs have PCIe P2P enabled[^15], which reduces latency and increases bandwidth when using standard PCIe between two GPUs. However, you can get away without either of these if you don't need more than about 12GB/s (each direction) between GPUs, which I am told you usually don't.
 
 Technically, you *can* plug in more GPUs than this (up to 4), but they'll have less bandwidth and messing around with riser cables is usually necessary.
 
@@ -145,3 +145,5 @@ They describe somewhat horrifying electrical engineering problems due to using s
 [^13]: This is not hard to fix with aftermarket fans and a 3D printer and/or zip ties.
 
 [^14]: You should be able to hold weights in FP16 and do the maths in FP32, giving you FP32 speeds instead of the horrible slowdown, though.
+
+[^15]: Geohotz/Tinygrad now has a [patch](https://github.com/tinygrad/open-gpu-kernel-modules) to the open-source kernel module which makes it work, at least on 3090s and 4090s, by hacking it into using native PCIe capabilities which are retained.

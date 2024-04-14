@@ -233,6 +233,12 @@ blockquote
     .sidenotes-container
         display: block
 
+$hl-border: 3px
+.footnote-item.hl1, .footnote-item.hl2
+    border-top: solid $hl-border orange
+    border-bottom: solid $hl-border orange
+    margin-top: -$hl-border
+
 @media (min-width: calc(2 * $content-margin + $content-width + $sidenotes-width + $navbar-width))
     // fullwidth 3-pane layout
     body

@@ -500,6 +500,16 @@ if (sidenotes && footnotes) {
             }
             rendered = false
         }
+
+        for (const item of sidenotes.querySelectorAll(".footnote-item")) {
+            const link = article.querySelector(`#${item.id.replace(/^fn/, "fnref")}`)
+            link.addEventListener("mouseover", () => {
+                item.classList.add("hl2")
+            })
+            link.addEventListener("mouseleave", () => {
+                item.classList.remove("hl2")
+            })
+        }
     }
 
     window.onresize = relayout
@@ -517,10 +527,20 @@ if (sidenotes && footnotes) {
     })
 }
 
+let previousHighlight
 const fixDetailsSummary = () => {
     const el = document.getElementById(window.location.hash.slice(1))
     var parent = el
     if (!el) return
+    console.log("got", el)
+    if (el.classList.contains("footnote-item")) {
+        if (previousHighlight) {
+            previousHighlight.classList.remove("hl1")
+        }
+        console.log("is footnote item", el)
+        el.classList.add("hl1")
+        previousHighlight = el
+    }
     while (parent.parentElement) {
         if (parent.nodeName === "DETAILS") {
             parent.setAttribute("open", true)
