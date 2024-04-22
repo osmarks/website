@@ -297,7 +297,7 @@ $hl-border: 3px
     blockquote
         border-left: 0.4rem solid white
 
-.sidenotes img
+.sidenotes img, .footnotes img
     width: 100%
     max-width: 15em
     display: block
@@ -316,3 +316,37 @@ table
         padding: 0.4em
     th
         white-space: nowrap
+
+.epigraph
+    position: relative
+    padding-left: 3rem
+    padding-right: 3rem
+    padding-top: 1rem
+    padding-bottom: 1rem
+
+    > div    
+        font-style: italic
+
+    .attribution
+        text-indent: 2rem
+        text-align: right
+        font-style: normal
+
+    > div::after
+        content: "\201D"
+        right: 0rem
+        bottom: 0rem
+
+    > div::before
+        content: "\201C"
+        left: 0rem
+        top: 0rem
+
+    > div::before, > div::after
+        display: block
+        position: absolute
+        font-size: 2.5em
+
+// TODO
+#comments-wrapper textarea
+    width: calc(100% - 0.5em) !important

@@ -5,6 +5,10 @@ created: 24/09/2023
 updated: 15/01/2024
 slug: opinion
 ---
+::: epigraph attribution=pyrartha
+If you aren't slandering those who disagree even slightly with you at every opportunity and talking about how you want to beat them up, do you even hold any political beliefs?
+:::
+
 This may sound strange coming from someone whose website contains things which are clearly [political opinions](/osbill/); I am being [hypocritical](https://www.overcomingbias.com/p/homo-hipocritushtml)/didn't notice/have updated my views since that/am writing hyperbolically or ironically to make a point/do not require myself to have self-consistent beliefs (select your favourite option). Regardless, I think that holding, forming and in various ways acting on political opinions is somewhere between unnecessary and significantly net harmful. I apologize in advance for not using concrete examples for anything in this post, but those would be political opinions.
 
 ## Importance, Tractability, Neglectedness

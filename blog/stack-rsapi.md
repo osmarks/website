@@ -4,6 +4,10 @@ description: RSAPI and the rest of my infrastructure.
 created: 27/03/2024
 slug: srsapi
 ---
+::: epigraph attribution=@creatine_cycle link=https://twitter.com/creatine_cycle/status/1661455402033369088
+Transhumanism is attractive until you have seen how software is built.
+:::
+
 The original [Site tech stack](/stack/) article (updated since release somewhat as hardware has improved and software been replaced) covers the basic workings of the public-facing website. However, I run *other* things, some of which are interesting to talk about! I have a number of services for personal use running on the same infrastructure, and several non-web-facing but public services. Here's the latest edition of the handy diagram I made in Graphviz:
 
 <details>

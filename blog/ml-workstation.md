@@ -5,6 +5,9 @@ created: 25/02/2024
 updated: 14/04/2024
 slug: mlrig
 ---
+::: epigraph attribution=@jckarter link=https://twitter.com/jckarter/status/1441441401439358988
+Programmers love talking about the “bare metal”, when in fact the logic board is composed primarily of plastics and silicon oxides.
+:::
 
 ## Summary
 

@@ -4,6 +4,10 @@ created: 02/07/2023
 description: Why programming education isn't very good, and my thoughts on AI code generation.
 slug: progedu
 ---
+::: epigraph attribution="Randall Munroe" link=https://xkcd.com/2030/
+Don't trust voting software and don't listen to anyone who tells you it's safe. I don't quite know how to put this, but our entire field is bad at what we do, and if you rely on us, everyone will die.
+:::
+
 It seems to be fairly well-known (or at least widely believed amongst the people I regularly talk to about this) that most people are not very good at writing code, even those who really "should" be because of having (theoretically) been taught to (see e.g. <https://web.archive.org/web/20150624150215/http://blog.codinghorror.com/why-cant-programmers-program/>). Why is this? In this article, I will describe my wild guesses.
 
 General criticisms of formal education have [already been done](https://en.wikipedia.org/wiki/The_Case_Against_Education), probably better than I can manage to do. I was originally going to write about how the incentives of the system are not particularly concerned with testing people in accurate ways, but rather easy and standardizable ways, and the easiest and most standardizable ways are to ask about irrelevant surface details rather than testing skill. But this isn't actually true: automated testing of code to solve problems is scaleable enough that things like [Project Euler](https://projecteuler.net/) and [Leetcode](https://leetcode.com/) can test vast amounts of people without human intervention, and it should generally be *less* effort to do this than to manually process written exams. It does seem to be the case that programming education tends to preferentially test bad proxies for actual skill, but the causality probably doesn't flow from testing methods.

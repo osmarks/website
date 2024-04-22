@@ -4,6 +4,10 @@ description: Learn about how osmarks.net works internally! Spoiler warning if yo
 created: 24/02/2022
 updated: 11/05/2023
 ---
+::: epigraph attribution="Rupert Goodwins"
+If you can't stand the heat, get out of the server room.
+:::
+
 As you may know, osmarks.net is a website, served from computers which are believed to exist. But have you ever wondered exactly how it's all set up? If not, you may turn elsewhere and live in ignorance. Otherwise, continue reading.
 
 Many similar personal sites are hosted on free static site services or various cloud platforms, but mine actually runs on a physical server. This was originally done because of my general distrust of SaaS/cloud platforms, to learn about Linux administration, and desire to run some non-web things, but now it's necessary to run the full range of weird components which are now important to the website. ~~The hardware has remained the same since early 2019, before I actually had a public site, apart from the addition of more disk capacity and a spare GPU for occasional machine learning workloads - I am using an old HP ML110 G7 tower server. Despite limited RAM and CPU power compared to contemporary rackmount models, it was cheap, has continued to work amazingly reliably, and is much more power-efficient than those would have been. It mostly only runs at about 5% CPU load and 2GB of RAM in use anyway, so it's not been an issue.~~ Due to the increasing compute demands of internal workloads, among other things, it has now been replaced with a custom build using a consumer Ryzen CPU. This has massively increased performance thanks to the CPU's much better IPC, clocks and core count, the 16x increase in RAM, and actually having an SSD[^2].

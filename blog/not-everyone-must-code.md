@@ -5,7 +5,6 @@ slug: nemc
 updated: 09/02/2020
 created: 14/08/2018
 ---
-
 Imagine that some politician said "Cars are an important part of our modern economy. Many jobs involve cars. Therefore, all students must learn how to build cars; we will be adding it to the curriculum."
 This does (to me, anyway) seem pretty ridiculous on its own.
 *Now* imagine that the students are being taught to make small car models out of card, whilst being told that this is actually how it's always done (this sort of falls apart, since with the car thing it's easy for the average person to tell; most people can't really distinguish these things with programming).
@@ -30,7 +29,7 @@ I have an alternative list of things to teach which I think might actually be re
 
 This doesn't really sound as fancy as teaching "the new literacy", but it seems like a better place to start for helping people be able to interact with modern computer systems.
 
-## Update (09/02/2020 CE)
+## Update (2020-02-09)
 
 Having shown someone this post, they've suggested to me that Scratch is more about teaching some level of computational thinking-type skills - learning how to express intentions in a structured way and being precise/specific - than actually teaching *programming*, regardless of how it's marketed.
 This does seem pretty sensible, actually.

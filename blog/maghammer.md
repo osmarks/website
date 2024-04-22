@@ -5,6 +5,10 @@ updated: 12/09/2023
 description: Powerful search tools as externalized cognition, and how mine work.
 slug: maghammer
 ---
+::: epigraph attribution="Deus Ex"
+The need to be observed and understood was once satisfied by God. Now we can implement the same functionality with data-mining algorithms.
+:::
+
 I have had this setup in various bits and pieces for a while, but some people expressed interest in its capabilities and apparently haven't built similar things and/or weren't aware of technologies in this space, so I thought I would run through what I mean by "personal data warehouse" and "externalized cognition" and why they're important, how my implementation works, and other similar work.
 
 ## What?

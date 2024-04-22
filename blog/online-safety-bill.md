@@ -5,6 +5,10 @@ created: 08/07/2021
 updated: 19/08/2021
 slug: osbill
 ---
+::: epigraph attribution="Malcolm Turnbull"
+The laws of Australia prevail in Australia, I can assure you of that. The laws of mathematics are very commendable, but the only law that applies in Australia is the law of Australia.
+:::
+
 I recently found out that the UK government aims to introduce the "[Online Safety Bill](https://www.gov.uk/government/publications/draft-online-safety-bill)" and read about it somewhat (no, I have not actually read much of the (draft) bill itself; it is 145 pages with 146 of impact assessments and 123 of explanatory notes, and so out of reach of all but very dedicated lawyers) and, as someone on the internet, it seems very harmful. This has already been detailed quite extensively and probably better than I [can](https://techcrunch.com/2021/05/12/uk-publishes-draft-online-safety-bill/) [manage](https://www.openrightsgroup.org/blog/access-denied-service-blocking-in-the-online-safety-bill/) [elsewhere](https://matrix.org/blog/2021/05/19/how-the-u-ks-online-safety-bill-threatens-matrix), so I'll just summarize my issues relatively quickly. 
 
 Firstly, it appears to impose an unreasonable amount of requirements on essentially every internet service (technically mine, too, due to the comments box!): risk-assessments, probably age verification (age is somewhat sensitive information which it would not be good for all websites to have to collect), fees for companies of some size (I think this is just set by OFCOM), and, more generally, removing "harmful content", on pain of being blocked/sanctioned/fined. Not *illegal* content, just "content that is harmful to children/adults" (as defined on page 50 or so). The bill is claimed to deal with the excesses of Facebook and other large companies, and they certainly have problems, but this affects much more than that (and doesn't seem to address their main problems (misaligned incentives with users causing optimization for engagement over all else, privacy violations, monopolistic behaviour) much).

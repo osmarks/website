@@ -4,6 +4,10 @@ description: The history of the feared note-taking application.
 created: 06/06/2023
 updated: 28/08/2023
 ---
+::: epigraph attribution="Xe Iaso" link=https://xeiaso.net/blog/GraphicalEmoji/
+This code is free as in mattress. If you decide to use it, it's your problem.
+:::
+
 If you've talked to me, you've probably heard of Minoteaur.
 It was conceptualized in 2019, when I determined that it was a good idea to take notes on things in a structured way, looked at all existing software, and was (as usual, since all software is terrible; I will probably write about this at some point) vaguely unsatisifed by it.
 I don't actually remember the exact details, since I don't have notes on this which I can find, but this was around the time when Roam Research leaked into the tech noösphere, and I was interested in and generally agreed with the ideas of graph-structured note-taking applications, with easy and fast flat organization.

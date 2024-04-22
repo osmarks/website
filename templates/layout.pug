@@ -48,17 +48,18 @@ html(lang="en")
                 .header
                     h1.page-title= title
                     block under-title
-                    h3.deemph
-                        if updated
-                            span= `Updated ${renderDate(updated)}`
-                            if created || wordCount
-                                span= " / "
-                        if created
-                            span= `Created ${renderDate(created)}`
-                            if wordCount
-                                span= " / "
-                        if wordCount 
-                            span= `${metricPrefix(wordCount, "")} words`
+                    if !internal
+                        h3.deemph
+                            if updated
+                                span= `Updated ${renderDate(updated)}`
+                                if created || wordCount
+                                    span= " / "
+                            if created
+                                span= `Created ${renderDate(created)}`
+                                if wordCount
+                                    span= " / "
+                            if wordCount 
+                                span= `${metricPrefix(wordCount, "")} words`
                     if description
                         em.description!= description
                 block content
@@ -67,5 +68,6 @@ html(lang="en")
                 .sidenotes
 
             if comments !== "off"
-                main(class=!haveSidenotes ? "fullwidth isso" : "isso")
+                main.isso
+                    h2 Comments
                     section(id="comments-wrapper")

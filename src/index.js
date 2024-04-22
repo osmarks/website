@@ -87,22 +87,48 @@ const renderContainer = (tokens, idx) => {
         opening = false
     }
     const m = tokens[idx].info.trim().split(" ");
-    const blockType = m[0]
+    const blockType = m.shift()
 
     const options = {}
-    for (const arg of m.slice(1)) {
-        const [k, v] = arg.split("=", 2)
-        options[k] = v ?? true
+    let inQuotes, k, v, arg = false
+    while (arg = m.shift()) {
+        let wasInQuotes = inQuotes
+        if (arg[arg.length - 1] == '"') {
+            arg = arg.slice(0, -1)
+            inQuotes = false
+        }
+        if (wasInQuotes) {
+            options[k] += " " + arg
+        } else {
+            [k, v] = arg.split("=", 2)
+            if (v && v[0] == '"') {
+                inQuotes = true
+                v = v.slice(1)
+            }
+            options[k] = v ?? true
+        }
     }
 
     if (opening) {
         if (blockType === "captioned") {
             const link = `<a href="${md.utils.escapeHtml(options.src)}">`
             return `<div class="${options.wide ? "caption wider" : "caption"}">${options.link ? link : ""}<img src="${md.utils.escapeHtml(options.src)}">${options.link ? "</a>" : ""}`
+        } else if (blockType === "epigraph") {
+            return `<div class="epigraph"><div>`
         }
     } else {
         if (blockType === "captioned") {
             return `</div>`
+        } else if (blockType === "epigraph") {
+            let ret = `</div></div>`
+            if (options.attribution) {
+                let inner = md.utils.escapeHtml(options.attribution)
+                if (options.link) {
+                    inner = `<a href="${md.utils.escapeHtml(options.link)}">${inner}</a>`
+                }
+                ret = `<div class="attribution">${md.utils.escapeHtml("— ") + inner}</div>` + ret
+            }
+            return ret
         }
     }
     throw new Error(`unrecognized blockType ${blockType}`)
@@ -226,7 +252,7 @@ const processBlog = async () => {
         }, processContent: renderMarkdown })
     })
     console.log(chalk.yellow(`${Object.keys(blog).length} blog entries`))
-    globalData.blog = addGuids(R.filter(x => !x.draft, R.sortBy(x => x.updated ? -x.updated.valueOf() : 0, R.values(blog))))
+    globalData.blog = addGuids(R.filter(x => !x.draft && !x.internal, R.sortBy(x => x.updated ? -x.updated.valueOf() : 0, R.values(blog))))
 }
 
 const processErrorPages = () => {
@@ -296,7 +322,7 @@ const runOpenring = async () => {
     const cached = readCache("openring", 60*60*1000)
     if (cached) { globalData.openring = cached; return }
     // wildly unsafe but only runs on input from me anyway
-    const arg = `./openring -n6 ${globalData.feeds.map(x => '-s "' + x + '"').join(" ")} < openring.html`
+    const arg = `./openring -n6 ${globalData.feeds.map(x => '-s "' + x + '"').join(" ")} < ./src/openring.html`
     console.log(chalk.keyword("orange")("Openring:") + " " + arg)
     const out = await util.promisify(childProcess.exec)(arg)
     console.log(chalk.keyword("orange")("Openring:") + "\n" + out.stderr.trim())
@@ -386,7 +412,7 @@ const doImages = async () => {
                 }
                 const avif = await writeFormat("avif", ".avif", "avifenc", ["-s", "0", "-q", "20"], " 2x")
                 const avifc = await writeFormat("avif-compact", ".c.avif", path.join(srcDir, "avif_compact.sh"), [])
-                const jpeg = await writeFormat("jpeg-scaled", ".jpg", "_fallback", "convert", ["-resize", "25%", "-format", "jpeg"])
+                const jpeg = await writeFormat("jpeg-scaled", ".jpg", "convert", ["-resize", "25%", "-format", "jpeg"])
                 globalData.images[stripped] = [
                     ["image/avif", `${avifc}, ${avif} 2x`],
                     ["_fallback", jpeg]
