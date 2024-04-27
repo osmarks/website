@@ -219,7 +219,7 @@ blockquote
     display: none
 .footnotes-list
     text-align: justify
-@media (max-width: calc(2 * $content-margin + $content-width + $sidenotes-width))
+@media (max-width: calc(4 * $content-margin + $content-width + $sidenotes-width))
     // minwidth 1-pane layout
     .sidenotes
         min-width: auto
@@ -233,13 +233,7 @@ blockquote
     .sidenotes-container
         display: block
 
-$hl-border: 3px
-.footnote-item.hl1, .footnote-item.hl2
-    border-top: solid $hl-border orange
-    border-bottom: solid $hl-border orange
-    margin-top: -$hl-border
-
-@media (min-width: calc(2 * $content-margin + $content-width + $sidenotes-width + $navbar-width))
+@media (min-width: calc(4 * $content-margin + $content-width + $sidenotes-width + $navbar-width))
     // fullwidth 3-pane layout
     body
         display: flex
@@ -264,6 +258,12 @@ $hl-border: 3px
     main.fullwidth
         margin-left: $content-margin
         margin-right: $content-margin
+
+$hl-border: 3px
+.footnote-item.hl1, .footnote-item.hl2
+    border-top: solid $hl-border orange
+    border-bottom: solid $hl-border orange
+    margin-top: -$hl-border
 
 @media (prefers-color-scheme: dark)
     body

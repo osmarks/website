@@ -39,7 +39,7 @@ This can also be blamed on cultural evolution/memetics. As with religions, the m
 
 ## Universalizability
 
-The most common objection I've heard is along the lines of "but if everyone did this, no political improvement would occur and the world would be much worse off". This is true but irrelevant: I'm not a Kantian and don't only advocate for behaviors which need to apply to everyone at once. In the current state of the world, I think the marginal benefit (to everyone, and to you) of engagement is below the marginal cost and so it should be avoided - if a sufficiently large amount of people agreed with me on this and did so, my arguments would apply less and it would become more worthwhile, and I might then argue in favour of political engagement.
+The most common objection I've heard is along the lines of "but if everyone did this, no political improvement would occur and the world would be much worse off". This is true but irrelevant: I'm not a Kantian and don't only advocate for behaviors which need to apply to everyone at once[^4]. In the current state of the world, I think the marginal benefit (to everyone, and to you) of engagement is below the marginal cost and so it should be avoided - if a sufficiently large amount of people agreed with me on this and did so, my arguments would apply less and it would become more worthwhile, and I might then argue in favour of political engagement.
 
 Another is the claim that I am a privileged person who is only able to ignore politics because I'm not heavily threatened or discriminated against by existing instutions. This is entirely missing the point: being more affected by something does not make you more able to affect it.
 
@@ -52,3 +52,5 @@ If you have any arguments against my argument I haven't addressed here, please t
 [^2]: In some countries (e.g. Australia) it's even compulsory.
 
 [^3]: And the reason why this post was accidentally left as an unfinished draft for several months.
+
+[^4]: I don't think [decision-theoretic](https://arbital.com/p/logical_dt/?l=58f) notions save you, because most people don't use or apply complicated decision theories so if you think about them you are already uncorrelated with almost everyone else.

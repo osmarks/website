@@ -357,7 +357,7 @@ window.points = (async () => {
             e.target.value === "Submit" &&
             e.target.parentElement &&
             e.target.parentElement.parentElement &&
-            e.target.parentElement.parentElement.className === "auth-section") {
+            e.target.parentElement.parentElement.classList.contains("controls")) {
             unlockAchievement("firstComment")
             points.updateMetric("commentsPosted", function(x) { return x + 1 }, 0)
         }
