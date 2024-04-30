@@ -1,4 +1,5 @@
-const siteVersion = "{{buildID}}"
+import { ignorePaths } from "./common"
+
 const offlinePage = "/assets/offline.html"
 const cacheName = `${siteVersion}-v1`
 const precache = [
@@ -32,15 +33,6 @@ self.addEventListener("activate", event => {
             .then(() => self.clients.claim())
     )
 })
-
-const ignorePaths = [
-    "/isso",
-    "/infipage",
-    "/wsthing",
-    "/random-stuff",
-    "/radio",
-    "/ystat"
-]
 
 const shouldRespond = req => {
     if (req.method !== "GET") { return false } // do not respond to non-GET requests

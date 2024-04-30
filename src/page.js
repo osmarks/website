@@ -1,22 +1,46 @@
 const idb = require("idb")
 const { solve } = require("yalps")
+const { ignorePaths } = require("./common")
+
+const prefetchHook = () => {
+    let lastFetch = 0
+    const prefetch = event => {
+        if (Date.now() - lastFetch >= 200) {
+            const href = new URL(event.target.getAttribute("href"), window.location)
+            if (href.origin === window.location.origin) {
+                for (const ignorePath of ignorePaths) {
+                    if (href.pathname.startsWith(ignorePath)) return
+                }
+                console.log("prefetch", href.href)
+                fetch(href)
+                lastFetch = Date.now()
+            }
+        }
+    }
+
+    for (const node of document.querySelectorAll("a[href]")) {
+        node.addEventListener("touchstart", prefetch)
+        node.addEventListener("mouseover", prefetch)
+    }
+}
 
 // attempt to register service worker
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js", { scope: "/" }).then(reg => {
         if (reg.installing) {
-            console.log("Service worker installing");
+            console.log("Service worker installing")
         } else if (reg.waiting) {
-            console.log("Service worker installed");
+            console.log("Service worker installed")
         } else if (reg.active) {
-            console.log("Service worker active");
+            console.log("Service worker active")
+            prefetchHook()
         }
     }).catch(error => {
         // registration failed
-        console.log("Registration failed with " + error);
+        console.log("Registration failed with " + error)
     });
 } else {
-    console.log("Service workers are not supported.");
+    console.log("Service workers are not supported.")
 }
 
 // https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript

@@ -374,6 +374,19 @@ const compilePageJSTask = async () => {
     })
 }
 
+const compileServiceWorkerJSTask = async () => {
+    await esbuild.build({
+        entryPoints: [ path.join(srcDir, "sw.js") ],
+        bundle: true,
+        outfile: path.join(outDir, "sw.js"),
+        minify: true,
+        sourcemap: true,
+        define: {
+            "siteVersion": JSON.stringify(globalData.buildID)
+        }
+    })
+}
+
 const genServiceWorker = async () => {
     const serviceWorker = mustache.render(await readFile(path.join(assetsDir, "sw.js")), globalData)
     await minifyJSFile(serviceWorker, "sw.js", path.join(outDir, "sw.js"))
@@ -440,7 +453,7 @@ const tasks = {
     manifest: { deps: ["assetsDir"], fn: genManifest },
     minifyJS: { deps: ["assetsDir"], fn: minifyJSTask },
     compilePageJS: { deps: ["assetsDir"], fn: compilePageJSTask },
-    serviceWorker: { deps: [], fn: genServiceWorker },
+    serviceWorker: { deps: [], fn: compileServiceWorkerJSTask },
     images: { deps: ["assetsDir"], fn: doImages },
     offlinePage: { deps: ["assetsDir", "pagedeps"], fn: () => applyTemplate(globalData.templates.experiment, path.join(assetsDir, "offline.html"), () => path.join(outAssets, "offline.html"), {}) },
     assets: { deps: ["manifest", "minifyJS", "serviceWorker", "images", "compilePageJS"] },
