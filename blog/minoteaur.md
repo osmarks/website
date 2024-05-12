@@ -4,8 +4,8 @@ description: The history of the feared note-taking application.
 created: 06/06/2023
 updated: 28/08/2023
 ---
-::: epigraph attribution="Xe Iaso" link=https://xeiaso.net/blog/GraphicalEmoji/
-This code is free as in mattress. If you decide to use it, it's your problem.
+::: epigraph attribution=@visakanv link=https://twitter.com/visakanv/status/1775741429392039946
+The goal is to have smart walkable high-density mixed-use note systems.
 :::
 
 If you've talked to me, you've probably heard of Minoteaur.

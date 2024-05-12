@@ -22,7 +22,7 @@ There's also the issue of predictability: a good interface agrees with the user'
 
 Think about what workflows your users need and how you can serve them with a well-scoped UI rather than pretending to handle every possible input[^5]. Make your interface feel like a predictable, trustworthy tool rather than someone you might delegate work to, unless it actually can have work reasonably delegated to it. A really good tool should do what you mean, anticipating your desires and needs[^4], and AI can help with this, mostly in unflashy but helpful ways - the primary uses being good semantic search and recommender systems. Something like a documentation website should just have good organization and helpful search, maybe with an inline summarizer; forms can just be forms, maybe with AI (or regexes) to point out possibly erroneous inputs; a dashboard should present the most important information upfront and any recent changes or anomalies rather than requiring a dialog tree. In general, subtle uses of AI in areas it's competent are better than trying and failing to emulate a human.
 
-[^1]: My thoughts on fictional magic systems are to be made available here later.
+[^1]: My thoughts on fictional magic systems are ~~to be made available here later~~ [now extant](/magic/).
 
 [^2]: I don't really know why this is the case, but it's probably for the best.
 

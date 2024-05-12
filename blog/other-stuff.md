@@ -2,7 +2,7 @@
 title: Other things you may like
 description: A nonexhaustive list of... content/media... which I like and which you may also be interested in as a visitor of my site.
 created: 11/06/2020
-updated: 22/03/2024
+updated: 11/05/2024
 slug: otherstuff
 ---
 I'm excluding music from this because music preferences seem to be even more varied between the people I interact with than other stuff.
@@ -70,6 +70,9 @@ Obviously this is just stuff *I* like; you might not like it, which isn't really
 * [The Lost Books of the Odyssey](https://www.goodreads.com/book/show/2199365.The_Lost_Books_of_the_Odyssey) - same author as Void Star so my notes about the prose apply. An interesting take on the mythology and at times even rather funny.
 * [Accelerando](https://www.antipope.org/charlie/blog-static/fiction/accelerando/accelerando.html) - the best fictional depiction of the posthuman technocapital singularity I'm aware of.
 * [The Quantum Thief](https://www.goodreads.com/book/show/7562764-the-quantum-thief) - moved out of my infinitely long queue to actually be read on recommendation from [Gwern](https://gwern.net/review/quantum-thief), it's very good. The cool kind of hard scifi which almost never explains itself but which is nevertheless (as far as I can tell) constantly scientifically correct.
+* [Systema Delenda Est](https://www.royalroad.com/fiction/83315/systema-delenda-est) - hard-SF deconstruction of LitRPG (suddenly switching the world over to [magic](/magic/) and "only the strong survive" is actually bad).
+* [House of Suns](https://www.goodreads.com/book/show/1126719.House_of_Suns) - I actually read this some time ago and forgot to move it to the mainlist. I have not read much else of Alastair Reynolds' work, but this was a great standalone work which explores the (some possible) consequences of sublight-only colonization. I liked the prose.
+  * "house of suns is really very good, you should read" - baidicoot/Aidan, creator of the world-renowned [Emu War](/emu-war) game
 
 Special mentions (i.e. "I haven't gotten around to reading these but they are well-reviewed and sound interesting") to:
 * [Children of Time](https://www.goodreads.com/book/show/25499718-children-of-time) by Adrian Tchaikovsky.
@@ -78,8 +81,6 @@ Special mentions (i.e. "I haven't gotten around to reading these but they are we
 * [Digitesque](https://www.goodreads.com/series/183319-digitesque) by Guerric Haché.
 * [This Is How You Lose The Time War](https://www.goodreads.com/book/show/43352954-this-is-how-you-lose-the-time-war) by Amal El-Mohtar, Max Gladstone.
 * [The Books of Babel](https://www.goodreads.com/series/127130-the-books-of-babel) by Josiah Bancroft.
-* [House of Suns](https://www.goodreads.com/book/show/1126719.House_of_Suns) by Alastair Reynolds.
-  * "house of suns is really very good, you should read" - baidicoot/Aidan, creator of the world-renowned [Emu War](/emu-war) game
 * [Singularity Sky](https://www.goodreads.com/book/show/81992.Singularity_Sky) by Charlie Stross.
 * [Zones of Thought](https://www.goodreads.com/series/52585-zones-of-thought) by Vernor Vinge.
 * [Cradle](https://www.goodreads.com/series/192821-cradle) by Will Wight.
