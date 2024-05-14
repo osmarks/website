@@ -398,7 +398,7 @@ const doImages = async () => {
     copyAsset("images")
     copyAsset("titillium-web.woff2")
     copyAsset("titillium-web-semibold.woff2")
-    copyAsset("share-tech-mono.woff2")
+    copyAsset("miracode.woff2")
     globalData.images = {}
     await Promise.all(
         (await fse.readdir(path.join(assetsDir, "images"), { encoding: "utf-8" })).map(async image => {
