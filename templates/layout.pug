@@ -62,6 +62,16 @@ html(lang="en")
                                 span= `${metricPrefix(wordCount, "")} words`
                     if description
                         em.description!= description
+                    if prev
+                        div
+                            .prev
+                                span= "← "
+                                a(href=`/${prev.slug}`)= prev.title
+                    if next
+                        div
+                            .next
+                                a(href=`/${next.slug}`)= next.title
+                                span= " →"
                 block content
 
             if haveSidenotes

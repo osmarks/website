@@ -239,18 +239,44 @@ const processExperiments = async () => {
 }
 
 const processBlog = async () => {
-    const templates = globalData.templates
     const blog = await loadDir(blogDir, async (file, basename) => {
-        return applyTemplate(templates.blogPost, file, async page => {
-            const out = path.join(outDir, page.data.slug)
-            await fse.ensureDir(out)
-            return path.join(out, "index.html")
-        }, { processMeta: (meta, page) => {
-            meta.slug = meta.slug || removeExtension(basename)
-            meta.wordCount = page.content.split(/\s+/).map(x => x.trim()).filter(x => x).length
-            meta.haveSidenotes = true
-        }, processContent: renderMarkdown })
+        const page = parseFrontMatter(await readFile(file))
+        const meta = page.data
+        meta.slug = meta.slug || removeExtension(basename)
+        meta.wordCount = page.content.split(/\s+/).map(x => x.trim()).filter(x => x).length
+        meta.haveSidenotes = true
+        meta.content = renderMarkdown(page.content)
+        return meta
     })
+
+    const series = {}
+    for (const [name, data] of Object.entries(blog)) {
+        if (data.series_index) {
+            series[data.series] ??= []
+            series[data.series].push({ index: data.series_index, post: name })
+        }
+    }
+    for (const entries of Object.values(series)) {
+        entries.sort((a, b) => a.index - b.index)
+        for (let i = 0; i < entries.length; i++) {
+            const currentEntry = blog[entries[i].post]
+            if (i > 0) {
+                currentEntry.prev = blog[entries[i - 1].post]
+            }
+            if (i + 1 < entries.length) {
+                currentEntry.next = blog[entries[i + 1].post]
+            }
+        }
+    }
+    for (const page of Object.values(blog)) {
+        const out = path.join(outDir, page.slug)
+        await fse.ensureDir(out)
+        await fsp.writeFile(path.join(out, "index.html"), globalData.templates.blogPost({
+            ...globalData,
+            ...page
+        }))
+    }
+
     console.log(chalk.yellow(`${Object.keys(blog).length} blog entries`))
     globalData.blog = addGuids(R.filter(x => !x.draft && !x.internal, R.sortBy(x => x.updated ? -x.updated.valueOf() : 0, R.values(blog))))
 }

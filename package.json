@@ -6,7 +6,7 @@
   "dependencies": {
     "@msgpack/msgpack": "^3.0.0-beta2",
     "axios": "^1.5.0",
-    "better-sqlite3": "^8.7.0",
+    "better-sqlite3": "^11.0.0",
     "chalk": "^4.1.0",
     "dayjs": "^1.8.28",
     "esbuild": "^0.19.6",

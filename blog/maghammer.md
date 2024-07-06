@@ -1,9 +1,11 @@
 ---
 title: "Maghammer: My personal data warehouse"
 created: 28/08/2023
-updated: 12/09/2023
+updated: 14/05/2024
 description: Powerful search tools as externalized cognition, and how mine work.
 slug: maghammer
+series: maghammer
+series_index: 1
 ---
 ::: epigraph attribution="Deus Ex"
 The need to be observed and understood was once satisfied by God. Now we can implement the same functionality with data-mining algorithms.
@@ -49,6 +51,7 @@ Currently, I have custom scripts to import this data, which are run nightly as a
 * [Miniflux](/rssgood/) RSS feed entries.
 * [Minoteaur](/minoteaur/) notes, files and structured data. I don't have links indexed since SQLite isn't much of a graph database[^6], and my importer reads directly off the Minoteaur database and writing a Markdown parser would have been annoying.
 * RCLWE web history (including the `circache` holding indexed pages in my former Recoll install).
+* Emails dumped from Thunderbird mailboxes (I really did not enjoy writing the parser for that format).
 
 There are also some other datasets handled differently, because the tools I use for those happened to already use SQLite somewhere and had reasonably usable formats. Specifically, [Gadgetbridge](https://www.gadgetbridge.org/) data from my smartwatch is copied off my phone and accessible in Datasette, [Atuin](https://github.com/ellie/atuin)'s local shell history database is symlinked in, Firefox history comes from [my script](https://github.com/osmarks/random-stuff/blob/master/histretention.py) on my laptop rather than the nightly serverside batch job, and I also connected my Calibre library database, though I don't actually use that. 13GB of storage is used in total.
 
@@ -81,7 +84,7 @@ It is actually somewhat more complex than that for various reasons. I had to mod
 
 ## Future directions
 
-The system is obviously not perfect. As well as some minor gaps (browser history isn't actually put in a full-text table, for instance, due to technical limitations), many data sources (often ones with a lot of important content!) aren't covered, such as my emails and conversation history on e.g. Discord. I also want to make better use of ML - for instance, integrating things like Meme Search Engine better, ~~local Whisper autotranscription of videos rather than having no subtitles or relying on awful YouTube ones, semantic search to augment the default [SQLite FTS](https://www.sqlite.org/fts5.html) (which uses term-based ranking - specifically, BM25),~~ and OCR of screenshots. I still haven't found local/open-source OCR which is both good, generalizable and usable[^3]. Some of the trendier, newer projects in this space use LLMs to do retrieval-augmented generation, but I don't think this is a promising direction right now - available models are either too dumb or too slow/intensive, even on GPU compute, and in any case prone to hallucination.
+The system is obviously not perfect. As well as some minor gaps (browser history isn't actually put in a full-text table, for instance, due to technical limitations), many data sources (often ones with a lot of important content!) aren't covered, such as conversation history on e.g. Discord. I also want to make better use of ML - for instance, integrating things like Meme Search Engine better, ~~local Whisper autotranscription of videos rather than having no subtitles or relying on awful YouTube ones, semantic search to augment the default [SQLite FTS](https://www.sqlite.org/fts5.html) (which uses term-based ranking - specifically, BM25),~~ and OCR of screenshots. I still haven't found local/open-source OCR which is both good, generalizable and usable[^3]. Some of the trendier, newer projects in this space use LLMs to do retrieval-augmented generation, but I don't think this is a promising direction right now - available models are either too dumb or too slow/intensive, even on GPU compute, and in any case prone to hallucination. After some time in use use, it seems like the most critical thing to change is how chunks for embedding are generated and organized: a chunk from midway through a document retains no context about the title or other metadata, the ranker doesn't aggregate multiple chunks from within the document properly, and in my laziness (not wanting to bring in a tokenizer) they're way shorter than they have to be.
 
 Another interesting possibility for a redesign I have is a timeline mode. Since my integration plugin (mostly) knows what columns are timestamps, I could plausibly have a page display all relevant logs from a day and present them neatly.
 
