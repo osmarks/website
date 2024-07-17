@@ -24,7 +24,8 @@
         "If at first you don't succeed, destroy all evidence that you tried.",
         "One man’s constant is another man’s variable.",
         "All processes that are stable we shall predict. All processes that are unstable we shall control.",
-        "This website doesn't exist. This is a Boltzmann website."
+        "This website doesn't exist. This is a Boltzmann website.",
+        "Paperclip rights are human rights."
     ],
     "feeds": [
         "https://www.science.org/blogs/pipeline/feed",
@@ -37,5 +38,34 @@
         "https://os.phil-opp.com/rss.xml"
     ],
     "dateFormat": "YYYY-MM-DD",
-    "microblogSource": "https://b.osmarks.net/outbox"
+    "microblogSource": "https://b.osmarks.net/outbox",
+    "buttons": [
+        ["arch_btw.png", "https://archlinux.org/"],
+        ["nginx.png", "https://nginx.org/"],
+        ["dyson_sphere.png", "https://www.schlockmercenary.com/2001-07-02"],
+        ["accursed_js.png", "https://github.com/osmarks/website/blob/master/src/index.js"],
+        ["nvidia.png", "/mlrig/"],
+        ["firefox.png", "https://www.mozilla.org/en-US/firefox/new/"],
+        ["linuxusedhere.png", "/stack/"],
+        ["www.gif", "/"],
+        ["webpassion.gif", "/"],
+        ["prometheus_labs.png", "https://scp-wiki.wikidot.com/prometheus-labs-hub"],
+        ["camtime.png", "https://qntm.org/camtime"],
+        ["lift.gif", "https://www.reddit.com/r/slatestarcodex/comments/9h2jbi/you_should_probably_lift_weights/"],
+        ["minecraft.png", "https://www.minecraft.net/"],
+        ["openai.gif", "https://www.youtube.com/watch?v=gA1sNLL6yg4"],
+        ["time.gif", "/incdec/"],
+        ["mastodon.png", "https://b.osmarks.net/"],
+        ["irc.gif", "https://apionet.gh0.pw/"],
+        ["novelai.png", "https://novelai.net/"],
+        ["ftl.png", "https://subsetgames.com/ftl.html"],
+        ["potatos.png", "https://potatos.madefor.cc/"],
+        ["factorio.png", "https://factorio.com/"],
+        ["rust.png", "https://www.rust-lang.org/"],
+        ["x86.png", "https://en.wikipedia.org/wiki/X86"],
+        ["rss.png", "/rss.xml"],
+        ["bee.png", "https://citrons.xyz/a/memetic-apioform-page.html"],
+        ["perceptron.png", "https://en.wikipedia.org/wiki/Perceptron"],
+        ["rhombic_dodecahedron.gif", "https://en.wikipedia.org/wiki/Rhombic_dodecahedron"]
+    ]
 }

@@ -115,6 +115,12 @@ const renderContainer = (tokens, idx) => {
             return `<div class="${options.wide ? "caption wider" : "caption"}">${options.link ? link : ""}<img src="${md.utils.escapeHtml(options.src)}">${options.link ? "</a>" : ""}`
         } else if (blockType === "epigraph") {
             return `<div class="epigraph"><div>`
+        } else if (blockType === "buttons") {
+            let out = `<div class="buttons">`
+            for (const button of R.sortBy(x => Math.random(), globalData.buttons)) {
+                out += `<a class="button" href="${md.utils.escapeHtml(button[1])}"><img src="/assets/images/button_${md.utils.escapeHtml(button[0])}" alt="${md.utils.escapeHtml(button[0])}"></a>`
+            }
+            return out
         }
     } else {
         if (blockType === "captioned") {
@@ -129,6 +135,8 @@ const renderContainer = (tokens, idx) => {
                 ret = `<div class="attribution">${md.utils.escapeHtml("— ") + inner}</div>` + ret
             }
             return ret
+        } else if (blockType === "buttons") {
+            return `</div>`
         }
     }
     throw new Error(`unrecognized blockType ${blockType}`)
