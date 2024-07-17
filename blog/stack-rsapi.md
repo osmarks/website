@@ -80,6 +80,7 @@ RSAPI has a wide range of functions, having grown from a short Flask application
 * Key/value storage backend for PotatOS, due to the shutdown of the random free API it used before.
 * Internal LLM-based [Threat Updates](https://r.osmarks.net/threat-update) system[^8], to replace the archive of historical ones and Twitter scraper. I was too lazy to work out how to draw nicely line-wrapped text in images in Python, so this actually invokes a ComputerCraft emulator, runs the Threat Update implementation on that, dumps its virtual screen, and renders that to an image.
 * The new comments system, replacing [Isso](https://github.com/isso-comments/isso). It supports ominous AI faces (from StyleGAN2, thanks to [StyleGANCpp](https://github.com/podgorskiy/StyleGANCpp/)[^7]), leftvotes/rightvotes for greater user expression, SSO integration, better threading, and lower client resource use.
+* Lighting control orchestration.
 
 I'm especially proud of the ComputerCraft to Prometheus metrics bridge. While it's only about 20 lines of code (plus the ComputerCraft side), it does allow me to feel cool about being able to monitor meaninglessly large numbers in great detail. There are similar Factorio mods, which I'll probably use next time I play.
 
