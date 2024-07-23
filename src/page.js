@@ -6,7 +6,11 @@ const prefetchHook = () => {
     let lastFetch = 0
     const prefetch = event => {
         if (Date.now() - lastFetch >= 200) {
-            const href = new URL(event.target.getAttribute("href"), window.location)
+            let target = event.target
+            while (!target.hasAttribute("href")) {
+                target = target.parentElement
+            }
+            const href = new URL(target.getAttribute("href"), window.location)
             if (href.origin === window.location.origin) {
                 for (const ignorePath of ignorePaths) {
                     if (href.pathname.startsWith(ignorePath)) return
