@@ -1,6 +1,6 @@
 ---
 title: Other things you may like
-description: A nonexhaustive list of... content/media... which I like and which you may also be interested in as a visitor of my site.
+description: A nonexhaustive list of media which I like and which you may also be interested in as a visitor of my site.
 created: 11/06/2020
 updated: 15/07/2024
 slug: otherstuff
@@ -53,7 +53,7 @@ Obviously this is just stuff *I* like; you might not like it, which isn't really
 * [A Hero's War](https://fictionpress.com/s/3238329/1/A-Hero-s-War) - bootstrapping industrialization in a setting with magic. Unfortunately, unfinished and seems likely to remain that way.
 * [Snow Crash](https://www.goodreads.com/book/show/40651883-snow-crash) - a fun action story even though I don't take the tangents into Sumerian mythology (?) very seriously.
   * Since this list was written, I think it became notorious for introducing the "metaverse" as pushed by Facebook now. This is very silly. Everyone who is paying attention knows that the real metaverse is Roblox.
-* [Limitless](https://en.wikipedia.org/wiki/Limitless_(TV_series)) (the movie is also decent) - actually among the least bad depictions of superhuman intelligence I've seen in media, and generally funny.
+* [Limitless](https://en.wikipedia.org/wiki/Limitless_(TV_series)) (the movie is also decent) - among the less bad depictions of superhuman intelligence I've seen in media, and generally funny.
 * [Pantheon](https://en.wikipedia.org/wiki/Pantheon_(TV_series)) - ~~unfortunately cancelled and pulled from streaming (for tax purposes somehow?) and thus hard to watch,~~ apparently uncancelled and hosted by Amazon now?! Still hard to watch. One of about three TV series I've seen on the subject of brain uploads, and I think the smartest, not that this is a very high bar since it's frequently quite silly (they repeatedly talk about how uploads are just data which can be copied, and then forget this every time it would be useful). Some day I want my own ominous giant cube of servers in Norway.
 * [Mark of the Fool](https://www.goodreads.com/series/346305-mark-of-the-fool) - somewhat standardly D&D-like world, but the characters are well-written and take reasonable decisions.
 * [Nice Dragons Finish Last](https://www.goodreads.com/series/128485-heartstrikers) - enjoyable urban fantasy.

@@ -39,7 +39,7 @@ You can contact me through [email](mailto:me@osmarks.net), <span class="hoverdef
 * (Arch) Linux (btw) systems administration.
 * Mechanical keyboard.
 * Causing inscrutable networking problems.
-* Bench press: 77.5kg (5RM).
+* Bench press: 85kg (4RM).
 * Nigh-omniscient knowledge of and concern for English grammar.
 
 ::: buttons

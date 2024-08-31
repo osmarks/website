@@ -63,6 +63,14 @@ const hashString = function(str, seed = 0) {
 const colHash = (str, saturation = 100, lightness = 70) => `hsl(${hashString(str) % 360}, ${saturation}%, ${lightness}%)`
 window.colHash = colHash
 
+const e = (cls, parent, content, type="div") => {
+    const element = document.createElement(type)
+    element.classList.add(cls)
+    if (content) { element.appendChild(document.createTextNode(content)) }
+    if (parent) { parent.appendChild(element) }
+    return element
+}
+
 // Arbitrary Points code, wrapped in an IIFE to not pollute the global environment much more than it already is
 window.points = (async () => {
     const achievementInfo = {
@@ -241,14 +249,6 @@ window.points = (async () => {
             console.warn("Database error (unexpectedly closed)")
         },
     });
-
-    const e = (cls, parent, content) => {
-        const element = document.createElement("div")
-        element.classList.add(cls)
-        if (content) { element.appendChild(document.createTextNode(content)) }
-        if (parent) { parent.appendChild(element) }
-        return element
-    }
 
     const achievementsContainer = e("achievements", document.body)
     const displayAchievement = (title, description, conditions, points) => {
@@ -590,3 +590,58 @@ if (customStyle) {
 }
 window.customStyleEl = customStyleEl
 window.customStyle = customStyle
+
+const nameMappings = {
+    "blog": "Blog",
+    "microblog": "Microblog",
+    "experiment": "Experiments",
+    "mycorrhiza": "Documentation"
+}
+
+// replace login navbar option with search because whatever
+const loginButton = document.querySelector("nav a:last-of-type")
+loginButton.href = "#"
+loginButton.innerText = "Search"
+loginButton.onclick = async ev => {
+    ev.preventDefault()
+    const query = (await import("/assets/js/fts_client.js")).default
+    const overlay = document.createElement("div")
+    overlay.classList.add("search-overlay")
+    document.body.appendChild(overlay)
+    const input = document.createElement("input")
+    input.type = "text"
+    input.placeholder = "Search"
+    let resultsEl
+    input.oninput = () => {
+        if (resultsEl) {
+            resultsEl.remove()
+        }
+        resultsEl = document.createElement("div")
+        resultsEl.classList.add("search-results")
+        for (const result of query(input.value)) {
+            const item = e("search-result", resultsEl)
+            const titleLine = nameMappings[result.sourceType] + " / " + (result.title ?? result.timestamp)
+            const link = e("search-result-link", item, titleLine, "a")
+            link.setAttribute("href", result.url)
+            if (result.title && result.timestamp) {
+                e("deemph", item, result.timestamp)
+            }
+            if (result.description) {
+                e("description", item, result.description)
+            }
+            item.style.border = `${colHash(result.sourceType)} solid 4px`
+            item.style.background = `${colHash(result.sourceType, 50, 10)}`
+        }
+        overlay.appendChild(resultsEl)
+    }
+    input.onkeydown = ev => {
+        if (ev.key === "Enter" || ev.key === "Backspace") {
+            if (input.value === "") {
+                // quit search mode
+                overlay.remove()
+            }
+        }
+    }
+    overlay.appendChild(input)
+    input.focus()
+}

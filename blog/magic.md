@@ -16,7 +16,7 @@ I did allude to the fact that I intended to write this at some point, and now I 
     * This doesn't work either, as the actual explanation for everything is just "the author says so" (or, in games, "the code says so"). In-universe, unless an author really likes infodumps, you may not find out either way[^2].
 * Magic is power centred in people (or individuals/life in general) rather than infrastructure - fictional casters can typically do a lot from their knowledge/skills/levels/etc and easily available "mana" (maybe with a few material components), while in real life I require lots of tools (my computers, 3D printer, knife, ominously specific computer-adjacent equipment, etc) and external runtime dependencies (electricity and internet connectivity).
     * This is explicitly discussed in [Mage Errant](https://www.goodreads.com/series/252085-mage-errant) as causing weird sociopolitical situations if you actually run through the consequences.
-    * It seems to consistently hold - I can think of some partial counterexamples, but they still pretty heavily confer power on individuals. Even in [Minecraft](/assets/images/botania-tech-mod.png), "magic mods" tend to contain more powers and equipment for the player than "tech mods".
+    * It seems to consistently hold - I can think of some partial counterexamples, but they still pretty heavily confer power on individuals. Even in [Minecraft](/assets/images/botania-tech-mod.png), "magic mods" tend to contain more powers and equipment for the player than "tech mods"[^6].
 
 Now that I've forced you to read those paragraphs, my real position is that "magic" is a fuzzy aesthetic concept related to all of these things to varying degrees: for any "technology" I can think of, I can adjust some surface details and/or backstory to make it "magic", and vice versa. At some level, people generally don't like the way science, technology and the real world work, since our default ontologies aren't built for them, and we have some standard ways to imply "I'm ignoring these in favour something I like more".
 
@@ -43,3 +43,5 @@ This is more of a set of somewhat linked ramblings than a cohesive post like I u
 [^4]: This is actually not a great example: it's not as complicated as some other "simple" things in other fiction, and the spell-complexity issue is explicitly called out later in reference to a cleaning spell.
 
 [^5]: I think this is because authors frequently study English and not ~~a real subject~~ sciences.
+
+[^6]: See also [this essay](https://genetyx8.github.io/flat-square-torus/2021/07/09/magic-mods.html).

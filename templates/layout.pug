@@ -27,6 +27,8 @@ html(lang="en")
         link(rel="manifest", href="/assets/manifest.webmanifest")
         link(rel="shortcut icon", href="/assets/images/logo256.png", type="image/png")
         meta(content=`https://${domain}/assets/images/logo256.png`, property="og:image")
+        if katex
+            link(rel="stylesheet", href="/assets/katex.min.css")
         style!= css
         if comments !== "off"
             script(src=`https://${domain}/rsapi/static/comments.js`, async=true)
@@ -38,7 +40,7 @@ html(lang="en")
                     .logotext osmarks
                 +nav-item(`/me/`, "About Me")
                 +nav-item(`https://mse.${domain}/`, "Meme Search")
-                +nav-item("https://github.com/osmarks/website", "Contribute")
+                +nav-item(`https://docs.${domain}/random`, "Documentation")
                 +nav-item(`https://b.${domain}`, "Microblog")
                 +nav-item(`https://status.${domain}`, "Status")
                 +nav-item(`https://r.${domain}/login`, "Login")

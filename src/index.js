@@ -22,6 +22,12 @@ const sqlite = require("better-sqlite3")
 const axios = require("axios")
 const msgpack = require("@msgpack/msgpack")
 const esbuild = require("esbuild")
+const htmlparser2 = require("htmlparser2")
+const cssSelect = require("css-select")
+const domSerializer = require("dom-serializer")
+const domutils = require("domutils")
+
+const fts = require("./fts.mjs")
 
 dayjs.extend(customParseFormat)
 
@@ -33,6 +39,7 @@ const errorPagesDir = path.join(root, "error")
 const assetsDir = path.join(root, "assets")
 const outDir = path.join(root, "out")
 const srcDir = path.join(root, "src")
+const nodeModules = path.join(root, "node_modules")
 
 const buildID = nanoid()
 globalData.buildID = buildID
@@ -76,7 +83,6 @@ globalData.hashBG = hashBG
 
 const removeExtension = x => x.replace(/\.[^/.]+$/, "")
 
-const mdutils = MarkdownIt().utils
 const renderContainer = (tokens, idx) => {
     let opening = true
     if (tokens[idx].type === "container__close") {
@@ -144,6 +150,7 @@ const renderContainer = (tokens, idx) => {
 
 const readFile = path => fsp.readFile(path, { encoding: "utf8" })
 const anchor = require("markdown-it-anchor")
+const { htmlToText } = require("html-to-text")
 const md = new MarkdownIt({ html: true })
     .use(require("markdown-it-container"), "", { render: renderContainer, validate: params => true })
     .use(require("markdown-it-footnote"))
@@ -152,6 +159,7 @@ const md = new MarkdownIt({ html: true })
             symbol: "§"
         })
     })
+    .use(require("@vscode/markdown-it-katex").default)
 const minifyHTML = x => htmlMinifier(x, {
     collapseWhitespace: true,
     sortAttributes: true,
@@ -236,7 +244,15 @@ const processExperiments = async () => {
                         return fse.copy(path.join(subdirectory, file), path.join(out, file))
                     }
                 }))
-                return path.join(out, "index.html")
+                const indexPath = path.join(out, "index.html")
+                fts.pushEntry("experiment", {
+                    url: "/" + page.data.slug,
+                    title: page.data.title,
+                    description: page.data.description,
+                    html: page.content,
+                    timestamp: dayjs(await fsp.stat(indexPath).then(x => x.mtimeMs))
+                })
+                return indexPath
             },
             { processMeta: meta => {
                 meta.slug = meta.slug || basename
@@ -254,6 +270,13 @@ const processBlog = async () => {
         meta.wordCount = page.content.split(/\s+/).map(x => x.trim()).filter(x => x).length
         meta.haveSidenotes = true
         meta.content = renderMarkdown(page.content)
+        fts.pushEntry("blog", {
+            html: meta.content,
+            url: "/" + meta.slug,
+            timestamp: meta.updated ?? meta.created,
+            title: meta.title,
+            description: meta.description
+        })
         return meta
     })
 
@@ -332,16 +355,32 @@ const writeCache = (k, v, ts=Date.now()) => {
     writeCacheStmt.run(k, Buffer.from(enc.buffer, enc.byteOffset, enc.byteLength), ts)
 }
 
+const DESC_CUT_LEN = 256
 const fetchMicroblog = async () => {
     const cached = readCache("microblog", 60*60*1000)
     if (cached) {
         globalData.microblog = cached
     } else {
+        // We have a server patch which removes the 20-post hardcoded limit.
+        // For some exciting reason microblog.pub does not expose pagination in the *API* components.
+        // This is a workaround.
         const posts = (await axios({ url: globalData.microblogSource, headers: { "Accept": 'application/ld+json; profile="https://www.w3.org/ns/activitystreams"' } })).data.orderedItems
         writeCache("microblog", posts)
         globalData.microblog = posts
     }
     
+    for (const post of globalData.microblog) {
+        if (!post.object.content) { continue }
+        const desc = fts.stripHTML(post.object.content)
+        fts.pushEntry("microblog", {
+            url: post.object.id,
+            timestamp: dayjs(post.object.published),
+            html: post.object.content,
+            description: desc.length > DESC_CUT_LEN ? desc.slice(0, DESC_CUT_LEN) + "..." : desc,
+            ignoreDescription: true
+        })
+    }
+
     globalData.microblog = globalData.microblog.slice(0, 6).map((post, i) => minifyHTML(globalData.templates.activitypub({
         ...globalData,
         permalink: post.object.id,
@@ -399,13 +438,24 @@ const minifyJSTask = async () => {
 }
 
 const compilePageJSTask = async () => {
-    await esbuild.build({
-        entryPoints: [ path.join(srcDir, "page.js") ],
-        bundle: true,
-        outfile: path.join(outAssets, "js/page.js"),
-        minify: true,
-        sourcemap: true
-    })
+    await Promise.all([
+        esbuild.build({
+            entryPoints: [ path.join(srcDir, "page.js") ],
+            bundle: true,
+            outfile: path.join(outAssets, "js/page.js"),
+            minify: true,
+            sourcemap: true,
+            external: ["/assets/js/fts_client.js"]
+        }),
+        esbuild.build({
+            entryPoints: [ path.join(srcDir, "fts_client.mjs") ],
+            bundle: true,
+            outfile: path.join(outAssets, "js/fts_client.js"),
+            minify: true,
+            sourcemap: true,
+            format: "esm"
+        })
+    ])
 }
 
 const compileServiceWorkerJSTask = async () => {
@@ -421,18 +471,14 @@ const compileServiceWorkerJSTask = async () => {
     })
 }
 
-const genServiceWorker = async () => {
-    const serviceWorker = mustache.render(await readFile(path.join(assetsDir, "sw.js")), globalData)
-    await minifyJSFile(serviceWorker, "sw.js", path.join(outDir, "sw.js"))
-}
-
 const copyAsset = subpath => fse.copy(path.join(assetsDir, subpath), path.join(outAssets, subpath))
 
 const doImages = async () => {
-    copyAsset("images")
-    copyAsset("titillium-web.woff2")
-    copyAsset("titillium-web-semibold.woff2")
-    copyAsset("miracode.woff2")
+    await Promise.all(["images", "titillium-web.woff2", "titillium-web-semibold.woff2", "miracode.woff2", "misc"].map(subpath => fse.copy(path.join(assetsDir, subpath), path.join(outAssets, subpath))))
+    
+    await fse.copy(path.join(nodeModules, "katex", "dist", "fonts"), path.join(outAssets, "fonts"))
+    await fse.copy(path.join(nodeModules, "katex", "dist", "katex.min.css"), path.join(outAssets, "katex.min.css"))
+
     globalData.images = {}
     await Promise.all(
         (await fse.readdir(path.join(assetsDir, "images"), { encoding: "utf-8" })).map(async image => {
@@ -471,6 +517,37 @@ const doImages = async () => {
     )
 }
 
+const fetchMycorrhiza = async () => {
+    const allPages = await axios({ url: globalData.mycorrhiza + "/list" })
+    const dom = htmlparser2.parseDocument(allPages.data)
+    const urls = cssSelect.selectAll("main > ol a", dom).map(x => x.attribs.href)
+    for (const url of urls) {
+        // TODO: this can run in parallel
+        const page = await axios({ url: globalData.mycorrhiza + url })
+        const dom = htmlparser2.parseDocument(page.data)
+        const title = domutils.innerText(cssSelect.selectAll(".navi-title a, .navi-title span", dom).slice(2))
+        const article = cssSelect.selectOne("main #hypha article", dom)
+        const content = article ? domSerializer.render(article) : ""
+        let description = null
+        if (description = cssSelect.selectOne("meta[property=og:description]", dom)) {
+            description = description.attribs.content
+        }
+        fts.pushEntry("mycorrhiza", {
+            url: globalData.mycorrhiza + url,
+            title,
+            description,
+            html: content,
+            timestamp: null
+        })
+    }
+}
+
+const buildFTS = async () => {
+    console.log(chalk.yellow("Building full-text search index"))
+    const blob = fts.build()
+    await fsp.writeFile(path.join(outDir, "fts.bin"), blob)
+}
+
 const tasks = {
     errorPages: { deps: ["pagedeps"], fn: processErrorPages },
     templates: { deps: [], fn: loadTemplates },
@@ -491,7 +568,9 @@ const tasks = {
     images: { deps: ["assetsDir"], fn: doImages },
     offlinePage: { deps: ["assetsDir", "pagedeps"], fn: () => applyTemplate(globalData.templates.experiment, path.join(assetsDir, "offline.html"), () => path.join(outAssets, "offline.html"), {}) },
     assets: { deps: ["manifest", "minifyJS", "serviceWorker", "images", "compilePageJS"] },
-    main: { deps: ["writeBuildID", "index", "errorPages", "assets", "experiments", "blog", "rss"] }
+    main: { deps: ["writeBuildID", "index", "errorPages", "assets", "experiments", "blog", "rss"] },
+    searchIndex: { deps: ["blog", "fetchMicroblog", "fetchMycorrhiza", "experiments"], fn: buildFTS },
+    fetchMycorrhiza: { deps: [], fn: fetchMycorrhiza }
 }
 
 const compile = async () => {
