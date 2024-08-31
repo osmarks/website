@@ -11,7 +11,7 @@ const prefetchHook = () => {
                 target = target.parentElement
             }
             const href = new URL(target.getAttribute("href"), window.location)
-            if (href.origin === window.location.origin) {
+            if (href.origin === window.location.origin && (href.pathname !== window.location.pathname || href.search !== window.location.search)) {
                 for (const ignorePath of ignorePaths) {
                     if (href.pathname.startsWith(ignorePath)) return
                 }
@@ -645,3 +645,11 @@ loginButton.onclick = async ev => {
     overlay.appendChild(input)
     input.focus()
 }
+
+window.addEventListener("keydown", ev => {
+    if (ev.key === "Escape") {
+        if (document.querySelector(".search-overlay")) {
+            document.querySelector(".search-overlay").remove()
+        }
+    }
+})
