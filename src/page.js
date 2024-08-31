@@ -598,6 +598,13 @@ const nameMappings = {
     "mycorrhiza": "Documentation"
 }
 
+const closeOverlay = () => {
+    if (document.querySelector(".search-overlay")) {
+        document.querySelector(".search-overlay").remove()
+    }
+    document.querySelector("html").style.overscrollBehavior = "none"
+}
+
 // replace login navbar option with search because whatever
 const loginButton = document.querySelector("nav a:last-of-type")
 loginButton.href = "#"
@@ -608,6 +615,7 @@ loginButton.onclick = async ev => {
     const overlay = document.createElement("div")
     overlay.classList.add("search-overlay")
     document.body.appendChild(overlay)
+    document.querySelector("html").style.overscrollBehavior = "none"
     const input = document.createElement("input")
     input.type = "text"
     input.placeholder = "Search"
@@ -638,7 +646,7 @@ loginButton.onclick = async ev => {
         if (ev.key === "Enter" || ev.key === "Backspace") {
             if (input.value === "") {
                 // quit search mode
-                overlay.remove()
+                closeOverlay()
             }
         }
     }
@@ -648,8 +656,6 @@ loginButton.onclick = async ev => {
 
 window.addEventListener("keydown", ev => {
     if (ev.key === "Escape") {
-        if (document.querySelector(".search-overlay")) {
-            document.querySelector(".search-overlay").remove()
-        }
+        closeOverlay()
     }
 })
