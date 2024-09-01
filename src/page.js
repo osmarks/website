@@ -597,6 +597,12 @@ const nameMappings = {
     "experiment": "Experiments",
     "mycorrhiza": "Documentation"
 }
+const hues = {
+    "blog": "210",
+    "microblog": "290",
+    "mycorrhiza": "30",
+    "experiment": "120"
+}
 
 const closeOverlay = () => {
     if (document.querySelector(".search-overlay")) {
@@ -637,8 +643,8 @@ loginButton.onclick = async ev => {
             if (result.description) {
                 e("description", item, result.description)
             }
-            item.style.border = `${colHash(result.sourceType)} solid 4px`
-            item.style.background = `${colHash(result.sourceType, 50, 10)}`
+            item.style.border = `hsl(${hues[result.sourceType]}deg, 100%, 70%) solid 4px` 
+            item.style.background = `hsl(${hues[result.sourceType]}deg, 50%, 10%)`
         }
         overlay.appendChild(resultsEl)
     }
