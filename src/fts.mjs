@@ -61,7 +61,7 @@ export const build = () => {
         const [a, b] = bigram.split(BIGRAM_SEPARATOR, 2)
         // bigram provides no useful information if term is unique anyway
         // want ascending order (lower is better)
-        if (totalTermCounts[a] === 1 || !totalTermCounts[b] === 1) { return 0 }
+        if (totalTermCounts[a] === 1 || totalTermCounts[b] === 1) { return 0 }
         return -(count / totalBigrams) / ((totalTermCounts[a] / totalTerms) * (totalTermCounts[b] / totalTerms))
     }
     const pmis = new Map(Object.entries(totalBigramCounts).map(([k, v]) => [k, pmi(k, v)]))
