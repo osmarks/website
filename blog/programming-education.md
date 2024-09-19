@@ -4,8 +4,10 @@ created: 02/07/2023
 description: Why programming education isn't very good, and my thoughts on AI code generation.
 slug: progedu
 ---
-::: epigraph attribution="Randall Munroe" link=https://xkcd.com/2030/
-Don't trust voting software and don't listen to anyone who tells you it's safe. I don't quite know how to put this, but our entire field is bad at what we do, and if you rely on us, everyone will die.
+::: epigraph attribution="Terry Pratchett"
+Education had been easy.
+
+Learning things had been harder.
 :::
 
 It seems to be fairly well-known (or at least widely believed amongst the people I regularly talk to about this) that most people are not very good at writing code, even those who really "should" be because of having (theoretically) been taught to (see e.g. <https://web.archive.org/web/20150624150215/http://blog.codinghorror.com/why-cant-programmers-program/>). Why is this? In this article, I will describe my wild guesses.
