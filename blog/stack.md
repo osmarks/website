@@ -3,6 +3,8 @@ title: Site tech stack
 description: Learn about how osmarks.net works internally! Spoiler warning if you wanted to reverse-engineer it yourself.
 created: 24/02/2022
 updated: 11/05/2023
+series: stack
+series_index: 1
 ---
 ::: epigraph attribution="Rupert Goodwins"
 If you can't stand the heat, get out of the server room.

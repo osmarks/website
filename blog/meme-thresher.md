@@ -3,6 +3,8 @@ title: "MemeThresher: efficient semiautomated meme acquisition with AI"
 description: Absurd technical solutions for problems which did not particularly need solving are one of life's greatest joys.
 slug: memethresher
 created: 22/04/2024
+series: meme_search
+series_index: 1
 ---
 ::: epigraph attribution=AI_WAIFU
 I think what you need to do is spend a day in the data labeling mines.

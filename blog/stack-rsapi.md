@@ -3,6 +3,8 @@ title: "Site tech stack 2: the unfathomed depths"
 description: RSAPI and the rest of my infrastructure.
 created: 27/03/2024
 slug: srsapi
+series: stack
+series_index: 2
 ---
 ::: epigraph attribution=@creatine_cycle link=https://twitter.com/creatine_cycle/status/1661455402033369088
 Transhumanism is attractive until you have seen how software is built.
