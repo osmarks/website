@@ -250,7 +250,7 @@ const processExperiments = async () => {
                     title: page.data.title,
                     description: page.data.description,
                     html: page.content,
-                    timestamp: dayjs(await fsp.stat(indexPath).then(x => x.mtimeMs))
+                    timestamp: dayjs(await fsp.stat(path.join(subdirectory, "index.html")).then(x => x.mtimeMs))
                 })
                 return indexPath
             },
@@ -368,7 +368,7 @@ const fetchMicroblog = async () => {
         writeCache("microblog", posts)
         globalData.microblog = posts
     }
-    
+
     for (const post of globalData.microblog) {
         if (!post.object.content) { continue }
         const desc = fts.stripHTML(post.object.content)
@@ -388,7 +388,6 @@ const fetchMicroblog = async () => {
         content: post.object.content,
         i
     })))
-    
 }
 
 const runOpenring = async () => {
@@ -475,7 +474,7 @@ const copyAsset = subpath => fse.copy(path.join(assetsDir, subpath), path.join(o
 
 const doImages = async () => {
     await Promise.all(["images", "titillium-web.woff2", "titillium-web-semibold.woff2", "miracode.woff2", "misc"].map(subpath => fse.copy(path.join(assetsDir, subpath), path.join(outAssets, subpath))))
-    
+
     await fse.copy(path.join(nodeModules, "katex", "dist", "fonts"), path.join(outAssets, "fonts"))
     await fse.copy(path.join(nodeModules, "katex", "dist", "katex.min.css"), path.join(outAssets, "katex.min.css"))
 
@@ -500,7 +499,7 @@ const doImages = async () => {
                     } else {
                         await fsp.writeFile(destPath, bytes)
                     }
-                    
+
                     return "/assets/images/" + destFilename
                 }
                 const avif = await writeFormat("avif", ".avif", "avifenc", ["-s", "0", "-q", "20"], " 2x")

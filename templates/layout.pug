@@ -24,6 +24,11 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         if description
             meta(name="description", content=description)
+            meta(property="og:description", content=description)
+        meta(property="og:title", content=title)
+        meta(property="og:type", content="website")
+        meta(property="og:url", content=`https://${domain}`)
+        meta(property="og:site_name", content=name)
         link(rel="manifest", href="/assets/manifest.webmanifest")
         link(rel="shortcut icon", href="/assets/images/logo256.png", type="image/png")
         meta(content=`https://${domain}/assets/images/logo256.png`, property="og:image")
@@ -60,7 +65,7 @@ html(lang="en")
                                 span= `Created ${renderDate(created)}`
                                 if wordCount
                                     span= " / "
-                            if wordCount 
+                            if wordCount
                                 span= `${metricPrefix(wordCount, "")} words`
                     if description
                         em.description!= description

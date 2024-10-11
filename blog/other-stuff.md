@@ -93,6 +93,10 @@ I don't know exactly what about [Ender's Game](https://en.wikipedia.org/wiki/End
 
 [The Expanse](https://www.goodreads.com/series/56399-the-expanse) by James S. A. Corey is another (see [Theft of Fire](#theft-of-fire) below for my general thoughts on this, though The Expanse was first and much more widely known, so) modern (mostly) hard science fiction series. It's also a TV series now, though that got truncated by internal meddling.
 
+### As the Godking Wills
+
+[As the Godking Wills](https://www.royalroad.com/fiction/28639/as-the-godking-wills) is a short(ish) somewhat Discworld like political/theological black comedy.
+
 ### Good Omens
 
 [Good Omens](https://en.wikipedia.org/wiki/Good_Omens) by Neil Gaiman and Terry Pratchett is a very funny... religious comedy... in which the apocalypse is averted by vaguely dissatisfied angels.

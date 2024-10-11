@@ -1,0 +1,247 @@
+---
+title: "Demo: Limitless* Grid"
+description: The Limitless Grid screensaver (kind of) implemented in a somewhat laggy pixel shader.
+slug: demogrid
+---
+<!DOCTYPE html>
+<canvas id="d"></canvas>
+<table id="ctrl"></table>
+<p>
+    Originally implemented in ShaderToy; ported to raw WebGL here.
+    I don't actually know computer graphics and today's best omniscient machine oracles are unhelpful for this, so this mostly relies on trial and error and some vector maths I did on paper.
+    Each ray in the viewport is intersected with planes in the xz, yz and xy directions. There are finitely many, since I don't know how or whether you can analytically compute the intersections for an infinite stack of them, so it is not, strictly, a "limitless" grid, though this is also true of the <a href="https://github.com/ghisguth/sunlight/tree/HEAD/limitlessgrid">original</a> and each plane is infinite in extent.
+</p>
+<script>
+const SHADER = `precision mediump float;
+uniform float time;
+uniform vec2 resolution;
+uniform float lscale;
+uniform float lthick;
+uniform float lbright;
+uniform float speed;
+uniform vec3 yz_col;
+uniform vec3 xz_col;
+uniform vec3 xy_col;
+
+float dfn(float x) {
+    float lscaleh = lscale * 0.5;
+    if (abs(x)>lscale*100.0) return 100.0;
+    return abs(mod(x - lscaleh, lscale) - lscaleh) / lscale;
+}
+
+float dfn_nonlin(float x) {
+    //return x;
+    if (x < lthick) return lbright;
+    else return 0.0;
+}
+
+vec3 ray_direction(vec2 uv, vec3 cam, vec3 target, float zoom) {
+    vec3 f = normalize(target - cam);
+    vec3 r = normalize(cross(vec3(0.0, 1.0, 0.0), f));
+    vec3 u = cross(f, r);
+    return normalize(uv.x * r + uv.y * u + zoom * f);
+}
+
+vec3 line_plane_intersect(vec3 l0, vec3 ldir, vec3 p0, vec3 n, out float lam) {
+    lam = dot(p0 - l0, n) / dot(ldir, n);
+    vec3 isect = l0 + ldir * lam;
+    return isect;
+}
+
+void main() {
+    vec2 uv = 2.0 * gl_FragCoord.xy / resolution.xy - vec2(1.0, 1.0);
+
+    vec3 l0 = vec3(0.0); // this cannot actually be moved off zero or some handwaves made somewhere (probably dfn(isect)) break
+    vec3 ldir = ray_direction(uv, l0, vec3(sin(speed * time), cos(speed * time), 0.1), 1.0);
+
+    float n = 1.0;
+    vec3 bri = vec3(0.0);
+
+    for (float n = 0.0; n <= 8.0; n += 1.0) {
+        {
+            // yz plane
+            vec3 p0 = vec3(n, 0.0, 0.0);
+            vec3 norm = vec3(1.0, 0.0, 0.0);
+            float lam;
+            vec3 isect = line_plane_intersect(l0, ldir, p0, norm, lam);
+            bri += yz_col * (dfn_nonlin(dfn(isect.y)) + dfn_nonlin(dfn(isect.z)));
+        }
+        {
+            // xz plane
+            vec3 p0 = vec3(0.0, n, 0.0);
+            vec3 norm = vec3(0.0, 1.0, 0.0);
+            float lam;
+            vec3 isect = line_plane_intersect(l0, ldir, p0, norm, lam);
+            bri += xz_col * (dfn_nonlin(dfn(isect.x)) + dfn_nonlin(dfn(isect.z)));
+        }
+        {
+            // xy plane
+            vec3 p0 = vec3(0.0, 0.0, n);
+            vec3 norm = vec3(0.0, 0.0, 1.0);
+            float lam;
+            vec3 isect = line_plane_intersect(l0, ldir, p0, norm, lam);
+            bri += xy_col * (dfn_nonlin(dfn(isect.x)) + dfn_nonlin(dfn(isect.y)));
+        }
+    }
+
+    // Output to screen
+    gl_FragColor = vec4(bri, 1.0);
+}`
+
+let size = 1000
+let canvas = document.querySelector("canvas")
+canvas.width = canvas.height = size
+canvas.style.width = canvas.style.height = "100%n"
+// the WebGL API is terrible and if I meet whoever designed it I will armbar them
+const gl = canvas.getContext("webgl")
+
+// https://developer.mozilla.org/en-US/docs/Web/API/WebGLShader
+function createShader(sourceCode, type) {
+    // Compiles either a shader of type gl.VERTEX_SHADER or gl.FRAGMENT_SHADER
+    const shader = gl.createShader(type)
+    gl.shaderSource(shader, sourceCode)
+    gl.compileShader(shader)
+
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        const info = gl.getShaderInfoLog(shader)
+        throw `Could not compile WebGL program. \n\n${info}`
+    }
+    return shader
+}
+
+const program = gl.createProgram()
+
+// Attach pre-existing shaders
+gl.attachShader(program, createShader(`precision mediump float;
+attribute vec2 position;
+void main() {
+    gl_Position = vec4(position, 0.0, 1.0);
+}`, gl.VERTEX_SHADER))
+gl.attachShader(program, createShader(SHADER, gl.FRAGMENT_SHADER))
+
+gl.linkProgram(program)
+
+if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+  const info = gl.getProgramInfoLog(program)
+  throw `Could not compile WebGL program. \n\n${info}`
+}
+
+const programInfo = {
+    program,
+    attribLocations: {
+        position: gl.getAttribLocation(program, "position"),
+    },
+    uniformLocations: {
+        time: gl.getUniformLocation(program, "time"),
+        resolution: gl.getUniformLocation(program, "resolution"),
+        lscale: gl.getUniformLocation(program, "lscale"),
+        lthick: gl.getUniformLocation(program, "lthick"),
+        lbright: gl.getUniformLocation(program, "lbright"),
+        speed: gl.getUniformLocation(program, "speed"),
+        xz_col: gl.getUniformLocation(program, "xz_col"),
+        yz_col: gl.getUniformLocation(program, "yz_col"),
+        xy_col: gl.getUniformLocation(program, "xy_col"),
+    },
+};
+
+const errorCheck = () => {
+    const error = gl.getError();
+    if (error !== gl.NO_ERROR) {
+        console.error("WebGL error:", error)
+    }
+}
+
+const positionBuffer = gl.createBuffer()
+const positions = new Float32Array([1.0, 1.0, -1.0, 1.0, 1.0, -1.0, -1.0, -1.0])
+gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer)
+gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW)
+errorCheck()
+
+const inputs = {
+    lscale: ["range", 0.05, 1],
+    lthick: ["range", 0.01, 0.2],
+    lbright: ["range", 0.01, 0.2],
+    speed: ["range", 0.005, 1],
+    xz_col: ["color"],
+    yz_col: ["color"],
+    xy_col: ["color"]
+}
+
+const inputValues = {
+    lscale: 0.2,
+    lthick: 0.06,
+    lbright: 0.02,
+    speed: 0.03,
+    xz_col: "#ff0000",
+    xy_col: "#00ff00",
+    yz_col: "#0000ff"
+}
+
+const ctrl = document.querySelector("#ctrl")
+
+for (const [name, [type, min, max]] of Object.entries(inputs)) {
+    const container = document.createElement("tr")
+    const label = document.createElement("label")
+    label.textContent = name
+    label.setAttribute("for", name)
+    label.style.minWidth = "10em"
+    label.style.display = "inline-block"
+    container.appendChild(label)
+    const input = document.createElement("input")
+    input.type = type
+    if (min && max) {
+        input.min = Math.log(min)
+        input.max = Math.log(max)
+        input.step = (Math.log(max) - Math.log(min)) / 100
+        input.value = Math.log(inputValues[name])
+    } else {
+        input.value = inputValues[name]
+    }
+    input.style.verticalAlign = "middle"
+    input.setAttribute("name", name)
+    input.oninput = () => {
+        if (type === "range") {
+            const v = Math.exp(parseFloat(input.value))
+            if (isNaN(v)) {
+                input.value = Math.log(inputValues[name])
+            } else {
+                inputValues[name] = [v]
+            }
+        }
+        if (type === "color") {
+            const rawColor = parseInt(input.value.slice(1), 16)
+            // R, G, B floats
+            inputValues[name] = [
+                ((rawColor >> 16) & 0xFF) / 0xFF,
+                ((rawColor >> 8) & 0xFF) / 0xFF,
+                (rawColor & 0xFF) / 0xFF
+            ]
+        }
+    }
+    input.oninput()
+    container.appendChild(input)
+    ctrl.appendChild(container)
+}
+
+let start = Date.now() / 1000
+let rec = () => {
+    gl.clearColor(0.0, 0.0, 0.0, 1.0)
+    gl.clear(gl.COLOR_BUFFER_BIT)
+
+    gl.useProgram(programInfo.program)
+    errorCheck()
+    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer)
+    gl.vertexAttribPointer(programInfo.attribLocations.position, 2, gl.FLOAT, false, 0, 0)
+    gl.enableVertexAttribArray(programInfo.attribLocations.position)
+    gl.uniform1f(programInfo.uniformLocations.time, Date.now() / 1000 - start)
+    for (const [name, value] of Object.entries(inputValues)) {
+        gl[`uniform${value.length}f`](programInfo.uniformLocations[name], ...value)
+    }
+    gl.uniform2f(programInfo.uniformLocations.resolution, canvas.width, canvas.height)
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
+    errorCheck()
+
+    requestAnimationFrame(rec)
+}
+rec()
+</script>
