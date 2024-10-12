@@ -114,7 +114,7 @@ let sc3 = 2.2
 let grid = 8
 let canvas = document.querySelector("canvas")
 canvas.width = canvas.height = size
-canvas.style.width = canvas.style.height = size + "px"
+canvas.style.width = "100%"
 let ctx = canvas.getContext("2d")
 let rec = () => {
     let dt = Date.now() / 5000
