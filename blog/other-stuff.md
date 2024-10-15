@@ -139,7 +139,7 @@ Well, I mean, yes idealism, yes the dignity of pure research, yes the pursuit of
 
 ### Message in a Bottle
 
-[Message in a Bottle](https://www.fimfiction.net/story/368986/message-in-a-bottle) has a human von Neumman probe make first contract with... Equesteria. This may sound like a strange choice, but it works very well.
+[Message in a Bottle](https://www.fimfiction.net/story/368986/message-in-a-bottle) has a human von Neumman probe make first contract with... Equestria. This may sound like a strange choice, but it works very well.
 
 ### Mistborn
 
@@ -155,7 +155,7 @@ Well, I mean, yes idealism, yes the dignity of pure research, yes the pursuit of
 
 ### A Practical Guide to Sorcery
 
-[A Practical Guide to Sorcery](https://forums.spacebattles.com/threads/a-practical-guide-to-sorcery-mage-punk-progression-fantasy.866065/#post-68660854) was read on the recommendation of [this comment](/magic/#com2081). It has a smart and competent (they make silly mistakes sometimes but in reasonable ways they notice later) protagonist, flexible but sufficiently-constrained magic system, and a well-realized setting with some mysteries to explore. 
+[A Practical Guide to Sorcery](https://forums.spacebattles.com/threads/a-practical-guide-to-sorcery-mage-punk-progression-fantasy.866065/#post-68660854) was read on the recommendation of [this comment](/magic/#com2081). It has a smart and competent (they make silly mistakes sometimes but in reasonable ways they notice later) protagonist, flexible but sufficiently-constrained magic system, and a well-realized setting with some mysteries to explore.
 
 ### The Quantum Thief
 
@@ -256,13 +256,19 @@ The author, Zachary Mason, also wrote [The Lost Books of the Odyssey](https://ww
 * ["You think that's air you're breathing?"](https://www.reddit.com/r/rational/comments/2r50cf/rtthe_matrix_you_think_thats_air_youre_breathing/) describes how the Matrix is actually wrong.
 * [Hronar the Barbarian](https://www.dropbox.com/scl/fi/juc2c8gku938brmedjm8q/Hronar-Final.odt?rlkey=yf01124ruzar1xza82cougpmk&e=1&dl=0).
 * [Voices of the Gods](https://www.dropbox.com/scl/fi/fq40ef5dpgd5awun1vuu6/Voices-of-the-Gods.doc?rlkey=dxx6adofzrpr4o9vri15qkbby&e=1&dl=0).
-* [A boring test in a room](https://medium.com/@arenavanera/a-boring-test-in-a-room-5e80f775a44)
+* [A boring test in a room](https://medium.com/@arenavanera/a-boring-test-in-a-room-5e80f775a44).
 * [For God-like power, all I need is one bit](https://docs.google.com/document/d/1UiGUYFm3CfO_6Z_dDIZUsU3P4izjY6FAOq6BGLbeIMk/edit#heading=h.b3ly0s8pl1qo).
 * [The Cambist and Lord Iron](https://www.lightspeedmagazine.com/fiction/the-cambist-and-lord-iron-a-fairy-tale-of-economics/).
 * [One Compile Man](https://archiveofourown.org/works/22394524).
 * [Immortem](https://vi-fi.github.io/Immortem.html).
 * [Compressibility](https://vi-fi.github.io/Compressibility.html).
 * [The State Pension](/stuff/the-state-pension.xhtml).
+* [The Long Chase](https://www.lightspeedmagazine.com/fiction/the-long-chase/),
+* [The Things](https://clarkesworldmagazine.com/watts_01_10/).
+* [The Study of Anglophysics](https://slatestarcodex.com/2014/04/03/the-study-of-anglophysics/).
+* [an important lesson in cryptography](https://archiveofourown.org/works/50491414).
+* [Stargate Physics 101](https://archiveofourown.org/works/3673335).
+* [Programmer at Large](https://archiveofourown.org/works/9233966/chapters/21827111) does futuristic and strange software and society worldbuilding.
 * More to be added when I feel like it.
 
 ## Games
@@ -287,6 +293,10 @@ You can also play [Minetest](https://www.minetest.net/), a free and open source 
 
 ## Video
 
+### Dirk Gently('s Holistic Detective Agency)
+
+This is actually two separate series (the [British](https://en.wikipedia.org/wiki/Dirk_Gently_(TV_series)) version and the [American but also British](https://en.wikipedia.org/wiki/Dirk_Gently%27s_Holistic_Detective_Agency_(TV_series)) version) based on Douglas Adams' excellent humour. Both have a detective who uses "the fundamental interconnectedness of all things" - the American version is somewhat flashier and weirder, whereas the British version is in some loose sense more realistic and significantly more cynical.
+
 ### Limitless
 
 [Limitless](https://en.wikipedia.org/wiki/Limitless_(TV_series)) (the movie is also decent) is among the somewhat less bad fictional depictions of superhuman intelligence, but mostly a good comedy. Unfortunately, like many of the series I like, it was killed unreasonably early. Perhaps future AI technology will simply predict the next season.
@@ -303,7 +313,7 @@ It is of about three TV series I've seen on the subject of brain uploads, and I 
 Men have gazed at the stars for millennia, and wondered whether there was a deity up there silently directing their fates. Today, for the first time, they'll be right, and the world will be... an undeniably better place.
 :::
 
-[Person of Interest](https://en.wikipedia.org/wiki/Person_of_Interest_(TV_series)) starts as a mediocre police procedural with the fun conceit that they only get social security numbers and no further details. If you do not feel like sitting through a lot of this for the good parts, you shouldn't watch it. What are the good parts? They actually have some idea of what superintelligence *means*, cool scenes with this sometimes, and unlike in our world (where the machine god will probably be visualized with a few loss curves and ugly CLI output) they have great graphic design.
+[Person of Interest](https://en.wikipedia.org/wiki/Person_of_Interest_(TV_series)) starts as a mediocre police procedural with the fun conceit that they only get social security numbers and no further details. If you do not feel like sitting through a lot of this for the good parts, you shouldn't watch it. What are the good parts? They actually have some idea of what superintelligence *means*, cool scenes with this sometimes, and, unlike AI labs in our world (where the machine god will probably be visualized with a few loss curves and ugly CLI output) they have great graphic design.
 
 ### styropyro
 
