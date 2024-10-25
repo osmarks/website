@@ -269,6 +269,10 @@ The author, Zachary Mason, also wrote [The Lost Books of the Odyssey](https://ww
 * [an important lesson in cryptography](https://archiveofourown.org/works/50491414).
 * [Stargate Physics 101](https://archiveofourown.org/works/3673335).
 * [Programmer at Large](https://archiveofourown.org/works/9233966/chapters/21827111) does futuristic and strange software and society worldbuilding.
+* [Economies of Force](https://apex-magazine.com/short-fiction/economies-of-force/).
+* [The Titanomachy](https://kishoto.wordpress.com/2015/09/09/the-titanomachy-rrational-challenge-defied-prophecy/).
+* [Wizard, Cabalist, Ascendant](/stuff/wizard-cabalist-ascendant.xhtml).
+* [Sekhmet Hunts The Dying: A Computation]9http://www.beneath-ceaseless-skies.com/stories/sekhmet-hunts-the-dying-gnosis-a-computation/.
 * More to be added when I feel like it.
 
 ## Games
