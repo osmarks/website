@@ -26,6 +26,7 @@ const htmlparser2 = require("htmlparser2")
 const cssSelect = require("css-select")
 const domSerializer = require("dom-serializer")
 const domutils = require("domutils")
+const feedExtractor = require("@extractus/feed-extractor")
 
 const fts = require("./fts.mjs")
 
@@ -149,7 +150,7 @@ const renderContainer = (tokens, idx) => {
 
 const readFile = path => fsp.readFile(path, { encoding: "utf8" })
 const anchor = require("markdown-it-anchor")
-const { htmlToText } = require("html-to-text")
+
 const md = new MarkdownIt({ html: true })
     .use(require("markdown-it-container"), "", { render: renderContainer, validate: params => true })
     .use(require("markdown-it-footnote"))
@@ -355,10 +356,14 @@ const writeCache = (k, v, ts=Date.now()) => {
 }
 
 const DESC_CUT_LEN = 256
+
+const cutDesc = desc => desc.length > DESC_CUT_LEN ? `${desc.slice(0, DESC_CUT_LEN)}...` : desc
+
 const fetchMicroblog = async () => {
     const cached = readCache("microblog", 60*60*1000)
     if (cached) {
         globalData.microblog = cached
+        console.log(chalk.yellow("Using cached microblog"))
     } else {
         // We have a server patch which removes the 20-post hardcoded limit.
         // For some exciting reason microblog.pub does not expose pagination in the *API* components.
@@ -375,7 +380,7 @@ const fetchMicroblog = async () => {
             url: post.object.id,
             timestamp: dayjs(post.object.published),
             html: post.object.content,
-            description: desc.length > DESC_CUT_LEN ? desc.slice(0, DESC_CUT_LEN) + "..." : desc,
+            description: cutDesc(desc),
             ignoreDescription: true
         })
     }
@@ -389,16 +394,53 @@ const fetchMicroblog = async () => {
     })))
 }
 
-const runOpenring = async () => {
-    const cached = readCache("openring", 60*60*1000)
-    if (cached) { globalData.openring = cached; return }
-    // wildly unsafe but only runs on input from me anyway
-    const arg = `./openring -n6 ${globalData.feeds.map(x => '-s "' + x + '"').join(" ")} < ./src/openring.html`
-    console.log(chalk.keyword("orange")("Openring:") + " " + arg)
-    const out = await util.promisify(childProcess.exec)(arg)
-    console.log(chalk.keyword("orange")("Openring:") + "\n" + out.stderr.trim())
-    globalData.openring = minifyHTML(out.stdout)
-    writeCache("openring", globalData.openring)
+const fetchFeeds = async () => {
+    const cached = readCache("feeds", 60*60*1000)
+    if (cached) {
+        globalData.openring = cached
+        console.log(chalk.yellow("Using cached feeds"))
+    } else {
+        globalData.openring = {}
+        const getOneFeed = async url => {
+            try {
+                const data = await axios.get(url, { headers: { "User-Agent": "osmarks.net static site compiler" } })
+                return feedExtractor.extractFromXml(data.data)
+            } catch (e) {
+                console.warn(`${chalk.red("Failed to fetch")} ${url}: ${e.message} ${e.errors && e.errors.map(x => x.message).join("\n")}`)
+            }
+        }
+        await Promise.all(Object.entries(globalData.feeds).map(async ([name, url]) => {
+            const feed = await getOneFeed(url)
+            if (feed) {
+                globalData.openring[name] = feed
+            }
+        }))
+        writeCache("feeds", globalData.openring)
+    }
+    
+    const entries = []
+    for (const [name, feed] of Object.entries(globalData.openring)) {
+        for (const entry of feed.entries) {
+            entry.feed = feed
+        }
+        const entry = feed.entries[0]
+        entry.published = Date.parse(entry.published)
+        if (isNaN(entry.published)) {
+            entry.published = Date.parse(feed.published)
+        }
+        entry.title = fts.stripHTML(entry.title)
+        entry.published = dayjs(entry.published)
+        entry.content = cutDesc(fts.stripHTML(entry.description))
+        entries.push(entry)
+        entry.feedName = name
+    }
+    entries.sort((a, b) => b.published - a.published)
+
+    globalData.openring = entries.slice(0, 6).map((post, i) => minifyHTML(globalData.templates.remoteFeedEntry({
+        ...globalData,
+        ...post,
+        i
+    })))
 }
 
 const compileCSS = async () => {
@@ -550,8 +592,8 @@ const tasks = {
     pagedeps: { deps: ["templates", "css"] },
     css: { deps: [], fn: compileCSS },
     writeBuildID: { deps: [], fn: writeBuildID },
-    index: { deps: ["openring", "pagedeps", "blog", "experiments", "images", "fetchMicroblog"], fn: index },
-    openring: { deps: [], fn: runOpenring },
+    index: { deps: ["fetchFeeds", "pagedeps", "blog", "experiments", "images", "fetchMicroblog"], fn: index },
+    fetchFeeds: { deps: ["templates"], fn: fetchFeeds },
     rss: { deps: ["blog"], fn: genRSS },
     blog: { deps: ["pagedeps"], fn: processBlog },
     fetchMicroblog: { deps: ["templates"], fn: fetchMicroblog },

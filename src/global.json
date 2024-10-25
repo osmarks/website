@@ -28,16 +28,25 @@
         "Paperclip rights are human rights.",
         "Humans aren't even AGI."
     ],
-    "feeds": [
-        "https://www.science.org/blogs/pipeline/feed",
-        "https://www.rtl-sdr.com/feed/",
-        "https://astralcodexten.substack.com/feed",
-        "https://www.rifters.com/crawl/?feed=rss2",
-        "https://drewdevault.com/blog/index.xml",
-        "https://qntm.org/rss.php",
-        "https://aphyr.com/posts.atom",
-        "https://os.phil-opp.com/rss.xml"
-    ],
+    "feeds": {
+        "In the Pipeline": "https://www.science.org/blogs/pipeline/feed",
+        "rtl-sdr.com": "https://www.rtl-sdr.com/feed/",
+        "Astral Codex Ten": "https://astralcodexten.substack.com/feed",
+        "Peter Watts": "https://www.rifters.com/crawl/?feed=rss2",
+        "Drew DeVault": "https://drewdevault.com/blog/index.xml",
+        "Things Of Interest":"https://qntm.org/rss.php",
+        "Chips and Cheese": "https://chipsandcheese.com/feed",
+        "BOFH": "https://www.theregister.com/offbeat/bofh/headlines.atom",
+        "Don't Worry About the Vase": "https://thezvi.substack.com/feed",
+        "KGOnTech": "https://kguttag.com/feed/",
+        "Overcoming Bias": "https://www.overcomingbias.com/feed",
+        "Construction Physics": "https://www.construction-physics.com/feed",
+        "Factorio": "https://www.factorio.com/blog/rss",
+        "The Eldraeverse": "https://eldraeverse.com/feed/",
+        "STH Newsletter Archive Feed": "https://us13.campaign-archive.com/feed?u=45c4ca50425f376ea593dcd22&id=c344a80940",
+        "Graphcore Research": "https://graphcore-research.github.io/feed.xml",
+        "ToughSF": "https://toughsf.blogspot.com/rss.xml"
+    },
     "dateFormat": "YYYY-MM-DD",
     "microblogSource": "https://b.osmarks.net/outbox",
     "buttons": [

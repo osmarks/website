@@ -1,0 +1,7 @@
+div.autocol(style=hashBG("remoteFeedEntry", i, 30))
+    div
+        a.title(href=link)= title
+    div.deemph
+        span=`${renderDate(published)} / `
+        a(href=feed.link)= feed.title
+    div!= description

@@ -40,7 +40,12 @@ block content
         p View some of my projects at 
             a(href=`https://git.${domain}/`) my git hosting.
 
-        .ring!= openring
+
+        h2.section-header Other Blogs
+        div.ring
+            each entry in openring
+                != entry
+        
         iframe(src="https://george.gh0.pw/embed.cgi?gollark", style="border:none;width:100%;height:50px", title="Acquiesce to GEORGE.")
 
 block under-title
