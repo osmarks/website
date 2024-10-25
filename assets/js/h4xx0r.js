@@ -20,7 +20,7 @@ jargonWords = {
        "IPv4", "IPv6", "ARP", "DES", "IEEE", "NoSQL", "UTF-16", "ADSL", "ABI", "TX", "HEVC", "AVC",
        "AV1", "ASLR", "ECC", "HBA", "HAL", "SMT", "RPC", "JIT", "LCD", "LED", "MIME", "MIMO", "LZW",
        "LGA", "OFDM", "ORM", "PCRE", "POP3", "SMTP", "802.3", "PSU", "RGB", "VLIW", "VPS", "VPN",
-       "XMPP", "IRC", "GNSS"], 
+       "XMPP", "IRC", "GNSS", "HBM", "ROM", "RFC", "HPC", "DMA"], 
    adjectives:
       ["auxiliary", "primary", "back-end", "digital", "open-source", "virtual", "cross-platform",
        "redundant", "online", "haptic", "multi-byte", "Bluetooth", "wireless", "1080p", "neural",
@@ -33,7 +33,7 @@ jargonWords = {
        "high-level", "low-level", "distributed", "accelerated", "base64", "purely functional",
        "serial", "parallel", "compute", "graphene", "recursive", "denormalized", "orbital",
        "networked", "autonomous", "applicative", "acausal", "hardened", "category-theoretic",
-       "ultrasonic"
+       "ultrasonic", "high-level", "amortized", "tertiary", "256-bit"
     ], 
    nouns:
       ["driver", "protocol", "bandwidth", "panel", "microchip", "program", "port", "card", 
@@ -50,7 +50,8 @@ jargonWords = {
        "regex", "socket", "platform", "IP", "compiler", "interpreter", "nanochip", "certificate",
        "API", "bitrate", "acknowledgement", "layout", "satellite", "shell", "MAC", "PHY", "VLAN",
        "SoC", "assembler", "interrupt", "directory", "display", "functor", "bits", "logic",
-       "sequence", "procedure", "subnet", "invariant", "monad", "endofunctor", "borrow checker"], 
+       "sequence", "procedure", "subnet", "invariant", "monad", "endofunctor", "borrow checker",
+       "kernel", "memory", "bootloader", "bytestring", "buffer", "allocator"], 
    participles:
       ["backing up", "bypassing", "hacking", "overriding", "compressing", "copying", "navigating", 
        "indexing", "connecting", "generating", "quantifying", "calculating", "synthesizing", 
@@ -62,7 +63,8 @@ jargonWords = {
        "scanning", "interpreting", "routing", "rerouting", "tunnelling", "randomizing",
        "underwriting", "accessing", "locating", "rotating", "invoking", "utilizing",
        "normalizing", "hijacking", "integrating", "type-checking", "uploading", "downloading",
-       "allocating", "receiving", "decoding"
+       "allocating", "receiving", "decoding", "converting", "wiping", "erasing", "flashing",
+       "managing", "updating", "terminating", "detaching", "rewiring"
 ]};
 
 // Generates a random piece of jargon
@@ -413,6 +415,7 @@ var adjustCanvas = function(){
 
         settings.outputConsole.style.height = (window.innerHeight / 3) * 2 + 'px';
         settings.outputConsole.style.top = window.innerHeight / 3 + 'px';
+        settings.outputConsole.style.textAlign = "left"
 
         settings.focal = settings.canvas.width / 2;
         settings.vpx = settings.canvas.width / 2;
