@@ -3,9 +3,11 @@ import * as htmlToText from "html-to-text"
 import * as binaryFuseFilter from "binary-fuse-filter"
 import { xxHash32 as hash } from "js-xxhash"
 import * as msgpack from "msgpackr"
+import * as fs from "fs"
 import { BIGRAM_SEPARATOR, FREQUENCY_SEPARATOR, FREQUENCY_THRESHOLDS, tokenize } from "./fts_common.mjs"
 
 const index = []
+const recordStrings = []
 
 const BIGRAM_INCLUSION = 0.3
 const URL = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g
@@ -22,6 +24,7 @@ export const pushEntry = (sourceType, entry) => {
     const { html, url, timestamp, title, description, ignoreDescription } = entry
     // TODO: this puts URLs inline, maybe do something with that
     const text = (title ?? "") + " " + (!ignoreDescription ? (description && stripHTML(description)) ?? "" : "") + " " + stripHTML(html)
+    recordStrings.push(text)
     const words = tokenize(text)
     const counts = {}
     for (const word of words) {
@@ -43,6 +46,8 @@ export const pushEntry = (sourceType, entry) => {
 }
 
 export const build = () => {
+    fs.writeFileSync("strings.json", JSON.stringify(recordStrings))
+
     let totalTerms = 0
     let totalBigrams = 0
     const totalBigramCounts = {}

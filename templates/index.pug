@@ -7,7 +7,7 @@ block content
             Read my opinions via the internet.
         div.blog
             each post, i in posts
-                .autocol.imbox(style=hashBG("blog", i))
+                .autocol.imbox(style=hashBG("blog", i, 180))
                     if images.hasOwnProperty(post.slug)
                         +image(images[post.slug])
                     div
@@ -28,7 +28,7 @@ block content
             Various web projects I have put together over many years. Made with at least four different JS frameworks. Some of them are bad.
         div.experiments
             each experiment, i in experiments
-                .autocol.imbox(style=hashBG("experiments", i))
+                .autocol.imbox(style=hashBG("experiments", i, 120))
                     if images.hasOwnProperty(experiment.slug)
                         +image(images[experiment.slug])
                     div

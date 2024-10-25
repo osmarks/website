@@ -73,11 +73,10 @@ function hslToRgb(h, s, l) {
 
     return `#${hexPad(r * 255)}${hexPad(g * 255)}${hexPad(b * 255)}`
 }
-const hashBG = (cls, i) => {
+const hashBG = (cls, i, hue) => {
     const buf = crypto.createHash("md5").update(cls).digest()
-    const base = (buf[0] + 256 * buf[1]) % 360
-    const hue = (base + i * 37) % 360
-    return `background: ${hslToRgb(hue / 360, 1, 0.9)}; background: hsl(${hue}deg, var(--autocol-saturation), var(--autocol-lightness))`
+    const base = buf[0] + 256 * buf[1]
+    return `background: ${hslToRgb(hue / 360, 0.85, 0.65)}; background: hsl(${hue}deg, var(--autocol-saturation), var(--autocol-lightness)); border: 4px solid black; border-color: hsl(${hue}deg, 80%, var(--autocol-border))`
 }
 globalData.hashBG = hashBG
 
@@ -470,10 +469,8 @@ const compileServiceWorkerJSTask = async () => {
     })
 }
 
-const copyAsset = subpath => fse.copy(path.join(assetsDir, subpath), path.join(outAssets, subpath))
-
 const doImages = async () => {
-    await Promise.all(["images", "titillium-web.woff2", "titillium-web-semibold.woff2", "miracode.woff2", "misc"].map(subpath => fse.copy(path.join(assetsDir, subpath), path.join(outAssets, subpath))))
+    await Promise.all(["images", "titillium-web.woff2", "titillium-web-semibold.woff2", "iosevka.woff2", "misc"].map(subpath => fse.copy(path.join(assetsDir, subpath), path.join(outAssets, subpath))))
 
     await fse.copy(path.join(nodeModules, "katex", "dist", "fonts"), path.join(outAssets, "fonts"))
     await fse.copy(path.join(nodeModules, "katex", "dist", "katex.min.css"), path.join(outAssets, "katex.min.css"))

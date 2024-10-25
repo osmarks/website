@@ -1,4 +1,4 @@
-div.autocol(style=hashBG("microblog", i))
+div.autocol(style=hashBG("microblog", i, 300))
     div
-        a(href=permalink)= renderDate(date)
+        a.title(href=permalink)= renderDate(date)
     div!= content
