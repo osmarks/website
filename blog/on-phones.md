@@ -1,5 +1,5 @@
 ---
-title: On Phones
+title: On phones
 description: My (probably unpopular in general but... actually likely fairly popular amongst this site's intended audience) opinions on smartphones today.
 slug: phones
 created: 01/06/2018

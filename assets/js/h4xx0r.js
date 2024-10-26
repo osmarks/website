@@ -20,7 +20,7 @@ jargonWords = {
        "IPv4", "IPv6", "ARP", "DES", "IEEE", "NoSQL", "UTF-16", "ADSL", "ABI", "TX", "HEVC", "AVC",
        "AV1", "ASLR", "ECC", "HBA", "HAL", "SMT", "RPC", "JIT", "LCD", "LED", "MIME", "MIMO", "LZW",
        "LGA", "OFDM", "ORM", "PCRE", "POP3", "SMTP", "802.3", "PSU", "RGB", "VLIW", "VPS", "VPN",
-       "XMPP", "IRC", "GNSS", "HBM", "ROM", "RFC", "HPC", "DMA"], 
+       "XMPP", "IRC", "GNSS", "HBM", "ROM", "RFC", "HPC", "DMA", "SDN"], 
    adjectives:
       ["auxiliary", "primary", "back-end", "digital", "open-source", "virtual", "cross-platform",
        "redundant", "online", "haptic", "multi-byte", "Bluetooth", "wireless", "1080p", "neural",
@@ -33,7 +33,8 @@ jargonWords = {
        "high-level", "low-level", "distributed", "accelerated", "base64", "purely functional",
        "serial", "parallel", "compute", "graphene", "recursive", "denormalized", "orbital",
        "networked", "autonomous", "applicative", "acausal", "hardened", "category-theoretic",
-       "ultrasonic", "high-level", "amortized", "tertiary", "256-bit"
+       "ultrasonic", "high-level", "amortized", "tertiary", "256-bit", "generative", "k8s", "core",
+       "central"
     ], 
    nouns:
       ["driver", "protocol", "bandwidth", "panel", "microchip", "program", "port", "card", 
@@ -51,7 +52,8 @@ jargonWords = {
        "API", "bitrate", "acknowledgement", "layout", "satellite", "shell", "MAC", "PHY", "VLAN",
        "SoC", "assembler", "interrupt", "directory", "display", "functor", "bits", "logic",
        "sequence", "procedure", "subnet", "invariant", "monad", "endofunctor", "borrow checker",
-       "kernel", "memory", "bootloader", "bytestring", "buffer", "allocator"], 
+       "kernel", "memory", "bootloader", "bytestring", "buffer", "allocator", "switch",
+       "router", "console", "microcontroller", "controller"], 
    participles:
       ["backing up", "bypassing", "hacking", "overriding", "compressing", "copying", "navigating", 
        "indexing", "connecting", "generating", "quantifying", "calculating", "synthesizing", 
@@ -64,7 +66,8 @@ jargonWords = {
        "underwriting", "accessing", "locating", "rotating", "invoking", "utilizing",
        "normalizing", "hijacking", "integrating", "type-checking", "uploading", "downloading",
        "allocating", "receiving", "decoding", "converting", "wiping", "erasing", "flashing",
-       "managing", "updating", "terminating", "detaching", "rewiring"
+       "managing", "updating", "terminating", "detaching", "rewiring", "hashing", "inserting",
+       "loading", "emulating", "simulating", "mapping", "enabling", "disabling"
 ]};
 
 // Generates a random piece of jargon
@@ -234,7 +237,9 @@ function GuiHacker(){
         "Opening Wireshark.",
         "Breaking fifth wall....",
         "Flipping arrows and applying yoneda lemma",
-        "Rewriting in Rust"
+        "Rewriting in Rust",
+        "Entering Mainframe",
+        "Full Scan Required."
     ];
     this.isProcessing = false;
     this.processTime = 0;

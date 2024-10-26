@@ -1,5 +1,5 @@
 ---
-title: "'Problem Solving' Tasks and Computer Science"
+title: "'Problem solving' tasks and computer science"
 description: Is solving Sudoku and similar puzzles by hand really useful in building computer science ability? We don't think so.
 slug: csproblem
 created: 20/05/2020

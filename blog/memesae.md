@@ -1,5 +1,5 @@
 ---
-title: Sparse Autoencoders for Meme Retrieval
+title: Sparse autoencoders for meme retrieval
 description: As ever, AI safety becomes AI capabilities.
 created: 06/10/2024
 series: meme_search

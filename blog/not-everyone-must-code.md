@@ -1,5 +1,5 @@
 ---
-title: Not Everyone Must "Code"
+title: Not everyone must "code"
 description: Why I think that government programs telling everyone to "code" are pointless.
 slug: nemc
 updated: 09/02/2020

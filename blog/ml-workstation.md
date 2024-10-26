@@ -1,5 +1,5 @@
 ---
-title: So You Want A Cheap ML Workstation
+title: So you want a cheap ML workstation
 description: How to run local AI slightly more cheaply than with a prebuilt system. Somewhat opinionated.
 created: 25/02/2024
 updated: 14/04/2024

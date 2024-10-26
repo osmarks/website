@@ -483,7 +483,7 @@ if (sidenotes && footnotes) {
 
                         // WANT: distbound_i >= placement_i - target_i AND distbound_i <= target_i - placement_i
                         // distbound_i >= gapsum_i + heightsum_i - target_i
-                        
+
                         // distbound_i_offset = distbound_i - gapsum_i
                         // so distbound_i_offset >= heightsum_i - target_i
                         // implies distbound_i - gapsum_i >= heightsum_i - target_i
@@ -557,6 +557,7 @@ if (sidenotes && footnotes) {
 
 let previousHighlight
 const fixDetailsSummary = () => {
+    if (!window.location.hash.slice(1)) return
     const el = document.getElementById(window.location.hash.slice(1))
     var parent = el
     if (!el) return
@@ -643,7 +644,7 @@ loginButton.onclick = async ev => {
             if (result.description) {
                 e("description", item, result.description)
             }
-            item.style.border = `hsl(${hues[result.sourceType]}deg, 100%, 70%) solid 4px` 
+            item.style.border = `hsl(${hues[result.sourceType]}deg, 100%, 70%) solid 4px`
             item.style.background = `hsl(${hues[result.sourceType]}deg, 50%, 10%)`
         }
         overlay.appendChild(resultsEl)
