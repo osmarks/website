@@ -8,7 +8,7 @@ mixin image(src)
         picture
             each pair in src
                 if pair[0] == "_fallback"
-                    img(src=pair[1])
+                    img(src=pair[1], loading="lazy")
                 else
                     source(srcset=pair[1], type=pair[0])
 

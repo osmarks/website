@@ -402,6 +402,15 @@ window.points = (async () => {
     }
 })()
 
+// we don't consider things that might be in a <summary> but it is not relevant here
+const inCollapsedDetails = el => {
+    while (el) {
+        if (el.nodeName === "DETAILS" && el.open === false) return true
+        el = el.parentElement
+    }
+    return false
+}
+
 const footnotes = document.querySelector(".footnotes")
 const sidenotes = document.querySelector(".sidenotes")
 if (sidenotes && footnotes) {
@@ -427,7 +436,7 @@ if (sidenotes && footnotes) {
             const exclusions = [[-Infinity, Math.max(articleRect.top, snRect.top)]]
             for (const codeblock of codeblocks) {
                 const codeblockRect = codeblock.getBoundingClientRect()
-                if (codeblockRect.width !== 0) { // collapsed
+                if (codeblockRect.width !== 0 && !inCollapsedDetails(codeblock)) { // collapsed
                     exclusions.push([codeblockRect.top - BORDER, codeblockRect.top + codeblockRect.height + BORDER])
                 }
             }

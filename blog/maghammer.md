@@ -1,5 +1,5 @@
 ---
-title: "Maghammer: My personal data warehouse"
+title: "Maghammer: my personal data warehouse"
 created: 28/08/2023
 updated: 14/05/2024
 description: Powerful search tools as externalized cognition, and how mine work.
