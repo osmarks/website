@@ -118,7 +118,7 @@ const renderContainer = (tokens, idx) => {
     if (opening) {
         if (blockType === "captioned") {
             const link = `<a href="${md.utils.escapeHtml(options.src)}">`
-            return `<div class="${options.wide ? "caption wider" : "caption"}">${options.link ? link : ""}<img src="${md.utils.escapeHtml(options.src)}">${options.link ? "</a>" : ""}`
+            return `${options.wide ? "<div class=wider>" : ""}<div class=caption>${options.link ? link : ""}<img src="${md.utils.escapeHtml(options.src)}">${options.link ? "</a>" : ""}`
         } else if (blockType === "epigraph") {
             return `<div class="epigraph"><div>`
         } else if (blockType === "buttons") {
@@ -130,7 +130,7 @@ const renderContainer = (tokens, idx) => {
         }
     } else {
         if (blockType === "captioned") {
-            return `</div>`
+            return options.wide ? `</div></div>` : `</div>`
         } else if (blockType === "epigraph") {
             let ret = `</div></div>`
             if (options.attribution) {
@@ -417,7 +417,7 @@ const fetchFeeds = async () => {
         }))
         writeCache("feeds", globalData.openring)
     }
-    
+
     const entries = []
     for (const [name, feed] of Object.entries(globalData.openring)) {
         for (const entry of feed.entries) {

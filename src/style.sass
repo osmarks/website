@@ -84,7 +84,7 @@ nav
 
     a, img, picture
         margin-right: 0.5em
-        
+
     @for $i from 1 through 6
         a:nth-child(#{$i + 1})
             color: hsl(120 + ($i * 30), 100%, 80%)
@@ -122,7 +122,7 @@ main
     display: flex
     flex-wrap: wrap
     text-align: left
-    
+
     > div
         min-width: 20em
         background: #eee
@@ -182,6 +182,9 @@ button, select, input, textarea, .textarea
     padding: 1em
     margin-bottom: 0.5em
     margin-top: 0.5em
+    box-sizing: border-box
+    > a
+        display: block
     img, picture
         width: 100%
     p
@@ -193,11 +196,10 @@ blockquote
     margin-left: 0.2rem
 
 .wider
-    width: calc(100vw - 2 * $content-margin)
-    max-width: 80em
-    min-width: 40em
     > *
-        min-width: 40em
+        width: calc(100vw - 2 * $content-margin)
+        max-width: 80em
+        min-width: calc(40rem - 2 * $content-margin)
     position: relative
     z-index: 1
 
@@ -258,6 +260,11 @@ blockquote
     main.fullwidth
         margin-left: $content-margin
         margin-right: $content-margin
+    .wider
+        > *
+            width: calc(100vw - 2 * $content-margin - $navbar-width)
+            max-width: 80em
+            min-width: calc(40rem - 2 * $content-margin - $navbar-width)
 
 $hl-border: 3px
 .footnote-item.hl1, .footnote-item.hl2
@@ -298,6 +305,10 @@ $hl-border: 3px
     blockquote
         border-left: 0.4rem solid white
 
+    button, select, input, textarea, .textarea
+        background: #333
+        color: white
+
 .sidenotes img, .footnotes img
     width: 100%
     max-width: 15em
@@ -328,7 +339,7 @@ table
     padding-top: 1rem
     padding-bottom: 1rem
 
-    > div    
+    > div
         font-style: italic
 
     .attribution
