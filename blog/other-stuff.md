@@ -273,6 +273,7 @@ The author, Zachary Mason, also wrote [The Lost Books of the Odyssey](https://ww
 * [The Titanomachy](https://kishoto.wordpress.com/2015/09/09/the-titanomachy-rrational-challenge-defied-prophecy/).
 * [Wizard, Cabalist, Ascendant](/stuff/wizard-cabalist-ascendant.xhtml).
 * [Sekhmet Hunts The Dying: A Computation]9http://www.beneath-ceaseless-skies.com/stories/sekhmet-hunts-the-dying-gnosis-a-computation/.
+* [The Finale of the Ultimate Meta Mega Crossover](https://m.fanfiction.net/s/5389450/1/).
 * More to be added when I feel like it.
 
 ## Games

@@ -8,7 +8,7 @@
     "@msgpack/msgpack": "^3.0.0-beta2",
     "@vscode/markdown-it-katex": "^1.1.0",
     "axios": "^1.5.0",
-    "better-sqlite3": "^11.0.0",
+    "better-sqlite3": "^11.5.0",
     "binary-fuse-filter": "^1.0.0",
     "chalk": "^4.1.0",
     "css-select": "^5.1.0",

@@ -100,5 +100,6 @@ export const build = () => {
     }
     console.log(`Total terms: ${totalTerms}`)
     console.log(`Total bigrams: ${totalBigrams}`)
-    return msgpack.pack(records)
+    const packr = new msgpack.Packr()
+    return packr.pack(records)
 }
