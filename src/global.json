@@ -43,9 +43,15 @@
         "Construction Physics": "https://www.construction-physics.com/feed",
         "Factorio": "https://www.factorio.com/blog/rss",
         "The Eldraeverse": "https://eldraeverse.com/feed/",
-        "STH Newsletter Archive Feed": "https://us13.campaign-archive.com/feed?u=45c4ca50425f376ea593dcd22&id=c344a80940",
+        "ServeTheHome": "https://www.servethehome.com/feed/",
         "Graphcore Research": "https://graphcore-research.github.io/feed.xml",
-        "ToughSF": "https://toughsf.blogspot.com/rss.xml"
+        "ToughSF": "https://toughsf.blogspot.com/rss.xml",
+        "Fernando Borretti": "https://borretti.me/feed.xml",
+        "Cameron Harwick": "https://cameronharwick.com/feed/",
+        "Money Stuff": "https://www.bloomberg.com/opinion/authors/ARbTQlRLRjE/matthew-s-levine.rss",
+        "The Worlds of John Bierce": "https://johnbierce.com/blog/feed/",
+        "Dominic Cummings": "https://dominiccummings.substack.com/feed"
+
     },
     "dateFormat": "YYYY-MM-DD",
     "microblogSource": "https://b.osmarks.net/outbox",

@@ -85,10 +85,6 @@ nav
     a, img, picture
         margin-right: 0.5em
 
-    @for $i from 1 through 6
-        a:nth-child(#{$i + 1})
-            color: hsl(120 + ($i * 30), 100%, 80%)
-
 h1, h2, h3, h4, h5, h6
     margin: 0
     font-weight: 600
@@ -235,6 +231,9 @@ blockquote
         display: block
     .sidenotes-container
         display: block
+    table
+        display: block
+        overflow-x: scroll
 
 @media (min-width: calc(4 * $content-margin + $content-width + $sidenotes-width + $navbar-width))
     // fullwidth 3-pane layout

@@ -1,5 +1,5 @@
-mixin nav-item(url, name)
-    a(href=url)= name + " "
+mixin nav-item(url, name, color)
+    a(href=url, style=`color: ${color}`)= name + " "
 
 mixin image(src)
     if typeof src === "string"
@@ -40,12 +40,12 @@ html(lang="en")
                 a.logocont(href="/")
                     img.logo(src="/assets/images/logo256.png", alt="osmarks.net logo")
                     .logotext osmarks
-                +nav-item(`/me/`, "About Me")
-                +nav-item(`https://mse.${domain}/`, "Meme Search")
-                +nav-item(`https://docs.${domain}/random`, "Documentation")
-                +nav-item(`https://b.${domain}`, "Microblog")
-                +nav-item(`https://status.${domain}`, "Status")
-                +nav-item(`https://r.${domain}/login`, "Login")
+                +nav-item(`/me/`, "About Me", "#5AF2F2")
+                +nav-item(`https://b.${domain}`, "Microblog", "#F25AF2")
+                +nav-item(`https://mse.${domain}/`, "Meme Search", "#5AF25A")
+                +nav-item(`https://docs.${domain}/random`, "Documentation", "#F2A65A")
+                +nav-item(`https://status.${domain}`, "Status", "#EEDC5B")
+                +nav-item(`https://r.${domain}/login`, "Login", "#12E193")
                 block nav-items
         .sidenotes-container
             main(class=!haveSidenotes ? "fullwidth" : "")

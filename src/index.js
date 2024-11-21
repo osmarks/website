@@ -385,7 +385,7 @@ const fetchMicroblog = async () => {
         })
     }
 
-    globalData.microblog = globalData.microblog.slice(0, 6).map((post, i) => minifyHTML(globalData.templates.activitypub({
+    globalData.microblog = globalData.microblog.slice(0, 8).map((post, i) => minifyHTML(globalData.templates.activitypub({
         ...globalData,
         permalink: post.object.id,
         date: dayjs(post.object.published),
@@ -418,10 +418,16 @@ const fetchFeeds = async () => {
         writeCache("feeds", globalData.openring)
     }
 
+    const otherBlogURLs = []
+    for (const [name, feed] of Object.entries(globalData.openring)) {
+        otherBlogURLs.push([name, feed.link])
+    }
+    globalData.otherBlogURLs = R.fromPairs(R.sortBy(x => x[0].toLowerCase(), otherBlogURLs))
     const entries = []
     for (const [name, feed] of Object.entries(globalData.openring)) {
         for (const entry of feed.entries) {
             entry.feed = feed
+            entry.feedName = name
         }
         const entry = feed.entries[0]
         entry.published = Date.parse(entry.published)
@@ -436,7 +442,7 @@ const fetchFeeds = async () => {
     }
     entries.sort((a, b) => b.published - a.published)
 
-    globalData.openring = entries.slice(0, 6).map((post, i) => minifyHTML(globalData.templates.remoteFeedEntry({
+    globalData.openring = entries.slice(0, 8).map((post, i) => minifyHTML(globalData.templates.remoteFeedEntry({
         ...globalData,
         ...post,
         i
