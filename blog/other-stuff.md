@@ -71,7 +71,7 @@ But if this is so, why did the gods make us at all? And if we were meant only to
 The gods are cruel not because they make us work. They are cruel because they allow us to hope.
 :::
 
-[The Divine Cities](https://www.goodreads.com/series/159695-the-divine-cities) - I like any[^1] fiction about killing God, and this has great characterization and a creatively exotic setting too. I haven't actually finished City of Miracles (the third book) yet, though.
+[The Divine Cities](https://www.goodreads.com/series/159695-the-divine-cities) - I like any[^1] fiction about killing God, and this has great characterization and a creatively exotic setting too. The ending of the last book did sort of annoy me, though.
 
 ### Doing God's Work
 
@@ -103,7 +103,7 @@ I don't know exactly what about [Ender's Game](https://en.wikipedia.org/wiki/End
 
 ### The Machineries of Empire
 
-[The Machineries of Empire](https://www.goodreads.com/series/160439-the-machineries-of-empire) has a unique setting, although I do feel like it has some issues with pacing, the vaguely mathematical nature of setting annoys me because the few pieces of specific maths are wrong[^2] (and, related to this, the setting is also not really congruent: there's not enough information there to model what might happen next yourself, or why anything might happen), and the fact that somehow nobody in several hundred years has thought of a particular externally-obvious thing until the protagonist did.
+[The Machineries of Empire](https://www.goodreads.com/series/160439-the-machineries-of-empire) has a unique setting, although I do feel like it has some issues with pacing, the vaguely mathematical nature of the setting annoys me because the few pieces of specific maths are wrong[^2] (and, related to this, the setting is also not really congruent: there's not enough information there to model what might happen next yourself, or why anything might happen), and it bothers me that somehow nobody in several hundred years has thought of a particular externally-obvious thing until the protagonist did.
 
 ### Mage Errant
 
@@ -114,6 +114,10 @@ Dragons keep their money in banks like everyone else. Hoards don’t accrue inte
 [Mage Errant](https://www.goodreads.com/series/252085-mage-errant) is a moderately-long-by-now fantasy series with a very vibrant world, and which actually considers the geopolitical implications of there being beings around ("Great Powers") able to act as one-man armies and the consequences of its setting in general. Now complete ~~(I haven't read the last two books though)~~ though I do not like the last book as much in some ways (unnecessarily large amounts of time spent on fight scenes, primarily).
 
 ### Firefall
+
+::: epigraph attribution=Sarasti
+Not talking about case studies. Brains are survival engines, not truth detectors. If self-deception promotes fitness, the brain lies. Stops noticing- irrelevant things. Truth never matters. Only fitness. By now you don't experience the world as it exists at all. You experience a simulation built from assumptions. Shortcuts. Lies. Whole species is agnosiac by default. Rorschach does nothing to you that you don't already do to yourselves.
+:::
 
 [Firefall](https://www.goodreads.com/book/show/22838183-firefall) (technically Blindsight and Echopraxia in an omnibus edition) is one of those rare books which is actually decent at portraying very alien intelligences. I preferred Blindsight to Echopraxia but both are worth reading. Some people seem to have thought that it is "cosmic horror" (particularly Blindsight) and/or had their psyche shattered by the implications of what they read within, but this didn't happen to me for whatever reason. It is certainly bleak. Also, Peter Watts somehow makes vampires work well scientifically.
 
@@ -268,12 +272,13 @@ The author, Zachary Mason, also wrote [The Lost Books of the Odyssey](https://ww
 * [The Study of Anglophysics](https://slatestarcodex.com/2014/04/03/the-study-of-anglophysics/).
 * [an important lesson in cryptography](https://archiveofourown.org/works/50491414).
 * [Stargate Physics 101](https://archiveofourown.org/works/3673335).
-* [Programmer at Large](https://archiveofourown.org/works/9233966/chapters/21827111) does futuristic and strange software and society worldbuilding.
+* [Programmer at Large](https://archiveofourown.org/works/9233966/chapters/20941043) does futuristic and strange software and society worldbuilding.
 * [Economies of Force](https://apex-magazine.com/short-fiction/economies-of-force/).
 * [The Titanomachy](https://kishoto.wordpress.com/2015/09/09/the-titanomachy-rrational-challenge-defied-prophecy/).
 * [Wizard, Cabalist, Ascendant](/stuff/wizard-cabalist-ascendant.xhtml).
-* [Sekhmet Hunts The Dying: A Computation]9http://www.beneath-ceaseless-skies.com/stories/sekhmet-hunts-the-dying-gnosis-a-computation/.
+* [Sekhmet Hunts The Dying Gnosis: A Computation](http://www.beneath-ceaseless-skies.com/stories/sekhmet-hunts-the-dying-gnosis-a-computation/).
 * [The Finale of the Ultimate Meta Mega Crossover](https://m.fanfiction.net/s/5389450/1/).
+* [Shannon's Law](https://web.archive.org/web/20140628065855/http://www.tor.com/stories/2011/05/shannons-law).
 * More to be added when I feel like it.
 
 ## Games

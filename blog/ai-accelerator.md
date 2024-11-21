@@ -65,7 +65,7 @@ As a brief sanity check, we can check against the values for the Nvidia A100[^10
 
 ## Classes of accelerator
 
-I am in some sense trivializing years of hard work by thousands of hardware engineers by doing this coarse categorization, but I think there are primary three classes of AI accelerator being built.
+I am in some sense trivializing years of hard work by thousands of hardware engineers by doing this coarse categorization, but I think there are three primary classes of AI accelerator being built.
 
 ### GPU-likes
 
@@ -83,7 +83,7 @@ A danger of these architectures is that they're easy to overfit to specific mode
 
 ### SRAM machines
 
-DRAM is costly, slow and power-hungry, so why don't we get rid of it? Many startups have tried this or similar things, by making big die with many small cores with attached SRAM and arithmetic units. This eliminates the power cost and bottlenecks of DRAM, meaning code can run much faster... as long as its data fits into the <1GB of SRAM available on each accelerator. In the past, this would often have been sufficient; now, scaling has eaten the world, and LLMs run into the terabytes at the highest end and ~10GB at the lower.
+DRAM is costly, slow and power-hungry, so why don't we get rid of it? Many startups have tried this or similar things, by making big die with many small cores with attached SRAM and arithmetic units. This eliminates the power cost and bottlenecks of DRAM[^13], meaning code can run much faster... as long as its data fits into the <1GB of SRAM available on each accelerator. In the past, this would often have been sufficient; now, scaling has eaten the world, and LLMs run into the terabytes at the highest end and ~10GB at the lower.
 
 A good example of this is Graphcore "IPUs" (intelligence processing units). They're very good at convolutions[^12] but achieve low utilization on large matrix multiplications, though the high memory bandwidth makes them better at small batches than a GPU would be. It's not clear to me exactly what their design intention was, since their architecture's main advantage is fine-grained local control, which standard neural nets did not need at the time and require even less now. It may be intended for "graph neural networks", which are used in some fields where inputs have more structure than text, or sparse training, where speed benefits are derived from skipping zeroed weights or activations. Like GPUs, this flexibility does also make them useful for non-AI tasks.
 
@@ -118,3 +118,5 @@ The design space of AI accelerators built on digital logic - for mainstream work
 [^11]: [Power consumption of a test chip](https://www.youtube.com/watch?v=rsxCZAE8QNA&t=1067) and [instruction overhead](https://www.youtube.com/watch?v=rsxCZAE8QNA&t=646).
 
 [^12]: [https://arxiv.org/abs/1912.03413](https://arxiv.org/abs/1912.03413) page 76.
+
+[^13]: Also possibly supply shortages. HBM is [pretty scarce](https://www.reuters.com/technology/nvidia-supplier-sk-hynix-says-hbm-chips-almost-sold-out-2025-2024-05-02/) right now, and it may prove impossible to ramp fast enough if AI hardware demand consumes an increasing proportion of logic fab output.
