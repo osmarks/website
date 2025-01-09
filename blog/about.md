@@ -12,6 +12,7 @@ Reality does not bow to expectations. Expectations merely mask what is. This is 
 I'm osmarks, also known as gollark in some places.
 I enjoy bending the world to my will and creating confusing and/or funny things through applied computer science and mathematics, among other things.
 You can contact me through [email](mailto:me@osmarks.net), <span class="hoverdefn" title="My username is 'gollark'">Discord</span>, <a href="https://apionet.gh0.pw/">IRC</a> sometimes, <span class="hoverdefn" title="please note that the monitoring sampling interval is 15 seconds">Morse code transmitted via HTTP request volumes</span>, carrier pigeon, or [ActivityPub (Mastodon)](https://b.osmarks.net/).
+Friend me on [Project Euler](https://projecteuler.net/friends)! My code is `1997726_vJHwaMCvTGs6hTAsxuhvUtwuF7TMgkBK`.
 
 ## My work
 

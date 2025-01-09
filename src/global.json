@@ -50,8 +50,8 @@
         "Cameron Harwick": "https://cameronharwick.com/feed/",
         "Money Stuff": "https://www.bloomberg.com/opinion/authors/ARbTQlRLRjE/matthew-s-levine.rss",
         "The Worlds of John Bierce": "https://johnbierce.com/blog/feed/",
-        "Dominic Cummings": "https://dominiccummings.substack.com/feed"
-
+        "Dominic Cummings": "https://dominiccummings.substack.com/feed",
+        "citrons": "https://citrons.xyz/a/journal/rss.xml"
     },
     "dateFormat": "YYYY-MM-DD",
     "microblogSource": "https://b.osmarks.net/outbox",
@@ -82,7 +82,8 @@
         ["rss.png", "/rss.xml"],
         ["bee.png", "https://citrons.xyz/a/memetic-apioform-page.html"],
         ["perceptron.png", "https://en.wikipedia.org/wiki/Perceptron"],
-        ["rhombic_dodecahedron.gif", "https://en.wikipedia.org/wiki/Rhombic_dodecahedron"]
+        ["rhombic_dodecahedron.gif", "https://en.wikipedia.org/wiki/Rhombic_dodecahedron"],
+        ["zeroptr.gif", "https://zptr.cc/88x31/"]
     ],
     "mycorrhiza": "https://docs.osmarks.net"
 }

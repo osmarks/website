@@ -125,7 +125,7 @@ They describe somewhat horrifying electrical engineering problems due to using s
 
 [^2]: High-performance compute hardware is still not cheap in an absolute sense, and for infrequent loads you are likely better off with [cloud services](https://vast.ai/).
 
-[^3]: I'm told it works fine on their latest datacentre cards. You are not getting those. You aren't even renting those, for some reason.
+[^3]: I'm told it works ~~fine~~ slightly better on their latest datacentre cards. You are not getting those. You aren't even renting those, for some reason.
 
 [^4]: Intel's is arguably better on consumer hardware than datacentre, as their datacentre hardware doesn't work.
 
