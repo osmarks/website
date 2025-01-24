@@ -127,6 +127,8 @@ const renderContainer = (tokens, idx) => {
                 out += `<a class="button" href="${md.utils.escapeHtml(button[1])}"><img src="/assets/images/button_${md.utils.escapeHtml(button[0])}" alt="${md.utils.escapeHtml(button[0])}"></a>`
             }
             return out
+        } else if (blockType === "emphasis") {
+            return `<div class="emphasis" style="${md.utils.escapeHtml(hashBG("blog", 0, 180))}">`
         }
     } else {
         if (blockType === "captioned") {
@@ -141,7 +143,7 @@ const renderContainer = (tokens, idx) => {
                 ret = `<div class="attribution">${md.utils.escapeHtml("— ") + inner}</div>` + ret
             }
             return ret
-        } else if (blockType === "buttons") {
+        } else if (blockType === "buttons" || blockType === "emphasis") {
             return `</div>`
         }
     }

@@ -5,9 +5,7 @@ created: 25/02/2024
 updated: 14/04/2024
 slug: mlrig
 ---
-::: epigraph attribution=@jckarter link=https://twitter.com/jckarter/status/1441441401439358988
-Programmers love talking about the “bare metal”, when in fact the logic board is composed primarily of plastics and silicon oxides.
-:::
+::: emphasis
 
 ## Summary
 
@@ -15,6 +13,12 @@ Programmers love talking about the “bare metal”, when in fact the logic boar
 - Buy recent consumer Nvidia GPUs with lots of VRAM (*not* datacentre or workstation ones).
 - Older or used parts are good to cut costs (not overly old GPUs).
 - Buy a sufficiently capable PSU.
+
+:::
+
+::: epigraph attribution=@jckarter link=https://twitter.com/jckarter/status/1441441401439358988
+Programmers love talking about the “bare metal”, when in fact the logic board is composed primarily of plastics and silicon oxides.
+:::
 
 ## Long version
 

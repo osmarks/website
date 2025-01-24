@@ -6,13 +6,15 @@ created: 24/01/2025
 series_index: 3
 slug: memescale
 ---
+::: emphasis
+Try the new search system [here](https://nooscope.osmarks.net/). I don't intend to replace the existing [Meme Search Engine](https://mse.osmarks.net/), as its more curated dataset is more useful to me for most applications.
+:::
+
 ::: epigraph attribution="Brian Eno"
 Be the first person to not do something that no one else has ever thought of not doing before.
 :::
 
 Computers are very fast. It is easy to forget this when they routinely behave so slowly, and now that many engineers are working on heavily abstracted cloud systems, but even my slightly outdated laptop is in principle capable of executing 15 billion instructions per core in each second it wastes stuttering and doing nothing in particular. People will sometimes talk about how their system has to serve "millions of requests a day", but a day is about 10<sup>5</sup> seconds, and the problem of serving tens of queries a second on much worse hardware than we have now was solved decades ago. The situation is even sillier for GPUs - every consumer GPU is roughly as fast as entire 1990s supercomputers[^1] and they mostly get used to shade triangles for games. In the spirit of [Production Twitter on One Machine](https://thume.ca/2023/01/02/one-machine-twitter/), [Command-line Tools can be 235x Faster than your Hadoop Cluster](https://adamdrake.com/command-line-tools-can-be-235x-faster-than-your-hadoop-cluster.html) and projects like [Marginalia](https://search.marginalia.nu/), I have assembled what I believe to be a competitively sized image dataset and search system on my one ["server"](/stack/)[^2] by carefully avoiding work.
-
-Try the new search system [here](https://nooscope.osmarks.net/). I don't intend to replace the existing [Meme Search Engine](https://mse.osmarks.net/), as its more curated dataset is more useful to me for most applications.
 
 ## Scraping
 
