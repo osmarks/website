@@ -183,6 +183,10 @@ Well, I mean, yes idealism, yes the dignity of pure research, yes the pursuit of
 
 Since this list was written, I think it became notorious for introducing the "metaverse" as pushed by Facebook now. This is very silly. Everyone who is paying attention knows that the real metaverse is Roblox.
 
+### Starrigger
+
+[Starrigger](https://www.goodreads.com/book/show/981841.Starrigger) surprised me by being pretty smart given its odd-sounding conceit (interstellar travel via highways) and age. Generally a fun read.
+
 ### Stories Of Your Life And Others
 
 ::: epigraph attribution="Ted Chiang"

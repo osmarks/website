@@ -2,6 +2,12 @@ extends layout.pug
 
 block content
     div.content.blog-post!= content
+    if bibtex
+        details.cite-this-post
+            summary Cite this post
+            textarea#citebox(rows=bibtex.split("\n").length, readonly)= bibtex
+            div
+                button#citebutton Copy
 
 block under-title
     if draft

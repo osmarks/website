@@ -621,7 +621,7 @@ const closeOverlay = () => {
     document.querySelector("html").style.overscrollBehavior = "none"
 }
 
-// replace login navbar option with search because whatever
+// this is actually now labelled properly as the search button
 const loginButton = document.querySelector("nav a:last-of-type")
 loginButton.href = "#"
 loginButton.innerText = "Search"
@@ -675,3 +675,14 @@ window.addEventListener("keydown", ev => {
         closeOverlay()
     }
 })
+
+const citeButton = document.getElementById("citebutton")
+if (citeButton) {
+    citeButton.onclick = async () => {
+        const citebox = document.getElementById("citebox")
+        await navigator.clipboard.writeText(citebox.value)
+        citebox.select()
+        document.execCommand("copy")
+        citebox.blur()
+    }
+}

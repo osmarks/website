@@ -277,6 +277,16 @@ const processBlog = async () => {
             title: meta.title,
             description: meta.description
         })
+        if ((meta.updated ?? meta.created) && !meta.internal) {
+            const year = (meta.updated ?? meta.created).format("YYYY")
+            meta.bibtex = `@online{osmarks${year}${meta.slug},
+    author = {osmarks},
+    title = {${meta.title}},
+    url = {https://${globalData.domain}/${meta.slug}},
+    urldate = {${globalData.renderDate(meta.updated ?? meta.created)}},
+    year = {${year}}
+}`
+        }
         return meta
     })
 
