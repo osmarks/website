@@ -106,7 +106,8 @@ const renderContainer = (tokens, idx) => {
         if (wasInQuotes) {
             options[k] += " " + arg
         } else {
-            [k, v] = arg.split("=", 2)
+            [k, ...vs] = arg.split("=")
+            v = vs.join("=")
             if (v && v[0] == '"') {
                 inQuotes = true
                 v = v.slice(1)
