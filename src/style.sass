@@ -191,7 +191,7 @@ button, select, input, textarea, .textarea
         margin: 0
 
 blockquote
-    padding-left: 0.4rem
+    padding-left: 0.8rem
     border-left: 0.4rem solid black
     margin-left: 0.2rem
 
@@ -306,7 +306,7 @@ $hl-border: 3px
         color: white
 
     blockquote
-        border-left: 0.4rem solid white
+        border-left: 0.8rem solid white
 
     button, select, input, textarea, .textarea
         background: #333
@@ -412,9 +412,36 @@ table
 #citebox
     width: 100%
 
+textarea.squiggle
+    width: 100%
+
 .emphasis
     margin-top: 16px
     margin-bottom: 16px
     padding: 16px
     p
         margin: 0
+
+@media print
+    .isso
+        display: none
+
+    .sidenotes
+        display: block
+        li
+            position: static !important
+
+    .cite-this-post
+        display: none
+
+    img
+        max-width: 60% !important
+
+    nav
+        display: none
+
+.large-button
+    padding: 0.5em
+
+.squiggle-control
+    text-wrap: wrap

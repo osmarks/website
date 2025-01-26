@@ -38,7 +38,7 @@ Both models use a prefix to indicate whether an input is a query or a passage to
 
 ## The quantitative data is not all that helpful
 
-While I could in principle get interesting results out of analyzing things like web browsing activity by day and whether my step count is correlated with anything interesting, I have not had any compelling reason to do this yet, and this would likely require complex dedicated analysis scripts and frontends to do well. Datasette's ability to run and nicely render custom SQL queries is cool, but not very relevant to this - I've only ever used it about five times in total.
+While I could in principle get interesting results out of analyzing things like web browsing activity by day and whether my step count is correlated with anything of note, I have not had any compelling reason to do this yet, and this would likely require complex dedicated analysis scripts and frontends to do well. Datasette's ability to run and nicely render custom SQL queries is cool, but not very relevant to this - I've only ever used it about five times in total.
 
 ## Sharded vector indices
 

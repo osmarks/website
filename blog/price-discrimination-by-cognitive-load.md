@@ -4,7 +4,7 @@ description: A slightly odd pattern I've observed.
 created: 16/10/2024
 slug: pricecog
 ---
-Price discrimination is a practice where sellers of a product try and sell materially the same product to different customers at different prices closer to their willingness to pay. Economists probably have opinions on whether this is good or bad, but I'm going to focus on a specific mechanism for it here. Price discrimination requires some way to show different customers different prices: this might be through timing, very slightly different variants of the product, location or directly selling to customers without a public price.
+Price discrimination is a practice where sellers of a product try to sell materially the same product to different customers at different prices closer to their willingness to pay. Economists probably have opinions on whether this is good or bad, but I'm going to focus on a specific mechanism for it here. Price discrimination requires some way to show different customers different prices: this might be through timing, very slightly different variants of the product, location or directly selling to customers without a public price.
 
 One perhaps more modern variant is to discriminate through making prices extremely confusing. I initially thought of this while discussing airline ticketing with one of my friends: the pricing of air fares is [famously](http://www.demarcken.org/carl/papers//ITA-software-travel-complexity/ITA-software-travel-complexity.html) so complex that it is literally impossible[^1] to determine the best price for a journey in some possible cases. One possible explanation is that the airlines want to price-discriminate by offering fares with strange restrictions to more price-sensitive buyers while charging more for convenient journeys. However, in some cases it's possible to pay less for exactly the same journey with the same features through a more complicated purchasing structure!
 
@@ -16,4 +16,4 @@ This is mostly relevant where resale is impractical or the price difference is l
 
 This may not be an especially important pattern, but I think it clarifies some things, it seems novel enough that I wasn't easily able to find preexisting work on it (though maybe I don't know the right terms, or it's buried in other things), and it permits me to feel vaguely annoyed that the world is not run by a perfect machine god executing zero-waste central planning.
 
-[^1]: Uncomputable - apparently, there's some construction which lets you reduce diophantine equations to fare search problems.
+[^1]: Uncomputable - apparently, there's a construction which lets you reduce diophantine equations to fare search problems.

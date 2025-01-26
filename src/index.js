@@ -153,7 +153,15 @@ const renderContainer = (tokens, idx) => {
 const readFile = path => fsp.readFile(path, { encoding: "utf8" })
 const anchor = require("markdown-it-anchor")
 
-const md = new MarkdownIt({ html: true })
+const md = new MarkdownIt({
+        html: true,
+        highlight: (code, language) => {
+            if (language === "squiggle") {
+                return `<textarea class="squiggle" rows=${code.split("\n").length}>${md.utils.escapeHtml(code.trim())}</textarea>`
+            }
+            return "" // default escaping
+        }
+    })
     .use(require("markdown-it-container"), "", { render: renderContainer, validate: params => true })
     .use(require("markdown-it-footnote"))
     .use(anchor, {
@@ -512,6 +520,13 @@ const compilePageJSTask = async () => {
             minify: true,
             sourcemap: true,
             format: "esm"
+        }),
+        esbuild.build({
+            entryPoints: [ path.join(srcDir, "squiggle_rt.mjs") ],
+            bundle: true,
+            outfile: path.join(outAssets, "js/squiggle_rt.js"),
+            minify: true,
+            sourcemap: true
         })
     ])
 }
