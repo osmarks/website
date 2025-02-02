@@ -88,7 +88,7 @@ This all required more time in the data labelling mines and slightly different a
 
 It turns out that SigLIP is tasteful enough on its own that I don't need to do that much given a fairly specific query, and the classifier is not that useful - the bitter lesson in action.
 
-I previously worked on [SAEs](/memesae/) to improve querying, but this seems to be unnecessary with everything else in place. Training of a bigger one is ongoing for general interest.
+I previously worked on [SAEs](/memesae/) to improve querying, but this seems to be unnecessary with everything else in place. Training of a bigger one has been completed for general interest - it can be downloaded [here](https://datasets.osmarks.net/big_sae/), along with the pages of the samples most/least in each feature direction. Subjectively, the negative samples seem somewhat more consistent and the features are more specific (I used 262144 features, up from 65536, and about ten times as many embeddings to train, and only did one epoch).
 
 As ever, logs and data are available from the [datasets server](https://datasets.osmarks.net/projects-formerly-codenamed-radius-tyrian-phase-ii/).
 
@@ -111,7 +111,7 @@ The meme search master plan.
 * Data labelling makes me much more misanthropic. So much of the randomly sampled content used to bootstrap rating is inane advertising, extremely poorly photographed images of games on computer screens or nonsense political memes.
 * There is currently no provision for updating the index. It [should be possible](https://arxiv.org/abs/2105.09613) - the algorithms are not terribly complex but there are some slightly tricky engineering considerations.
 * I don't actually know how good the recall is because computing ground truth results is very expensive. Oh well.
-* The build-time deduplication is still insufficient, so I added a hacky step to do it at query time. I may do another pass and rebuild to fix this.
+* The build-time deduplication is still insufficient, so I added a hacky step to do it at query time which uses entirely too much compute. I may do another pass and rebuild to fix this.
 
 [^1]: Yes, I know we count supercomputer power in FP64 and consumer hardware mostly won't do double-precision. I am ignoring that for the purposes of art.
 

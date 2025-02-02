@@ -2,7 +2,7 @@
 title: So you want a cheap ML workstation
 description: How to run local AI slightly more cheaply than with a prebuilt system. Somewhat opinionated.
 created: 25/02/2024
-updated: 14/04/2024
+updated: 02/02/2025
 slug: mlrig
 ---
 ::: emphasis
@@ -13,6 +13,7 @@ slug: mlrig
 - Buy recent consumer Nvidia GPUs with lots of VRAM (*not* datacentre or workstation ones).
 - Older or used parts are good to cut costs (not overly old GPUs).
 - Buy a sufficiently capable PSU.
+- For *specifically* big LLM inference, you probably want a server CPU (not a GPU) with lots of memory and memory bandwidth. See [this section](#cpu-inference).
 
 :::
 
@@ -117,6 +118,14 @@ Apple M1 Ultra | 21 | 819 | 27 | 128 | Apple Silicon has a bizarrely good memory
 </div>
 
 One forward pass of an LLM with FP16 weights conveniently also requires loading two bytes per weight, so the FLOPS per byte ratio above is (approximately; I'm rounding off many, many details here) how many tokens can be processed in parallel without slowdown. Since sampling (generating outputs) is inherently serial you don't benefit from possible parallelism (except when processing the prompt), so quantization (which reduces memory bandwidth and slightly increases compute costs) has lots of room to work. In principle the FLOP/byte ratio should be high enough with everything that performance is directly proportional to bandwidth. This does not appear to be true with older GPUs according to [user reports](https://www.reddit.com/r/LocalLLaMA/search?q=p40&restrict_sr=on&sort=relevance&t=all), probably due to overheads I ignored - notably, nobody reports more than about 15 tokens/second. Thus, despite somewhat better software support, CPU inference is usually going to be slower than old-datacentre-GPU inference, but is at least the best way to get lots of memory capacity.
+
+#### MoE models
+
+I have seen a noticeable uptick in search traffic to this page recently, which I assume is because of interest in [DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1) and running it locally. If you're not aware, people often use "R1" to refer to either the original 671-billion-parameter [DeepSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3)-based model or the much smaller (<70B) finetunes of other open-source models. These are different in many ways - the former is much smarter but hard to run.
+
+Mixture of Experts models are a way to improve on the compute-efficiency of standard "dense" transformers by using only a subset of parameters in each forward pass of the model. This is good for large-scale deployments, where one instance of a model is deployed across tens or hundreds of GPUs, because of lower per-token compute costs, but unfortunately quite bad for local users, because you need more total parameters for equivalent performance to a dense model and thus more VRAM capacity for inference.
+
+Most open-source language models (LLaMA, etc) are either small enough to fit on one or two GPUs, or compute-intensive enough (LLaMA-3.1-405B, for instance) that home users could only feasibly fit them on CPU RAM but would then experience awful (~1 token per second) speeds. DeepSeek-V3 (and thus -R1), however, is an MoE model - only 37B of the 671B total parameters are needed for each token, so bandwidth requirements are much lower, so with enough RAM capacity it can theoretically run at slow-GPU-system speeds of ~10 tokens per second. You'll need a server platform to fit this much RAM, and RAM itself is quite expensive, though. See [this article](https://digitalspaceport.com/how-to-run-deepseek-r1-671b-fully-locally-on-2000-epyc-rig/) on a $2000 single-socket AMD EPYC build doing ~4 tokens per second on the quantized model. See [this Twitter thread](https://x.com/carrigmat/status/1884244369907278106) for a $6000 dual-socket build doing ~8 tokens per second on the unquantized model. This is significantly below the theoretical limit (~25 t/s) so better software should be able to bring it up. I don't think it's possible to do significantly better than that without much more expensive hardware.
 
 ### Scaling up
 
