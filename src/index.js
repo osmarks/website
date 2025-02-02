@@ -171,6 +171,14 @@ const md = new MarkdownIt({
         })
     })
     .use(require("@vscode/markdown-it-katex").default)
+
+const textRenderer = md.renderer.rules.text
+md.renderer.rules.text = (tokens, idx, options, env, self) => {
+    const token = tokens[idx]
+    token.content = token.content.replace(/ \- /g, " – ") // highly advanced typography
+    return textRenderer(tokens, idx, options, env, self)
+}
+
 const minifyHTML = x => htmlMinifier(x, {
     collapseWhitespace: true,
     sortAttributes: true,
