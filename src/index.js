@@ -240,8 +240,10 @@ const applyTemplate = async (template, input, getOutput, options = {}) => {
     const page = parseFrontMatter(await readFile(input))
     if (options.processMeta) { options.processMeta(page.data, page) }
     if (options.processContent) { page.originalContent = page.content; page.content = options.processContent(page.content) }
-    const rendered = template({ ...globalData, ...page.data, content: page.content })
-    await fsp.writeFile(await getOutput(page), minifyHTML(rendered))
+    const output = await getOutput(page)
+    const urlPath = "/" + path.relative(outDir, output).replace(/index\.html$/, "")
+    const rendered = template({ ...globalData, ...page.data, content: page.content, path: output.replace(/index\.html$/, "") })
+    await fsp.writeFile(output, minifyHTML(rendered))
     page.data.full = page
     return page.data
 }
@@ -333,7 +335,8 @@ const processBlog = async () => {
         await fse.ensureDir(out)
         await fsp.writeFile(path.join(out, "index.html"), globalData.templates.blogPost({
             ...globalData,
-            ...page
+            ...page,
+            path: `/${page.slug}/` // TODO: inelegant
         }))
     }
 
@@ -365,7 +368,7 @@ globalData.metricPrefix = applyMetricPrefix
 const writeBuildID = () => fsp.writeFile(path.join(outDir, "buildID.txt"), buildID)
 
 const index = async () => {
-    const index = globalData.templates.index({ ...globalData, title: "Index", posts: globalData.blog, description: globalData.siteDescription })
+    const index = globalData.templates.index({ ...globalData, title: "Index", posts: globalData.blog, description: globalData.siteDescription, path: "/" })
     await fsp.writeFile(path.join(outDir, "index.html"), index)
 }
 
