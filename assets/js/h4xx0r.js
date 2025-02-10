@@ -239,7 +239,9 @@ function GuiHacker(){
         "Flipping arrows and applying yoneda lemma",
         "Rewriting in Rust",
         "Entering Mainframe",
-        "Full Scan Required."
+        "Full Scan Required.",
+        "Core Redundancy Override",
+        "Cryptoseed Timeout Recalculation"
     ];
     this.isProcessing = false;
     this.processTime = 0;

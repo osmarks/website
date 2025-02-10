@@ -414,7 +414,7 @@ const inCollapsedDetails = el => {
 const footnotes = document.querySelector(".footnotes")
 const sidenotes = document.querySelector(".sidenotes")
 if (sidenotes && footnotes) {
-    const codeblocks = document.querySelectorAll(".wider")
+    const codeblocks = Array.from(document.querySelectorAll(".wider")).concat(Array.from(document.querySelectorAll(".content pre")))
     const article = document.querySelector(".content")
     while (footnotes.firstChild) {
         sidenotes.appendChild(footnotes.firstChild)
@@ -447,6 +447,7 @@ if (sidenotes && footnotes) {
                 inclusions.push({ start: end - snRect.top, contents: [] })
             }
             inclusions[inclusions.length - 1].end = Infinity
+            console.log(inclusions, exclusions)
             const notes = []
             // read off sidenotes to place
             for (const item of footnoteItems) {
@@ -469,6 +470,7 @@ if (sidenotes && footnotes) {
                     .findIndex(inc => (sum(inc.contents.map(x => x.height)) + note.height) < (inc.end - inc.start))
                 inclusions[index + next].contents.push(note)
             }
+            console.log(inclusions)
             // TODO: try simple moves between regions? might be useful sometimes
             // place within region and apply styles
             for (const inc of inclusions) {
@@ -478,7 +480,7 @@ if (sidenotes && footnotes) {
                     const constraints = {}
                     if (inc.end !== Infinity) {
                         const heights = regionNotes.map(note => note.height)
-                        constraints["sum_gaps"] = { max: inc.end - inc.start - sum(heights) }
+                        constraints["sum_gaps"] = { max: inc.end - sum(heights) }
                     }
                     regionNotes.forEach((note, i) => {
                         variables[`distbound_${i}`] = {
@@ -523,6 +525,7 @@ if (sidenotes && footnotes) {
                     }
                     const solutionVars = new Map(solution.variables)
                     let position = 0
+                    console.log(solutionVars, model)
                     regionNotes.forEach((note, i) => {
                         position += solutionVars.get(`gap_${i}`) || 0
                         note.item.style.top = position + "px"
