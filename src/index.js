@@ -557,7 +557,7 @@ const compileServiceWorkerJSTask = async () => {
 }
 
 const doImages = async () => {
-    await Promise.all(["images", "titillium-web.woff2", "titillium-web-semibold.woff2", "iosevka.woff2", "misc"].map(subpath => fse.copy(path.join(assetsDir, subpath), path.join(outAssets, subpath))))
+    await Promise.all(["images", "osmarks-primary.woff2", "osmarks-primary-semibold.woff2", "osmarks-primary-italic.woff2", "osmarks-mono.woff2", "misc"].map(subpath => fse.copy(path.join(assetsDir, subpath), path.join(outAssets, subpath))))
 
     await fse.copy(path.join(nodeModules, "katex", "dist", "fonts"), path.join(outAssets, "fonts"))
     await fse.copy(path.join(nodeModules, "katex", "dist", "katex.min.css"), path.join(outAssets, "katex.min.css"))

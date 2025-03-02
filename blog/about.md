@@ -16,7 +16,7 @@ Friend me on [Project Euler](https://projecteuler.net/friends)! My code is `1997
 
 ## My work
 
-* [Meme Search Engine](https://github.com/osmarks/meme-search-engine), probably still the world's most powerful meme search engine due to lack of credible competitors. Now with automatic harvesting pipeline and [scoring model](/memethresher/)!
+* [Meme Search Engine](https://github.com/osmarks/meme-search-engine)/[Nooscope](https://nooscope.osmarks.net), state-of-the art meme (and other image) search technology. [Automatic quality scoring](/memethresher/) and [230-million-item index](/memescale/)!
 * [4D Tic-Tac-Toe](/tictactoe4/), one of the somewhat difficult games in the world.
 * [Untitled Objection Series](https://www.youtube.com/playlist?list=PLIoFMnkvRA5PggXaYGQ2QJPEH8LPDm5Dd), a metafictional work about decision theory, Solomonoff induction and `#off-topic`.
 * [osmarkscalculator](https://esolangs.org/wiki/Osmarkscalculator), an esolang and/or computer algebra system based on string rewriting.

@@ -5,8 +5,8 @@ created: 11/06/2020
 updated: 17/09/2024
 slug: otherstuff
 ---
-I'm excluding music from this because music preferences seem to be even more varied between the people I interact with than other stuff.
-Obviously this is just stuff *I* like; you might not like it, which isn't really my concern - this list is primarily made to bring to people's attention stuff they might like but have not heard of.
+I'm excluding music from this because music preferences seem to be even more varied between the people I interact with than other preferences.
+Obviously this is just material *I* like; you might not like it, which isn't really my concern - this list is primarily made to bring to people's attention media they might like but have not heard of.
 Enjoy the newly reformatted version of this list, with my slightly opaque organizational scheme and possibly incorrectly sorted lists.
 
 ## Writing
@@ -157,6 +157,10 @@ Well, I mean, yes idealism, yes the dignity of pure research, yes the pursuit of
 
 [Nice Dragons Finish Last](https://www.goodreads.com/series/128485-heartstrikers) is some reasonably enjoyable and nonstandard urban fantasy.
 
+### Orion's Arm
+
+[Orion's Arm](https://www.orionsarm.com/xcms.php?r=oaeg-front) is the most credible attempt so far to construct a detailed far-future universe. Despite the obvious challenges, the project does a good job conveying the bigness and weirdness (by our standards) of a society with ten thousand years of technological and social development behind it.
+
 ### A Practical Guide to Sorcery
 
 [A Practical Guide to Sorcery](https://forums.spacebattles.com/threads/a-practical-guide-to-sorcery-mage-punk-progression-fantasy.866065/#post-68660854) was read on the recommendation of [this comment](/magic/#com2081). It has a smart and competent (they make silly mistakes sometimes but in reasonable ways they notice later) protagonist, flexible but sufficiently-constrained magic system, and a well-realized setting with some mysteries to explore.
@@ -283,6 +287,7 @@ The author, Zachary Mason, also wrote [The Lost Books of the Odyssey](https://ww
 * [Sekhmet Hunts The Dying Gnosis: A Computation](http://www.beneath-ceaseless-skies.com/stories/sekhmet-hunts-the-dying-gnosis-a-computation/).
 * [The Finale of the Ultimate Meta Mega Crossover](https://m.fanfiction.net/s/5389450/1/).
 * [Shannon's Law](https://web.archive.org/web/20140628065855/http://www.tor.com/stories/2011/05/shannons-law).
+* [Dave Scum](https://docs.google.com/document/d/1SddGHeVfcVa5SCDHHTOA4RlKwnef-Q6IMw_Jqw9I0Mw/mobilebasic).
 * More to be added when I feel like it.
 
 ## Games

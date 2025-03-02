@@ -1,6 +1,7 @@
 ---
 title: Lessons learned from Maghammer
 created: 06/07/2024
+updated: 13/02/2025
 description: I got annoyed and rewrote everything.
 slug: maghammer2
 series: maghammer
@@ -32,7 +33,9 @@ One significant problem with the last version is that the context window used fo
 
 This has the additional advantage of producing fewer sentence embedding vectors, which makes the index more efficient.
 
-As a minor consequence of picking from models released about a year later, I also replaced the [e5-large-v2](https://huggingface.co/intfloat/e5-large-v2) model previously used for embeddings with the same-sized-and-apparently-better [snowflake-arctic-embed-l](https://huggingface.co/Snowflake/snowflake-arctic-embed-l), since it claims better retrieval performance and is more trustworthy, to me, than the Chinese models also claiming that.
+~~As a minor consequence of picking from models released about a year later, I also replaced the [e5-large-v2](https://huggingface.co/intfloat/e5-large-v2) model previously used for embeddings with the same-sized-and-apparently-better [snowflake-arctic-embed-l](https://huggingface.co/Snowflake/snowflake-arctic-embed-l), since it claims better retrieval performance and is more trustworthy, to me, than the Chinese models also claiming that.~~
+
+This has now been replaced again with [ModernBERT-Embed-Large](https://huggingface.co/lightonai/modernbert-embed-large) for the greater context length, maybe better runtime and better retrieval performance. The long context leads to some VRAM issues with large batches, which I have not yet been able to resolve cleanly.
 
 Both models use a prefix to indicate whether an input is a query or a passage to match against, but the newer one seems to be more sensitive to them (or it could simply be the longer inputs), so I've also split columns into "short" and "long" to determine whether this prefixing mechanism is used for queries or not - without this, short passages are privileged, especially ones containing, for some ridiculous reason[^5], the literal text `passage`. This has its own problems, so I might need an alternative solution.
 
