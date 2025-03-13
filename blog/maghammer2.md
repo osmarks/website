@@ -37,7 +37,7 @@ This has the additional advantage of producing fewer sentence embedding vectors,
 
 This has now been replaced again with [ModernBERT-Embed-Large](https://huggingface.co/lightonai/modernbert-embed-large) for the greater context length, maybe better runtime and better retrieval performance. The long context leads to some VRAM issues with large batches, which I have not yet been able to resolve cleanly.
 
-Both models use a prefix to indicate whether an input is a query or a passage to match against, but the newer one seems to be more sensitive to them (or it could simply be the longer inputs), so I've also split columns into "short" and "long" to determine whether this prefixing mechanism is used for queries or not - without this, short passages are privileged, especially ones containing, for some ridiculous reason[^5], the literal text `passage`. This has its own problems, so I might need an alternative solution.
+The model uses a prefix to indicate whether an input is a query or a passage to match against, so I've also split columns into "short" and "long" to determine whether this prefixing mechanism is used for queries or not ~~- without this, short passages are privileged, especially ones containing, for some ridiculous reason[^5], the literal text `passage`. This has its own problems, so I might need an alternative solution.~~ ModernBERT-Embed-Large handles this better, so this mechanism is now legacy unless I also add a non-semantic index.
 
 ## The quantitative data is not all that helpful
 

@@ -288,6 +288,7 @@ The author, Zachary Mason, also wrote [The Lost Books of the Odyssey](https://ww
 * [The Finale of the Ultimate Meta Mega Crossover](https://m.fanfiction.net/s/5389450/1/).
 * [Shannon's Law](https://web.archive.org/web/20140628065855/http://www.tor.com/stories/2011/05/shannons-law).
 * [Dave Scum](https://docs.google.com/document/d/1SddGHeVfcVa5SCDHHTOA4RlKwnef-Q6IMw_Jqw9I0Mw/mobilebasic).
+* [Nate the Snake](https://natethesnake.com/) is a complex setup for a pun.
 * More to be added when I feel like it.
 
 ## Games

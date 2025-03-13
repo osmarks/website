@@ -27,6 +27,8 @@ const cssSelect = require("css-select")
 const domSerializer = require("dom-serializer")
 const domutils = require("domutils")
 const feedExtractor = require("@extractus/feed-extractor")
+const https = require("https")
+const pLimit = require("p-limit")
 
 const fts = require("./fts.mjs")
 
@@ -41,6 +43,17 @@ const assetsDir = path.join(root, "assets")
 const outDir = path.join(root, "out")
 const srcDir = path.join(root, "src")
 const nodeModules = path.join(root, "node_modules")
+
+const axiosInst = axios.create({
+    timeout: 10000,
+    headers: { "User-Agent": "osmarks.net static site compiler" },
+    httpsAgent: new https.Agent({
+        keepAlive: true,
+        timeout: 10000,
+        scheduling: "fifo",
+        maxTotalSockets: 20
+    })
+})
 
 const buildID = nanoid()
 globalData.buildID = buildID
@@ -400,7 +413,7 @@ const fetchMicroblog = async () => {
         // We have a server patch which removes the 20-post hardcoded limit.
         // For some exciting reason microblog.pub does not expose pagination in the *API* components.
         // This is a workaround.
-        const posts = (await axios({ url: globalData.microblogSource, headers: { "Accept": 'application/ld+json; profile="https://www.w3.org/ns/activitystreams"' } })).data.orderedItems
+        const posts = (await axiosInst({ url: globalData.microblogSource, headers: { "Accept": 'application/ld+json; profile="https://www.w3.org/ns/activitystreams"' } })).data.orderedItems
         writeCache("microblog", posts)
         globalData.microblog = posts
     }
@@ -433,16 +446,17 @@ const fetchFeeds = async () => {
         console.log(chalk.yellow("Using cached feeds"))
     } else {
         globalData.openring = {}
+        const limiter = pLimit.default(4)
         const getOneFeed = async url => {
             try {
-                const data = await axios.get(url, { headers: { "User-Agent": "osmarks.net static site compiler" } })
+                const data = await axiosInst.get(url)
                 return feedExtractor.extractFromXml(data.data)
             } catch (e) {
                 console.warn(`${chalk.red("Failed to fetch")} ${url}: ${e.message} ${e.errors && e.errors.map(x => x.message).join("\n")}`)
             }
         }
         await Promise.all(Object.entries(globalData.feeds).map(async ([name, url]) => {
-            const feed = await getOneFeed(url)
+            const feed = await limiter(getOneFeed, url)
             if (feed) {
                 globalData.openring[name] = feed
             }
@@ -482,9 +496,8 @@ const fetchFeeds = async () => {
 }
 
 const compileCSS = async () => {
-    let css = sass.renderSync({
-        data: await readFile(path.join(srcDir, "style.sass")),
-        outputStyle: "compressed",
+    let css = sass.compile(path.join(srcDir, "style.sass"), {
+        style: "compressed",
         indentedSyntax: true
     }).css
     css += "\n"
@@ -601,12 +614,12 @@ const doImages = async () => {
 }
 
 const fetchMycorrhiza = async () => {
-    const allPages = await axios({ url: globalData.mycorrhiza + "/list" })
+    const allPages = await axiosInst({ url: globalData.mycorrhiza + "/list" })
     const dom = htmlparser2.parseDocument(allPages.data)
     const urls = cssSelect.selectAll("main > ol a", dom).map(x => x.attribs.href)
     for (const url of urls) {
         // TODO: this can run in parallel
-        const page = await axios({ url: globalData.mycorrhiza + url })
+        const page = await axiosInst({ url: globalData.mycorrhiza + url })
         const dom = htmlparser2.parseDocument(page.data)
         const title = domutils.innerText(cssSelect.selectAll(".navi-title a, .navi-title span", dom).slice(2))
         const article = cssSelect.selectOne("main #hypha article", dom)
