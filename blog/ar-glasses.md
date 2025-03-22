@@ -44,4 +44,5 @@ Mass-market appeal probably requires reduced costs, better batteries and onboard
 
 [^5]: Wirelessly offloading many operations to a normal phone nearby is maybe possible, but streaming lots of video back and forth is also costly. For 3D graphics there still has to be a fast onboard GPU to keep latency low in case of head movements.
 
-[^6]: https://en.wikipedia.org/wiki/GNU_Units
+[^6]: [https://en.wikipedia.org/wiki/GNU_Units](https://en.wikipedia.org/wiki/GNU_Units
+)
