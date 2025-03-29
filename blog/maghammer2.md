@@ -11,7 +11,7 @@ series_index: 2
 If Google Search does not return the result the user wanted because the user typed the wrong thing in the search box, that is a failure on Google's part, not a failure on the user's part. Conversely, if Google Search does return the result the user wanted because the user typed the correct thing in the search box, that is a failure on Google's part, not a failure on the user's part.
 :::
 
-[Maghammer](/maghammer/), the search and data management system I previously outlined, has been reasonably successful, as it's frequently been able to find things which were hard to look up any other way. But, like all software, it has problems. It has somewhat more than usual, being an assemblage of very ugly Python scripts made out of expediency and laziness. Many of these were knowable in advance if I had paid more attention, but I have at least gained some interesting information from its slightly-less-than-a-year of production use. Due to vague dissatisfaction with Python and mounting implementation problems, I've done a full rewrite in Rust. As the code has now gone from "active affront to God" to merely "quite inelegant", I will be releasing it shortly (though I do not expect it to be very usable for other people). Here's what I've determined and changed:
+[Maghammer](/maghammer/), the search and data management system I previously outlined, has been reasonably successful, as it's frequently been able to find things which were hard to look up any other way. But, like all software, it has problems. It has somewhat more than usual, being an assemblage of very ugly Python scripts made out of expediency and laziness. Many of these were knowable in advance if I had paid more attention, but I have at least gained some actionable information from its slightly-less-than-a-year of production use. Due to vague dissatisfaction with Python and mounting implementation problems, I've done a full rewrite in Rust. As the code has now gone from "active affront to God" to merely "quite inelegant", I will be releasing it shortly (though I do not expect it to be very usable for other people). Here's what I've determined and changed:
 
 ## Postgres and PGVector are very good
 
@@ -41,7 +41,7 @@ The model uses a prefix to indicate whether an input is a query or a passage to 
 
 ## The quantitative data is not all that helpful
 
-While I could in principle get interesting results out of analyzing things like web browsing activity by day and whether my step count is correlated with anything of note, I have not had any compelling reason to do this yet, and this would likely require complex dedicated analysis scripts and frontends to do well. Datasette's ability to run and nicely render custom SQL queries is cool, but not very relevant to this - I've only ever used it about five times in total.
+While I could in principle get useful results out of analyzing things like web browsing activity by day and whether my step count is correlated with anything of note, I have not had any compelling reason to do this yet, and this would likely require complex dedicated analysis scripts and frontends to do well. Datasette's ability to run and nicely render custom SQL queries is cool, but not very relevant to this - I've only ever used it about five times in total.
 
 ## Sharded vector indices
 

@@ -92,13 +92,13 @@ My base's reactor powering up on a recent tech modpack server, as visualized fro
 
 I also have some custom inference servers backing [Meme Search Engine](https://mse.osmarks.net/) and [Maghammer](/maghammer/), in addition to an ExllamaV2-based LLM API used in PotatOS. Early prototypes loaded the models in-process, but this was very inflexible: restarts were slow, only one process at a time could use them, and it effectively required that consuming code be written in Python. The servers are basic (no automatic batching and few optimizations), but are presently good enough to handle traffic. The CLIP one is in fact open as part of [Meme Search Engine](https://github.com/osmarks/meme-search-engine/blob/master/clip_server.py).
 
-I haven't covered *every* osmarks.net service in this post, or even all the ones in the slightly outdated diagram above, but I think I got the most interesting ones. I hope this was informative, and did not accidentally make people notice horrible security issues I missed.
+I haven't covered *every* osmarks.net service in this post, or even all the ones in the slightly outdated diagram above, but I think I covered the best ones. I hope this was informative, and did not accidentally make people notice horrible security issues I missed.
 
 [^1]: Much better uptime: ![An SSH session on procyon saying "up 588 days, 38 min".](/assets/images/uptime.png)
 
 [^2]: Ironically, they are doing this via mailing list services which absolutely could also offer RSS if they wanted to (Mailchimp does, even, as an option). They probably don't want to for "engagement" reasons.
 
-[^3]: osmarksDNS is less interesting, and refers to a DNS over HTTPS server and recursive resolver installed locally, I think because of an issue with bootstrapping dnscrypt-proxy I had years ago. That was fixed another way, but I never had a compelling reason to shut it down.
+[^3]: osmarksDNS refers to a DNS over HTTPS server and recursive resolver installed locally, I think because of an issue with bootstrapping dnscrypt-proxy I had years ago. That was fixed another way, but I never had a compelling reason to shut it down.
 
 [^4]: This used to be Prometheus, but I swapped VictoriaMetrics in to reduce storage requirements.
 
