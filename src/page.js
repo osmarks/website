@@ -413,6 +413,37 @@ const inCollapsedDetails = el => {
 
 const footnotes = document.querySelector(".footnotes")
 const sidenotes = document.querySelector(".sidenotes")
+var sidenotesAtSide = () => false
+
+let previousHighlight
+const fixDetailsSummary = elt => {
+    if (!(elt instanceof HTMLElement) && !window.location.hash.slice(1)) return
+    const el = elt instanceof HTMLElement ? elt : document.getElementById(window.location.hash.slice(1))
+    var parent = el
+    if (!el) return
+    if (el.classList.contains("footnote-item")) {
+        if (previousHighlight) {
+            previousHighlight.classList.remove("hl1")
+        }
+        el.classList.add("hl1")
+        previousHighlight = el
+    }
+    if (el.classList.contains("footnote-backref")) {
+        // close footnote
+        if (previousHighlight) {
+            previousHighlight.classList.remove("hl1")
+            previousHighlight.classList.remove("hl3")
+        }
+    }
+    while (parent.parentElement) {
+        if (parent.nodeName === "DETAILS") {
+            parent.setAttribute("open", true)
+        }
+        parent = parent.parentElement
+    }
+    if (sidenotesAtSide()) el.scrollIntoView()
+}
+
 if (sidenotes && footnotes) {
     const codeblocks = Array.from(document.querySelectorAll(".wider")).concat(Array.from(document.querySelectorAll(".content pre")))
     const article = document.querySelector(".content")
@@ -424,7 +455,7 @@ if (sidenotes && footnotes) {
     const sum = xs => xs.reduce((a, b) => a + b, 0)
     const arrayOf = (n, x) => new Array(n).fill(x)
     const BORDER = 16
-    const sidenotesAtSide = () => getComputedStyle(sidenotes).paddingLeft !== "0px"
+    sidenotesAtSide = () => getComputedStyle(sidenotes).paddingLeft !== "0px"
     let rendered = false
     const relayout = forceRedraw => {
         // sidenote column width is static: no need to redo positioning on resize unless no positions applied
@@ -447,13 +478,14 @@ if (sidenotes && footnotes) {
                 inclusions.push({ start: end - snRect.top, contents: [] })
             }
             inclusions[inclusions.length - 1].end = Infinity
-            console.log(inclusions, exclusions)
             const notes = []
             // read off sidenotes to place
             for (const item of footnoteItems) {
                 const link = article.querySelector(`#${item.id.replace(/^fn/, "fnref")}`)
                 const linkRect = link.getBoundingClientRect()
                 item.style.position = "absolute"
+                item.style.display = "list-item"
+                item.style.width = null
                 item.style.left = getComputedStyle(sidenotes).paddingLeft
                 item.style.paddingBottom = item.style.paddingTop = item.style.paddingRight = `${BORDER / 2}px`
                 const itemRect = item.getBoundingClientRect()
@@ -470,7 +502,6 @@ if (sidenotes && footnotes) {
                     .findIndex(inc => (sum(inc.contents.map(x => x.height)) + note.height) < (inc.end - inc.start))
                 inclusions[index + next].contents.push(note)
             }
-            console.log(inclusions)
             // TODO: try simple moves between regions? might be useful sometimes
             // place within region and apply styles
             for (const inc of inclusions) {
@@ -525,7 +556,7 @@ if (sidenotes && footnotes) {
                     }
                     const solutionVars = new Map(solution.variables)
                     let position = 0
-                    console.log(solutionVars, model)
+                    console.log("Layout solution found")
                     regionNotes.forEach((note, i) => {
                         position += solutionVars.get(`gap_${i}`) || 0
                         note.item.style.top = position + "px"
@@ -535,8 +566,17 @@ if (sidenotes && footnotes) {
             }
             rendered = true
         } else {
+            const articleRect = article.getBoundingClientRect()
+            const pad = parseFloat(getComputedStyle(sidenotes).paddingLeft)
             for (const item of sidenotes.querySelectorAll(".footnote-item")) {
-                item.style.position = "static"
+                //item.style.position = "static"
+                const link = article.querySelector(`#${item.id.replace(/^fn/, "fnref")}`)
+                const linkRect = link.getBoundingClientRect()
+                item.style.position = "absolute"
+                item.style.left = (articleRect.left + pad) + "px"
+                item.style.width = (articleRect.right - articleRect.left - pad * 2) + "px"
+                item.style.top = linkRect.bottom + "px"
+                item.style.display = "none"
             }
             rendered = false
         }
@@ -548,6 +588,12 @@ if (sidenotes && footnotes) {
             })
             link.addEventListener("mouseleave", () => {
                 item.classList.remove("hl2")
+            })
+            item.addEventListener("mouseover", () => {
+                if (!sidenotesAtSide()) item.classList.add("hl3")
+            })
+            item.addEventListener("mouseleave", () => {
+                item.classList.remove("hl3")
             })
         }
     }
@@ -565,28 +611,18 @@ if (sidenotes && footnotes) {
             setTimeout(() => relayout(true), 0)
         })
     })
-}
-
-let previousHighlight
-const fixDetailsSummary = () => {
-    if (!window.location.hash.slice(1)) return
-    const el = document.getElementById(window.location.hash.slice(1))
-    var parent = el
-    if (!el) return
-    if (el.classList.contains("footnote-item")) {
-        if (previousHighlight) {
-            previousHighlight.classList.remove("hl1")
-        }
-        el.classList.add("hl1")
-        previousHighlight = el
-    }
-    while (parent.parentElement) {
-        if (parent.nodeName === "DETAILS") {
-            parent.setAttribute("open", true)
-        }
-        parent = parent.parentElement
-    }
-    el.scrollIntoView()
+    document.querySelectorAll("a").forEach(x => {
+        const isBackref = x.classList.contains("footnote-backref")
+        const isRef = x.parentElement.classList.contains("footnote-ref")
+        if (!isBackref && !isRef) return
+        x.addEventListener("click", ev => {
+            if (!sidenotesAtSide()) {
+                ev.preventDefault()
+                if (isRef) fixDetailsSummary(document.getElementById(x.getAttribute("href").slice(1)))
+                else fixDetailsSummary(x)
+            }
+        })
+    })
 }
 
 window.addEventListener("hashchange", fixDetailsSummary)

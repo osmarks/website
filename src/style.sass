@@ -102,7 +102,7 @@ h1, h2, h3, h4, h5, h6
     font-family: $headers
     text-align: left
     a
-        color: inherit
+        color: inherit !important
         text-decoration: none !important
 
 summary h1, summary h2
@@ -222,9 +222,12 @@ blockquote
     min-width: $sidenotes-width
     padding-left: 1.5rem
     position: relative
+    box-sizing: border-box
     p
         margin: 0
 
+.footnotes-list
+    margin: 0
 .footnotes-sep
     display: none
 .footnotes-list
@@ -236,15 +239,21 @@ blockquote
         width: auto
         max-width: $content-width
         padding: 0
+        position: static
         margin-left: $content-margin
         margin-right: $content-margin
-    .footnotes-sep
-        display: block
     .sidenotes-container
         display: block
     table
         display: block
         overflow-x: scroll
+
+    .footnote-item.hl1, .footnote-item.hl2, .footnote-item.hl3
+        background: hsl(0, 0%, var(--autocol-lightness))
+        padding: 0.5em
+        box-sizing: border-box
+        list-style-type: none
+        display: block !important
 
 @media (min-width: calc(4 * $content-margin + $content-width + $sidenotes-width + $navbar-width))
     // fullwidth 3-pane layout
@@ -278,7 +287,7 @@ blockquote
             min-width: calc(40rem - 2 * $content-margin - $navbar-width)
 
 $hl-border: 3px
-.footnote-item.hl1, .footnote-item.hl2
+.footnote-item.hl1, .footnote-item.hl2, .footnote-item.hl3
     border-top: solid $hl-border orange
     border-bottom: solid $hl-border orange
     margin-top: -$hl-border
