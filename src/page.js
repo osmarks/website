@@ -573,9 +573,9 @@ if (sidenotes && footnotes) {
                 const link = article.querySelector(`#${item.id.replace(/^fn/, "fnref")}`)
                 const linkRect = link.getBoundingClientRect()
                 item.style.position = "absolute"
-                item.style.left = (articleRect.left + pad) + "px"
+                item.style.left = (articleRect.left + window.scrollX + pad) + "px"
                 item.style.width = (articleRect.right - articleRect.left - pad * 2) + "px"
-                item.style.top = linkRect.bottom + "px"
+                item.style.top = linkRect.bottom + window.scrollY + "px"
                 item.style.display = "none"
             }
             rendered = false

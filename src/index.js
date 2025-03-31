@@ -498,7 +498,8 @@ const fetchFeeds = async () => {
 const compileCSS = async () => {
     let css = sass.compile(path.join(srcDir, "style.sass"), {
         style: "compressed",
-        indentedSyntax: true
+        indentedSyntax: true,
+        charset: false
     }).css
     css += "\n"
     css += await fsp.readFile(path.join(srcDir, "comments.css"))
