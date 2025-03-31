@@ -661,10 +661,10 @@ const closeOverlay = () => {
 }
 
 // this is actually now labelled properly as the search button
-const loginButton = document.querySelector("nav a:last-of-type")
-loginButton.href = "#"
-loginButton.innerText = "Search"
-loginButton.onclick = async ev => {
+const searchButton = document.querySelector("nav a:last-of-type")
+searchButton.href = "#"
+searchButton.innerText = "Search"
+searchButton.onclick = async ev => {
     ev.preventDefault()
     const query = (await import("/assets/js/fts_client.js")).default
     const overlay = document.createElement("div")
@@ -675,13 +675,18 @@ loginButton.onclick = async ev => {
     input.type = "text"
     input.placeholder = "Search"
     let resultsEl
+    let topResult
     input.oninput = () => {
         if (resultsEl) {
             resultsEl.remove()
         }
         resultsEl = document.createElement("div")
         resultsEl.classList.add("search-results")
-        for (const result of query(input.value)) {
+        const results = query(input.value)
+        if (results.length > 0) {
+            topResult = results[0].url
+        }
+        for (const result of results) {
             const item = e("search-result", resultsEl)
             const titleLine = nameMappings[result.sourceType] + " / " + (result.title ?? result.timestamp)
             const link = e("search-result-link", item, titleLine, "a")
@@ -702,6 +707,12 @@ loginButton.onclick = async ev => {
             if (input.value === "") {
                 // quit search mode
                 closeOverlay()
+                return
+            }
+        }
+        if (ev.key === "Enter") {
+            if (topResult) {
+                window.location.href = topResult
             }
         }
     }
@@ -712,6 +723,9 @@ loginButton.onclick = async ev => {
 window.addEventListener("keydown", ev => {
     if (ev.key === "Escape") {
         closeOverlay()
+    }
+    if (ev.key === "/" && ev.ctrlKey) {
+        searchButton.click()
     }
 })
 
