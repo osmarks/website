@@ -11,6 +11,7 @@ $navbar-width: 20rem
     --autocol-saturation: 85%
     --autocol-border: 0%
     --block-lightness: 85%
+    --overlay-opacity: 0.8
 
 @font-face
     font-family: 'osmarks-primary'
@@ -319,7 +320,8 @@ $hl-border: 3px
         --autocol-lightness: 10%
         --autocol-saturation: 50%
         --autocol-border: 35%
-        --block-lightness: 10%
+        --block-lightness: 20%
+        --overlay-opacity: 0.5
 
     nav .logocont
         color: white
@@ -402,7 +404,7 @@ table
     left: 0
     bottom: 0
     right: 0
-    background: rgba(0, 0, 0, 0.9)
+    background: rgba(0, 0, 0, var(--overlay-opacity))
     backdrop-filter: blur(10px)
     padding: 2em
     color: white
