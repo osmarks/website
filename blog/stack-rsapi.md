@@ -80,7 +80,7 @@ RSAPI has a wide range of functions, having grown from a short Flask application
 * RSS feed for random memes (for XScreensaver).
 * Better login system - multiple users, SSO for other services via [Nginx authentication subrequests](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-subrequest-authentication/), basicauth option for non-interactive systems.
 * Key/value storage backend for PotatOS, due to the shutdown of the random free API it used before.
-* Internal LLM-based [Threat Updates](https://r.osmarks.net/threat-update) system[^8], to replace the archive of historical ones and Twitter scraper. I was too lazy to work out how to draw nicely line-wrapped text in images in Python, so this actually invokes a ComputerCraft emulator, runs the Threat Update implementation on that, dumps its virtual screen, and renders that to an image.
+* Internal LLM-based [Threat Updates](https://r.osmarks.net/threat-update) system[^8], to replace the archive of historical ones and Twitter scraper. I was too lazy to work out how to draw nicely line-wrapped text in images in Python, so this invokes a ComputerCraft emulator, runs the Threat Update implementation on that, dumps its virtual screen, and renders that to an image.
 * The new comments system, replacing [Isso](https://github.com/isso-comments/isso). It supports ominous AI faces (from StyleGAN2, thanks to [StyleGANCpp](https://github.com/podgorskiy/StyleGANCpp/)[^7]), leftvotes/rightvotes for greater user expression, SSO integration, better threading, and lower client resource use.
 * Lighting control orchestration.
 

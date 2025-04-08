@@ -32,7 +32,7 @@ Friend me on [Project Euler](https://projecteuler.net/friends)! My code is `1997
 
 ## Skills
 
-* Programming in all cool languages (Python, JavaScript somewhat resentfully, Rust, Lua, Nim, Haskell).
+* Programming in all cool languages (Python, JavaScript, Rust, Lua, Nim, Haskell).
 * Programming in several uncool languages (C, Java), but only ironically.
 * Vague knowledge of contemporary machine learning frameworks and algorithms.
 * Expert knowledge of ComputerCraft (Minecraft mod).
