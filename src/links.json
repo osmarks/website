@@ -579,5 +579,14 @@
         referenceIn: {
             bitalg: ""
         }
+    },
+    "https://fleetwood.dev/posts/domain-specific-architectures": {
+        title: "Domain specific architectures for AI inference",
+        author: "Fleetwood",
+        date: "2025-03-08",
+        referenceIn: {
+            "accel": "Goes into more specific technical detail."
+        },
+        "excerpt": "With exploding demand for AI inference, many hardware startups are designing Domain Specific Architectures. Working backwards from the Transformer workload, we will identify optimal design choices, promising hardware and how to predict the future of inference."
     }
 }
