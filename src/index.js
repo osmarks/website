@@ -29,6 +29,9 @@ const domutils = require("domutils")
 const feedExtractor = require("@extractus/feed-extractor")
 const https = require("https")
 const pLimit = require("p-limit")
+const json5 = require("json5")
+const readability = require("@mozilla/readability")
+const { JSDOM } = require("jsdom")
 
 const fts = require("./fts.mjs")
 
@@ -93,6 +96,76 @@ const hashBG = (cls, i, hue) => {
     return `background: ${hslToRgb(hue / 360, 0.85, 0.65)}; background: hsl(${hue}deg, var(--autocol-saturation), var(--autocol-lightness)); border: 4px solid black; border-color: hsl(${hue}deg, 80%, var(--autocol-border))`
 }
 globalData.hashBG = hashBG
+
+const links = {}
+
+// Retrieve cached (automatically fetched, but version-controlled) link metadata
+// and manually configured overrides.
+const loadLinksOut = async () => {
+    const cache = JSON.parse(await fsp.readFile(path.join(root, "links_cache.json")))
+    for (const [url, meta] of Object.entries(cache)) {
+        links[url] = {
+            ...meta,
+            inline: undefined
+        }
+    }
+    const manual = json5.parse(await fsp.readFile(path.join(srcDir, "links.json")))
+    for (const [url, meta] of Object.entries(manual)) {
+        links[url] = {
+            ...links[url] || {},
+            ...meta
+        }
+    }
+}
+
+const fetchLinksOut = async () => {
+    for (const [url, meta] of Object.entries(links)) {
+        // All links need at least a title. If that is not there, fetch target.
+        if (!meta.title) {
+            let article
+            if (!url.endsWith(".pdf")) {
+                try {
+                    // I don't know why, but without the timeout race configured here
+                    const response = await Promise.race([
+                        axiosInst({ url }),
+                        new Promise((_, reject) =>
+                            setTimeout(() => reject(new Error("timeout")), 15000)
+                        )
+                    ])
+                    if (response.headers["content-type"].startsWith("text/html")) {
+                        const doc = new JSDOM(response.data, { url })
+                        const reader = new readability.Readability(doc.window.document)
+                        article = reader.parse()
+                    }
+                } catch (e) {
+                    console.warn(chalk.red(`Failed to fetch ${url}: ${e.message}`))
+                }
+            }
+            if (article && article.title) {
+                meta.excerpt = article.excerpt
+                meta.title = article.title
+                meta.author = article.byline && article.byline.split("\n")[0]
+                meta.date = article.publishedTime
+                meta.website = article.siteName
+                meta.auto = true
+                console.log(chalk.greenBright("Fetched"), meta.title)
+            } else {
+                console.log(chalk.red(`Manual intervention required for`), url)
+            }
+        }
+    }
+
+    const cachedLinks = {}
+    for (const [url, meta] of Object.entries(links)) {
+        if (meta.auto) {
+            cachedLinks[url] = {
+                ...meta,
+                references: undefined,
+            }
+        }
+    }
+    await fsp.writeFile(path.join(root, "links_cache.json"), JSON.stringify(cachedLinks, null, 4))
+}
 
 const removeExtension = x => x.replace(/\.[^/.]+$/, "")
 
@@ -191,6 +264,15 @@ md.renderer.rules.text = (tokens, idx, options, env, self) => {
     token.content = token.content.replace(/ \- /g, " – ") // highly advanced typography
     return textRenderer(tokens, idx, options, env, self)
 }
+md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+    for (const [attr, value] of tokens[idx].attrs) {
+        if (attr === "href") {
+            env.urls = env.urls ?? []
+            env.urls.push(value)
+        }
+    }
+    return self.renderToken(tokens, idx, options)
+}
 
 const minifyHTML = x => htmlMinifier(x, {
     collapseWhitespace: true,
@@ -201,7 +283,11 @@ const minifyHTML = x => htmlMinifier(x, {
     conservativeCollapse: true,
     collapseBooleanAttributes: true
 })
-const renderMarkdown = x => md.render(x)
+const renderMarkdown = text => {
+    const env = {}
+    const html = md.render(text, env)
+    return [ html, env.urls ?? [] ]
+}
 // basically just whitespace removal - fast and still pretty good versus unminified code
 const minifyJS = (x, filename) => {
     const res = terser.minify(x, {
@@ -303,7 +389,25 @@ const processBlog = async () => {
         meta.slug = meta.slug || removeExtension(basename)
         meta.wordCount = page.content.split(/\s+/).map(x => x.trim()).filter(x => x).length
         meta.haveSidenotes = true
-        meta.content = renderMarkdown(page.content)
+        const [html, urls] = renderMarkdown(page.content)
+        meta.content = html
+
+        for (const url of urls) {
+            try {
+                const parsed = new URL(url)
+                if (parsed.protocol === "http:" || parsed.protocol === "https:") {
+                    parsed.hash = "" // TODO handle this more cleanly
+                    if (!links[parsed]) {
+                        links[parsed] = {
+                            inline: true
+                        }
+                        links[parsed].references = links[parsed].references ?? []
+                        links[parsed].references.push(meta.slug)
+                    }
+                }
+            } catch (e) {}
+        }
+
         fts.pushEntry("blog", {
             html: meta.content,
             url: "/" + meta.slug,
@@ -654,7 +758,7 @@ const tasks = {
     index: { deps: ["fetchFeeds", "pagedeps", "blog", "experiments", "images", "fetchMicroblog"], fn: index },
     fetchFeeds: { deps: ["templates"], fn: fetchFeeds },
     rss: { deps: ["blog"], fn: genRSS },
-    blog: { deps: ["pagedeps"], fn: processBlog },
+    blog: { deps: ["pagedeps", "loadLinksOut"], fn: processBlog },
     fetchMicroblog: { deps: ["templates"], fn: fetchMicroblog },
     experiments: { deps: ["pagedeps"], fn: processExperiments },
     assetsDir: { deps: [], fn: () => fse.ensureDir(outAssets) },
@@ -667,7 +771,9 @@ const tasks = {
     assets: { deps: ["manifest", "minifyJS", "serviceWorker", "images", "compilePageJS"] },
     main: { deps: ["writeBuildID", "index", "errorPages", "assets", "experiments", "blog", "rss"] },
     searchIndex: { deps: ["blog", "fetchMicroblog", "fetchMycorrhiza", "experiments"], fn: buildFTS },
-    fetchMycorrhiza: { deps: [], fn: fetchMycorrhiza }
+    fetchMycorrhiza: { deps: [], fn: fetchMycorrhiza },
+    fetchLinksOut: { deps: ["blog"], fn: fetchLinksOut },
+    loadLinksOut: { deps: [], fn: loadLinksOut }
 }
 
 const compile = async () => {

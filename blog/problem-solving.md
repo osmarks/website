@@ -16,7 +16,7 @@ The goal of this is for computers to be able to solve them automatically with th
 One common example of a problem-solving puzzle to help develop 'computational skills' is Sudoku.
 While the logical reasoning skills used in Sudoku are admirable, and may even be useful for a few problems in CS, we do not often think about *why we take certain steps* when deducing the value of a tile, instead reasoning retroactively about *how we know* it.
 When we solve Sudoku we do not develop a general algorithm for solving Sudoku in our heads and then execute it; instead, we solve it through a combination of intuition and creative logical reasoning, which are not well-defined or easily applicable to computers.
-[Here](http://educ.jmu.edu/~arnoldea/MathMagHss.pdf) is an interesting article relating to this.
+[Here](https://educ.jmu.edu/~arnoldea/MathMagHss.pdf) is an interesting article relating to this.
 
 'Computational skills' puzzles are inherently unhelpful as tools for improving CS ability, as they do not force players to formalise and be specific in their thought processes while solving problems; instead, they develop the player's intuitive ability.
 In chess, competitive players often talk about 'developing intuition', i.e. being able to play a chess game automatically and without formalising their thought processes.

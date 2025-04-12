@@ -1,0 +1,482 @@
+{
+    "/assets/misc/2014-horowitz.pdf": {
+        title: "Computing's Energy Problem (and what we can do about it)",
+        author: "Mark Horowitz",
+        date: "2014-02-10"
+    },
+    "https://nooscope.osmarks.net/": {
+        title: "Nooscope",
+        author: "osmarks"
+    },
+    "https://www.youtube.com/playlist?list=PLIoFMnkvRA5PggXaYGQ2QJPEH8LPDm5Dd": {
+        title: "Untitled Objection Series",
+        author: "osmarks",
+        website: "YouTube"
+    },
+    "https://www.youtube.com/watch?v=BsEltlIXkYg": {
+        title: "The New Super Cool Epson MOVERIO BT-35E Smart Glasses for Drones",
+        author: "CAPTAIN DRONE",
+        website: "YouTube"
+    },
+    "https://sigbovik.org/2024/proceedings.pdf": {
+        title: "Proceedings",
+        author: "SIGBOVIK",
+        date: "2024-04-01"
+    },
+    "https://resources.nvidia.com/en-us-tensor-core/gtc22-whitepaper-hopper": {
+        title: "NVIDIA H100 Tensor Core GPU Architecture",
+        website: "NVIDIA"
+    },
+    "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-nvidia-us-2188504-web.pdf": {
+        title: "NVIDIA A100 Tensor Core GPU",
+        website: "NVIDIA"
+    },
+    "https://karthikecon.github.io/karthiksrinivasan.org/paying_attention.pdf": {
+        title: "Paying Attention",
+        author: "Karthik Srinivasan",
+        date: "2023-12-18"
+    },
+    "https://x.com/seatedro/status/1839661758107070858": {
+        date: "2024-09-27",
+        author: "@seatedro",
+        title: "it does now, memegrep [dot] com",
+        website: "Twitter"
+    },
+    "https://datasets.osmarks.net/components.html": {
+        title: "Embeddings PCA",
+        website: "osmarks datasets"
+    },
+    "https://x.com/michaelsayman/status/1835841675584811239": {
+        title: "Introducing SocialAI",
+        author: "@michaelsayman",
+        date: "2024-09-17",
+        website: "Twitter"
+    },
+    "https://www.intel.com/content/www/us/en/products/sku/77978/intel-atom-processor-c2358-1m-cache-1-70-ghz/specifications.html": {
+        title: "Intel Atom® Processor C2358",
+        website: "Intel"
+    },
+    "https://www.intel.com/content/www/us/en/products/details/ethernet/700-network-adapters/x710-network-adapters/docs.html": {
+        title: "Intel® Ethernet Network Adapter X710",
+        website: "Intel",
+        excerpt: "10GbE adapters with hardware optimization and offloads for the rapid provisioning of networks in the data center. These adapters are available with SFP+ or RJ45 connection types."
+    },
+    "https://vi-fi.github.io/Immortem.html": {
+        title: "Immortem",
+        author: "vi-fi"
+    },
+    "https://vi-fi.github.io/Compressibility.html": {
+        title: "Compressibility",
+        author: "vi-fi"
+    },
+    "https://0t.lt/": {
+        title: "0t.lt",
+        author: "osmarks",
+        description: "osmarks.net URL shortener"
+    },
+    "https://www.anandtech.com/show/21342/intel-introduces-gaudi-3-accelerator-going-bigger-and-aiming-higher": {
+        title: "Intel Introduces Gaudi 3 AI Accelerator: Going Bigger and Aiming Higher In AI Market",
+        author: "Ryan Smith",
+        website: "AnandTech",
+        date: "2024-04-09"
+    },
+    "https://global.canon/en/technology/nil-2023.html": {
+        title: "Nanoimprint Lithography",
+        date: "2023-10-16",
+        website: "Canon"
+    },
+    "https://0t.lt/YearningPried": {
+        title: "Cryoapioform Rotating At 0.223 Radians Per Second",
+        website: "osmarks.net"
+    },
+    "https://osmarks.net/rss.xml": {
+        title: "osmarks.net RSS feed",
+        website: "osmarks.net"
+    },
+    "https://www.youtube.com/watch?v=rsxCZAE8QNA&t=1067": {
+        title: "HC2023-K2: Hardware for Deep Learning",
+        website: "YouTube",
+        author: "Bill Dally"
+    },
+    "https://www.youtube.com/watch?v=rsxCZAE8QNA&t=646": {
+        title: "HC2023-K2: Hardware for Deep Learning",
+        website: "YouTube",
+        author: "Bill Dally"
+    },
+    "https://www.youtube.com/watch?v=qAuwW7Wzrng": {
+        title: "Why am I wearing a heads-up display?",
+        website: "YouTube",
+        author: "Zack Freedman"
+    },
+    "https://osmarks.net/stuff/apn.pdf": {
+        title: "Advancing Consensus: Automated Persuasion Networks for Public Belief Enhancement",
+        author: "osmarks.net Computational Memetics Division",
+        date: "2024-04-01"
+    },
+    "https://www.youtube.com/playlist?list=PLliiJ70rl2NvJjby2LoVuP1EuOvRAyf97": {
+        title: "Minecraft - Gregtech New Horizons",
+        website: "YouTube",
+        author: "Kharax82"
+    },
+    "https://kay21s.github.io/RoarGraph-VLDB2024.pdf": {
+        title: "RoarGraph: A Projected Bipartite Graph for Efficient Cross-Modal Approximate Nearest Neighbor Search",
+        author: ["Meng Chen", "Kai Zhang", "Zhenying He", "Yinan Jing", "X.Sean Wang"]
+    },
+    "https://www.fanfiction.net/s/9658524/1/Branches-on-the-Tree-of-Time": {
+        title: "Branches on the Tree of Time",
+        website: "fanfiction.net",
+        author: "alexanderwales"
+    },
+    "https://www.reuters.com/technology/nvidia-supplier-sk-hynix-says-hbm-chips-almost-sold-out-2025-2024-05-02/": {
+        title: "Nvidia supplier Sk Hynix says HBM chips almost sold out for 2025",
+        website: "Reuters",
+        author: ["Joyce Lee", "Heekyong Yang"],
+        date: "2024-05-02"
+    },
+    "https://x.com/nearcyan/status/1532076277947330561": {
+        title: "heavenbanning, the hypothetical practice of banishing a user from a platform by causing everyone that they speak with to be replaced by AI models that constantly agree and praise them, but only from their own perspective, is entirely feasible with the current state of AI/LLMs",
+        author: "@nearcyan",
+        date: "2022-06-01",
+        website: "Twitter"
+    },
+    "https://support.reddithelp.com/hc/en-us/articles/360043043412-What-is-a-custom-feed-and-how-do-I-make-one": {
+        title: "What is a custom feed and how do I make one?",
+        website: "Reddit Help"
+    },
+    "https://www.youtube.com/watch?v=L5pUA3LsEaw": {
+        title: "Why Not Just: Think of AGI Like a Corporation?",
+        website: "YouTube",
+        author: "Robert Miles AI Safety"
+    },
+    "https://files.osf.io/v1/resources/xcz2t/providers/osfstorage/628662af52d1723f1080bc21?action=download&direct&version=1": {
+        title: "Shedding Light on Shadowbanning",
+        author: "Gabriel Nicholas",
+        date: "2022-04-01"
+    },
+    "https://www.usenix.org/system/files/nsdi24-yi.pdf": {
+        title: "BFMSense: WiFi Sensing Using Beamforming Feedback Matrix",
+        date: "2024-04-16",
+        author: ["Enze Yi", "Dan Wu", "Fusang Zhang", "Kai Niu", "Daqing Zhang"]
+    },
+    "https://proceedings.neurips.cc/paper_files/paper/2023/file/9d89448b63ce1e2e8dc7af72c984c196-Paper-Conference.pdf": {
+        title: "Scaling Data-Constrained Language Models",
+        date: "2023-05-25",
+        author: ["Niklas Muennighoff", "Alexander M. Rush", "Boaz Barak", "Teven Le Scao", "Aleksandra Piktus", "Nouamane Tazi", "Sampo Pyysalo", "Thomas Wolf", "Colin Raffel"]
+    },
+    "https://pubs.aip.org/aip/jcp/article/139/12/121923/74793/Statistical-physics-of-self-replication": {
+        title: "Statistical physics of self-replication",
+        date: "2013-08-21",
+        author: "Jeremy L. England"
+    },
+    "https://harsha-simhadri.org/pubs/Filtered-DiskANN23.pdf": {
+        title: "Filtered-DiskANN: Graph Algorithms for Approximate Nearest Neighbor Search with Filters",
+        date: "2023-04-30",
+        author: ["Siddharth Gollapudi","Neel Karia","Varun Sivashankar","Ravishankar Krishnaswamy","Nikit Begwani","Swapnil Raz","Yiyong Lin","Yin Zhang","Neelam Mahapatro","Premkumar Srinivasan","Amit Singh","Harsha Vardhan Simhadri"]
+    },
+    "https://twitter.com/gf_256/status/1598104835848798208": {
+        title: "OMG WTF",
+        author: "@gf_256",
+        date: "2022-12-01",
+        website: "Twitter"
+    },
+    "https://twitter.com/emollick/status/1657050639644360706": {
+        title: "Digital humanities is about to be wild.",
+        author: "@emollick",
+        date: "2023-05-12",
+        website: "Twitter"
+    },
+    "https://x.com/carrigmat/status/1884244369907278106": {
+        title: "Complete hardware + software setup for running Deepseek-R1 locally. The actual model, no distillations, and Q8 quantization for full quality. Total cost, $6,000. All download and part links below:",
+        author: "@carrigmat",
+        date: "2025-01-28",
+        website: "Twitter"
+    },
+    "https://discord.gg/ckGrMDR": {
+        title: "styropyro Discord server",
+        website: "Discord"
+    },
+    "https://openai.com/blog/openai-codex/": {
+        title: "OpenAI Codex",
+        website: "OpenAI",
+        date: "2021-08-10"
+    },
+    "https://www.facebook.com/509414227/posts/10157671264984228/": {
+        title: "Eliezer Yudkowsky's post",
+        website: "Facebook",
+        date: "2019-09-08"
+    },
+    "https://dlportal.barracudanetworks.com/download/6120/GWAY-9.0.4-0097.iso": {
+        title: "Barracuda Networks gateway firmware ISO version 9.0.4"
+    },
+    "https://huggingface.co/intfloat/e5-large-v2": {
+        title: "e5-large-v2",
+        author: "intfloat",
+        website: "HuggingFace"
+    },
+    "https://huggingface.co/Snowflake/snowflake-arctic-embed-l": {
+        title: "Snowflake's Arctic-embed-l",
+        author: "Snowflake",
+        website: "HuggingFace"
+    },
+    "https://huggingface.co/lightonai/modernbert-embed-large": {
+        title: "ModernBERT-embed-large",
+        author: "LightOn AI",
+        website: "HuggingFace"
+    },
+    "https://x.com/threat_update": {
+        title: "Threat Update",
+        author: "@threat_update",
+        website: "Twitter"
+    },
+    "https://twitter.com/threat_update": {
+        title: "Threat Update",
+        author: "@threat_update",
+        website: "Twitter"
+    },
+    "https://www.anandtech.com/show/17415/asmls-highna-update-coming-to-fabs-in-2024-2025": {
+        title: "ASML High-NA Development Update: Coming to Fabs in 2024 - 2025",
+        author: "Anton Shilov",
+        date: "2022-05-26",
+        website: "AnandTech"
+    },
+    "https://i.osmarks.net/memes-or-something/arch-btw.png": {
+        title: "I use Arch BTW"
+    },
+    "https://r.osmarks.net/threat-update": {
+        title: "Live Threat Update",
+        website: "osmarks.net"
+    },
+    "https://wrv.github.io/h26forge.pdf": {
+        title: "The Most Dangerous Codec in the World: Finding and Exploiting Vulnerabilities in H.264 Decoders",
+        author: ["Willy R. Vasquez", "Stephen Checkoway", "Hovav Shacham"]
+    },
+    "https://battle-blackberry-78e.notion.site/How-to-run-ML-Experiments-for-cheap-b1270491395747458ac6726515b323cc": {
+        title: "How to run ML Experiments (for cheap)"
+    },
+    "https://educ.jmu.edu/~arnoldea/MathMagHss.pdf": {
+        title: "How Do YOU Solve Sudoku? A Group-theoretic Approach to Human Solving Strategies",
+        author: ["Elizabeth A. Arnold", "Harrison C. Chapman", "Malcom E. Rupert"]
+    },
+    "https://archiveofourown.org/works/50491414": {
+        title: "an important lesson in cryptography",
+        author: "heav_1",
+        date: "2023-10-02"
+    },
+    "https://www.xreal.com/uk/air2/": {
+        title: "Xreal Air2"
+    },
+    "https://onlinelibrary.wiley.com/doi/pdf/10.1207/s15516709cog1004_4": {
+        title: "How Much Do People Remember? Some Estimates of the Quantity of Learned Information in Long-term Memory",
+        author: "Thomas K. Landauer",
+        date: "1986-12-01"
+    },
+    "https://fanfiction.net/s/5389450/1/": {
+        title: "The Finale of the Ultimate Meta Mega Crossover",
+        author: "Eliezer Yudkowsky",
+        website: "fanfiction.net"
+    },
+    "https://twitter.com/matthew_d_green/status/1392814211122843651": {
+        title: "This article about end-to-end encryption and authorities’ desire to perform real-time content scanning is very well written and I hope you’ll read it. It also makes me pretty angry. https://t.co/YQijeQgRL6",
+        author: "@matthew_d_green",
+        date: "2021-05-13",
+        website: "Twitter"
+    },
+    "https://www.schneier.com/wp-content/uploads/2016/09/paper-keys-under-doormats-CSAIL.pdf": {
+        title: "Keys Under Doormats: Mandating Insecurity By Requiring Government Access To All Data And Communications",
+        author: ["H. Abelson","R. Anderson","S. M. Bellovin","J. Benaloh","M. Blaze","W. Diffie","J. Gilmore","M. Green","S. Landau","P. G. Neumann","R. L. Rivest","J. I. Schiller","B. Schneier","M. Specter","D. J. Weitzner"],
+        date: "2015-11-01"
+    },
+    "https://www.lesbonscomptes.com/recoll/faqsandhowtos/IndexWebHistory": {
+        title: "Indexing visited Web pages with the Recoll Firefox extension"
+    },
+    "https://twitter.com/giffmana/status/1707327094982672666": {
+        title: "Pleased to announce we are releasing checkpoints for our SigLIP models!",
+        author: "@giffmana",
+        date: "2023-09-28",
+        website: "Twitter"
+    },
+    "https://www.pnas.org/doi/10.1073/pnas.0510013103": {
+        title: "Essential genes of a minimal bacterium",
+        author: ["John I. Glass","Nacyra Assad-Garcia","Nina Alperovich","Shibu Yooseph","Matthew R. Lewis","Mahir Maruf","Clyde A. Hutchison, III","Hamilton O. Smith","J. Craig Venter"]
+    },
+    "https://www.telegraph.co.uk/news/2017/07/31/dont-want-ban-encryption-inability-see-terrorists-plotting-online/": {
+        title: "We don't want to ban encryption, but our inability to see what terrorists are plotting undermines our security",
+        author: "Amber Rudd",
+        date: "2017-07-31",
+        website: "The Telegraph"
+    },
+    "https://openai.com/blog/function-calling-and-other-api-updates": {
+        title: "Function calling and other API updates",
+        date: "2023-06-13",
+        website: "OpenAI",
+        excerpt: "We’re announcing updates including more steerable API models, function calling capabilities, longer context, and lower prices."
+    },
+    "https://youtube.com/user/styropyro/": {
+        title: "styropyro",
+        website: "YouTube",
+        author: "styropyro",
+        excerpt: "I'm a science maniac that loves building huge lasers and playing with electricity and chemicals."
+    },
+    "https://platform.openai.com/docs/api-reference": {
+        title: "Introduction",
+        website: "OpenAI Platform"
+    },
+    "https://platform.openai.com/docs/api-reference/completions": {
+        title: "Completions (Legacy)",
+        excerpt: "Given a prompt, the model will return one or more predicted completions along with the probabilities of alternative tokens at each position. Most developer should use our Chat Completions API to leverage our best and newest models.",
+        website: "OpenAI Platform"
+    },
+    "https://openaccess.thecvf.com/content_ECCV_2018/papers/Julieta_Martinez_LSQ_lower_runtime_ECCV_2018_paper.pdf": {
+        title: "LSQ++: Lower running time and higher recall in multi-codebook quantization",
+        author: ["Julieta Martinez", "Shobhit Zakhmi", "Holger H. Hoos", "James J. Little"],
+        date: "2018-10-06"
+    },
+    "https://ieeexplore.ieee.org/document/10067540": {
+        title: "“Zen 4”: The AMD 5nm 5.7GHz x86-64 Microprocessor Core",
+        author: ["Benjamin Munger", "Kathy Wilcox", "Jeshuah Sniderman", "Chuck Tung", "Brett Johnson", "Russell Schreiber"],
+        date: "2023-03-23"
+    },
+    "https://www.researchgate.net/profile/Richard-Gunstone/publication/238983736_Student_understanding_in_mechanics_A_large_population_survey/links/02e7e52f8a2f984024000000/Student-understanding-in-mechanics-A-large-population-survey.pdf": {
+        title: "Student understanding in mechanics: A large population survey",
+        author: "Richard Gunstone",
+        date: "1987-08-01"
+    },
+    "https://proceedings.neurips.cc/paper_files/paper/2019/file/09853c7fb1d3f8ee67a61b6bf4a7f8e6-Paper.pdf": {
+        title: "DiskANN: Fast Accurate Billion-point Nearest Neighbor Search on a Single Node",
+        author: ["Suhas Jayaram Subramanya", "Devvrit", "Rohan Kadekodi", "Ravishankar Krishaswamy", "Harsha Vardhan Simhadri"],
+        date: "2019-11-01"
+    },
+    "https://conference-indico.kek.jp/event/160/contributions/2876/attachments/2148/2699/Zhilong_Pan.pdf": {
+        title: "Recent progress of SSMB EUV light source project at Tsinghua University",
+        author: "Zhilong Pan",
+        date: "2022-01-18"
+    },
+    "https://support.reddithelp.com/hc/en-us/articles/26410290525844-Public-Content-Policy": {
+        title: "Public Content Policy",
+        website: "Reddit Help"
+    },
+    "https://leetcode.com/": {
+        title: "LeetCode"
+    },
+    "https://www.lfs.org/": {
+        title: "Libertarian Futurist Society"
+    },
+    "https://www.dropbox.com/scl/fi/juc2c8gku938brmedjm8q/Hronar-Final.odt?rlkey=yf01124ruzar1xza82cougpmk&e=1&dl=0": {
+        title: "Hronar (Final)",
+        author: "Maximilian Krause"
+    },
+    "https://www.dropbox.com/scl/fi/fq40ef5dpgd5awun1vuu6/Voices-of-the-Gods.doc?rlkey=dxx6adofzrpr4o9vri15qkbby&e=1&dl=0": {
+        title: "Voices of the Gods",
+        author: "Maximilian Krause"
+    },
+    "https://www.fictionpress.com/s/2961893/1/Mother-of-Learning": {
+        title: "Mother of Learning",
+        author: "nobody103",
+        website: "fictionpress.com"
+    },
+    "https://www.fanfiction.net/s/13451176/1/Chili-and-the-Chocolate-Factory-Fudge-Revelation": {
+        title: "Chili and the Chocolate Factory: Fudge Revelation",
+        author: "gaizemaize",
+        website: "fanfiction.net"
+    },
+    "https://fictionpress.com/s/3238329/1/A-Hero-s-War": {
+        title: "A Hero's War",
+        author: "jseah",
+        website: "fictionpress.com"
+    },
+    "https://www.antipope.org/charlie/blog-static/fiction/accelerando/accelerando.html": {
+        title: "Accelerando",
+        author: "Charles Stross",
+        date: "2005-07-01"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/ender-io": {
+        title: "Ender IO",
+        author: "crazypants_mc_the_second",
+        website: "CurseForge"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/create": {
+        title: "Create",
+        author: "simibubi",
+        website: "CurseForge"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/pretty-pipes": {
+        title: "Pretty Pipes",
+        author: "Ellpeck",
+        website: "CurseForge"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/psi": {
+        title: "Psi",
+        author: "Vazkii",
+        website: "CurseForge"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering": {
+        title: "Immersive Engineering",
+        author: "BluSunrize",
+        website: "CurseForge"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/forestry": {
+        title: "Forestry",
+        author: "mezz",
+        website: "CurseForge"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/mystical-agriculture": {
+        title: "Mystical Agriculture",
+        author: "BlakeBr0",
+        website: "CurseForge"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/thermal-expansion": {
+        title: "Thermal Expansion",
+        author: "TeamCoFH",
+        website: "CurseForge"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/cc-tweaked": {
+        title: "CC: Tweaked",
+        author: "SquidDev",
+        website: "CurseForge"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/thaumcraft": {
+        title: "Thaumcraft",
+        author: "Azanor",
+        website: "CurseForge"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/crafttweaker": {
+        title: "CraftTweaker",
+        author: "Jaredlll08",
+        website: "CurseForge"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/astral-sorcery": {
+        title: "Astral Sorcery",
+        author: "HellFirePvP",
+        website: "CurseForge"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/singularities": {
+        title: "Singularities",
+        author: "Shadows_of_Fire",
+        website: "CurseForge"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/immersive-engineering": {
+        title: "Immersive Engineering",
+        author: "BluSunrize",
+        website: "CurseForge"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/big-reactors": {
+        title: "Big Reactors",
+        author: "ErogenousBeef",
+        website: "CurseForge"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/modern-industrialization": {
+        title: "Modern Industrialization",
+        author: "thetechnici4n",
+        website: "CurseForge"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/pneumaticcraft-repressurized": {
+        title: "PneumaticCraft Repressurized",
+        author: "desht_08",
+        website: "CurseForge"
+    },
+    "https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest": {
+        title: "The Twilight Forest",
+        author: "Benimatic",
+        website: "CurseForge"
+    }
+}

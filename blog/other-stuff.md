@@ -285,7 +285,7 @@ The author, Zachary Mason, also wrote [The Lost Books of the Odyssey](https://ww
 * [The Titanomachy](https://kishoto.wordpress.com/2015/09/09/the-titanomachy-rrational-challenge-defied-prophecy/).
 * [Wizard, Cabalist, Ascendant](/stuff/wizard-cabalist-ascendant.xhtml).
 * [Sekhmet Hunts The Dying Gnosis: A Computation](http://www.beneath-ceaseless-skies.com/stories/sekhmet-hunts-the-dying-gnosis-a-computation/).
-* [The Finale of the Ultimate Meta Mega Crossover](https://m.fanfiction.net/s/5389450/1/).
+* [The Finale of the Ultimate Meta Mega Crossover](https://fanfiction.net/s/5389450/1/).
 * [Shannon's Law](https://web.archive.org/web/20140628065855/http://www.tor.com/stories/2011/05/shannons-law).
 * [Dave Scum](https://docs.google.com/document/d/1SddGHeVfcVa5SCDHHTOA4RlKwnef-Q6IMw_Jqw9I0Mw/mobilebasic).
 * [Nate the Snake](https://natethesnake.com/) is a complex setup for a pun.
@@ -351,7 +351,7 @@ Men have gazed at the stars for millennia, and wondered whether there was a deit
 
 ### Freefall
 
-[Freefall](https://freefall.purrsia.com/), a hard-science-fiction webcomic. Long-running enough that it has also gone through a wide range of themes. I find it to be consistently surprisingly thoughtful.
+[Freefall](http://freefall.purrsia.com/), a hard-science-fiction webcomic. Long-running enough that it has also gone through a wide range of themes. I find it to be consistently surprisingly thoughtful.
 
 Special mentions (i.e. "I haven't gotten around to reading these but they are well-reviewed and sound interesting") to:
 * [Children of Time](https://www.goodreads.com/book/show/25499718-children-of-time) by Adrian Tchaikovsky.
