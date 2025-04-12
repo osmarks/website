@@ -116,6 +116,9 @@ const loadLinksOut = async () => {
             ...meta
         }
     }
+    for (const [url, meta] of Object.entries(links)) {
+        meta.url = url
+    }
 }
 
 const fetchLinksOut = async () => {
@@ -161,6 +164,7 @@ const fetchLinksOut = async () => {
             cachedLinks[url] = {
                 ...meta,
                 references: undefined,
+                url: undefined
             }
         }
     }
@@ -391,6 +395,7 @@ const processBlog = async () => {
         meta.haveSidenotes = true
         const [html, urls] = renderMarkdown(page.content)
         meta.content = html
+        meta.references = []
 
         for (const url of urls) {
             try {
@@ -406,6 +411,19 @@ const processBlog = async () => {
                     }
                 }
             } catch (e) {}
+        }
+
+        // this is quite inefficient but we don't have many links so whatever
+        for (const [url, umeta] of Object.entries(links)) {
+            if (umeta.referenceIn) {
+                const refText = umeta.referenceIn[meta.slug]
+                if (refText !== undefined) {
+                    meta.references.push({
+                        description: refText,
+                        ...links[url]
+                    })
+                }
+            }
         }
 
         fts.pushEntry("blog", {

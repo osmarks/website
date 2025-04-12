@@ -284,7 +284,8 @@
     "https://www.schneier.com/wp-content/uploads/2016/09/paper-keys-under-doormats-CSAIL.pdf": {
         title: "Keys Under Doormats: Mandating Insecurity By Requiring Government Access To All Data And Communications",
         author: ["H. Abelson","R. Anderson","S. M. Bellovin","J. Benaloh","M. Blaze","W. Diffie","J. Gilmore","M. Green","S. Landau","P. G. Neumann","R. L. Rivest","J. I. Schiller","B. Schneier","M. Specter","D. J. Weitzner"],
-        date: "2015-11-01"
+        date: "2015-11-01",
+        excerpt: "Twenty years ago, law enforcement organizations lobbied to require data and communication services to engineer their products to guarantee law enforcement access to all data. After lengthy debate and vigorous predictions of enforcement channels “going dark,” these attempts to regulate security technologies on the emerging Internet were abandoned. In the intervening years, innovation on the Internet flourished, and law enforcement agencies found new and more effective means of accessing vastly larger quantities of data. Today, there are again calls for regulation to mandate the provision of exceptional access mechanisms. In this article, a group of computer scientists and security experts, many of whom participated in a 1997 study of these same topics, has convened to explore the likely effects of imposing extraordinary access mandates. We have found that the damage that could be caused by law enforcement exceptional access requirements would be even greater today than it would have been 20 years ago. In the wake of the growing economic and social cost of the fundamental insecurity of today’s Internet environment, any proposals that alter the security dynamics online should be approached with caution. Exceptional access would force Internet system developers to reverse “forward secrecy” design practices that seek to minimize the impact on user privacy when systems are breached. The complexity of today’s Internet environment, with millions of apps and globally connected services, means that new law enforcement requirements are likely to introduce unanticipated, hard to detect security flaws. Beyond these and other technical vulnerabilities, the prospect of globally deployed exceptional access systems raises difficult problems about how such an environment would be governed and how to ensure that such systems would respect human rights and the rule of law."
     },
     "https://www.lesbonscomptes.com/recoll/faqsandhowtos/IndexWebHistory": {
         title: "Indexing visited Web pages with the Recoll Firefox extension"
@@ -334,7 +335,8 @@
     "https://ieeexplore.ieee.org/document/10067540": {
         title: "“Zen 4”: The AMD 5nm 5.7GHz x86-64 Microprocessor Core",
         author: ["Benjamin Munger", "Kathy Wilcox", "Jeshuah Sniderman", "Chuck Tung", "Brett Johnson", "Russell Schreiber"],
-        date: "2023-03-23"
+        date: "2023-03-23",
+        excerpt: "“Zen 4” is AMD's next generation x86-64 microprocessor core, fabricated in a 5nm FinFET process. Close collaboration between the design team and TSMC enabled an optimized process and excellent process scaling relative to the 7nm process used for “Zen 3”. The 55mm2 core complex (CCX), shown in Fig. 2.1.1, contains 6.5B transistors across eight cores, similar to the 8 core CCX in the previous generation. Each core includes a 1MB private L2 cache, double the previous generation, and the eight cores share a 32MB L3 cache. The design also delivers a process-neutral performance increase over “Zen 3”: instructions per cycle (IPC) is increased, the physical design improves process-neutral frequency and changes are made to drive improved power efficiency maximizing both single-threaded performance and performance per watt in multi-threaded workloads. Incremental improvements to the core micro-architecture provide a 13% IPC improvement over the previous generation on an average of single-threaded desktop applications and the “Zen 4” core can operate at up to 5.7GHz delivering a more than 29% increase generationally in single-threaded performance."
     },
     "https://www.researchgate.net/profile/Richard-Gunstone/publication/238983736_Student_understanding_in_mechanics_A_large_population_survey/links/02e7e52f8a2f984024000000/Student-understanding-in-mechanics-A-large-population-survey.pdf": {
         title: "Student understanding in mechanics: A large population survey",
@@ -344,7 +346,8 @@
     "https://proceedings.neurips.cc/paper_files/paper/2019/file/09853c7fb1d3f8ee67a61b6bf4a7f8e6-Paper.pdf": {
         title: "DiskANN: Fast Accurate Billion-point Nearest Neighbor Search on a Single Node",
         author: ["Suhas Jayaram Subramanya", "Devvrit", "Rohan Kadekodi", "Ravishankar Krishaswamy", "Harsha Vardhan Simhadri"],
-        date: "2019-11-01"
+        date: "2019-11-01",
+        excerpt: "Current state-of-the-art approximate nearest neighbor search (ANNS) algorithms generate indices that must be stored in main memory for fast high-recall search. This makes them expensive and limits the size of the dataset. We present a new graph-based indexing and search system called DiskANN that can index, store, and search a billion point database on a single workstation with just 64GB RAM and an inexpensive solid-state drive (SSD). Contrary to current wisdom, we demonstrate that the SSD-based indices built by DiskANN can meet all three desiderata for large-scale ANNS: high-recall, low query latency and high density (points indexed per node). On the billion point SIFT1B bigann dataset, DiskANN serves > 5000 queries a second with < 3ms mean latency and 95%+ 1-recall@1 on a 16 core machine, where state-of-the-art billion-point ANNS algorithms with similar memory footprint like FAISS and IVFOADC+G+P plateau at around 50% 1-recall@1. Alternately, in the high recall regime, DiskANN can index and serve 5 - 10x more points per node compared to state-of-the-art graph-based methods such as HNSW and NSG. Finally, as part of our overall DiskANN system, we introduce Vamana, a new graph-based ANNS index that is more versatile than the existing graph indices even for in-memory indices."
     },
     "https://conference-indico.kek.jp/event/160/contributions/2876/attachments/2148/2699/Zhilong_Pan.pdf": {
         title: "Recent progress of SSMB EUV light source project at Tsinghua University",
@@ -478,5 +481,103 @@
         title: "The Twilight Forest",
         author: "Benimatic",
         website: "CurseForge"
+    },
+    "https://gwern.net/harberger": {
+        title: "Self-Funding Harberger Taxes",
+        author: "gwern",
+        excerpt: "Copyright mechanism proposal to solve the orphan works problem: self-assessed Harberger taxes on any inherited copyright are then invested, and dedicated to eventually buying out the owners. Works are either immediately public-domained, or the owners voluntarily ‘sell’ them if their value underperforms a baseline investment.",
+        referenceIn: {
+            "georg": "A related but more specific proposal."
+        },
+        date: "2024-11-22"
+    },
+    "https://cameronharwick.com/writing/high-culture-and-hyperstimulus/": {
+        title: "High Culture and Hyperstimulus",
+        author: "Cameron Harwick",
+        date: "2024-04-02",
+        referenceIn: {
+            "heaven": "Hard-to-replicate entertainment is higher-status because if you enjoy easy-to-produce things you're more open to exploitation (spending too many resources on those easy things)."
+        },
+        excerpt: "What’s the difference between a Renaissance nude and a Playboy centerfold?"
+    },
+    "https://dynomight.net/smart/": {
+        title: "Limits of smart",
+        author: "Dynomight",
+        referenceIn: {
+            "asi": "Dynomight argues for substantially more limited superintelligence than me based on (I think) more irreducible complexity."
+        },
+        date: "2025-03-27",
+        excerpt: "Take me. Now take someone with the combined talents of Von Neumann, Archimedes, Ramanujan, and Mozart. Now take someone smarter again by the same margin and repeat that a few times. Say this Being is created and has an IQ of 300. Let’s also say it can think at 10,000× normal speed. But it only has access to the same resources you do. Now what?"
+    },
+    "https://www.alignmentforum.org/w/vinge-s-law": {
+        title: "Vinge's Law",
+        author: "Eliezer Yudkowsky",
+        date: "2016-06-26",
+        referenceIn: {
+            "asi": "We can't know exactly what a superintelligence will do, or it is not usefully superintelligent."
+        },
+        excerpt: "Vinge's Law (as rephrased by Yudkowsky) states: Characters cannot be significantly smarter than their authors. You can't have a realistic character that's too much smarter than the author, because to really know how a character like that would think, you'd have to be that smart yourself."
+    },
+    "https://www.lesswrong.com/posts/LTtNXM9shNM9AC2mp/superintelligence-faq": {
+        title: "Superintelligence FAQ",
+        author: "Scott Alexander",
+        date: "2016-09-20",
+        referenceIn: {
+            "asi": "A good introduction to the general concerns of ASI which addresses safety more directly."
+        },
+        excerpt: "This post is several years out of date and doesn't include information on modern systems like GPT-4, but is still a solid layman's introduction to why superintelligence might be important, dangerous and confusing."
+    },
+    "https://www.lesswrong.com/posts/KuBMKQnAsYBGP4rkZ/modest-superintelligences": {
+        title: "Modest Superintelligences",
+        author: "Wei Dai",
+        date: "2012-03-22",
+        referenceIn: {
+            "asi": "Plausible superintelligences without (exactly) AI."
+        },
+        excerpt: "I suggest that even if intelligence explosion turns out to be impossible, we can still reach a positive Singularity by building what I'll call \"modest superintelligences\", that is, superintelligent entities, capable of taking over the universe and preventing existential risks and Malthusian outcomes, whose construction does not require fast recursive self-improvement or other questionable assumptions about the nature of intelligence. This helps to establish a lower bound on the benefits of an organization that aims to strategically influence the outcome of the Singularity."
+    },
+    "https://tvtropes.org/pmwiki/pmwiki.php/Main/PowerCreep": {
+        title: "Power Creep",
+        website: "TVTropes",
+        excerpt: "Power creep is the process in multi-player games (Collectible Card Games, Tabletop Games, Video Games, etc.) in which newly-added content (such as character abilities or equipment) can be played alongside old content, but the new content is far more powerful/useful. This process makes old content no longer worth using, save for a few exceptions and for Cherry Tapping.",
+        referenceIn: {
+            "mcpower": ""
+        }
+    },
+    "https://www.reddit.com/r/feedthebeast/comments/2l490p/power_creep_what_it_is_how_it_affects_mods_and/": {
+        title: "Power Creep: What it is, how it affects Mods, and what's being done so far.",
+        website: "Reddit",
+        date: "2014-11-03",
+        referenceIn: {
+            "mcpower": ""
+        },
+        excerpt: "The Top Tier, that was your new sword, the top end game item, is now mid tier, and you have to grind, and grind, and grind once more, just to stay in the top tier. This cycle repeats and repeats, until that first sword is just a toothpick in comparison to the blade forged from God's left Toe Nail, and sheathed in some magic leather from cows in space. This is Power Creep. Every game with some form of progression has this, albeit some more than others."
+    },
+    "https://arxiv.org/abs/2502.18663": {
+        title: "CayleyPy RL: Pathfinding and Reinforcement Learning on Cayley Graphs",
+        author: ["A.Chervov","A.Soibelman","S.Lytkin","I.Kiselev","S.Fironov","A.Lukyanenko","A.Dolgorukova","A.Ogurtsov","F.Petrov","S.Krymskii","M.Evseev","L.Grunvald","D.Gorodkov","G.Antiufeev","G.Verbii","V.Zamkovoy","L.Cheldieva","I.Koltsov","A. Sychev","M.Obozov","A.Eliseev","S.Nikolenko","N.Narynbaev","R.Turtayev","N. Rokotyan","S.Kovalev","A.Rozanov","V.Nelin","S.Ermilov","L.Shishina","D.Mamayeva","A.Korolkova","K.Khoruzhii","A.Romanov"],
+        excerpt: "This paper is the second in a series of studies on developing efficient artificial intelligence-based approaches to pathfinding on extremely large graphs (e.g. 10^70 nodes) with a focus on Cayley graphs and mathematical applications. The open-source CayleyPy project is a central component of our research. The present paper proposes a novel combination of a reinforcement learning approach with a more direct diffusion distance approach from the first paper. Our analysis includes benchmarking various choices for the key building blocks of the approach: architectures of the neural network, generators for the random walks and beam search pathfinding.",
+        date: "2025-02-25",
+        referenceIn: {
+            "bitalg": "Pathfinding on Cayley graphs is quite close to expression rewriting."
+        }
+    },
+    "https://arxiv.org/abs/2502.17513": {
+        title: "Int2Int: a framework for mathematics with transformers",
+        author: "François Charton",
+        excerpt: "This paper documents Int2Int, an open source code base for using transformers on problems of mathematical research, with a focus on number theory and other problems involving integers. Int2Int is a complete PyTorch implementation of a transformer architecture, together with training and evaluation loops, and classes and functions to represent, generate and decode common mathematical objects. Ancillary code for data preparation, and Jupyter Notebooks for visualizing experimental results are also provided.",
+        date: "2025-02-22",
+        referenceIn: {
+            bitalg: ""
+        }
+    },
+    "https://arxiv.org/abs/2502.12717": {
+        title: "Learning the symmetric group: large from small",
+        author: ["Max Petschack", "Alexandr Garbali", "Jan de Gier"],
+        date: "2025-02-18",
+        excerpt: "We propose a method for scalable tasks, by which models trained on simpler versions of a task can then generalize to the full task. Specifically, we demonstrate that a transformer neural-network trained on predicting permutations from words formed by general transpositions in the symmetric group S_10 can generalize to the symmetric group S_25 with near 100% accuracy.",
+        referenceIn: {
+            bitalg: ""
+        }
     }
 }

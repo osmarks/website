@@ -2,6 +2,30 @@ extends layout.pug
 
 block content
     div.content.blog-post!= content
+
+    if references.length > 0
+        h2 See also
+        div
+            each ref in references
+                div.autocol.ref
+                    a.title(href=ref.url)= ref.title
+                    div.deemph
+                        if ref.author
+                            if Array.isArray(ref.author)
+                                span= `${ref.author.length > 4 ? ref.author.slice(0, 4).join(", ") + " et al." : ref.author.join(", ")}`
+                            else
+                                span= ref.author
+                        if ref.website
+                            if ref.author
+                                span= " / "
+                            span= `${ref.website}`
+                        if ref.date
+                            if ref.author || ref.website
+                                span= " / "
+                            span= `${ref.date}`
+                    .description!= ref.description
+                    .excerpt= ref.excerpt
+
     if bibtex
         details.cite-this-post
             summary Cite this post

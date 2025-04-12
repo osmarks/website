@@ -122,10 +122,13 @@
     "https://gwern.net/harberger": {
         "excerpt": "Copyright mechanism proposal to solve the orphan works problem: self-assessed Harberger taxes on any inherited copyright are then invested, and dedicated to eventually buying out the owners. Works are either immediately public-domained, or the owners voluntarily ‘sell’ them if their value underperforms a baseline investment.",
         "title": "Self-Funding Harberger Taxes",
-        "author": "Gwern",
-        "date": null,
+        "author": "gwern",
+        "date": "2024-11-22",
         "website": null,
-        "auto": true
+        "auto": true,
+        "referenceIn": {
+            "georg": "A related but more specific proposal."
+        }
     },
     "https://en.wikipedia.org/wiki/Multiply%E2%80%93accumulate_operation": {
         "excerpt": "From Wikipedia, the free encyclopedia",
@@ -696,12 +699,15 @@
         "auto": true
     },
     "https://cameronharwick.com/writing/high-culture-and-hyperstimulus/": {
-        "excerpt": "What’s the difference between a Renaissance nude and a Playboy centerfold? Mark Twain sardonically called the painting above “too strong for any…",
+        "excerpt": "What’s the difference between a Renaissance nude and a Playboy centerfold?",
         "title": "High Culture and Hyperstimulus",
-        "author": null,
-        "date": null,
+        "author": "Cameron Harwick",
+        "date": "2024-04-02",
         "website": null,
-        "auto": true
+        "auto": true,
+        "referenceIn": {
+            "heaven": "Hard-to-replicate entertainment is higher-status because if you enjoy easy-to-produce things you're more open to exploitation (spending too many resources on those easy things)."
+        }
     },
     "http://prize.hutter1.net/": {
         "excerpt": "500'000€ Prize for Compressing Human Knowledge by Marcus Hutter",
