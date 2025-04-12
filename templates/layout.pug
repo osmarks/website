@@ -1,5 +1,5 @@
 mixin nav-item(url, name, color)
-    a(href=url, style=`color: ${color}`)= name + " "
+    a.nav-a(href=url)= name + " "
 
 mixin image(src)
     if typeof src === "string"

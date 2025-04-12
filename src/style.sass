@@ -7,9 +7,12 @@ $navbar-width: 20rem
     box-sizing: border-box
 
 :root
-    --autocol-lightness: 65%
-    --autocol-saturation: 85%
-    --autocol-border: 0%
+    --box-bg: #d0faab
+    --box-border: black
+    // xkcd bluegreen
+    --link: #017a79
+    // xkcd dark blue green
+    --visited-link: #005249
     --block-lightness: 85%
     --overlay-opacity: 0.8
 
@@ -64,6 +67,9 @@ pre, code, .deemph
 
 a
     text-decoration: none
+    color: var(--link)
+    &:visited
+        color: var(--visited-link)
 
 .blog-post a, .sidenotes a
     text-decoration: underline
@@ -97,6 +103,9 @@ nav
 
     a
         margin-left: 0.5em
+
+    .nav-a
+        color: #6dedfd
 
 h1, h2, h3, h4, h5, h6
     margin: 0
@@ -135,8 +144,6 @@ main
 
     > div
         min-width: 20em
-        background: #eee
-        padding: 12px
         flex: 1 1 20%
 
 .microblog > div
@@ -185,6 +192,8 @@ button, select, input, textarea, .textarea
         height: 8em
         width: 8em
         margin-bottom: auto
+        background: black
+        aspect-ratio: 1/1
 
 .caption
     background: lightgray
@@ -308,18 +317,16 @@ $hl-border: 3px
     .achievement
         color: black
 
-    a
-        color: lightblue
-        &:visited
-            color: #e17701
-
     .caption
         background: #333
 
     :root
-        --autocol-lightness: 10%
-        --autocol-saturation: 50%
-        --autocol-border: 35%
+        --box-bg: #001009
+        --box-border: #004020
+        // bright teal
+        --link: #01f9c6
+        // aqua green
+        --visited-link: #12e193
         --block-lightness: 20%
         --overlay-opacity: 0.5
 
@@ -332,6 +339,10 @@ $hl-border: 3px
     button, select, input, textarea, .textarea
         background: #333
         color: white
+
+    .imbox
+        img, picture
+            background: transparent
 
 .sidenotes img, .footnotes img
     width: 100%
@@ -424,8 +435,13 @@ table
             .description
                 font-style: italic
 
-.autocol
+.box
     margin: 4px
+    border: 4px solid black
+    border-color: var(--box-border)
+    background: #b1d1fc
+    background: var(--box-bg)
+    padding: 12px
     .title
         font-size: 1.1em
         font-family: $headers
@@ -469,11 +485,6 @@ textarea.squiggle
     text-wrap: wrap
 
 .ref
-    border: 4px solid black
-    border-color: hsl(300deg, 80%, var(--autocol-border))
-    background: #f2a65a
-    background: hsl(30deg, var(--autocol-saturation), var(--autocol-lightness))
-    padding: 12px
     .excerpt
         font-size: 0.9em
         font-style: italic

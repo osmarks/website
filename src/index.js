@@ -64,39 +64,6 @@ globalData.buildID = buildID
 const randomPick = xs => xs[Math.floor(Math.random() * xs.length)]
 globalData.siteDescription = randomPick(globalData.taglines)
 
-const hexPad = x => Math.round(x).toString(16).padStart(2, "0")
-function hslToRgb(h, s, l) {
-    var r, g, b;
-
-    if (s == 0) {
-        r = g = b = l; // achromatic
-    } else {
-            function hue2rgb(p, q, t) {
-            if (t < 0) t += 1;
-            if (t > 1) t -= 1;
-            if (t < 1/6) return p + (q - p) * 6 * t;
-            if (t < 1/2) return q;
-            if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
-            return p;
-        }
-
-        var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-        var p = 2 * l - q;
-
-        r = hue2rgb(p, q, h + 1/3);
-        g = hue2rgb(p, q, h);
-        b = hue2rgb(p, q, h - 1/3);
-    }
-
-    return `#${hexPad(r * 255)}${hexPad(g * 255)}${hexPad(b * 255)}`
-}
-const hashBG = (cls, i, hue) => {
-    const buf = crypto.createHash("md5").update(cls).digest()
-    const base = buf[0] + 256 * buf[1]
-    return `background: ${hslToRgb(hue / 360, 0.85, 0.65)}; background: hsl(${hue}deg, var(--autocol-saturation), var(--autocol-lightness)); border: 4px solid black; border-color: hsl(${hue}deg, 80%, var(--autocol-border))`
-}
-globalData.hashBG = hashBG
-
 const links = {}
 
 // Retrieve cached (automatically fetched, but version-controlled) link metadata
@@ -219,7 +186,7 @@ const renderContainer = (tokens, idx) => {
             }
             return out
         } else if (blockType === "emphasis") {
-            return `<div class="emphasis" style="${md.utils.escapeHtml(hashBG("blog", 0, 180))}">`
+            return `<div class="emphasis box">`
         }
     } else {
         if (blockType === "captioned") {
@@ -710,7 +677,7 @@ const doImages = async () => {
                     const destFilename = stripped + ext
                     const destPath = path.join(outAssets, "images", destFilename)
                     if (!bytes) {
-                        console.log(chalk.keyword("orange")(`Compressing image ${stripped} (${name})`))
+                        console.log(chalk.keyword("orange")(`Processing image ${stripped} (${name})`))
                         await util.promisify(childProcess.execFile)(cmd, supplementaryArgs.concat([
                             fullPath,
                             destPath
@@ -722,13 +689,8 @@ const doImages = async () => {
 
                     return "/assets/images/" + destFilename
                 }
-                const avif = await writeFormat("avif", ".avif", "avifenc", ["-s", "0", "-q", "20"], " 2x")
-                const avifc = await writeFormat("avif-compact", ".c.avif", path.join(srcDir, "avif_compact.sh"), [])
-                const jpeg = await writeFormat("jpeg-scaled", ".jpg", "convert", ["-resize", "25%", "-format", "jpeg"])
-                globalData.images[stripped] = [
-                    ["image/avif", `${avifc}, ${avif} 2x`],
-                    ["_fallback", jpeg]
-                ]
+                const dither = await writeFormat("dither-png-small", ".png", path.join(srcDir, "dither.sh"), ["128x128"])
+                globalData.images[stripped] = dither
             } else {
                 globalData.images[image.split(".").slice(0, -1).join(".")] = "/assets/images/" + image
             }
