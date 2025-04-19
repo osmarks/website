@@ -2683,12 +2683,15 @@
         "auto": true
     },
     "https://en.wikipedia.org/wiki/The_Case_Against_Education": {
-        "excerpt": "From Wikipedia, the free encyclopedia",
+        "excerpt": "Despite being immensely popular—and immensely lucrative—education is grossly overrated. In this explosive book, Bryan Caplan argues that the primary function of education is not to enhance students’ skill but to certify their intelligence, work ethic, and conformity—in other words, to signal the qualities of a good employee. Learn why students hunt for easy As and casually forget most of what they learn after the final exam, why decades of growing access to education have not resulted in better jobs for the average worker but instead in runaway credential inflation, how employers reward workers for costly schooling they rarely if ever use, and why cutting education spending is the best remedy.",
         "title": "The Case Against Education",
-        "author": "Contributors to Wikimedia projects",
+        "author": "Bryan Caplan",
         "date": "2019-08-15T03:02:06Z",
         "website": "Wikimedia Foundation, Inc.",
-        "auto": true
+        "auto": true,
+        "referenceIn": {
+            "progedu": ""
+        }
     },
     "https://projecteuler.net/": {
         "excerpt": "A website dedicated to the fascinating world of mathematics and programming",
@@ -3862,6 +3865,14 @@
         "author": "Cyprezz LLC",
         "date": null,
         "website": "Planet Minecraft",
+        "auto": true
+    },
+    "https://yosefk.com/blog/my-history-with-forth-stack-machines.html": {
+        "excerpt": "My VLSI tools take a chip from conception through testing. Perhaps 500 lines\nof source code. Cadence, Mentor Graphics do the same, more or less. With how much source/object\ncode?",
+        "title": "My history with Forth & stack machines",
+        "author": null,
+        "date": null,
+        "website": null,
         "auto": true
     }
 }
