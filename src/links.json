@@ -588,5 +588,14 @@
             "accel": "Goes into more specific technical detail."
         },
         "excerpt": "With exploding demand for AI inference, many hardware startups are designing Domain Specific Architectures. Working backwards from the Transformer workload, we will identify optimal design choices, promising hardware and how to predict the future of inference."
+    },
+    "https://irrationalanalysis.substack.com/p/tenstorrent-and-the-state-of-ai-hardware": {
+        title: "Tenstorrent and the State of AI Hardware Startups",
+        author: "Irrational Analysis",
+        date: "2024-12-15",
+        referenceIn: {
+            "accel": "A comparison of Tenstorrent's architecture to others and the reasons they have for it."
+        },
+        "excerpt": "Semi-custom silicon is a bigger problem than Nvidia."
     }
 }
