@@ -52,7 +52,13 @@
         "Money Stuff": "https://www.bloomberg.com/opinion/authors/ARbTQlRLRjE/matthew-s-levine.rss",
         "The Worlds of John Bierce": "https://johnbierce.com/blog/feed/",
         "Dominic Cummings": "https://dominiccummings.substack.com/feed",
-        "citrons": "https://citrons.xyz/a/journal/rss.xml"
+        "citrons": "https://citrons.xyz/a/journal/rss.xml",
+        "Marginal Revolution": "https://feeds.feedblitz.com/marginalrevolution",
+        "SemiAnalysis": "https://www.semianalysis.com/feed",
+        "Mythic Beasts": "https://www.mythic-beasts.com/blog/feed/",
+        "Tales from the Void": "https://randomsprint.substack.com/feed",
+        "Max Barry": "https://maxbarry.com/index.rss",
+        "Real World Tech": "https://www.realworldtech.com/feed/"
     },
     "dateFormat": "YYYY-MM-DD",
     "microblogSource": "https://b.osmarks.net/outbox",

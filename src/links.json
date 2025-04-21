@@ -597,5 +597,14 @@
             "accel": "A comparison of Tenstorrent's architecture to others and the reasons they have for it."
         },
         "excerpt": "Semi-custom silicon is a bigger problem than Nvidia."
+    },
+    "https://x.com/FelixCLC_/status/1913629661780750561": {
+       title: "Discussion of why AI hardware as a field prefers low precision types came up (again) the other day.",
+       author: "@FelixCLC_",
+       date: "2025-04-19",
+       referenceIn: {
+            "accel": ""
+       },
+       excerpt: "The software brained answer is that for precision insensitive workloads, you effectively double your bandwidth from caches/device mem/host mem. But there's a lot more to it."
     }
 }

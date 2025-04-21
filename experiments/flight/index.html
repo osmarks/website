@@ -25,7 +25,7 @@ description: Fly an ominous flying square around above some ground! Includes spe
 <canvas id="thing" width=800 height=800></canvas>
 <div id="controls-container">
 <div id="controls">
-	<label><select name="mechanics"><option>Relativistic</option><option>Newtonian</option><option>Aristotlean</option></select> Mechanics</label><br>
+	<label><select name="mechanics"><option>Relativistic</option><option>Newtonian</option><option>Aristotelian</option></select> Mechanics</label><br>
 	<label><select name="ground"><option>Noise</option><option>Time-Varying</option><option>Flat</option><option>Triangles</option><option>Catenary</option></select> Ground</label><br>
 	<label><select name="controls"><option>Absolute Orientation</option><option>Relative Orientation</option></select> Controls</label><br>
 	<label><select name="restitution"><option>1</option><option>&lt; 1</option><option>&gt; 1</option></select> e</label><br>
@@ -215,7 +215,7 @@ function loop(timestamp) {
 		}
 		var velocityChange = scalarMult(scale(force), 1/divisor)
 		//console.log(gamma(vecLength(velocity)), velocity, velocityChange)
-		if (settings.mechanics === "Aristotlean") {
+		if (settings.mechanics === "Aristotelian") {
 			velocity = scalarMult(velocityChange, 60)
 		} else {
 			velocity = vecAdd(velocity, velocityChange)
