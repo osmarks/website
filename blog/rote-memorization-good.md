@@ -3,13 +3,14 @@ title: Against being against rote memorization
 description: A common criticism of school is that it focuses overmuch on rote memorization. While I don't endorse school, I think this argument is wrong.
 slug: rote
 created: 28/01/2023
+tags: ["education", "opinion"]
 ---
 It is popular to be against rote-memorizing things (i.e. spending time to deliberately commit things exactly to memory) and in favour of something like learning "problem-solving"; I think this is a false dichotomy and memorization can help with more advanced skills.
 
 ## Remembering things is faster than using reference materials
 
 A common argument made against reliance on external tools for cognition like calculators is that you "won't always have them".
-Obviously in today's world of ubiquitous portable computers this is mostly wrong in noncontrived situations, but a better reason is that they're not tightly integrated enough; access is *very slow*. 
+Obviously in today's world of ubiquitous portable computers this is mostly wrong in noncontrived situations, but a better reason is that they're not tightly integrated enough; access is *very slow*.
 Even with the best search tools it's generally faster to recall things (assuming they're not extremely long and you remember them well) than to retrieve and consult relevant notes.
 This can be a significant bottleneck: imagine how much slower mental arithmetic would be if you had to look up the results of single-digit operations each time.
 Even if the time cost isn't that large, it can still be problematic via removing you from "flow".

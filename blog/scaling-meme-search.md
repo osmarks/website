@@ -5,6 +5,7 @@ created: 24/01/2025
 series: meme_search
 series_index: 3
 slug: memescale
+tags: ["own tech", "ai", "search", "memes"]
 ---
 ::: emphasis
 Try the new search system [here](https://nooscope.osmarks.net/). I don't intend to replace the existing [Meme Search Engine](https://mse.osmarks.net/), as its more curated dataset is more useful to me for most applications.

@@ -3,6 +3,7 @@ title: AI interface design
 description: Please stop making chatbots.
 slug: nochatbots
 created: 27/04/2024
+tags: ["ai", "opinion"]
 ---
 ::: epigraph attribution="Leo Gao" link=https://twitter.com/nabla_theta/status/1776427242748609022
 While computers may excel at soft skills like creativity and emotional understanding, they will never match human ability at dispassionate, mechanical reasoning.

@@ -3,6 +3,7 @@ title: Price discrimination by cognitive load
 description: A slightly odd pattern I've observed.
 created: 16/10/2024
 slug: pricecog
+tags: ["economics"]
 ---
 Price discrimination is a practice where sellers of a product try to sell materially the same product to different customers at different prices closer to their willingness to pay. Economists probably have opinions on whether this is good or bad, but I'm going to focus on a specific mechanism for it here. Price discrimination requires some way to show different customers different prices: this might be through timing, very slightly different variants of the product, location or directly selling to customers without a public price.
 

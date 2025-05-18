@@ -3,6 +3,7 @@ title: "A modest proposal: Abstract Concept Georgism"
 description: Generalize land value tax to short names.
 created: 27/03/2025
 slug: georg
+tags: ["economics"]
 ---
 ::: epigraph attribution="Ancient American curse"
 May your markets be efficient.

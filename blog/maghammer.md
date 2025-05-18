@@ -6,6 +6,7 @@ description: Powerful search tools as externalized cognition, and how mine work.
 slug: maghammer
 series: maghammer
 series_index: 1
+tags: ["own tech", "ai", "search"]
 ---
 ::: epigraph attribution="Deus Ex"
 The need to be observed and understood was once satisfied by God. Now we can implement the same functionality with data-mining algorithms.

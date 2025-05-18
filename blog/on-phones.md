@@ -4,6 +4,7 @@ description: My (probably unpopular in general but... actually likely fairly pop
 slug: phones
 created: 01/06/2018
 updated: 24/01/2020
+tags: ["opinion", "hardware"]
 ---
 * Why notches? WHY? Just because Apple used them doesn't mean every single manufacturer needs to start making their screens have ugly black bits on them.
 * Really, why Apple at all? They sell uncustomisable and locked-down stuff at higher and higher prices with fewer and fewer nice-to-haves (e.g. headphone jacks) each year. And the vendor lock-in (Lightning headphones, iVersionsOfMostOtherSoftware) is also bad.

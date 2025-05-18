@@ -3,6 +3,7 @@ title: Modded Minecraft power creep trends
 description: Has Minecraft become easier?
 created: 01/11/2024
 slug: mcpower
+tags: ["fiction", "games"]
 ---
 Playing modded Minecraft, I have the vague impression that many things have been simplified over the years of development. Of course, vague impressions from memory aren't very reliable, so I've gathered slightly more robust information by looking at what general-purpose "kitchen sink" modpacks in various versions had available. The categories I will use are by nature somewhat arbitrary, but I think they're good enough to be useful. If you don't want to know about all the details, [skip to the conclusion](#conclusion).
 
@@ -105,7 +106,7 @@ You can reasonably argue that it's not an actual problem because multiplayer gam
 
 Something to note here is that we don't see a smooth monotonic progression towards more power. There generally instead seems to be convergence toward a "preferred" level of simplicity/abstraction/power within each domain, progressing rapidly at first as people discover-or-invent new mechanics and occasionally reversing (e.g. Create, AE2[^9]). There's also lots of sensitivity to the actions and design goals of individual developers, making jumps discontinuous and somewhat unpredictable. It also appears that power creep is avoidable by individual mod authors by deliberately reducing interconnectivity with other mods, such that users cannot pick-and-choose optimal solutions finely, and by having unusual features which can't clearly be compared in power[^7].
 
-What can we learn from this outside of Minecraft mod balance? Probably not that much. While we see that the dynamics involved have been quite sensitive to individual developers, I think this is because there's not very strong selection pressure on mods and because "generations" are slow rather than this being a more general pattern. One interesting angle here is that the (apparent) nonexistence of a dominant strategy often comes from the advantages and disadvantages being merely hard to compare rather than actually equal. I think this holds up in other contexts, and growing ability to make end-to-end comparisons might remove illusions that many things are equally matched.
+What can we learn from this outside of Minecraft mod balance? Probably not that much. While we see that the dynamics involved have been quite sensitive to individual developers, I think this is because there's not very strong selection pressure on mods and because "generations" are slow rather than this being a more general pattern. One interesting angle here is that the (apparent) nonexistence of a dominant strategy often comes from the advantages and disadvantages being merely hard to compare rather than truly equal. I think this holds up in other contexts, and growing ability to make end-to-end comparisons might remove illusions that many things are equally matched.
 
 [^1]: In a way, this is similar to (the ideal of) cloud computing.
 

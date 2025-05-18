@@ -4,6 +4,7 @@ description: A nonexhaustive list of media which I like and which you may also b
 created: 11/06/2020
 updated: 17/09/2024
 slug: otherstuff
+tags: ["fiction", "opinion"]
 ---
 I'm excluding music from this because music preferences seem to be even more varied between the people I interact with than other preferences.
 Obviously this is just material *I* like; you might not like it, which isn't really my concern - this list is primarily made to bring to people's attention media they might like but have not heard of.
@@ -221,7 +222,7 @@ And so the frog says... 'Because you're a scorpion.'
 
 [Theft of Fire](https://www.goodreads.com/book/show/199142773-theft-of-fire): I am very conflicted on this, but I did like it enough to fast-track it and read it in two days, so I am including it. Expanding on this might deserve an entire blog post, but it would be a short blog post, and this would create odd incentives unless I expand all other entries to blog posts, which I won't.
 
-It is "hard scifi" in the sense of The Expanse (moderately recently) and lots of older fiction (it's been compared to Heinlein, who I haven't actually read much) - spacefaring technology and a few peripheral areas advance substantially, and most other technologies are unchanged, as opposed to e.g. The Quantum Thief where everything is radically overhauled to the limits of known physical laws. I can generally accept this as a setting conceit like I accept fantasy worlds, but it feels strange to be 200 years in the future and have neural interfaces but only used for primitive AR, computers nominally thousands of times more powerful but with capabilities slightly worse than 2024's state of the art[^3], and spaceships maintained with modern-era manually-operated machine tools. This does, at least, make the problem-solving more relatable to us modern people. It portrays spaceflight under the constraints of astrodynamics and having to not pulp your human crew very well. The governance of the (off-Earth parts of the) setting is apparently anarchocapitalist, which is a minor detail I bring up because it caused me to discover that there's a [Libertarian Futurist Society](https://www.lfs.org/) with a very 90s-but-in-a-good-way website.
+It is "hard scifi" in the sense of The Expanse (moderately recently) and lots of older fiction (it's been compared to Heinlein, who I haven't actually read much) - spacefaring technology and a few peripheral areas advance substantially, and most other technologies are unchanged, as opposed to e.g. [The Quantum Thief](#the-quantum-thief) where everything is radically overhauled to the limits of known physical laws. I can generally accept this as a setting conceit like I accept fantasy worlds, but it feels strange to be 200 years in the future and have neural interfaces but only used for primitive AR, computers nominally thousands of times more powerful but with capabilities slightly worse than 2024's state of the art[^3], and spaceships maintained with modern-era manually-operated machine tools. This does, at least, make the problem-solving more relatable to us modern people. It portrays spaceflight under the constraints of astrodynamics and having to not pulp your human crew very well. The governance of the (off-Earth parts of the) setting is apparently anarchocapitalist, which is a minor detail I bring up because it caused me to discover that there's a [Libertarian Futurist Society](https://www.lfs.org/) with a very 90s-but-in-a-good-way website.
 
 It is very character-driven, in the sense that the main characters being silly drives most of the plot. Some of the characterization is odd, though it has its moments of brilliance. The author clearly wants to distinguish the "space roughneck" main character Marcus from "space princess" Miranda, but this is done oddly. I cannot believe that he simultaneously knows what Dirac monopoles are, has read enough Lewis Carroll to say "typical Lewis Carroll" in first-person internal monologue, and was apparently a childhood scifi fan, but doesn't know what "Fibonacci" and "anthropomorphizing" mean. Miranda is described as very intelligent; the author does not entirely ignore this as some might have, but the fact that she should be able to resolve most of their situation with about ten minutes of internet access (which she has) is not noticed.
 
@@ -259,7 +260,7 @@ The author, Zachary Mason, also wrote [The Lost Books of the Odyssey](https://ww
 
 ### We Are Legion (We Are Bob)
 
-[We Are Legion (We Are Bob)](https://www.goodreads.com/book/show/32109569-we-are-legion-we-are-bob) by Dennis E. Taylor is a fun and decent, though not particularly deep or smart[^5], space-colonization science fiction story.
+[We Are Legion (We Are Bob)](https://www.goodreads.com/book/show/32109569-we-are-legion-we-are-bob) by Dennis E. Taylor is a fun and decent, though not particularly deep or smart[^5], vaguely transhuman space-colonization science fiction story. It has a bizarrely simplified universe in many ways: faster-than-light communication with no relativity worries, near-universally-biocompatible life, mentally humanlike aliens and present but nonthreatening AI.
 
 ### Short stories
 
@@ -289,6 +290,7 @@ The author, Zachary Mason, also wrote [The Lost Books of the Odyssey](https://ww
 * [Shannon's Law](https://web.archive.org/web/20140628065855/http://www.tor.com/stories/2011/05/shannons-law).
 * [Dave Scum](https://docs.google.com/document/d/1SddGHeVfcVa5SCDHHTOA4RlKwnef-Q6IMw_Jqw9I0Mw/mobilebasic).
 * [Nate the Snake](https://natethesnake.com/) is a complex setup for a pun.
+* [Instruments of Destruction](https://alexanderwales.com/instruments-of-destruction/).
 * More to be added when I feel like it.
 
 ## Games
@@ -321,6 +323,10 @@ This is actually two separate series (the [British](https://en.wikipedia.org/wik
 
 [Limitless](https://en.wikipedia.org/wiki/Limitless_(TV_series)) (the movie is also decent) is among the somewhat less bad fictional depictions of superhuman intelligence, but mostly a good comedy. Unfortunately, like many of the series I like, it was killed unreasonably early. Perhaps future AI technology will simply predict the next season.
 
+### Margin Call
+
+[Margin Call](https://en.wikipedia.org/wiki/Margin_Call) is the best (2008) financial crisis movie. Understated, character-driven in a good way and smart.
+
 ### Pantheon
 
 [Pantheon](https://en.wikipedia.org/wiki/Pantheon_(TV_series)) was saved from cancellation and unwatchability (which was apparently done for nonsense tax reasons) by Amazon, though I believe it's still nontrivial to watch.
@@ -341,7 +347,11 @@ Men have gazed at the stars for millennia, and wondered whether there was a deit
 
 ### Travelers
 
-[Travelers](https://en.wikipedia.org/wiki/Travelers_(TV_series)) contains a novel (to me, at least) take on time travel. Some of it is somewhat dumb, and the ending is clearly very rushed, but the idea is quite new and it's otherwise well-executed.
+[Travelers](https://en.wikipedia.org/wiki/Travelers_(TV_series)) contains a novel (to me, at least) take on time travel. Some of it is somewhat dumb, and the ending is clearly very rushed, but the idea is quite new and it's otherwise fairly well-executed.
+
+### Upload
+
+[Upload](https://en.wikipedia.org/wiki/Upload_(TV_series)) is one of the other TV series I've seen on the subject of brain uploads. It's set in a world where this is relatively normalized, so there's much less of the philosophical hand-wringing I find annoying, and while mostly a comedy it retains internal consistency and some sense of stakes.
 
 ## Other
 

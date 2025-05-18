@@ -3,6 +3,7 @@ title: FTL tips
 description: We are not responsible if these tips cause your ship to implode/explode. Contains spoilers in vast quantities.
 created: 16/08/2017
 updated: 08/03/2020
+tags: ["fiction", "games"]
 ---
 * Use Cloaking *after* enemy weapons have fired so that they miss.
 * Upgrade Shields as soon as possible; many early-sector enemies can't get through 2 shields.

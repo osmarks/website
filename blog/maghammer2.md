@@ -6,6 +6,7 @@ description: I got annoyed and rewrote everything.
 slug: maghammer2
 series: maghammer
 series_index: 2
+tags: ["own tech", "ai", "search"]
 ---
 ::: epigraph attribution=RossM
 If Google Search does not return the result the user wanted because the user typed the wrong thing in the search box, that is a failure on Google's part, not a failure on the user's part. Conversely, if Google Search does return the result the user wanted because the user typed the correct thing in the search box, that is a failure on Google's part, not a failure on the user's part.

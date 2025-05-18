@@ -5,6 +5,7 @@ created: 24/02/2022
 updated: 08/04/2025
 series: stack
 series_index: 1
+tags: ["own tech", "linux"]
 ---
 ::: epigraph attribution="Rupert Goodwins"
 If you can't stand the heat, get out of the server room.

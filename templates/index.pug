@@ -7,7 +7,7 @@ block content
             Read my opinions via the internet.
         div.blog
             each post, i in posts
-                .box.imbox
+                .box.imbox(style=post.accentColor && `--stripe: ${post.accentColor}`)
                     if images.hasOwnProperty(post.slug)
                         +image(images[post.slug])
                     div

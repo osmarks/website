@@ -4,6 +4,7 @@ description: This is, of course, all part of my evil plan to drive site activity
 created: 24/09/2023
 updated: 15/01/2024
 slug: opinion
+tags: ["politics", "opinion"]
 ---
 ::: epigraph attribution=pyrartha
 If you aren't slandering those who disagree even slightly with you at every opportunity and talking about how you want to beat them up, do you even hold any political beliefs?
@@ -11,7 +12,7 @@ If you aren't slandering those who disagree even slightly with you at every oppo
 
 This may sound strange coming from someone whose website contains things which are clearly [political opinions](/osbill/); I am being [hypocritical](https://www.overcomingbias.com/p/homo-hipocritushtml)/didn't notice/have updated my views since that/am writing hyperbolically or ironically to make a point/do not require myself to have self-consistent beliefs (select your favourite option). Regardless, I think that holding, forming and in various ways acting on political opinions is somewhere between unnecessary and significantly net harmful. I apologize in advance for not using concrete examples for anything in this post, but those would be political opinions.
 
-## Importance, Tractability, Neglectedness
+## Importance, tractability, neglectedness
 
 Political interaction is often framed as altruistic[^1] or even morally necessary - most notably, voting is a "civic duty"[^2], and it's common for political movements and their participants to believe that they are helping to bring about a better world through their actions, or that they're preventing some other group from doing harm (and thus in some sense doing good) with their ill-posed opinions, misaligned values or sheer evilness. Thus, let's evaluate it as an altruistic act using the [ITN](https://forum.effectivealtruism.org/topics/itn-framework) framework favoured by Effective Altruism. In brief, Importance is the value of fully solving whatever problem you're targeting, Tractability is the marginal value of your input to it (how much an additional unit of work can affect the problem), and Neglectedness is how little the problem is already being worked on.
 
@@ -19,9 +20,9 @@ Politics clearly fails at neglectedness. The majority of people are interested a
 
 It does not do well on tractability. For mostly the same reasons as neglectedness, your marginal contribution is not big. [Voting](https://putanumonit.com/2015/12/30/010-voting/) is, even under fairly optimistic assumptions, very unlikely to change the outcome of an election. Discussing politics with people you know is notorious for never changing anyone's beliefs, and arguments on social media are even less effective - very little discussion surfaces novel ideas and it mostly serves as an ineffective attempt to apply social pressure. The situation with protests and similar activity is perhaps better because there are fewer people doing that, but I do not think their effectiveness is going to be affected much by the addition or removal of a person on the margin, and I am not convinced that they do much in general. Politics is also especially intractable because on many issues, people are actively working against you.
 
-Importance is somewhat more ambiguous. I have been playing fast and loose with the exact definition of "politics" here - while it's clearly true that the sum of everything people want solved via politics is very important, the plausible consequences of something like electing a party you like or having a policy you want implemented are significantly smaller, both from the perspectives of [conflict theory](https://slatestarcodex.com/2018/01/24/conflict-vs-mistake/) (the frame of political disagreements as battles between groups over values or resource allocation) and mistake theory (political disagreements as good-faith discussions of what the best thing to do is given a shared understanding of goals). I found out while researching for this that policy changes are [actually surprisingly robust](https://forum.effectivealtruism.org/posts/jCwuozHHjeoLPLemB/how-long-do-policy-changes-matter-new-paper), but there are still problems - mistake-theroretically, the world is very complex and a policy may not actually do what you want, and, conflict-theoretically, an uncooperative government will not implement a policy in the way you want.
+Importance is somewhat more ambiguous. I have been playing fast and loose with the exact definition of "politics" here - while it's clearly true that the sum of everything people want solved via politics is very important, the plausible consequences of something like electing a party you like or having a policy you want implemented are significantly smaller, both from the perspectives of [conflict theory](https://slatestarcodex.com/2018/01/24/conflict-vs-mistake/) (the frame of political disagreements as battles between groups over values or resource allocation) and mistake theory (political disagreements as good-faith discussions of what the best thing to do is given a shared understanding of goals). I found out while researching for this that policy changes are [surprisingly robust](https://forum.effectivealtruism.org/posts/jCwuozHHjeoLPLemB/how-long-do-policy-changes-matter-new-paper), but there are still problems - mistake-theroretically, the world is very complex and a policy may not actually do what you want, and, conflict-theoretically, an uncooperative government will not implement a policy in the way you want.
 
-## The Magic Fix-Everything Button
+## The magic fix-everything button
 
 A large amount of modern politics-as-practiced seems to take a specific kind of conflict-theoretic view which I think makes it less important (in that the policies resulting from it will be worse) as well as less tractable (it's easier to persuade people if they don't tie opposing views into their identity, and easier to take actions if you are not battling some other group). Specifically, the belief that the main obstacle to improving the world is simply that evil people are in power, and that if you can demand it insistently enough you can replace them with favorable people who will then fix everything in a simple and obvious way which has heretofore gone unused. This is exemplified by [movements with unclear goals and underspecified demands to fix things](https://www.astralcodexten.com/p/book-review-the-revolt-of-the-public).
 
@@ -29,7 +30,7 @@ While there are absolutely some cases where a bad policy exists for conflict-the
 
 This can also lead to passivity and learned helplessness: not considering solutions to problems other than wrangling large-scale governmental mechanisms. This is also harmful, since the government is [not omnicompetent](https://www.theonion.com/smart-qualified-people-behind-the-scenes-keeping-ameri-1819571706) and anything complicated it does is mired in horrifying bureaucratic quagmires of impenetrable dysfunction, as are most large-scale organizations.
 
-## Selfish Reasons To Not Participate
+## Selfish reasons to not participate
 
 Rather than merely not being a public good, I think involvement in politics is even individually harmful. The most obvious reason is opportunity cost - all the time spent reading political news, voting, forming opinions, or having conversations about it could be spent more effectively - but there is the further reason that because people often tie politics to their identities, political discussions are frequently damaging to relationships or prevent people who would otherwise get on fine from doing so.
 
@@ -43,7 +44,7 @@ The most common objection I've heard is along the lines of "but if everyone did 
 
 Another is the claim that I am a privileged person who is only able to ignore politics because I'm not heavily threatened or discriminated against by existing institutions. This is entirely missing the point: being more affected by something does not make you more able to affect it.
 
-The best I've had[^3] is that even if standard political engagement doesn't do anything, there are some activities considered "politics" which do work and which are reasonably accessible to individuals, such as local organization, engaging directly with figures in government or writing detailed policy proposals. This is plausibly true, but it's almost entirely orthogonal to most interaction, and having strong opinions on politics tends to bias your judgment of how effective and reasonable your actions actually are.
+The best I've had[^3] is that even if standard political engagement doesn't do anything, there are some activities considered "politics" which do work and which are reasonably accessible to individuals, such as local organization, engaging directly with figures in government or writing detailed policy proposals. This is plausibly true, but it's almost entirely orthogonal to most interaction, and having strong opinions on politics tends to bias your judgment of how effective and reasonable your actions truly are.
 
 If you have any arguments against my argument I haven't addressed here, please tell me so I can think about them.
 

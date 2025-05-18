@@ -4,6 +4,7 @@ description: Is solving Sudoku and similar puzzles by hand really useful in buil
 slug: csproblem
 created: 20/05/2020
 uodated: 28/01/2023
+tags: ["education", "opinion"]
 ---
 
 *Co-written with Aidan, developer of [Emu War](/emu-war). He did most of it.*

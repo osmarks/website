@@ -3,6 +3,7 @@ title: Thoughts on fictional magic systems
 description: What exactly is "magic" anyway?
 slug: magic
 created: 12/05/2024
+tags: ["fiction"]
 ---
 ::: epigraph author=Unknown
 Arcane magical rituals work because they are adversarial inputs on AI controlling all of reality.
@@ -20,7 +21,7 @@ I did allude to the fact that I intended to write this at some point, and now I 
 
 Now that I've forced you to read those paragraphs, my real position is that "magic" is a fuzzy aesthetic concept related to all of these things to varying degrees: for any "technology" I can think of, I can adjust some surface details and/or backstory to make it "magic", and vice versa. At some level, people generally don't like the way science, technology and the real world work, since our default ontologies aren't built for them, and we have some standard ways to imply "I'm ignoring these in favour something I like more".
 
-The way more or less every magic system, including "hard" ones, leaves its operations massively underspecified, provides some interesting worldbuilding opportunities. I initially thought of this while reading [a book](https://www.goodreads.com/en/book/show/51279226) with a rune-based magic system in which the simplest spell is a "source-link", built out of three runes (~8 bits each[^3]) and yet with many degrees of freedom already filled in - it's targeted using some kind of raycasting (but subject to gravity), renders as a green line, and performs several operations dependent on what the user is thinking[^4]. However, the problem of where the details come from is applicable to almost everything and, I think, infrequently explicitly addressed[^5] ([Ra](https://qntm.org/ra) is significantly about this, and some obscure [HPMoR](https://hpmor.com/) authors' notes talk about it). Here are some possible approaches:
+The way more or less every magic system, including "hard" ones, leaves its operations massively underspecified provides some interesting worldbuilding opportunities. I initially thought of this while reading [a book](https://www.goodreads.com/en/book/show/51279226) with a rune-based magic system in which the simplest spell is a "source-link", built out of three runes (~8 bits each[^3]) and yet with many degrees of freedom already filled in - it's targeted using some kind of raycasting (but subject to gravity), renders as a green line, and performs several operations dependent on what the user is thinking[^4]. However, the problem of where the details come from is applicable to almost everything and, I think, infrequently explicitly addressed[^5] ([Ra](https://qntm.org/ra) is significantly about this, and some obscure [HPMoR](https://hpmor.com/) authors' notes talk about it). Here are some possible approaches:
 
 1. Spellcasters *do* have to specify almost everything (well, down to moderately complex physics), possibly making magic a way to internalize what would otherwise take lots of machinery. This is roughly the approach in [Ra](https://qntm.org/ra) and [The Machineries of Empire](https://www.goodreads.com/book/show/26118426-ninefox-gambit). Characters are legally required to offhandedly mention arbitrarily complex mathematics.
 2. The less you specify the more power is required, presumably to derive the remainder some other way. I haven't seen anything but [Break Them All](https://forums.sufficientvelocity.com/threads/break-them-all-original-precross.12960/) (an obscure unfinished prequel (?) to a fanfiction to a webserial) do this. This provides a fairly natural way to make magic users more powerful from study, and to make advance preparation useful.
@@ -40,7 +41,7 @@ This is more of a set of somewhat linked ramblings than a cohesive post like I u
 
 [^3]: Possibly a few extra for position.
 
-[^4]: This is actually not a great example: it's not as complicated as some other "simple" things in other fiction, and the spell-complexity issue is explicitly called out later in reference to a cleaning spell.
+[^4]: This is not a great example: it's not as complicated as some other "simple" things in other fiction, and the spell-complexity issue is explicitly called out later in reference to a cleaning spell.
 
 [^5]: I think this is because authors frequently study English and not ~~a real subject~~ sciences.
 

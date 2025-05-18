@@ -5,6 +5,7 @@ slug: memethresher
 created: 22/04/2024
 series: meme_search
 series_index: 1
+tags: ["own tech", "ai", "search", "memes"]
 ---
 ::: epigraph attribution=AI_WAIFU
 I think what you need to do is spend a day in the data labeling mines.

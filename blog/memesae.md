@@ -4,6 +4,7 @@ description: As ever, AI safety becomes AI capabilities.
 created: 06/10/2024
 series: meme_search
 series_index: 2
+tags: ["own tech", "ai", "search", "memes"]
 ---
 ::: epigraph attribution=@revhowardarson link=https://twitter.com/revhowardarson/status/1830464099396010402
 The fact that you can build a chatbot out of a statistical abstract of all human language is among the least interesting things about a statistical abstract of all human language.

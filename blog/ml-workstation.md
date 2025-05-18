@@ -4,6 +4,7 @@ description: How to run local AI slightly more cheaply than with a prebuilt syst
 created: 25/02/2024
 updated: 02/02/2025
 slug: mlrig
+tags: ["hardware", "ai"]
 ---
 ::: emphasis
 
@@ -51,7 +52,7 @@ It may look innocent, but it is a menace to unaware hobbyists.
 
 ### Do not buy workstation cards
 
-Nvidia has a range of workstation graphics cards. However, they are generally worse than their consumer GPU counterparts in every way except for VRAM capacity, sometimes compactness, and artificial feature gating (PCIe P2P and ECC): the prices are drastically higher (the confusingly named RTX 6000 Ada Generation ("6000A") sells for about four times the price of the similar RTX 4090), the memory bandwidth lower (consumer cards use GDDR6X, which generally offers higher bandwidth, but workstation hardware uses plain GDDR6 due to power) and performance in practice actually worse even when on paper it should be better. The 6000A has an underpowered cooler and aggressively throttles back under high-power loads, resulting in drastically lower performance.[^11]
+Nvidia has a range of workstation graphics cards. However, they are generally worse than their consumer GPU counterparts in every way except for VRAM capacity, sometimes compactness, and artificial feature gating (PCIe P2P and ECC): the prices are drastically higher (the confusingly named RTX 6000 Ada Generation ("6000A") sells for about four times the price of the similar RTX 4090), the memory bandwidth lower (consumer cards use GDDR6X, which generally offers higher bandwidth, but workstation hardware uses plain GDDR6 due to power) and performance in practice worse even when on paper it should be better. The 6000A has an underpowered cooler and aggressively throttles back under high-power loads, resulting in drastically lower performance.[^11]
 
 ### Workload characteristics
 
@@ -96,7 +97,7 @@ Also note that modern GPUs are very big. You should be sure that your case suppo
 
 ### CPU inference
 
-While I don't like this myself, you might be interested in slowly running very large language models interactively and nothing else. This is when datacentre GPUs might actually be sane (still not K80s), as well as running on CPU. To a first approximation, one token generated requires two FLOPS (one fused multiply-add) per parameter regardless of quantization, and loading every weight into cache from RAM once. Here is (roughly) the compute and memory bandwidth available with various hardware:
+While I don't like this myself, you might be interested in slowly running very large language models interactively and nothing else. This is when datacentre GPUs might, for once, be sane (still not K80s), as well as running on CPU. To a first approximation, one token generated requires two FLOPS (one fused multiply-add) per parameter regardless of quantization, and loading every weight into cache from RAM once. Here is (roughly) the compute and memory bandwidth available with various hardware:
 
 <div class="wider">
 
@@ -154,7 +155,7 @@ They describe somewhat horrifying electrical engineering problems due to using s
 
 [^10]: See the "PSUs" section [here](https://nonint.com/2022/05/30/my-deep-learning-rig/).
 
-[^11]: I don't seem to actually have a source for this (probably old Discord conversations), but I'm obviously right.
+[^11]: I don't seem to have a source for this (probably old Discord conversations), but I'm obviously right.
 
 [^12]: Meaning optimized code for a specific computing task, not *OS* kernels.
 

@@ -3,6 +3,7 @@ title: Consumer AR glasses
 description: Why I think they're not popular, and what they need.
 created: 22/03/2025
 slug: glass
+tags: ["hardware", "hci"]
 ---
 ::: epigraph attribution="Daniel Eliot Boese"
 What were you expecting? At one point, the solution to all communication issues was a handheld glassy rectangle. Welcome to the future. We do things differently here.

@@ -3,6 +3,7 @@ title: Linux on the Barracuda CloudGen Firewall F380 Revision B
 description: My new main router.
 created: 10/02/2025
 slug: f380b
+tags: ["hardware", "own tech", "linux"]
 ---
 While idly browsing eBay, I came across Barracuda Networks "firewall" devices, mysterious boxes with lots of (fairly low-speed) network IO and basic general-purpose-computer IO (USB and VGA). It transpired that Barracuda is primarily in the business of selling expensive software licenses to people who for some reason don't want to use open-source software, and that the mysterious boxes were actually rebadged x86 machines from various "network appliance" vendors. The [F180A](https://campus.barracuda.com/product/cloudgenfirewall/doc/169426005/f180-and-f183-revision-a) I was considering originally has an outdated Atom CPU[^1] and apparently an integrated WiFi card, which was not very interesting, but further searching turned up the [F380B](https://campus.barracuda.com/product/cloudgenfirewall/doc/93880710/f380-revision-b/) at a very low price (£37). Barracuda do not document this, but as far as I can tell it's actually an [Aewin SCB-1723](https://www.aewin.com/products/scb-1723/), with "recent" (2017) Intel CPU compatibility[^2] and a low-end Celeron in it - and, in their version, two SFP+ ports driven by an [X710](https://www.intel.com/content/www/us/en/products/details/ethernet/700-network-adapters/x710-network-adapters/docs.html)! I clearly had to get one to stop my overtaxed access point from also serving as a router.
 

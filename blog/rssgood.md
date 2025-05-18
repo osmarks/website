@@ -2,6 +2,7 @@
 title: "RSS: good and useful"
 description: RSS/Atom are protocols for Internet-based newsletter/feed services. They're surprisingly well-supported and you should consider using them.
 created: 14/05/2022
+tags: ["opinion", "web"]
 ---
 RSS stands for Really Simple Syndication, and it's an underappreciated protocol for generally "following" things on the internet.
 Most people do this via proprietary platforms with feed/notification functionality, the problems of which are obvious, or email.
@@ -18,7 +19,7 @@ Yes, despite RSS's relative lack of use nowadays, a surprisingly large amount of
 * WordPress, a very popular platform for blogs, has RSS support enabled by default (just go to `/feed/`).
 * YouTube has RSS feeds for channels' videos: `https://www.youtube.com/feeds/videos.xml?channel_id=[ID of channel to follow]`.
 * Some web fiction sites (e.g. Royal Road, Archive Of Our Own) have per-story RSS feeds.
-* osmarks.net has an RSS feed, linked on the main page somewhere: [https://osmarks.net/rss.xml](https://osmarks.net/rss.xml) - this does only cover blog posts and not experiments, as those aren't actually timestamped.
+* osmarks.net has an RSS feed, linked on the main page somewhere: [https://osmarks.net/rss.xml](https://osmarks.net/rss.xml) - this does only cover blog posts and not experiments, as those aren't timestamped.
 * Blogspot blogs have feeds at `/rss.xml`.
 * The BBC has RSS feeds described here: [https://www.bbc.com/news/10628494](https://www.bbc.com/news/10628494).
 * Otherwise, you can ctrl+F for "RSS" or "Atom" or "feed" or "subscribe" and might be successful, or try URLs like `/feed`, `/feed.xml`, `/feed.atom`, `/index.xml`, `/rss` or `/rss.xml`.

@@ -2,6 +2,7 @@
 title: New site design!
 created: 25/01/2020
 description: It's slightly different now!
+tags: ["own tech"]
 ---
 If you visit this frequently (why would you?) you may have noticed that since late last year there's been a page notifying you of service disruption and no actual content any more.
 This is because the old code used to generate the HTML files making up the site was a several-year-old and somewhat flaky Haskell program, and I've been meaning to replace it for a while, but finally got round to it recently after quite a while of just leaving the service disruption page up.

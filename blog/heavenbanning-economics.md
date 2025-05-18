@@ -4,6 +4,7 @@ description: Predicting the post-social world.
 created: 26/01/2025
 slug: heaven
 squiggle: true
+tags: ["ai", "economics"]
 ---
 ::: epigraph attribution=Architects link="https://www.youtube.com/watch?v=nT9NUjeBocw"
 Delete another day <br />

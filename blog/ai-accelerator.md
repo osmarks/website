@@ -4,6 +4,7 @@ description: "Or: why most AI hardware startups are lying."
 slug: accel
 created: 06/10/2024
 katex: true
+tags: ["hardware", "ai"]
 ---
 ::: epigraph attribution=Chlorokin
 Except in the domain of making near-omnipotent computer entities, I project very little progress in the next 50 years.

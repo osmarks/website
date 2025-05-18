@@ -3874,5 +3874,189 @@
         "date": null,
         "website": null,
         "auto": true
+    },
+    "https://squiddev.github.io/ae-sat/": {
+        "excerpt": "Disclaimer: I am by no means an expert in this sort of thing so please do correct me if I get things entirely\nwrong! I should also warn you that, whilst I’ll try to keep this as accessible as possible, some prior\nprogramming/comp-sci knowledge is recommended.",
+        "title": "Autocrafting is NP-hard | squiddev.github.io",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Boolean_satisfiability_problem": {
+        "excerpt": "\"3SAT\" redirects here. For the Central European television network, see 3sat.",
+        "title": "Boolean satisfiability problem",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2001-12-03T09:36:45Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Benford%27s_law": {
+        "excerpt": "Benford's law, also known as the Newcomb–Benford law, the law of anomalous numbers, or the first-digit law, is an observation that in many real-life sets of numerical data, the leading digit is likely to be small.[1] In sets that obey the law, the number 1 appears as the leading significant digit about 30% of the time, while 9 appears as the leading significant digit less than 5% of the time. Uniformly distributed digits would each occur about 11.1% of the time.[2] Benford's law also makes predictions about the distribution of second digits, third digits, digit combinations, and so on.",
+        "title": "Benford's law",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2002-02-02T10:34:10Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://gwern.net/oen": {
+        "excerpt": "Proposal to create a ‘search engine’ like OEIS but for individual\nnumbers, allowing fuzzy lookups, by training a neural net embedding on\nthe scientific & mathematic literature’s corpus of co-occurring\nnumbers, and by known special transformations.",
+        "title": "Number Search Engine via NN Embeddings",
+        "author": "Gwern",
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://pile.eleuther.ai/": {
+        "excerpt": "The Pile is a 825 GiB diverse, open source language modelling data set that consists of 22 smaller, high-quality datasets combined together.",
+        "title": "The Pile",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Pareto_distribution": {
+        "excerpt": "Probability density function",
+        "title": "Pareto distribution",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2002-05-23T05:25:13Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://github.com/osmarks/misc/blob/master/empirical-number-distribution/src/main.rs": {
+        "excerpt": "In the interest of transparency and/or their great value to society, I'm releasing my smaller projects/scripts upon an unsuspecting public. - osmarks/misc",
+        "title": "misc/empirical-number-distribution/src/main.rs at master · osmarks/misc",
+        "author": "osmarks",
+        "date": null,
+        "website": "GitHub",
+        "auto": true
+    },
+    "https://docs.minecraftforge.net/en/1.12.x/utilities/oredictionary/": {
+        "excerpt": "The OreDictionary exists primarily for inter-mod compatibility.",
+        "title": "OreDictionary - Forge Documentation",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://minecraft.wiki/w/Item_tag_(Java_Edition)": {
+        "excerpt": "An item tag is a group of items. They are used when a recipe allows multiple different items as inputs and control many other gameplay features. See below for the use of each item tag. They can also be used when testing for item arguments in commands with #<resource location>, which succeeds if the item matches any of the items specified in the tag, and can be searched in the creative inventory by searching #<resource location>.",
+        "title": "Item tag (Java Edition) – Minecraft Wiki",
+        "author": null,
+        "date": null,
+        "website": "Minecraft Wiki",
+        "auto": true
+    },
+    "https://github.com/AppliedEnergistics/Applied-Energistics-2/blob/70838d74f81917ece64335db2aca3cb3a604b780/src/main/java/appeng/crafting/CraftingTreeNode.java": {
+        "excerpt": "A Minecraft Mod about Matter, Energy and using them to conquer the world.. - AppliedEnergistics/Applied-Energistics-2",
+        "title": "Applied-Energistics-2/src/main/java/appeng/crafting/CraftingTreeNode.java at 70838d74f81917ece64335db2aca3cb3a604b780 · AppliedEnergistics/Applied-Energistics-2",
+        "author": "AppliedEnergistics",
+        "date": null,
+        "website": "GitHub",
+        "auto": true
+    },
+    "https://github.com/refinedmods/refinedstorage2/blob/accdcf28c52752c1512c16b97efad7b59ab3b340/refinedstorage-autocrafting-api/src/main/java/com/refinedmods/refinedstorage/api/autocrafting/calculation/CraftingTree.java": {
+        "excerpt": "Refined Storage is a mass storage mod for Minecraft that offers the player a network-based storage system, allowing them to store items and fluids on a massively expandable device network. - refine...",
+        "title": "refinedstorage2/refinedstorage-autocrafting-api/src/main/java/com/refinedmods/refinedstorage/api/autocrafting/calculation/CraftingTree.java at accdcf28c52752c1512c16b97efad7b59ab3b340 · refinedmods/refinedstorage2",
+        "author": "refinedmods",
+        "date": null,
+        "website": "GitHub",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/P_versus_NP_problem": {
+        "excerpt": "Unsolved problem in computer science",
+        "title": "P versus NP problem",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2001-08-26T23:04:30Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Satisfiability_modulo_theories": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Satisfiability modulo theories",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2006-05-14T07:25:59Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://borretti.me/fiction/eog581/the-lunar-surface": {
+        "excerpt": "life in amber — nothing left — Rijndael",
+        "title": "The Lunar Surface",
+        "author": "Fernando Borretti",
+        "date": "2022-11-15T00:00:00+00:00",
+        "website": "Fernando Borretti",
+        "auto": true
+    },
+    "https://alexanderwales.com/instruments-of-destruction/": {
+        "excerpt": "Author’s Note: This is largely a story about project management. Adherence to canon not guaranteed.",
+        "title": "Instruments of Destruction – Alexander Wales",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Margin_Call": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Margin Call",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2010-06-27T05:06:38Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Upload_(TV_series)": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Upload (TV series)",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2018-07-28T22:34:51Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://www.reddit.com/r/feedthebeast/comments/7t8v0o/autocrafting_is_npcomplete/dtbgkz9/": {
+        "excerpt": "Reddit and its partners use cookies and similar technologies to provide you with a better experience. By accepting all cookies, you agree to our use of cookies to deliver and maintain our services and site, improve the quality of Reddit, personalize Reddit content and advertising, and measure the effectiveness of advertising. By rejecting non-essential cookies, Reddit may still use certain cookies to ensure the proper functionality of our platform.\n            For more information, please see our\n        Cookie Notice\n        and our\n        Privacy Policy.",
+        "title": "The heart of the internet",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://guide.appliedenergistics.org/1.20.4/example-setups/recursive-crafting-setup": {
+        "excerpt": "As stated in autocrafting, the autocrafting planning algorithm cannot handle recipes where\nthe primary output is one of the inputs. For example, it cannot handle cloning Smithing Templates.",
+        "title": "A Recursive Crafting Setup - AE2 Players Guide for 1.20.4",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Petri_net": {
+        "excerpt": "A Petri net, also known as a place/transition net (PT net), is one of several mathematical modeling languages for the description of distributed systems.  It is a class of discrete event dynamic system. A Petri net is a directed bipartite graph that has two types of elements: places and transitions. Place elements are depicted as white circles and transition elements are depicted as rectangles. \nA place can contain any number of tokens, depicted as black circles. A transition is enabled if all places connected to it as inputs contain at least one token. Some sources[1] state that Petri nets were invented in August 1939 by Carl Adam Petri — at the age of 13 — for the purpose of describing chemical processes.",
+        "title": "Petri net",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2003-05-11T14:43:22Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Vector_addition_system": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Vector addition system",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2015-01-18T22:16:29Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://www.sciencedirect.com/science/article/pii/S0019995883800229": {
+        "excerpt": "Commutative grammars are introduced, and various classes of commutative grammars are defined. The complexity of uniform word problems for commutative …",
+        "title": "Commutative grammars: The complexity of uniform word problems",
+        "author": "Author links open overlay panelDung T. Huynh *",
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://github.com/osmarks/misc/blob/master/autocrafter.py": {
+        "excerpt": "In the interest of transparency and/or their great value to society, I'm releasing my smaller projects/scripts upon an unsuspecting public. - osmarks/misc",
+        "title": "misc/autocrafter.py at master · osmarks/misc",
+        "author": "osmarks",
+        "date": null,
+        "website": "GitHub",
+        "auto": true
     }
 }
