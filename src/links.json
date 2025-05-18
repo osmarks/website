@@ -606,5 +606,24 @@
             "accel": ""
        },
        excerpt: "The software brained answer is that for precision insensitive workloads, you effectively double your bandwidth from caches/device mem/host mem. But there's a lot more to it."
-    }
+    },
+    "https://www.hc33.hotchips.org/assets/program/conference/day2/HC2021.DESRES.AdamButts.v03.pdf": {
+        title: "The ANTON 3 ASIC: a Fire-Breathing Monster for Molecular Dynamics Simulation",
+        author: "DE Shaw Research",
+        date: "2021-08-24"
+    },
+    "https://datasets.osmarks.net/counts.csv": {
+        title: "Pile Number Frequency Data",
+        website: "osmarks datasets"
+    },
+    "https://isr.umd.edu/Labs/CIM/miscs/wmsor97.pdf": {
+        title: "Petri Nets: Tutorial and Applications",
+        author: ["Jeffrey W. Herrmann", "Edward Lin"],
+        date: "1997-11-05"
+    },
+    "/assets/misc/commutative_grammars.pdf": {
+        title: "Commutative Grammars",
+        author: ["S. Crespi-Reghizzi", "D. Mandrioli"],
+        date: "1975-05-05"
+    },
 }

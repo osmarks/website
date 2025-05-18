@@ -43,7 +43,7 @@
         "Overcoming Bias": "https://www.overcomingbias.com/feed",
         "Construction Physics": "https://www.construction-physics.com/feed",
         "Factorio": "https://www.factorio.com/blog/rss",
-        "The Eldraeverse": "https://eldraeverse.com/feed/",
+        "The Eldraeverse": "https://eldraeverse.com/rss/",
         "ServeTheHome": "https://www.servethehome.com/feed/",
         "Graphcore Research": "https://graphcore-research.github.io/feed.xml",
         "ToughSF": "https://toughsf.blogspot.com/rss.xml",
@@ -58,7 +58,10 @@
         "Mythic Beasts": "https://www.mythic-beasts.com/blog/feed/",
         "Tales from the Void": "https://randomsprint.substack.com/feed",
         "Max Barry": "https://maxbarry.com/index.rss",
-        "Real World Tech": "https://www.realworldtech.com/feed/"
+        "Real World Tech": "https://www.realworldtech.com/feed/",
+        "Entropic Thoughts": "https://entropicthoughts.com/feed",
+        "phils web site": "https://phils-web-site.net/rss.xml",
+        "Sixty Degrees North": "https://sixtydegreesnorth.substack.com/feed.xml"
     },
     "dateFormat": "YYYY-MM-DD",
     "microblogSource": "https://b.osmarks.net/outbox",
@@ -92,5 +95,14 @@
         ["rhombic_dodecahedron.gif", "https://en.wikipedia.org/wiki/Rhombic_dodecahedron"],
         ["zeroptr.gif", "https://zptr.cc/88x31/"]
     ],
-    "mycorrhiza": "https://docs.osmarks.net"
+    "mycorrhiza": "https://docs.osmarks.net",
+    "tagColors": {
+        "ai": "#703be7",
+        "hardware": "#5e819d",
+        "fiction": "#ff028d",
+        "economics": "#15b01a",
+        "opinion": "#fdaa48",
+        "own tech": "#04d8b2",
+        "maths": "#f8481c"
+    }
 }

@@ -32,6 +32,7 @@ const pLimit = require("p-limit")
 const json5 = require("json5")
 const readability = require("@mozilla/readability")
 const { JSDOM } = require("jsdom")
+const hljs = require("highlight.js")
 
 const fts = require("./fts.mjs")
 
@@ -164,12 +165,13 @@ const renderContainer = (tokens, idx) => {
             options[k] += " " + arg
         } else {
             [k, ...vs] = arg.split("=")
+            let vEmpty = vs.length == 0
             v = vs.join("=")
             if (v && v[0] == '"') {
                 inQuotes = true
                 v = v.slice(1)
             }
-            options[k] = v ?? true
+            options[k] = vEmpty ? true : v ?? true
         }
     }
 
@@ -215,7 +217,13 @@ const md = new MarkdownIt({
         html: true,
         highlight: (code, language) => {
             if (language === "squiggle") {
-                return `<textarea class="squiggle" rows=${code.split("\n").length}>${md.utils.escapeHtml(code.trim())}</textarea>`
+                return `<textarea class=squiggle rows=${code.split("\n").length}>${md.utils.escapeHtml(code.trim())}</textarea>`
+            }
+            if (language && hljs.getLanguage(language)) {
+                try {
+                    const hl = hljs.highlight(code, { language }).value
+                    return `<pre class=wider><code class="hljs">${hl}</code></pre>`
+                } catch(e) {}
             }
             return "" // default escaping
         }
@@ -320,6 +328,16 @@ const applyTemplate = async (template, input, getOutput, options = {}) => {
 
 const addGuids = R.map(x => ({ ...x, guid: uuid.v5(`${x.lastUpdate}:${x.slug}`, "9111a1fc-59c3-46f0-9ab4-47c607a958f2") }))
 
+const processTags = meta => {
+    meta.accentColor = null
+    for (const tag of meta.tags ?? []) {
+        if (globalData.tagColors[tag]) {
+            meta.accentColor = globalData.tagColors[tag]
+            break
+        }
+    }
+}
+
 const processExperiments = async () => {
     const templates = globalData.templates
     const experiments = await loadDir(experimentDir, (subdirectory, basename) => {
@@ -336,6 +354,7 @@ const processExperiments = async () => {
                     }
                 }))
                 const indexPath = path.join(out, "index.html")
+                processTags(page.data)
                 fts.pushEntry("experiment", {
                     url: "/" + page.data.slug,
                     title: page.data.title,
@@ -360,6 +379,7 @@ const processBlog = async () => {
         meta.slug = meta.slug || removeExtension(basename)
         meta.wordCount = page.content.split(/\s+/).map(x => x.trim()).filter(x => x).length
         meta.haveSidenotes = true
+        processTags(meta)
         const [html, urls] = renderMarkdown(page.content)
         meta.content = html
         meta.references = []
@@ -593,6 +613,24 @@ const compileCSS = async () => {
     css += "\n"
     css += await fsp.readFile(path.join(srcDir, "comments.css"))
     globalData.css = css
+
+    const lightThemeHighlight = await fsp.readFile(path.join(srcDir, "light-theme-highlight.css"))
+    const darkThemeHighlight = await fsp.readFile(path.join(srcDir, "dark-theme-highlight.css"))
+
+    // abuse SASS compiler to do minification
+    const highlightCSS = sass.compileString(`
+${lightThemeHighlight}
+
+@media (prefers-color-scheme: dark) {
+    ${darkThemeHighlight}
+}
+    `, {
+        style: "compressed",
+        indentedSyntax: false,
+        charset: false
+    })
+
+    await fsp.writeFile(path.join(outAssets, "highlight.min.css"), highlightCSS.css)
 }
 
 const loadTemplates = async () => {
