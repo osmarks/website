@@ -223,7 +223,7 @@ blockquote
     > *
         width: calc(100vw - 2 * $content-margin)
         max-width: 80em
-        min-width: calc(40rem - 2 * $content-margin)
+        //min-width: calc(40rem - 2 * $content-margin)
     position: relative
     z-index: 1
 
@@ -270,6 +270,7 @@ blockquote
         box-sizing: border-box
         list-style-type: none
         display: block !important
+        z-index: 2
 
 @media (min-width: calc(4 * $content-margin + $content-width + $sidenotes-width + $navbar-width))
     // fullwidth 3-pane layout
