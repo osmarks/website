@@ -4058,5 +4058,277 @@
         "date": null,
         "website": "GitHub",
         "auto": true
+    },
+    "https://en.wikipedia.org/wiki/X86": {
+        "excerpt": "This article is about the Intel microprocessor architecture in general. For the 32-bit generation of this architecture that is also referred to as \"x86\", see IA-32.",
+        "title": "X86",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2001-10-31T13:12:04Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/ATX": {
+        "excerpt": "This article is about the computer form factor. For other uses, see ATX (disambiguation).",
+        "title": "ATX",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2003-11-04T11:11:21Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://gamersnexus.net/guides/3568-intel-atx-12vo-spec-explained-what-manufacturers-think": {
+        "excerpt": "stub ATX12VO is a new-ish power supply spec published by Intel in July of 2019 that eliminates the 3.3V and 5V rails from power supplies, leaving only the 12V rail. The spec has become a hot buzzword lately because Tier 2 of the California Energy Commision’s Title 20 goes into effect on July 1st, 2021, and these stricter energy regulations were a large part of why the ATX12VO spec was written. We’ve spoken to Intel, a major power supply manufacturer, and a power supply factory on the subject, the latter two off-record, and today we’ll be reporting their thoughts. We’ll also be defining the ATX12VO spec and what it means for computing, along with Intel’s goals for the specification.   We should start with this notice: 12VO, in a sense, isn’t actually new. Companies like Dell, HP, and Lenovo -- especially HP -- have been using a form of power supplies with only 12V in their systems for a long time now. In these systems, the motherboards are outfitted with all the DC-to-DC bucks and boosts necessary for drives. Although these have existed, they weren’t standardized and often used proprietary connectors or power supplies. The difference today is that Intel is moving to standardize these types of power supplies, and the primary reason is to more easily meet efficiency requirements set by government bodies. These regulations apply to pre-built systems, not to DIY enthusiast systems, but the recent question has been whether that’ll slowly creep outward from pre-built and into DIY. A lot of pre-builts, especially fromtraditional OEMs, use motherboards that can’t be bought retail. Higher-end gaming pre-builts use retail motherboards, which is where questions start to emerge. Note that this was already published as a video on our channel, found here: Let’s start with some background. Intel published the original ATX (no -12VO) spec for motherboards and PSUs back in 1995 and the ATX12V (no -O) spec in 2000, from which we can draw two important conclusions: first, ATX12VO is a revision of Intel’s own technology rather than Intel attempting to seize the reins out of nowhere, and second, the ATX12V spec is old. Technically, ATX refers to the form factor and general design (currently on version 2.2) and ATX12V refers to specifically PSU features (currently on version 2.52). Note that the Intel ATX12V spec is also responsible for such things as a 120mv ripple requirement, highlighting just how old this is. Power supplies provide 12V, 5V, and 3.3V power to motherboards, divided into three distinct “rails.” Of the cables included with most modern PSUs, there are 5V or 3.3V pins only in the 24-pin ATX, MOLEX 4-pin, and SATA power connectors. PCIe 6/8 pin connectors, ATX12V, and EPS12V connectors use only 12V and ground. 3.3V and 5V rails are mostly used for things like some RGB strips on 5V, some peripherals, and storage devices. Most MOLEX 4-pin connectors only use 12V and ground, skipping the 5V line altogether. 3.3V and 5V power is used much less in PCs now than it was when the ATX spec was being written decades ago, and is being used less all the time, so Intel has published a PSU spec they call “12 Volt Only” (12VO). ATX12VO uses a single 10-pin connector to replace the existing 24-pin ATX connector, and as the name implies, the PSU would provide nothing but a single rail of 12V power across all cables. The spec includes a full set of electrical and physical guidelines for building a PSU that will be compatible with 12VO systems, including CFX, LFX, SFX, TFX, and Flex ATX versions (CFX12VO, LFX12VO, etc.), as well as recommendations for connectors and cables. We’re focused on ATX12VO, but the idea is the same for all of them. When we asked Intel what their objectives were with 12VO, their response was “ATX12VO is one of Intel’s efforts to improve efficiency across OEM/SI systems and products from industry partners. One of the immediate objectives of ATX12VO is to help meet multiple government energy regulations. The most recent government energy regulations require OEMs to use extreme low system idle power levels to reduce desktop idle power consumption [...] There are many benefits to all desktop segments, including a smaller connector, more flexible board designs, and improved energy conversions. ATX12VO is not only for small desktops.” The main advantage to eliminating the other voltages is efficiency, in terms of cables, price, and power consumption. To the first point, removing more than half of the pins from the main power connector makes it less bulky, as we’ve already seen on Intel’s Compute Element (or Ghost Canyon NUC), which uses a 10-pin 12VO plug. The 24-pin ATX cable is invariably the largest and most difficult cable to secure in a desktop, and it governs the size of cable cutouts in every PC case. Intel’s new spec has this to say about motherboard connectors and power passthrough: ATX12VO makes the main power connector smaller, but it doesn’t eliminate the work of stepping down 12V power for things like SATA and USB devices--it just shunts it over to the motherboard, taking up valuable real estate there and shifting cost from one product to another. The motherboard also must now supply its own SATA power connectors, so it remains to be seen how much tidier a full-size ATX12VO layout would be. This creates a significant imposition on real-estate for motherboards, especially enthusiast motherboards that are already packed with ICs and interfaces. From Intel: “Motherboard connectors for these type of devices are needed and described in the ATX12VO specification Section 4.3. Motherboard designers will have to decide how many devices and the power to provide to these types of devices for the 5V and 12V power. If the device is 12V only – like some LEDs, fans, or liquid cooling solutions – the 1x4 Peripheral connector still exists as an optional connector, but only 12V and ground pins can be provided by the power supply.” The 1x4 connector refers to MOLEX, which can provide both 5V and 12V power but is sometimes used just for 12V. PSU manufacturers would have the option of providing MOLEX connectors with just the 12V and ground pins connected. CPU 4- and 8-pin connectors remain unchanged. Making a PSU that supplies 12V power exclusively is obviously simpler than making one which supplies 12V, 5V, and 3.3V, and it’s potentially cheaper as well. Fewer cables, less internal hardware, and less engineering required to make an ATX12VO PSU. Again, the work eliminated from the PSU side is just shunted over to the motherboard side, so the cost of the system as a whole may not decrease. It’s logical to think that since the ATX12VO power connector is a cut-down version of the existing 24-pin connector that existing ATX PSUs would be compatible with ATX12VO motherboards using an adapter cable, but it’s more complicated than that. When asked if it would be possible to use a passive adapter cable, Intel responded with the following: “The main problem with using an existing Multi-Rail ATX power supply to power a new ATX12VO motherboard is the 12V Standby Rail. The existing Multi Rail ATX Power Supplies use a 5VSB rail. This would have to be converted to a 12VSB rail to work with ATX12VO motherboards. The new standby rail of 12V was determined by working with power supply vendors and motherboard manufacturers to determine the best overall efficiency. There were minor efficiency differences between 12VSB and 5VSB. Keeping the new power supplies as 12V/12VSB only was the best option to improve overall power efficiency.” It sounds like compatibility isn’t totally ruled out, but it won’t be as simple as just hooking up the right pins. PSUs are expected to have a longer span of usefulness than motherboards on average, so this could be an important point if ATX12VO is ever going to win over the DIY community. We reached-out to a power supply engineer at a large company and confirmed that a 5VSB to 12VSB adapter is possible and already exists, because ATX12VO is similar in ways to power supplies that Lenovo, HP, and Dell already have for OEM systems. One could take an HP-to-ATX12V adapter and re-pin it to work with 12VO, for example. Anyone who’s checked the spec out for themselves may have noticed that it’s entitled “Single Rail Power Supply Desktop Platform Form Factors ATX12VO (12 V Only).” We’ve confirmed with Intel that “single-rail” refers to the fact that there are no 5V or 3.3V rails; the spec allows for multiple 12V rails. “Multiple” 12V rails in a desktop PSU usually means a single 12V rail split up for increased safety rather than literal discrete rails, but that’s a subject for another day. Intel stated that “OEMs may consider using multiple 12V rails to meet the 240 VA Safety Requirement, which would limit each 12V rail to 20 amps each.” In many ways, the onus is now on motherboard manufacturers for pre-built systems. PSU manufacturers just have to strip down their existing PSUs to fit the new spec, while motherboard manufacturers have to integrate new technology onto already-crowded PCBs and then find a way to cool it. Remember again one important point: This doesn’t necessarily mean a change to DIY enthusiast platforms -- at least, not immediately -- because it’s unifying existing proprietary power supplies from OEMs and SIs. The goal is to meet government regulations for pre-built systems. Those regulations do not extend to DIY enthusiast, and even further, there’s a “high expandability” loophole in the regulation that essentially says any system with a discrete GPU is presently immune to these requirements. That means that high-end Origin, Maingear, Cyberpower, or other enthusiast systems would be able to continue using off-the-shelf motherboards without needing special bucks on the boards. As mentioned earlier, the main motivation for anyone to adopt the ATX12VO standard is a new, stricter standard for assembled systems being sold in the state of California in July 2021. OEMs will now have to meet strict efficiency requirements at 20% and 50% load, not just at 100%. Further, Intel is trying to get companies up to speed with a 2% load efficiency requirement, initially proposed to power supply makers around 2018. The relevant section of Title 20 for PSUs and ATX12VO is 1605.3, although there’s plenty more surrounding that section that governs other aspects of computers and monitors. These regulations will ONLY apply to new complete systems sold by OEMs and SIs, not DIY PCs and not PCs sold before Tier 2 goes into effect. Tier 1 is already in effect now, and Intel estimates that most desktop models will need to reduce idle power consumption by a further 5 watts to move to the next tier. The previous charts were examples of Energy Star and CEC requirements that PSU manufacturers might want or need to meet, while these charts are Intel’s own requirements, built into the spec. The biggest difference is that Intel specifies efficiency at 10W or 2% load, depending on the PSU size. Idle power efficiency should be one of the major advantages of ATX12VO, and Intel is preempting further energy regulations by establishing this 2% efficiency requirement. Intel says that sticking to a single rail will cut down on AC to DC conversion loss; the PSU engineers we spoke to confirmed that using 12V exclusively would allow PSUs to be more efficient. As reported by Gordon Mah Ung of PCWorld, supplying a low current across 3.3V, 5V, and 12V rails at all times makes PSUs only perhaps 50-60% efficient at idle. Moving to a single 12V rail raises idle efficiency and should help OEMs meet these requirements, but of course they’re free to choose other options instead. Speaking with an engineer from a power supply manufacturer we can’t name, we asked what the general opinion of ATX12VO was at present. The answer started like this: “I think it’s a good change for the wrong reasons. They're doing it because some PSU vendors claimed it was too hard/too expensive to meet the 2% load efficiency requirements with a multiple output PSU, so it's probably going to be something you'll only see with SIs since they need to meet that 2% requirement to pass CEC. And that requirement is only if you have a PC that doesn't meet the ‘high expandability’ loophole, so that's essentially any PC with a discrete graphics card. In fact, not even modern standby mode (currently) works with a discrete graphics card installed.” We asked about if this would impact the enthusiast or DIY market by proxy, and our same contact said: “It’s not going to. In my opinion, they should keep the PSU a +12V and +5V PSU. Get rid of +3.3V and -12V. Make the main connector smaller. But that's it. That would be much easier to adopt/digest.” Speaking with a source at a power supply factory, we asked some of the same questions. The contact confirmed that power supply efficiency is easier to increase with just 12V rails, and noted that this reduces cost for the PSU industry, but increases it for motherboards. As far as the purchaser of both would go -- that’d be the OEMs and SIs, mostly -- the cost would largely equalize. Cable cost goes down, DC-to-DC component cost goes down and shifts to the motherboard, and efficiency goes up. Our contact told us that in their personal opinion, upgrade pathways become more limited for consumers and the mixed standards for retail also complicates things, saying that they didn’t think it “makes sense” overall. Next, we asked Jon Gerow of Corsair, formerly of JonnyGuru, about if this would move some of the requirements from the power supply to the motherboard. He answered: \"Yes. You still need +3.3V and +5V, so you're just moving the DC to DC from the PSU to the motherboard. And since they made the new standard have a +12VSB, you'll also need DC to DC to get USB ports to work and work in standby.\" We also asked Gerow if economies of scale and mass production would move ATX12VO and ATX12V power supply standards toward each other, eventually getting into the DIY space. He replied: \"Not really. Dell, HP and Lenovo already use a 12V Only type of solution, but their connectors are proprietary. Intel is just taking that idea and trying to standardize it. ATX12VO is an attempt at streamlining an ancient standard. As such, it removes some features without adding anything really exciting for DIY PC builders, but it also isn’t a standard aimed at DIY PC builders (for now). It’s ultimately up to OEMs whether this standard succeeds and becomes more widely adopted or not, but the factory we spoke to isn’t rushing to start selling ATX12VO PSUs. Intel has confirmed that they will continue to publish the normal ATX spec. Nobody is obligated to adopt ATX12VO, even OEMs. Their only obligation is to meet the CEC’s standards, and ATX12VO is one tool that Intel is offering to help. This isn’t pure altruism--Intel must have its own motives for promoting ATX12VO--but the sky isn’t falling, 12VO isn’t such a bad thing, and adoption by the DIY market will be gradual if it happens at all. Editorial: Patrick LathanAdditional Reporting, Host: Steve BurkeVideo: Keegan Gallick, Andrew Coleman, Josh Svoboda",
+        "title": "Intel ATX12VO vs. 12V Spec Explained & What Manufacturers Think | GamersNexus",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://semiwiki.com/forum/threads/intel-10nm-process-problems-my-thoughts-on-this-subject.10535/": {
+        "excerpt": "Hi folks. I have already posted this writeup at a forum in several instalments and now submit it here since I figured you guys can find it interesting. Some parts go verbatim, some are edited, but only for readability or better articulation of some thoughts. If you want to read the original, you...",
+        "title": "Intel 10nm process problems -- my thoughts on this subject",
+        "author": "Fred Chen",
+        "date": null,
+        "website": "SemiWiki",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Moore%27s_law": {
+        "excerpt": "Moore's law is the observation that the number of transistors in an integrated circuit (IC) doubles about every two years. Moore's law is an observation and projection of a historical trend. Rather than a law of physics, it is an empirical relationship. It is an experience-curve law, a type of law quantifying efficiency gains from experience in production.",
+        "title": "Moore's law",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2001-09-27T20:14:24Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://www.opencompute.org/wiki/Open_Rack/SpecsAndDesigns": {
+        "excerpt": "The files contributed to to the RACK and POWER Project are available for download.",
+        "title": "Open Rack/SpecsAndDesigns - OpenCompute",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/PCI_Express": {
+        "excerpt": "Not to be confused with PCI-X or UCIe.",
+        "title": "PCI Express",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2002-11-02T17:49:44Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Printed_circuit_board": {
+        "excerpt": "\"PC board\" redirects here. For the mainboard of personal computers, see Motherboard.",
+        "title": "Printed circuit board",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2001-11-02T11:03:48Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://pcisig.com/blog/pcie%C2%AE-cabling-%E2%80%93-journey-copprlink%E2%84%A2": {
+        "excerpt": "https://www.businesswire.com/news/home/20240501529875/en/PCI-SIG%C2%AE-Announces-CopprLink%E2%84%A2-Cable-Specifications-for-PCIe%C2%AE-5.0-and-6.0-Technology",
+        "title": "PCIe® Cabling – The Journey to CopprLink™",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Gigabit_Ethernet": {
+        "excerpt": "\"GigE\" redirects here. For the camera protocol, see GigE vision.",
+        "title": "Gigabit Ethernet",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2002-07-26T00:18:21Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://www.realtek.com/": {
+        "excerpt": "",
+        "title": "Realtek",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://www.cnx-software.com/2024/06/18/realtek-rtl8126-5gbps-ethernet-pcie-and-m-2-adapters/": {
+        "excerpt": "The low-power RealTek RTL8126(-CG) PCIe 3.0 x1 to 5GbE controller was unveiled at Computex 2023 last year, and a few M.2 modules and PCIe cards are now",
+        "title": "RealTek RTL8126 5Gbps Ethernet PCIe and M.2 adapters are now available for $12 and up",
+        "author": "Jean-Luc Aufranc (CNXSoft)",
+        "date": "2024-06-17T17:01:08+00:00",
+        "website": "CNX Software - Embedded Systems News",
+        "auto": true
+    },
+    "https://www.techpowerup.com/337113/realtek-to-bring-affordable-10-gbps-ethernet-to-the-masses-later-this-year": {
+        "excerpt": "It's been two years since Realtek showed off its 5 Gbps Ethernet chips at Computex and at the time, they hinted at a 10 Gbps chip. This year, the company was showing off a wide range of 10 Gbps Ethernet chips on the show, ranging from a standard consumer solution, to server chips and native USB vari...",
+        "title": "Realtek to Bring Affordable 10 Gbps Ethernet to the Masses Later This Year",
+        "author": "by TheLostSwede",
+        "date": null,
+        "website": "TechPowerUp",
+        "auto": true
+    },
+    "https://github.com/TechEmpower/FrameworkBenchmarks/wiki/Project-Information-Environment": {
+        "excerpt": "Source for the TechEmpower Framework Benchmarks project - TechEmpower/FrameworkBenchmarks",
+        "title": "Project Information Environment",
+        "author": "TechEmpower",
+        "date": null,
+        "website": "GitHub",
+        "auto": true
+    },
+    "https://www.dpdk.org/": {
+        "excerpt": "The Open Source Data Plane Development Kit Accelerating Network Performance",
+        "title": "DPDK – The open source data plane development kit accelerating network performance",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://www.servethehome.com/hands-on-with-the-intel-co-packaged-optics-and-silicon-photonics-switch/": {
+        "excerpt": "We visit an Intel lab to see a Barefoot Tofino 2 switch that is demonstrating silicon photonics and co-packaged optics for the 51.2Tbps switch generation",
+        "title": "Hands-on with the Intel Co-Packaged Optics and Silicon Photonics Switch",
+        "author": "Patrick Kennedy",
+        "date": "2020-03-18T16:45:28+00:00",
+        "website": "ServeTheHome",
+        "auto": true
+    },
+    "https://www.servethehome.com/intel-quickassist-in-ice-lake-servers-what-you-need-to-know/": {
+        "excerpt": "Intel QuickAssist hardware acceleration offers massive performance gains. We run through compression, VPN, and nginx to see the impact",
+        "title": "Intel QuickAssist in Ice Lake Servers What You Need to Know",
+        "author": "Patrick Kennedy",
+        "date": "2022-09-07T15:43:00+00:00",
+        "website": "ServeTheHome",
+        "auto": true
+    },
+    "https://www.servethehome.com/intel-quickassist-parts-and-cards-by-qat-generation/": {
+        "excerpt": "We have a guide looking at the Intel QuickAssist cards and parts by generation. This is Intel's main crypto and compression acceleration tech",
+        "title": "Intel QuickAssist Parts and Cards by QAT Generation",
+        "author": "Rohit Kumar",
+        "date": "2022-08-20T16:45:38+00:00",
+        "website": "ServeTheHome",
+        "auto": true
+    },
+    "https://www.anandtech.com/show/17596/intel-demos-sapphire-rapids-accelerators-at-innovation-2022": {
+        "excerpt": "With Intel’s annual Innovation event taking place this week in San Jose, the company is looking to recapture a lot of technical momentum that has slowly been lost over the past couple of years. While Intel has remained hard at work releasing new products over the time, the combination of schedule slips and an inability to show off their wares to in-person audiences has taken some of the luster off the company and its products. So for their biggest in-person technical event since prior to the pandemic, the company is showing off as much silicon as they can, to convince press, partners, and customers alike that CEO Pat Gelsinger’s efforts have put the company back on track.",
+        "title": "Intel Demos Sapphire Rapids Hardware Accelerator Blocks In Action At Innovation 2022",
+        "author": "Ryan Smith",
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://forum.openwrt.org/t/how-to-check-if-hardware-nat-flow-offloading-is-enabled/83239/15": {
+        "excerpt": "Is there any list or something similar to check OpenWRT devices supported with hardware flow-offloading?",
+        "title": "How to check if hardware NAT (flow offloading) is enabled?",
+        "author": "Klingon",
+        "date": "2023-07-18T09:09:31+00:00",
+        "website": "OpenWrt Forum",
+        "auto": true
+    },
+    "https://www.servethehome.com/dpu-vs-smartnic-sth-nic-continuum-framework-for-discussing-nic-types/": {
+        "excerpt": "We are introducing the 2021 STH NIC Continuum framework for discussing NIC types to help categorize DPU vs SmartNIC and other solutions",
+        "title": "DPU vs SmartNIC and the STH NIC Continuum Framework",
+        "author": "Patrick Kennedy",
+        "date": "2021-05-29T16:07:20+00:00",
+        "website": "ServeTheHome",
+        "auto": true
+    },
+    "https://www.tomshardware.com/pc-components/gpus/nvidia-shows-off-rubin-ultra-with-600-000-watt-kyber-racks-and-infrastructure-coming-in-2027": {
+        "excerpt": "Planning for the future with up to 600kW per rack.",
+        "title": "Nvidia shows off Rubin Ultra with 600,000-Watt Kyber racks and infrastructure, coming in 2027",
+        "author": "Jarred Walton",
+        "date": "2025-03-19T22:09:33+00:00",
+        "website": "Tom's Hardware",
+        "auto": true
+    },
+    "https://www.servethehome.com/why-servers-are-using-so-much-power-tdp-growth-over-time-supermicro-vertiv-intel-amd-nvidia/": {
+        "excerpt": "Server CPU and GPU TDPs are rapidly increasing. We chart the increases and go into some of the other aspects driving power in data centers",
+        "title": "Why Servers Are Using So Much Power TDP Growth Over Time",
+        "author": "Patrick Kennedy",
+        "date": "2024-07-10T18:26:35+00:00",
+        "website": "ServeTheHome",
+        "auto": true
+    },
+    "https://www.servethehome.com/deep-dive-into-lowering-server-power-consumption-intel-inspur-hpe-dell-emc/": {
+        "excerpt": "We deep-dive into server power consumption and look at 1U v. 2U, power supply efficiency, and using accelerators",
+        "title": "Deep Dive into Lowering Server Power Consumption",
+        "author": "Patrick Kennedy",
+        "date": "2022-02-21T22:00:24+00:00",
+        "website": "ServeTheHome",
+        "auto": true
+    },
+    "https://www.servethehome.com/liquid-cooling-next-gen-servers-getting-hands-on-3-options-supermicro/4/": {
+        "excerpt": "We get hands-on with 3 liquid cooling technologies rear door heat exchanger, immersion, and direct to chip and get to test the benefits",
+        "title": "Liquid Cooling Next-Gen Servers Getting Hands-on with 3 Options",
+        "author": "Patrick Kennedy",
+        "date": "2021-08-02T14:00:31+00:00",
+        "website": "ServeTheHome",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Storage_area_network": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Storage area network",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2003-07-13T17:33:59Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://www.servethehome.com/ethernet-ssds-hands-on-with-the-kioxia-em6-nvmeof-ssd/": {
+        "excerpt": "The Kioxia EM6 SSD uses Ethernet instead of SAS, SATA, or PCIe NVMe to connect directly to networks. We get hands-on with the tech",
+        "title": "Ethernet SSDs – Hands-on with the Kioxia EM6 NVMeoF SSD",
+        "author": "Patrick Kennedy",
+        "date": "2022-04-20T18:45:00+00:00",
+        "website": "ServeTheHome",
+        "auto": true
+    },
+    "https://www.nextplatform.com/2020/04/03/cxl-and-gen-z-iron-out-a-coherent-interconnect-strategy/": {
+        "excerpt": "To one way of looking at it, a reprise of the Bus Wars from days gone by in the late 1980s and early 1990s would have been a lot of fun. The fighting",
+        "title": "CXL And Gen-Z Iron Out A Coherent Interconnect Strategy",
+        "author": "Timothy Prickett Morgan",
+        "date": "2020-04-03T19:14:41+00:00",
+        "website": "The Next Platform",
+        "auto": true
+    },
+    "https://www.servethehome.com/cxl-is-finally-coming-in-2025-amd-intel-marvell-xconn-inventec-lenovo-asus-kioxia-montage-arm/": {
+        "excerpt": "After years of hype, we are seeing enough CXL action that it is a technology we expect to see a lot more of in 2025. Here is why",
+        "title": "CXL is Finally Coming in 2025",
+        "author": "Patrick Kennedy",
+        "date": "2024-12-19T20:39:26+00:00",
+        "website": "ServeTheHome",
+        "auto": true
+    },
+    "https://semianalysis.com/2022/07/07/cxl-enables-microsoft-azure-to-cut/": {
+        "excerpt": "CXL (Compute Express Link) is going to be a transformative technology that will redefine how the datacenter is architected and built. This is because CXL provides a standardized protocol for cache …",
+        "title": "CXL Enables Microsoft Azure To Cut Server Capital Expenditures By Hundreds Of Millions Of Dollars",
+        "author": null,
+        "date": "2022-07-07T15:49:56+00:00",
+        "website": "SemiAnalysis",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Non-uniform_memory_access": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Non-uniform memory access",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2002-02-25T15:51:15Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/12VHPWR": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "12VHPWR",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2023-07-18T14:52:27Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://tenstorrent.com/hardware/blackhole": {
+        "excerpt": "Infinitely Scalable",
+        "title": "Blackhole™",
+        "author": null,
+        "date": null,
+        "website": "Tenstorrent",
+        "auto": true
+    },
+    "https://github.com/tenstorrent/tt-metal/issues/19950": {
+        "excerpt": "The following test will fail: def test_integer_permute(device): torch_input = torch.randint(-10, 10, (1, 2, 1, 1)) torch_output = torch.permute(torch_input, [0, 2, 3, 1]) input_tensor = ttnn.from_t...",
+        "title": "[$3000 Bounty] int32 permute produces incorrect data · Issue #19950 · tenstorrent/tt-metal",
+        "author": "tenstorrent",
+        "date": null,
+        "website": "GitHub",
+        "auto": true
     }
 }

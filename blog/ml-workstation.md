@@ -2,7 +2,7 @@
 title: So you want a cheap ML workstation
 description: How to run local AI slightly more cheaply than with a prebuilt system. Somewhat opinionated.
 created: 25/02/2024
-updated: 02/02/2025
+updated: 27/05/2025
 slug: mlrig
 tags: ["hardware", "ai"]
 ---
@@ -11,7 +11,7 @@ tags: ["hardware", "ai"]
 ## Summary
 
 - Most of your workstation should be like a normal gaming desktop, but with less emphasis on single-threaded performance and more RAM. These are not hard to build yourself.
-- Buy recent consumer Nvidia GPUs with lots of VRAM (*not* datacentre or workstation ones).
+- Buy recent (3000-series and onward) consumer Nvidia GPUs with lots of VRAM (*not* datacentre or workstation ones).
 - Older or used parts are good to cut costs (not overly old GPUs).
 - Buy a sufficiently capable PSU.
 - For *specifically* big LLM inference, you probably want a server CPU (not a GPU) with lots of memory and memory bandwidth. See [this section](#cpu-inference).
@@ -38,7 +38,9 @@ The most important decision you will make in your build is your choice of GPU(s)
 
 Unless you want to spend lots of your time messing around with drivers, Nvidia is your only practical choice for compute workloads. Optimized kernels[^12] such as [Flash Attention](https://github.com/Dao-AILab/flash-attention) are generally only written for CUDA, hampering effective compute performance on alternatives. AMD make capable GPUs for gaming which go underappreciated by many buyers, and Intel... make GPUs... but AMD does not appear to be taking their compute stack seriously on consumer hardware[^3] and Intel's is merely okay[^4].
 
-AMD's CUDA competitor, ROCm, appears to only be officially supported on the [highest-end cards](https://rocm.docs.amd.com/projects/radeon/en/latest/docs/compatibility.html), and (at least according to [geohot as of a few months ago](https://geohot.github.io/blog/jekyll/update/2023/06/07/a-dive-into-amds-drivers.html)) does not work very reliably even on those. AMD also lacks capable matrix multiplication acceleration, meaning its GPUs' AI compute performance is lacking - even the latest RDNA 3 hardware only has [WMMA](https://gpuopen.com/learn/wmma_on_rdna3/), which reuses existing hardware slightly more efficiently, resulting in the top-end RX 7900 XTX being slower than Nvidia's last-generation RTX 3090 in theoretical matrix performance.
+AMD's CUDA competitor, ROCm, appears to only be officially supported on the [highest-end cards](https://rocm.docs.amd.com/projects/radeon/en/latest/docs/compatibility.html), and (at least according to [geohot as of a few months ago](https://geohot.github.io/blog/jekyll/update/2023/06/07/a-dive-into-amds-drivers.html)) does not work very reliably even on those. ~~AMD also lacks capable matrix multiplication acceleration, meaning its GPUs' AI compute performance is lacking - even the latest RDNA 3 hardware only has [WMMA](https://gpuopen.com/learn/wmma_on_rdna3/), which reuses existing hardware slightly more efficiently, resulting in the top-end RX 7900 XTX being slower than Nvidia's last-generation RTX 3090 in theoretical matrix performance.~~ The AMD RX 9070 XT now has competent matrix acceleration, but the RDNA 4 generation doesn't have anything higher-end than it, and it only has 16GB of VRAM and mediocre bandwidth.
+
+[Tenstorrent Blackhole](https://tenstorrent.com/hardware/blackhole) is a very credible competitor - hardware-wise. The compute is on par with an RTX 4090, and they are cheaper and have more VRAM, although less VRAM bandwidth. The p150a has absurdly fast networking for scale-out (multi-accelerator) workloads. However, the software is barely functional - they have gone through several software stacks, [basic features are broken](https://github.com/tenstorrent/tt-metal/issues/19950) and, at least based on the open bounties and discussion on the Discord, they appear more concerned with making specific workloads run than a general solution (making their compiler robust). Additionally, idle power consumption is ~100W with the current firmware, as opposed to ~10W for a modern GPU, which adds lots to effective cost, and as they aren't GPUs they can't do display output themselves.
 
 Intel GPUs have good matrix multiplication accelerators, but their most powerful (consumer) GPU product is not very performant and the software is problematic - [Triton](https://github.com/intel/intel-xpu-backend-for-triton) and [PyTorch](https://github.com/intel/intel-extension-for-pytorch) are supported, but not all tools will support Intel's integration code, and there is presently an issue with addressing more than 4GB of memory in one allocation due to their iGPU heritage which apparently causes many problems.
 
@@ -64,7 +66,7 @@ As you can probably now infer, I recommend using recent consumer hardware, which
 
 VRAM capacity doesn't affect performance until it runs out, at which point you will incur heavy penalties from swapping and/or moving part of your workload to the CPU. Memory bandwidth is generally limiting with large models and small batch sizes (e.g. online LLM inference for chatbots[^5]), and compute the bottleneck for training and some inference (e.g. Stable Diffusion and some other vision models)[^6]. Within a GPU generation, these generally scale together, but between generations bandwidth usually grows slower than compute. Between Ampere (RTX 3XXX) and Ada Lovelace (RTX 4XXX) it has in some cases gone *down*[^7].
 
-As VRAM effectively upper-bounds practical workloads, it's best to get the cards Nvidia generously deigns to give outsized amounts of VRAM for their compute performance, unless you're sure of what you want to run. This usually means a RTX 3060 (12GB), RTX 3090 or RTX 4090. RTX 3090s are readily available used far below the official retail prices, and are a good choice if you're mostly concerned with inference, since their memory bandwidth is almost the same as a 4090's, but 4090s have over twice as much compute on paper and (in non-memory-bound scenarios) also bear this out in practice.
+As VRAM effectively upper-bounds practical workloads, it's best to get the cards Nvidia generously deigns to give outsized amounts of VRAM for their compute performance, unless you're sure of what you want to run. This usually means a RTX 3060 (12GB), RTX 3090 or RTX 4090. RTX 3090s are readily available used far below the official retail prices, and are a good choice if you're mostly concerned with inference, since their memory bandwidth is almost the same as a 4090's, but 4090s have over twice as much compute on paper and (in non-memory-bound scenarios) also bear this out in practice. RTX 5090s are a significant upgrade, but cost over twice as much.
 
 Native BF16 support is important too, but Ampere and Ada Lovelace both have this. It looks like RDNA3 (AMD) does, even.
 
