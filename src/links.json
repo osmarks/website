@@ -626,4 +626,52 @@
         author: ["S. Crespi-Reghizzi", "D. Mandrioli"],
         date: "1975-05-05"
     },
+    "https://holdtherobot.com/blog/2025/05/11/linux-on-android-with-ar-glasses/": {
+        title: "Coding Without a Laptop - Two Weeks with AR Glasses and Linux on Android",
+        author: "Hold the Robot",
+        date: "2025-05-11",
+        referenceIn: { glass: "" }
+    },
+    "https://files.opencompute.org/oc/public.php?service=files&t=cf80ec91104554a01b3227983f33a89c&download": {
+        title: "Overview of Open Rack Standard V2.0",
+        author: ["Steve Mills", "Mike Lau", "Xin Li", "Chris Moynihan"],
+        date: "2016-08-10"
+    },
+    "https://www.molex.com/en-us/industries-applications/servers-storage/open-compute-project/ocp-rack-and-power-orv3": {
+        title: "ORV3 Rack and Power Infrastructure"
+    },
+    "https://www.eetimes.com/intels-10nm-node-past-present-and-future/": {
+        title: "Intel’s 10nm Node: Past, Present, and Future",
+        date: "2020-06-15",
+        author: "Anton Shilov"
+    },
+    "https://www.asrockrack.com/general/productdetail.asp?Model=GENOAD8X-2T/BCM": {
+        title: "ASRock Rack GENOAD8X-2T/BCM"
+    },
+    "https://www.techempower.com/benchmarks/": {
+        title: "TechEmpower Web Framework Benchmarks"
+    },
+    "https://146a55aca6f00848c565-a7635525d40ac1c70300198708936b4e.ssl.cf1.rackcdn.com/images/fbb4a175925d7b085634f772f89584006f81f01f.pdf": {
+        title: "OCP Accelerator Module (OAM)",
+        author: ["Siamak Tavallaei", "Whitney Zhao", "Tiffany Jin", "Cheng Chen", "Richard Ding"]
+    },
+    "https://herbsutter.com/welcome-to-the-jungle/": {
+        title: "Welcome to the Jungle",
+        author: "Herb Sutter",
+        excerpt: "Or, A Heterogeneous Supercomputer in Every Pocket",
+        referenceIn: { "diypc": "" }
+    },
+    "https://www.intel.com/content/www/us/en/developer/articles/technical/proof-points-of-dynamic-load-balancer-dlb.html": {
+        title: "Proof Points of Intel® Dynamic Load Balancer (Intel® DLB)"
+    },
+    "https://www.intel.com/content/www/us/en/products/docs/accelerator-engines/what-is-intel-amx.html": {
+        title: "What Is Intel® Advanced Matrix Extensions (Intel® AMX)?"
+    },
+    "https://conferences.sigcomm.org/hotnets/2023/papers/hotnets23_levis.pdf": {
+        title: "A Case Against CXL Memory Pooling",
+        author: ["Philip Levis", "Kun Lin", "Amy Tai"]
+    },
+    "https://www.nvidia.com/content/dam/en-zz/Solutions/networking/ethernet-adapters/connectX-6-dx-datasheet.pdf": {
+        title: "NVIDIA ConnectX-6 DX Ethernet SmartNIC"
+    }
 }

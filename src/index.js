@@ -585,6 +585,10 @@ const fetchFeeds = async () => {
             entry.feedName = name
         }
         const entry = feed.entries[0]
+        if (!entry) {
+            console.log(chalk.red("Entry missing for"), name)
+            continue
+        }
         entry.published = Date.parse(entry.published)
         if (isNaN(entry.published)) {
             entry.published = Date.parse(feed.published)
