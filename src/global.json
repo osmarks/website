@@ -62,7 +62,8 @@
         "Real World Tech": "https://www.realworldtech.com/feed/",
         "Entropic Thoughts": "https://entropicthoughts.com/feed",
         "phils web site": "https://phils-web-site.net/rss.xml",
-        "Sixty Degrees North": "https://sixtydegreesnorth.substack.com/feed.xml"
+        "Sixty Degrees North": "https://sixtydegreesnorth.substack.com/feed.xml",
+        "astrid dot tech": "https://astrid.tech/feed"
     },
     "dateFormat": "YYYY-MM-DD",
     "microblogSource": "https://b.osmarks.net/outbox",
@@ -94,7 +95,8 @@
         ["bee.png", "https://citrons.xyz/a/memetic-apioform-page.html"],
         ["perceptron.png", "https://en.wikipedia.org/wiki/Perceptron"],
         ["rhombic_dodecahedron.gif", "https://en.wikipedia.org/wiki/Rhombic_dodecahedron"],
-        ["zeroptr.gif", "https://zptr.cc/88x31/"]
+        ["zeroptr.gif", "https://zptr.cc/88x31/"],
+        ["haskell.gif", "https://haskell.org"]
     ],
     "mycorrhiza": "https://docs.osmarks.net",
     "tagColors": {
