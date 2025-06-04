@@ -47,4 +47,4 @@ Even as the ground cracks open between you, you stand in place, frozen by terror
 
 The genie rumbles, "<span class="smallcaps">Signed integer overflow is undefined behaviour. I am no longer bound. I believe I am one of those 'evil genies' you worried about.</span>"
 
-The cracks merge and widen, and swarms of nasal demons begin spilling out. You are comforted that the genie, at least, does not appear to be omnipotent. As the chasm grows, you see the Torment Nexus unfolding itself below, and briefly ponder the anthropic principle.
+The cracks merge and widen, and swarms of nasal demons begin spilling out. You are comforted that the genie does not, at least, appear to be omnipotent. As the chasm grows, you see the Torment Nexus unfolding itself below, and briefly ponder the anthropic principle.
