@@ -11,7 +11,7 @@
     "@vscode/markdown-it-katex": "^1.1.0",
     "axios": "^1.5.0",
     "base64-js": "^1.5.1",
-    "better-sqlite3": "^11.5.0",
+    "better-sqlite3": "^11.10.0",
     "binary-fuse-filter": "^1.0.0",
     "chalk": "^4.1.0",
     "css-select": "^5.1.0",

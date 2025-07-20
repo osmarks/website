@@ -176,7 +176,7 @@ Well, I mean, yes idealism, yes the dignity of pure research, yes the pursuit of
 
 ### Schild's Ladder
 
-[Schild's Ladder](https://www.goodreads.com/book/show/156780.Schild_s_Ladder) may just be Greg Egan showing off cool physics ideas without much in the way of plot beyond this, but they *are* very cool. Egan also manages to pull off an actually-futuristic future society and world. I also enjoyed Greg Egan's many short story collections, [Luminous](https://www.goodreads.com/book/show/156782.Luminous)/[Oceanic](https://www.goodreads.com/book/show/6741362-oceanic)/[Instantiation](https://www.goodreads.com/book/show/50641444-instantiation) - I think he does better at these.
+[Schild's Ladder](https://www.goodreads.com/book/show/156780.Schild_s_Ladder) may just be Greg Egan showing off cool physics ideas without much in the way of plot beyond this, but they *are* very cool. Egan also manages to pull off an actually-futuristic future society and world[^6]. I also enjoyed Greg Egan's many short story collections, [Luminous](https://www.goodreads.com/book/show/156782.Luminous)/[Oceanic](https://www.goodreads.com/book/show/6741362-oceanic)/[Instantiation](https://www.goodreads.com/book/show/50641444-instantiation) - I think he does better at these.
 
 ### Sufficiently Advanced Magic
 
@@ -382,3 +382,5 @@ You can suggest other possibly-good stuff in the comments and I may add it to an
 [^4]: Using the word "dimension" this way is terrible but we are stuck with it. I might have to retroactively eliminate whoever came up with it.
 
 [^5]: I believe the reviewers saying it's novel and exciting have just never read anything vaguely transhumanist ever.
+
+[^6]: He does have a tendency to write every character, including nominally-alien aliens, as unrealistically reasonable, cosmopolitan, smart and well-educated.

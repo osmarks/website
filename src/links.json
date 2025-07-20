@@ -673,5 +673,14 @@
     },
     "https://www.nvidia.com/content/dam/en-zz/Solutions/networking/ethernet-adapters/connectX-6-dx-datasheet.pdf": {
         title: "NVIDIA ConnectX-6 DX Ethernet SmartNIC"
+    },
+    "https://content.knightfrank.com/research/2207/documents/en/nlaknight-frank-london-tall-buildings-survey-2021-7962.pdf": {
+        title: "London Tall Buildings Survey",
+        author: "Knight Frank"
+    },
+    "https://www.pnas.org/doi/10.1073/pnas.0610172104": {
+        title: "Growth, innovation, scaling, and the pace of life in cities",
+        date: "2007-04-24",
+        author: ["Luís M. A. Bettencourt", "José Lobo", "Dirk Helbing", "Geoffrey B. West"]
     }
 }

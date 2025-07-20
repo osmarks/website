@@ -52,7 +52,7 @@ html(lang="en")
                 block nav-items
         .sidenotes-container
             main(class=!haveSidenotes ? "fullwidth" : "")
-                .header
+                .header(style=accentColor ? `--stripe: ${accentColor}` : "")
                     h1.page-title= title
                     block under-title
                     if !internal
