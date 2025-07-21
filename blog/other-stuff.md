@@ -8,13 +8,13 @@ tags: ["fiction", "opinion"]
 ---
 I'm excluding music from this because music preferences seem to be even more varied between the people I interact with than other preferences.
 Obviously this is just material *I* like; you might not like it, which isn't really my concern - this list is primarily made to bring to people's attention media they might like but have not heard of.
-Enjoy the newly reformatted version of this list, with my slightly opaque organizational scheme and possibly incorrectly sorted lists.
+Enjoy the newly reformatted version of this list, with my slightly opaque organizational scheme and manually sorted lists.
 
 ## Writing
 
 ### 12 Miles Below
 
-[12 Miles Below](https://www.royalroad.com/fiction/42367/12-miles-below/) is an ongoing webserial (I am not fully caught up or close to it yet) with intelligent and well-written characters and a quirky setting. It has more grammar/spelling errors than I would like (I would like none) but most people care about this less than me.
+[12 Miles Below](https://www.royalroad.com/fiction/42367/12-miles-below/) is an ongoing webserial (I am not fully caught up or close to it yet) with (somewhat) intelligent and well-written characters and a quirky setting. It has more grammar/spelling errors than I would like (I would like none) but most people care about this less than me.
 
 ### A Hero's War
 
