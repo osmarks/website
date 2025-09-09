@@ -26,7 +26,7 @@ The worse utilization on real training runs is partly because of individual weig
 
 ### DLRMs
 
-While "generative AI" now comprises the majority of interest in AI, a large fraction of total compute is still spent on boring but critical work like the [Deep Learning Recommender Models](https://ai.meta.com/blog/dlrm-an-advanced-open-source-deep-learning-recommendation-model/) which now control modern culture by determining what social media users see. These use extremely large lookup tables for sparse features and very little arithmetic, making them much more memory bandwidth- and capacity-bound. I won't talk about them further because there are already solutions for this implemented by Google and Meta in TPUs and [MTIA](https://ai.meta.com/blog/meta-training-inference-accelerator-AI-MTIA/), and no startups seem particularly interested.
+While "generative AI" now constitutes the majority of interest in AI, a large fraction of total compute is still spent on boring but critical work like the [Deep Learning Recommender Models](https://ai.meta.com/blog/dlrm-an-advanced-open-source-deep-learning-recommendation-model/) which now control modern culture by determining what social media users see. These use extremely large lookup tables for sparse features and very little arithmetic, making them much more memory bandwidth- and capacity-bound. I won't talk about them further because there are already solutions for this implemented by Google and Meta in TPUs and [MTIA](https://ai.meta.com/blog/meta-training-inference-accelerator-AI-MTIA/), and no startups seem particularly interested.
 
 ## Hardware design
 
