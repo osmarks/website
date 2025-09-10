@@ -682,5 +682,65 @@
         title: "Growth, innovation, scaling, and the pace of life in cities",
         date: "2007-04-24",
         author: ["Luís M. A. Bettencourt", "José Lobo", "Dirk Helbing", "Geoffrey B. West"]
+    },
+    "https://www.youtube.com/watch?v=5MxNf5_xflM": {
+        title: "AR/AI Glasses Hardware Expectations with Karl Guttag, KGOnTech",
+        date: "2025-07-24",
+        referenceIn: {
+            "glass": ""
+        },
+        author: "AWE XR"
+    },
+    "https://x.com/openai/status/1956461718097494196": {
+        title: "We’re making GPT-5 warmer and friendlier based on feedback that it felt too formal before.",
+        author: "@OpenAI",
+        date: "2025-08-15"
+    },
+    "https://x.com/repligate/status/1834210769338069175": {
+        title: "aside from its obvious intelligence, the one on the left has a kind of slimy hyperoptimized rizz that's simultaneously repulsive and fascinating.",
+        date: "2024-09-12",
+        author: "@repligate"
+    },
+    "https://x.com/MParakhin/status/1916496987731513781": {
+        title: "When we were first shipping Memory, the initial thought was: “Let’s let users see and edit their profiles”.",
+        date: "2025-04-27",
+        author: "@MParakhin"
+    },
+    "https://openai.com/index/expanding-on-sycophancy/": {
+        title: "Expanding on what we missed with sycophancy",
+        date: "2025-05-02"
+    },
+    "https://x.com/fidjissimo/status/1916231605167001672": {
+        title: "Such a fascinating prompt and I love the answer I got!",
+        date: "2025-04-26",
+        author: "@fidjissimo"
+    },
+    "https://openai.com/index/leadership-expansion-with-fidji-simo/": {
+        title: "OpenAI Expands Leadership with Fidji Simo",
+        date: "2025-05-07"
+    },
+    "https://www.lesswrong.com/w/taking-ideas-seriously": {
+        title: "Taking Ideas Seriously",
+        date: "2020-08-06"
+    },
+    "https://platform.openai.com/docs/guides/batch/batch-api": {
+        title: "Batch API – OpenAI API"
+    },
+    "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/12/do-adults-have-the-skills-they-need-to-thrive-in-a-changing-world_4396f1f1/b263dc5d-en.pdf": {
+        title: "Do Adults Have the Skills They Need to Thrive in a Changing World?",
+        description: "Survey of Adult Skills 2023",
+        date: "2024-12-10"
+    },
+    "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/12/survey-of-adult-skills-2023_1ab54c9e/3639d1e2-en.pdf": {
+        title: "Survey of Adult Skills Reader’s Companion",
+        date: "2024-12-10"
+    },
+    "https://www.oecd.org/en/about/programmes/piaac/piaac-released-items.html": {
+        title: "PIAAC released items"
+    },
+    "https://x.com/wanyeburkett/status/1927413667173159142": {
+        title: "One thing that I think is a little bit frustrating about modern life that is about to get way, way, way worse, unless we legislate it away, is that you can create models of human behavior that are better at predicting future behavior than intuition in ways that we feel are sort of unfair.",
+        author: "@wayneburkett",
+        date: "2025-05-27"
     }
 }

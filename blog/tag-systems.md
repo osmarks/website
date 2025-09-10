@@ -33,7 +33,7 @@ The slightly outdated copy of Meme Search Engine I run on my photos and screensh
 
 [^4]: In my case this is maths notes: it's ugly to put an entire topic into one long page, but wildly impractical and annoying to split every proof, corollary and note into a separate page.
 
-[^5]: To some extent this is the case for blog posts: I have many minor things to say, but only publish them when they can fit into a particularly witty microblog snippet or form a coherent long post from several.
+[^5]: To some extent this is the case for blog posts: I have many minor things to say, but only publish them when they can fit into a particularly witty microblog snippet or form a coherent long post.
 
 [^6]: I think big tech photo software does offer basic semantic search now, but with primitive small models.
 

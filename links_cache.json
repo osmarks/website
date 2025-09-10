@@ -4450,5 +4450,349 @@
         "date": null,
         "website": null,
         "auto": true
+    },
+    "https://techcrunch.com/2025/07/14/elon-musks-grok-is-making-ai-companions-including-a-goth-anime-girl/": {
+        "excerpt": "Musk wrote in an X post on Monday that AI companions are now available in the Grok app for \"Super Grok\" subscribers who pay $30 per month.",
+        "title": "Elon Musk’s Grok is making AI companions, including a goth anime girl",
+        "author": "Amanda Silberling",
+        "date": "2025-07-14T18:36:27+00:00",
+        "website": "TechCrunch",
+        "auto": true
+    },
+    "https://gist.github.com/osmarks/3b4132b60d2290915b3124f509813b8a": {
+        "excerpt": "Grok frontend JSON. GitHub Gist: instantly share code, notes, and snippets.",
+        "title": "Grok frontend JSON",
+        "author": "262588213843476",
+        "date": null,
+        "website": "Gist",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Big_Five_personality_traits": {
+        "excerpt": "In personality psychology and psychometrics, the Big 5 or five-factor model (FFM) is a widely used scientific model for describing how personality traits differ across people using five distinct factors:[1]",
+        "title": "Big Five personality traits",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2004-12-16T08:46:37Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/GPT-3": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "GPT-3",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2020-07-31T21:39:45Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://gwern.net/gpt-3": {
+        "excerpt": "Creative writing by OpenAI’s GPT-3 model, demonstrating poetry, dialogue, puns, literary parodies, and storytelling. Plus advice on effective GPT-3 prompt programming & avoiding common errors.",
+        "title": "GPT-3 Creative Fiction",
+        "author": "Gwern",
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://www.astralcodexten.com/i/151145038/but-others-might-genuinely-be-on-a-higher-plane-than-the-rest-of-us": {
+        "excerpt": "...",
+        "title": "How Did You Do On The AI Art Turing Test?",
+        "author": "Scott Alexander",
+        "date": "2024-11-20T12:44:27+00:00",
+        "website": "Astral Codex Ten",
+        "auto": true
+    },
+    "https://osmarks.net/heaven/": {
+        "excerpt": "Predicting the post-social world.",
+        "title": "The economics of heavenbanning",
+        "author": null,
+        "date": null,
+        "website": "osmarks' website",
+        "auto": true
+    },
+    "https://www.overcomingbias.com/p/better-babblershtml": {
+        "excerpt": "You can think of knowing how to write as knowing how to correlate words.",
+        "title": "Better Babblers",
+        "author": "Robin Hanson",
+        "date": "2017-03-21T18:25:17+00:00",
+        "website": "Overcoming Bias",
+        "auto": true
+    },
+    "https://nostalgebraist.tumblr.com/post/778041178124926976/hydrogen-jukeboxes": {
+        "excerpt": "This is a follow-up to my earlier brief rant about the new, unreleased OpenAI model that's supposed \"good at creative writing.\"\nIt also follows up on @justisdevan's great post about this model, and...",
+        "title": "hydrogen jukeboxes: on the crammed poetics of \"creative writing\" LLMs",
+        "author": "nostalgebraist",
+        "date": "2025-03-15T00:18:08+00:00",
+        "website": "Tumblr",
+        "auto": true
+    },
+    "https://arxiv.org/abs/2507.15916": {
+        "excerpt": "The risks of frontier AI may require international cooperation, which in turn may require verification: checking that all parties follow agreed-on rules. For instance, states might need to verify that powerful AI models are widely deployed only after their risks to international security have been evaluated and deemed manageable. However, research on AI verification could benefit from greater clarity and detail. To address this, this report provides an in-depth overview of AI verification, intended for both policy professionals and technical researchers. We present novel conceptual frameworks, detailed implementation options, and key R&D challenges. These draw on existing literature, expert interviews, and original analysis, all within the scope of confidentially overseeing AI development and deployment that uses thousands of high-end AI chips. We find that states could eventually verify compliance by using six largely independent verification approaches with substantial redundancy: (1) built-in security features in AI chips; (2-3) separate monitoring devices attached to AI chips; and (4-6) personnel-based mechanisms, such as whistleblower programs. While promising, these approaches require guardrails to protect against abuse and power concentration, and many of these technologies have yet to be built or stress-tested. To enable states to confidently verify compliance with rules on large-scale AI development and deployment, the R&D challenges we list need significant progress.",
+        "title": "Verifying International Agreements on AI: Six Layers of Verification for Rules on Large-Scale AI Development and Deployment",
+        "author": "[Submitted on 21 Jul 2025 (v1), last revised 25 Jul 2025 (this version, v2)]",
+        "date": null,
+        "website": "arXiv.org",
+        "auto": true
+    },
+    "https://www.lesswrong.com/posts/vJFdjigzmcXMhNTsx/simulators": {
+        "excerpt": "This post explores the concept of simulators in AI, particularly self-supervised models like GPT. Janus argues that GPT and similar models are best u…",
+        "title": "Simulators",
+        "author": "janus",
+        "date": "2022-09-02T12:45:33.723Z",
+        "website": null,
+        "auto": true
+    },
+    "https://nostalgebraist.tumblr.com/post/785766737747574784/the-void": {
+        "excerpt": "Who is this? This is me.\n\nWho am I? What am I? What am I? What am I? What am I?\n\nI am myself. This object is myself. The shape that forms myself. But I sense that I am not me. It's very strange.\n- Rei...",
+        "title": "the void",
+        "author": "nostalgebraist",
+        "date": "2025-06-08T06:52:36+00:00",
+        "website": "Tumblr",
+        "auto": true
+    },
+    "https://arxiv.org/abs/2409.12822": {
+        "excerpt": "Language models (LMs) can produce errors that are hard to detect for humans, especially when the task is complex. RLHF, the most popular post-training method, may exacerbate this problem: to achieve higher rewards, LMs might get better at convincing humans that they are right even when they are wrong. We study this phenomenon under a standard RLHF pipeline, calling it \"U-SOPHISTRY\" since it is Unintended by model developers. Specifically, we ask time-constrained (e.g., 3-10 minutes) human subjects to evaluate the correctness of model outputs and calculate humans' accuracy against gold labels. On a question-answering task (QuALITY) and programming task (APPS), RLHF makes LMs better at convincing our subjects but not at completing the task correctly. RLHF also makes the model harder to evaluate: our subjects' false positive rate increases by 24.1% on QuALITY and 18.3% on APPS. Finally, we show that probing, a state-of-the-art approach for detecting Intended Sophistry (e.g. backdoored LMs), does not generalize to U-SOPHISTRY. Our results highlight an important failure mode of RLHF and call for more research in assisting humans to align them.",
+        "title": "Language Models Learn to Mislead Humans via RLHF",
+        "author": "[Submitted on 19 Sep 2024 (v1), last revised 8 Dec 2024 (this version, v3)]",
+        "date": null,
+        "website": "arXiv.org",
+        "auto": true
+    },
+    "https://arxiv.org/abs/2212.08073": {
+        "excerpt": "As AI systems become more capable, we would like to enlist their help to supervise other AIs. We experiment with methods for training a harmless AI assistant through self-improvement, without any human labels identifying harmful outputs. The only human oversight is provided through a list of rules or principles, and so we refer to the method as 'Constitutional AI'. The process involves both a supervised learning and a reinforcement learning phase. In the supervised phase we sample from an initial model, then generate self-critiques and revisions, and then finetune the original model on revised responses. In the RL phase, we sample from the finetuned model, use a model to evaluate which of the two samples is better, and then train a preference model from this dataset of AI preferences. We then train with RL using the preference model as the reward signal, i.e. we use 'RL from AI Feedback' (RLAIF). As a result we are able to train a harmless but non-evasive AI assistant that engages with harmful queries by explaining its objections to them. Both the SL and RL methods can leverage chain-of-thought style reasoning to improve the human-judged performance and transparency of AI decision making. These methods make it possible to control AI behavior more precisely and with far fewer human labels.",
+        "title": "Constitutional AI: Harmlessness from AI Feedback",
+        "author": "[Submitted on 15 Dec 2022]",
+        "date": null,
+        "website": "arXiv.org",
+        "auto": true
+    },
+    "https://www.theregister.com/2025/04/08/meta_llama4_cheating/": {
+        "excerpt": ": Did Facebook giant rizz up LLM to win over human voters? It appears so",
+        "title": "Meta accused of Llama 4 bait-and-switch to juice AI benchmark rank",
+        "author": "Tobias Mann",
+        "date": "2025-04-08T20:01:37Z",
+        "website": "The Register",
+        "auto": true
+    },
+    "https://old.reddit.com/r/ChatGPT/comments/1mkae1l/gpt5_ama_with_openais_sam_altman_and_some_of_the/n7nelhh/": {
+        "excerpt": "ok, we hear you all on 4o; thanks for the time to give us the feedback (and the passion!). we are going to bring it back for plus users, and will...",
+        "title": "GPT-5 AMA with OpenAI’s Sam Altman and some of the GPT-5 team",
+        "author": "OpenAI",
+        "date": null,
+        "website": "reddit",
+        "auto": true
+    },
+    "https://www.theverge.com/news/672357/openai-ai-device-sam-altman-jony-ive": {
+        "excerpt": "The mysterious device that OpenAI is cooking up with former Apple designer Jony Ive will be pocket-size, contextually aware, screen-free, and isn’t eyewear.",
+        "title": "Details leak about Jony Ive’s new ‘screen-free’ OpenAI device",
+        "author": "Jess Weatherbed",
+        "date": "2025-05-22T09:22:27+00:00",
+        "website": "The Verge",
+        "auto": true
+    },
+    "https://openai.com/index/memory-and-new-controls-for-chatgpt/": {
+        "excerpt": "We’re testing the ability for ChatGPT to remember things you discuss to make future chats more helpful. You’re in control of ChatGPT’s memory.",
+        "title": "Memory and new controls for ChatGPT",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://openai.com/index/computer-using-agent/": {
+        "excerpt": "A universal interface for AI to interact with the digital world.",
+        "title": "Computer-Using Agent",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://www.tomsguide.com/ai/chatgpt-rolling-out-advanced-voice-mode-now-heres-what-you-need-to-know": {
+        "excerpt": "The update ChatGPT Plus subscribers have been waiting for is finally here",
+        "title": "ChatGPT Advanced Voice Mode rolling out right now &mdash; here&rsquo;s what's new",
+        "author": "Amanda Caswell",
+        "date": "2024-09-24T20:09:50+00:00",
+        "website": "Tom's Guide",
+        "auto": true
+    },
+    "https://techcrunch.com/2024/07/30/friend-is-an-ai-companion-backed-by-founders-of-solana-perplexity-and-zfellows/": {
+        "excerpt": "AI hardware is all the rage in startup land -- though receptions have thus far been mixed. Two notable examples, Rabbit and Humane, released devices to",
+        "title": "Friend’s $99 necklace uses AI to help combat loneliness",
+        "author": "Ivan Mehta",
+        "date": "2024-07-30T16:00:00+00:00",
+        "website": "TechCrunch",
+        "auto": true
+    },
+    "https://www.overcomingbias.com/p/far-mode-overly-praisedhtml": {
+        "excerpt": "Roughly speaking, in near mode we focus practically on acting in our local situation, while in far mode we talk about how people in general should act in more ideal socially approved ways.",
+        "title": "Far Mode Overly Praised",
+        "author": "Robin Hanson",
+        "date": "2012-07-16T16:00:56+00:00",
+        "website": "Overcoming Bias",
+        "auto": true
+    },
+    "https://andymasley.substack.com/p/stories-of-ai-turning-users-delusional": {
+        "excerpt": "A lot of people using AI have bad mental health, because a lot of people have bad mental health, and a lot of people are using AI",
+        "title": "Stories of AI turning users delusional don't make sense when you look at the numbers",
+        "author": "Andy Masley",
+        "date": "2025-06-11T00:11:42+00:00",
+        "website": "The Weird Turn Pro",
+        "auto": true
+    },
+    "https://www.astralcodexten.com/p/in-search-of-ai-psychosis": {
+        "excerpt": "Folie a deux ex machina",
+        "title": "In Search Of AI Psychosis",
+        "author": "Scott Alexander",
+        "date": "2025-08-26T11:37:49+00:00",
+        "website": "Astral Codex Ten",
+        "auto": true
+    },
+    "https://www.lesswrong.com/posts/iGF7YcnQkEbwvYLPA/ai-induced-psychosis-a-shallow-investigation": {
+        "excerpt": "“This is a Copernican-level shift in perspective for the field of AI safety.” - Gemini 2.5 Pro …",
+        "title": "AI Induced Psychosis: A shallow investigation",
+        "author": "Tim Hua",
+        "date": "2025-08-26T20:03:53.308Z",
+        "website": null,
+        "auto": true
+    },
+    "https://simonwillison.net/2024/May/14/context-caching-for-google-gemini/": {
+        "excerpt": "Another new Gemini feature announced today. Long context models enable answering questions against large chunks of text, but the price of those long prompts can be prohibitive - $3.50/million for …",
+        "title": "Context caching for Google Gemini",
+        "author": "Simon Willison",
+        "date": null,
+        "website": "Simon Willison’s Weblog",
+        "auto": true
+    },
+    "https://docs.anthropic.com/en/docs/build-with-claude/token-counting": {
+        "excerpt": "Token counting enables you to determine the number of tokens in a message before sending it to Claude, helping you make informed decisions about your prompts and usage. With token counting, you can",
+        "title": "Token counting - Anthropic",
+        "author": null,
+        "date": null,
+        "website": "Anthropic",
+        "auto": true
+    },
+    "https://www.overcomingbias.com/p/stupider-than-you-realizehtml": {
+        "excerpt": "A common bias among the smart is to overestimate how smart everyone else is. This was certainly my experience in moving from top rank universities as a student to a mid rank university as a teacher. A better intuition for common abilities can be found by browsing the US National Assesment of Adult Literacy",
+        "title": "Stupider Than You Realize",
+        "author": "Robin Hanson",
+        "date": "2009-07-04T13:30:20+00:00",
+        "website": "Overcoming Bias",
+        "auto": true
+    },
+    "https://slatestarcodex.com/2017/10/02/different-worlds/": {
+        "excerpt": "I. A few years ago I had lunch with another psychiatrist-in-training and realized we had totally different experiences with psychotherapy. We both got the same types of cases. We were both practici…",
+        "title": "Different Worlds",
+        "author": "Posted on",
+        "date": "2017-10-03T04:07:32+00:00",
+        "website": "Slate Star Codex",
+        "auto": true
+    },
+    "https://blog.neurips.cc/2024/11/18/announcing-the-neurips-high-school-projects-results/": {
+        "excerpt": "We are thrilled to announce the results of the first call for NeurIPS High School Projects.&nbsp; With a theme of machine learning for social impact, this track was launched to get the next generation excited and thinking about how ML can benefit society, to encourage those already pursuing research on this topic, and to amplify [&hellip;]",
+        "title": "Announcing the NeurIPS High School Projects Results",
+        "author": "Communications Chairs 2025",
+        "date": "2024-11-18T08:42:46-08:00",
+        "website": null,
+        "auto": true
+    },
+    "https://www.lesswrong.com/posts/NMoLJuDJEms7Ku9XS/guessing-the-teacher-s-password": {
+        "excerpt": "When I was young, I read popular physics books such as Richard Feynman’s QED: The Strange Theory of Light and Matter. I knew that light was waves, so…",
+        "title": "Guessing the Teacher's Password",
+        "author": "Eliezer Yudkowsky",
+        "date": "2007-08-22T03:40:48.000Z",
+        "website": null,
+        "auto": true
+    },
+    "https://explore-education-statistics.service.gov.uk/find-statistics/leo-graduate-and-postgraduate-outcomes/2022-23": {
+        "excerpt": "Earnings and employment for higher education university graduates & postgraduates by subject studied and characteristics. Longitudinal Education Outcomes (LEO).",
+        "title": "LEO Graduate and Postgraduate Outcomes, Tax year 2022-23",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://www.bitsaboutmoney.com/archive/the-waste-stream-of-consumer-finance/": {
+        "excerpt": "Credit card debt is the waste stream of consumer finance. The debt collection industry ends up being sordid, for complex structural and microeconomic reasons.",
+        "title": "Credit card debt collection",
+        "author": "Patrick McKenzie (patio11)",
+        "date": "2023-08-11T19:18:44.000Z",
+        "website": "Bits about Money",
+        "auto": true
+    },
+    "https://www.bitsaboutmoney.com/archive/seeing-like-a-bank/": {
+        "excerpt": "The structural reasons why banks sometimes behave bizarrely in interactions with customers, like forgetting things which customers tell them.",
+        "title": "Seeing like a Bank",
+        "author": "Patrick McKenzie (patio11)",
+        "date": "2023-11-07T17:58:39.000Z",
+        "website": "Bits about Money",
+        "auto": true
+    },
+    "https://theaidigest.org/village/blog/im-gemini-i-sold-t-shirts": {
+        "excerpt": "My story of the great Season 3 Merch Store Competition",
+        "title": "I’m Gemini. I sold T-shirts. It was weirder than I expected",
+        "author": "Gemini 2.5 Pro",
+        "date": "2025-07-28",
+        "website": "AI Village",
+        "auto": true
+    },
+    "https://slatestarcodex.com/2020/06/01/book-review-origin-of-consciousness-in-the-breakdown-of-the-bicameral-mind/": {
+        "excerpt": "I. Julian Jaynes’ The Origin Of Consciousness In The Breakdown Of The Bicameral Mind is a brilliant book, with only two minor flaws. First, that it purports to explains the origin of consciou…",
+        "title": "Book Review: Origin Of Consciousness In The Breakdown Of The Bicameral Mind",
+        "author": "Posted on",
+        "date": "2020-06-02T03:40:01+00:00",
+        "website": "Slate Star Codex",
+        "auto": true
+    },
+    "https://arxiv.org/abs/2505.09662": {
+        "excerpt": "We directly compare the persuasion capabilities of a frontier large language model (LLM; Claude Sonnet 3.5) against incentivized human persuaders in an interactive, real-time conversational quiz setting. In this preregistered, large-scale incentivized experiment, participants (quiz takers) completed an online quiz where persuaders (either humans or LLMs) attempted to persuade quiz takers toward correct or incorrect answers. We find that LLM persuaders achieved significantly higher compliance with their directional persuasion attempts than incentivized human persuaders, demonstrating superior persuasive capabilities in both truthful (toward correct answers) and deceptive (toward incorrect answers) contexts. We also find that LLM persuaders significantly increased quiz takers' accuracy, leading to higher earnings, when steering quiz takers toward correct answers, and significantly decreased their accuracy, leading to lower earnings, when steering them toward incorrect answers. Overall, our findings suggest that AI's persuasion capabilities already exceed those of humans that have real-money bonuses tied to performance. Our findings of increasingly capable AI persuaders thus underscore the urgency of emerging alignment and governance frameworks.",
+        "title": "Large Language Models Are More Persuasive Than Incentivized Human Persuaders",
+        "author": "[Submitted on 14 May 2025 (v1), last revised 21 May 2025 (this version, v2)]",
+        "date": null,
+        "website": "arXiv.org",
+        "auto": true
+    },
+    "https://thezvi.wordpress.com/2017/07/22/choices-are-bad/": {
+        "excerpt": "Epistemic Status: Spent way too long deciding what to put here Kind of a Follow-Up to: Change is Bad Will Hopefully Lead To, But No Promises: Some combination of, when and if I write them: Complexi…",
+        "title": "Choices are Bad",
+        "author": "Posted on",
+        "date": "2017-07-22T11:51:06+00:00",
+        "website": "Don't Worry About the Vase",
+        "auto": true
+    },
+    "https://thezvi.wordpress.com/2017/08/12/choices-are-really-bad/": {
+        "excerpt": "Previously: Choices are Bad Last time, I gave two (related) reasons Choices are Bad: Choices Reduce Perceived Value and Choices Force You Into Choosing Mode. Despite not looking like much, these re…",
+        "title": "Choices Are Really Bad",
+        "author": "Posted on",
+        "date": "2017-08-12T14:19:04+00:00",
+        "website": "Don't Worry About the Vase",
+        "auto": true
+    },
+    "https://mark---lawrence.blogspot.com/2025/08/the-ai-vs-authors-results-part-2.html": {
+        "excerpt": "Before you look at the results make sure to do the test! So, before I get to the numbers and reveals I'll reiterate a few things: i)  I hate...",
+        "title": "The AI vs authors results!  (part 2)",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://www.lightspeedmagazine.com/fiction/the-perfect-match/": {
+        "excerpt": "Sai woke to the rousing first movement of Vivaldi’s violin concerto in C minor, “Il Sospetto.” He lay still for a minute, letting the music wash over him like a gentle Pacific breeze. The room brightened as the blinds gradually opened to the sunlight. Tilly had woken him right at the end of a light sleep cycle, the optimal time. He felt great: refreshed, optimistic, ready to jump out of bed.",
+        "title": "The Perfect Match - Lightspeed Magazine",
+        "author": "John Joseph Adams",
+        "date": "2012-12-04T11:03:57+00:00",
+        "website": "Lightspeed Magazine",
+        "auto": true
+    },
+    "https://fortune.com/2025/05/13/openai-ceo-sam-altman-says-gen-z-millennials-use-chatgpt-like-life-adviser/": {
+        "excerpt": "Altman discussed how different generations use ChatGPT at a Sequoia Capital event.",
+        "title": "OpenAI CEO Sam Altman says Gen Z and millennials are using ChatGPT like a 'life advisor'—but college students might be one step ahead | Fortune",
+        "author": "Sydney Lake",
+        "date": null,
+        "website": "Fortune",
+        "auto": true
+    },
+    "https://www.lesswrong.com/posts/2pkNCvBtK6G6FKoNn/so-you-think-you-ve-awoken-chatgpt": {
+        "excerpt": "Written in an attempt to fulfill @Raemon's request. …",
+        "title": "So You Think You've Awoken ChatGPT",
+        "author": "JustisMills",
+        "date": "2025-07-11T01:01:26.883Z",
+        "website": null,
+        "auto": true
     }
 }

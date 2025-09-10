@@ -28,6 +28,7 @@ Friend me on [Project Euler](https://projecteuler.net/friends)! My code is `1997
 * [Minoteaur 8](https://github.com/osmarks/minoteaur-8), the world's most osmarks-designed, Minoteaur-like note-taking application.
 * [Project LIMINAL OCTOTHORPE](https://github.com/osmarks/liminal-octothorpe), a slightly functional AI agent implementation for internet-based forecasting.
 * [A lot of code](https://github.com/osmarks/misc/tree/master/computercraft) for miscellaneous control/monitoring/automation tasks in Minecraft.
+* Helped advise on [Verifying International Agreements on AI: Six Layers of Verification for Rules on Large-Scale AI Development and Deployment](https://arxiv.org/abs/2507.15916).
 * [Many other short scripts](https://github.com/osmarks/misc/) accessible to the public.
 
 ## Skills
