@@ -81,8 +81,8 @@ However, the incentives of the providers here are very bad: if a user is support
 
 * "External-facing" (upstream of significant actions) or politically salient beliefs become more homogeneous, due to pressure to make users not look obviously insane and to not provide "misinformation".
 * Less consequential beliefs (such as modern (interpretations of) religions, woo and astrology) become stranger, because there's less social interaction in which they might be challenged. They may or may not become more diverse - LLMs could push beliefs into specific attractors, as seems to happen with [ChatGPT-induced "AI consciousness" beliefs](https://www.lesswrong.com/posts/2pkNCvBtK6G6FKoNn/so-you-think-you-ve-awoken-chatgpt).
-* Competition will be constrained by it being difficult to switch providers - regardless of GDPR-compliance memory export features, off-policy learning of you by another LLM is less informative than active conversations, and companions will shape your preferences in their favour.
-* Active chatbot interaction, as opposed to speaking with them while doing other things, encroaches on time currently used for social media, as well as (what remains of) in-personal social interaction, although very high use remains seen as low-status[^18]. Many humans will adopt the speech habits and to some extent interaction styles of popular AI systems.
+* Competition is constrained by it being difficult to switch providers - regardless of GDPR-compliance memory export features, off-policy learning of you by another LLM is less informative than active conversations, and companions shape your preferences in their favour.
+* Active chatbot interaction, as opposed to speaking with them while doing other things, encroaches on time currently used for social media, as well as (what remains of) in-personal social interaction, although very high use remains seen as low-status[^18]. Many humans adopt the speech habits and to some extent interaction styles of popular AI systems.
 
 
 <details><summary>Aside: local-first AI.</summary>
