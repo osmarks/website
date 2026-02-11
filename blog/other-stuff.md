@@ -190,7 +190,7 @@ Since this list was written, I think it became notorious for introducing the "me
 
 ### Starrigger
 
-[Starrigger](https://www.goodreads.com/book/show/981841.Starrigger) surprised me by being pretty smart given its odd-sounding conceit (interstellar travel via highways) and age. Generally a fun read.
+[Starrigger](https://www.goodreads.com/book/show/981841.Starrigger) surprised me by being pretty smart given its odd-sounding conceit (interstellar travel via highways) and age. Generally a fun read. The sequels are annoying, however.
 
 ### Stories Of Your Life And Others
 
@@ -245,6 +245,10 @@ ATTENTION. DUE TO A SCALE BACK IN COVERAGE, THE MORAL ARC OF THE UNIVERSE NO LON
 :::
 
 [UNSONG](https://unsongbook.com/) (now published as a book, but the web version is what I read and is probably fine) is one of approximately two books here based on wild free association based on (very sophisticated) puns. I recall there being some weirdness with pacing, but I like it overall, and it is *fearsome* how well Scott is able to connect everything to everything else.
+
+### Venomous Lumpsucker
+
+[Venomous Lumpsucker](https://www.goodreads.com/book/show/59593576-venomous-lumpsucker) is perhaps the only good environmentalist fiction (at least, out of that which I have read), and also one of the rare pieces of speculative economics fiction I'm aware of. Has the vaguely whimsical feeling of [Accelerando](#accelerando), moving through a world of advanced, bizarre and poorly understood technologies.
 
 ### Void Star
 
@@ -318,6 +322,10 @@ You can also play [Minetest](https://www.minetest.net/), a free and open source 
 ### Dirk Gently('s Holistic Detective Agency)
 
 This is actually two separate series (the [British](https://en.wikipedia.org/wiki/Dirk_Gently_(TV_series)) version and the [American but also British](https://en.wikipedia.org/wiki/Dirk_Gently%27s_Holistic_Detective_Agency_(TV_series)) version) based on Douglas Adams' excellent humour. Both have a detective who uses "the fundamental interconnectedness of all things" - the American version is somewhat flashier and weirder, whereas the British version is in some loose sense more realistic and significantly more cynical.
+
+### Hundreds of Beavers
+
+[Hundreds of Beavers](https://en.wikipedia.org/wiki/Hundreds_of_Beavers) is an inspiring story about human ingenuity triumphing over nature (beavers).
 
 ### Limitless
 

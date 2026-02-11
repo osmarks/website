@@ -30,7 +30,7 @@ To change the world, a superintelligence doesn't have to be massively better at 
 
 For many tasks, there is a hard limit on how good anything can get, and dimishing returns on compute/resources as that limit is approached. For instance, [bin packing](https://en.wikipedia.org/wiki/Bin_packing_problem) is NP-hard, but very simple and cheap algorithms can get within a small constant factor of the optimal solution. Chess engine developers believe that the best engines cannot get significantly better at play from the normal chess starting position, because the game can be drawn too easily, and some think that they're about able to [draw God](https://en.chessbase.com/post/how-god-plays-chess) from there (frontier chess engines are instead tested in asymmetric starting positions such that one side should always be able to win or draw). In tic-tac-toe, perfect play is obviously simple enough that no ASI can, within the constraints of the game, do anything beyond forcing a draw against a competent opponent. In benchmarks with known correct answers, nothing can beat a 100% score[^16]. This is often used to argue for diminishing returns on intelligence in general, which I don't think is correct.
 
-There are several important problems with this: mere "diminishing returns" tells you nothing about how rapidly they diminish, whether they asymptote or just grow more slowly, or how far beyond humans you can go; usefulness isn't always linear in whatever metric shows diminishing returns; and more intelligence unlocks qualitatively new abilities which preexisting benchmarks won't catch.
+There are several important problems with this: mere "diminishing returns" tells you nothing about how rapidly they diminish, whether they asymptote or just grow more slowly, or how far beyond humans you can go; usefulness isn't always linear in whatever metric shows diminishing returns; and more intelligence unlocks qualitatively new abilities which preexisting benchmarks won't catch[^19].
 
 As I address in the next section, capabilities can frequently go far beyond humans', since ([Moravec's paradox](https://en.wikipedia.org/wiki/Moravec's_paradox)) we are strongly optimized for the kind of task our ancestors regularly faced and rely on less robust general-purpose capability for anything more recent[^17].
 
@@ -133,3 +133,5 @@ Enough of the world is bottlenecked on (availability of) human intelligence, rat
 [^17]: This may centrally be an I/O limitation.
 
 [^18]: This section uses mostly evidence from deep learning. It is possible that ASI won't be built this way (though I personally expect it to be), but whatever is used should be "at least as good" in these ways.
+
+[^19]: Apparently, Gwern [also wrote about this](https://gwern.net/complexity), but I forgot.
