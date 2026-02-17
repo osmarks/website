@@ -383,6 +383,8 @@ const processBlog = async () => {
         const [html, urls] = renderMarkdown(page.content)
         meta.content = html
         meta.references = []
+        meta.sourceFile = file
+        meta.markdownAlt = `/${meta.slug}/index.md`
 
         for (const url of urls) {
             try {
@@ -460,6 +462,7 @@ const processBlog = async () => {
             ...page,
             path: `/${page.slug}/` // TODO: inelegant
         }))
+        await fsp.copyFile(page.sourceFile, path.join(out, "index.md"))
     }
 
     console.log(chalk.yellow(`${Object.keys(blog).length} blog entries`))
@@ -539,7 +542,7 @@ const fetchMicroblog = async () => {
         })
     }
 
-    globalData.microblog = globalData.microblog.slice(0, 8).map((post, i) => minifyHTML(globalData.templates.activitypub({
+    globalData.microblog = globalData.microblog.slice(0, 10).map((post, i) => minifyHTML(globalData.templates.activitypub({
         ...globalData,
         permalink: post.object.id,
         date: dayjs(post.object.published),
@@ -601,7 +604,7 @@ const fetchFeeds = async () => {
     }
     entries.sort((a, b) => b.published - a.published)
 
-    globalData.openring = entries.slice(0, 8).map((post, i) => minifyHTML(globalData.templates.remoteFeedEntry({
+    globalData.openring = entries.slice(0, 10).map((post, i) => minifyHTML(globalData.templates.remoteFeedEntry({
         ...globalData,
         ...post,
         i

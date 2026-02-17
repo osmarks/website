@@ -28,7 +28,8 @@ html(lang="en")
         meta(property="og:site_name", content=name)
         link(rel="manifest", href="/assets/manifest.webmanifest")
         link(rel="shortcut icon", href="/assets/images/logo256.png", type="image/png")
-        meta(content=`https://${domain}/assets/images/logo256.png`, property="og:image")
+        if markdownAlt
+            link(rel="alternate", type="text/markdown", href=`https://${domain}${markdownAlt}`)
         if katex
             link(rel="stylesheet", href="/assets/katex.min.css")
         if highlightCode
