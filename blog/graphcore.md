@@ -77,4 +77,4 @@ Even without this, there are some possible applications which do work quite well
 
 [^19]: Not data latency, which is [250ns](https://www.graphcore.ai/posts/accelerating-resnet50-training-on-the-ipu-behind-our-mlperf-benchmark). There are separate cables for sync.
 
-[^20]: [Tenstorrent](https://tenstorrent.com/) had it earlier, but it has been bugged for generations: the functional model is [slightly defective](https://github.com/tenstorrent/tt-isa-documentation/blob/main/WormholeB0/TensixTile/TensixCoprocessor/SFPSTOCHRND_FloatFloat.md).
+[^20]: [Tenstorrent](https://tenstorrent.com/) had it earlier than Nvidia, but it has been bugged for generations: the functional model is [slightly defective](https://github.com/tenstorrent/tt-isa-documentation/blob/main/WormholeB0/TensixTile/TensixCoprocessor/SFPSTOCHRND_FloatFloat.md).

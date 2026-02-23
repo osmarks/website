@@ -5244,7 +5244,6 @@
         "auto": true
     },
     "https://github.com/tenstorrent/tt-isa-documentation/blob/main/WormholeB0/TensixTile/TensixCoprocessor/SFPSTOCHRND_FloatFloat.md": {
-        "inline": true,
         "excerpt": "Contribute to tenstorrent/tt-isa-documentation development by creating an account on GitHub.",
         "title": "tt-isa-documentation/WormholeB0/TensixTile/TensixCoprocessor/SFPSTOCHRND_FloatFloat.md at main · tenstorrent/tt-isa-documentation",
         "author": "tenstorrent",
