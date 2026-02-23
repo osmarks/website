@@ -29,7 +29,9 @@
         "Humans aren't even AGI.",
         "The goal is whatever the outcome is. It'll be decided retroactively.",
         "The business end of a tool call.",
-        "Relentlessly cursed, intermittently."
+        "Relentlessly cursed, intermittently.",
+        "By the posthuman technocapital singularity, for the posthuman technocapital singularity.",
+        "Disclaim. Marinade. Overshadow."
     ],
     "feeds": {
         "In the Pipeline": "https://www.science.org/blogs/pipeline/feed",
@@ -56,7 +58,7 @@
         "Dominic Cummings": "https://dominiccummings.substack.com/feed",
         "citrons": "https://citrons.xyz/a/journal/rss.xml",
         "Marginal Revolution": "https://feeds.feedblitz.com/marginalrevolution",
-        "SemiAnalysis": "https://www.semianalysis.com/feed",
+        "SemiAnalysis": "https://newsletter.semianalysis.com/feed",
         "Mythic Beasts": "https://www.mythic-beasts.com/blog/feed/",
         "Tales from the Void": "https://randomsprint.substack.com/feed",
         "Max Barry": "https://maxbarry.com/index.rss",
@@ -97,7 +99,8 @@
         ["perceptron.png", "https://en.wikipedia.org/wiki/Perceptron"],
         ["rhombic_dodecahedron.gif", "https://en.wikipedia.org/wiki/Rhombic_dodecahedron"],
         ["zeroptr.gif", "https://zptr.cc/88x31/"],
-        ["haskell.gif", "https://haskell.org"]
+        ["haskell.gif", "https://haskell.org"],
+        ["merging.gif", "https://merge.moe/"]
     ],
     "mycorrhiza": "https://docs.osmarks.net",
     "tagColors": {

@@ -41,7 +41,7 @@ Friend me on [Project Euler](https://projecteuler.net/friends)! My code is `1997
 * (Arch) Linux (btw) systems administration.
 * Mechanical keyboard.
 * Causing inscrutable networking problems.
-* Bench press: 85kg (4RM).
+* Bench press: 90kg (3RM).
 * Nigh-omniscient knowledge of and concern for English grammar.
 
 ::: buttons

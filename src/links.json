@@ -742,5 +742,75 @@
         title: "One thing that I think is a little bit frustrating about modern life that is about to get way, way, way worse, unless we legislate it away, is that you can create models of human behavior that are better at predicting future behavior than intuition in ways that we feel are sort of unfair.",
         author: "@wayneburkett",
         date: "2025-05-27"
-    }
+    },
+    "/assets/misc/copenhagen_ethics.html": {
+        title: "The Copenhagen Interpretation of Ethics",
+        date: "2015-06-24",
+        author: "jai"
+    },
+    "https://www.sciencedirect.com/science/article/pii/S0360132324003706": {
+        title: "Ventilation provision and use in homes in Great Britain: A national survey",
+        date: "2024-06-01",
+        author: ["Cairan Van Rooyen", "Tim Sharpe"]
+    },
+    "https://assets.publishing.service.gov.uk/media/62a761edd3bf7f03667c667e/ADF2_revised.pdf": {
+        title: "The Building Regulations 2010 Ventilation Approved Document F",
+        date: "2021"
+    },
+    "https://www.frbservices.org/binaries/content/assets/crsocms/news/research/2024-risk-officer-survey-results.pdf": {
+        title: "Key Findings From the Annual Federal Reserve Financial Services (FRFS) Financial Institution Risk Officer Survey (2024)",
+        author: "Federal Reserve Financial Services",
+        date: "2024"
+    },
+    "https://usa.visa.com/dam/VCOM/global/support-legal/documents/merchant-surcharging-considerations-and-requirements.pdf": {
+        title: "Merchant Surcharging Considerations and Requirements",
+        date: "2024-08-14",
+        author: "Visa"
+    },
+    "https://icm.aexp-static.com/content/dam/gms/en_us/optblue/us-mog.pdf": {
+        title: "American Express Merchant Operating Guide",
+        date: "2025-10-01",
+        author: "American Express"
+    },
+    "https://eur-lex.europa.eu/eli/reg/2015/751/oj/eng": {
+        title: "Regulation (EU) 2015/751 of the European Parliament and of the Council of 29 April 2015 on interchange fees for card-based payment transactions (Text with EEA relevance)",
+        date: "2015-05-19"
+    },
+    "https://archive.ph/og9Hh": {
+        title: "Visa and Mastercard Near Deal With Merchants That Would Change Rewards Landscape",
+        date: "2025-11-08",
+        author: "AnnaMaria Andriotis"
+    },
+    "https://hc33.hotchips.org/assets/program/conference/day2/HC2021.Graphcore.SimonKnowles.v04.pdf": {
+        title: "Graphcore Colossus Mk2 IPU",
+        date: "2021-08-24",
+        author: "Simon Knowles"
+    },
+    "https://gwern.net/complexity": {
+        title: "Complexity no Bar to AI",
+        date: "2019-06-09",
+        author: "gwern"
+    },
+    "https://www.youtube.com/watch?v=dLvkF_TmyAc": {
+        title: "Simon Knowles - More complex models and more powerful machines",
+        date: "2018-05-22",
+        website: "YouTube",
+        author: "Man AHL"
+    },
+    "https://www.csm.ornl.gov/srt/conferences/Scala/2022/brown.pdf": {
+        title: "Hybrid AI/HPC Approaches for Next Generation Multi-Trillion-Parameter Models",
+        date: "2022-11-18",
+        author: "Phil Brown"
+    },
+    "https://cdn2.hubspot.net/hubfs/729091/assets/ScaledML%20Stanford%2024mar18%20SK.pdf": {
+        title: "Scaling Throughput Processors for Machine Intelligence",
+        date: "2018-03-24",
+        author: "Simon Knowles"
+    },
+    "https://www.youtube.com/watch?v=dLvkF_TmyAc&t=527": {
+        title: "Simon Knowles - More complex models and more powerful machines",
+        date: "2018-05-22",
+        website: "YouTube",
+        author: "Man AHL"
+    },
 }
