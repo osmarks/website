@@ -17,7 +17,7 @@ Writing this has been a low priority for a while, but Elon Musk has forced my ha
 
 ## Superhuman niceness
 
-::: epigraph attribution=Gwern
+::: epigraph attribution=Gwern link=https://www.reddit.com/r/MediaSynthesis/comments/1h2xy98/the_neruda_factory_jenn_failed_prompting/lzpzthu/
 Nothing [Agreeable](https://en.wikipedia.org/wiki/Big_Five_personality_traits) makes it out of the near-future intact.
 :::
 
