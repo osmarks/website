@@ -64,7 +64,7 @@ Moreover, people are on average [not very smart](https://www.overcomingbias.com/
 Increasingly, doing well in modernity requires long-horizon, complex, quantitative decision-making and forward planning, and/or cultural knowledge not common to everyone. Consider:
 
 * For Americans, getting into high-status colleges has a significant effect on later career outcomes, and famously requires years of wrangling highly specific extracurriculars and knowing how to write essays to accurately pander to admissions officers.
-* With the fall of defined-benefit pensions, (comfortable) retirement requires understanding compound interest and investment returns, various tax-advantaged savings options with inscrutable acronyms and constraints, as well as having the low time preference/discipline to bother to do this.
+* With the fall of defined-benefit pensions, (comfortable) retirement requires understanding compound interest and investment returns and various tax-advantaged savings options with inscrutable acronyms and constraints, as well as having the low time preference/discipline to bother to do this.
 * [Advance-booked transport ticket pricing](/pricecog/).
 * Safely and correctly using credit is similarly complex and valuable.
 * Job applications now require extremely scaled [guessing the teacher's password](https://www.lesswrong.com/posts/NMoLJuDJEms7Ku9XS/guessing-the-teacher-s-password) and knowledge of the current fashions amongst hiring managers.

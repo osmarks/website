@@ -813,4 +813,23 @@
         website: "YouTube",
         author: "Man AHL"
     },
+    "https://en.wikipedia.org/wiki/McKelvey%E2%80%93Schofield_chaos_theorem": {
+        title: "McKelvey–Schofield chaos theorem",
+        website: "Wikipedia",
+        referenceIn: { opinion: "" }
+    },
+    "https://www.youtube.com/watch?v=96eFnTescoY": {
+        title: "The Highly Ridiculous Over-Engineering of the Diamondback Nozzle",
+        website: "YouTube",
+        author: "Zack Freedman"
+    },
+    "https://www.aisc.org/media/hf4jbmik/b904_sbdh_chapter4.pdf": {
+        title: "Steel Bridge Design Handbook",
+        date: "2022-02-01",
+        author: "American Institute of Steel Construction"
+    },
+    "https://assets.publishing.service.gov.uk/media/67d2bb074702aacd2251cb94/Approved_Document_B_volume_1_Dwellings_2019_edition_incorporating_2020_2022_and_2025_amendments_collated_with_2026_and_2029_amendments.pdf": {
+        title: "The Building Regulations 2010 Approved Document B",
+        date: "2025"
+    }
 }

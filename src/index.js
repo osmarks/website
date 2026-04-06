@@ -33,6 +33,7 @@ const json5 = require("json5")
 const readability = require("@mozilla/readability")
 const { JSDOM } = require("jsdom")
 const hljs = require("highlight.js")
+const { xxHash32 } = require("js-xxhash")
 
 const fts = require("./fts.mjs")
 
@@ -45,6 +46,7 @@ const blogDir = path.join(root, "blog")
 const errorPagesDir = path.join(root, "error")
 const assetsDir = path.join(root, "assets")
 const outDir = path.join(root, "out")
+const patternDir = path.join(outDir, "assets/pattern")
 const srcDir = path.join(root, "src")
 const nodeModules = path.join(root, "node_modules")
 
@@ -139,16 +141,37 @@ const fetchLinksOut = async () => {
     await fsp.writeFile(path.join(root, "links_cache.json"), JSON.stringify(cachedLinks, null, 4))
 }
 
+const background = []
+
 const removeExtension = x => x.replace(/\.[^/.]+$/, "")
+
+// This causes browser flickering somehow. The world is just not ready.
+const generateBoxPattern = name => {
+    /*
+    const hash = xxHash32(name)
+
+    const filename = path.join(patternDir, `${hash}.png`)
+    background.push(async () => {
+        await fse.ensureDir(patternDir)
+        await util.promisify(childProcess.execFile)(path.join(__dirname, "strichtarn_generator.py"), [filename])
+    })
+    //return `background-image: url(/assets/pattern/${hash}.png);`
+    */
+    return null
+}
+
+globalData.generateBoxPattern = generateBoxPattern
 
 const renderContainer = (tokens, idx) => {
     let opening = true
+    let interior = ""
     if (tokens[idx].type === "container__close") {
         let nesting = 0
         for (; tokens[idx].type !== "container__open" && nesting !== 1; idx--) {
             nesting += tokens[idx].nesting
         }
         opening = false
+        interior += JSON.stringify(tokens[idx].content)
     }
     const m = tokens[idx].info.trim().split(" ");
     const blockType = m.shift()
@@ -188,7 +211,8 @@ const renderContainer = (tokens, idx) => {
             }
             return out
         } else if (blockType === "emphasis") {
-            return `<div class="emphasis box">`
+            const style = generateBoxPattern(interior) && ` style="${generateBoxPattern(interior)}"`
+            return `<div class="emphasis box${style || ""}>`
         }
     } else {
         if (blockType === "captioned") {
@@ -798,7 +822,8 @@ const tasks = {
     searchIndex: { deps: ["blog", "fetchMicroblog", "fetchMycorrhiza", "experiments"], fn: buildFTS },
     fetchMycorrhiza: { deps: [], fn: fetchMycorrhiza },
     fetchLinksOut: { deps: ["blog"], fn: fetchLinksOut },
-    loadLinksOut: { deps: [], fn: loadLinksOut }
+    loadLinksOut: { deps: [], fn: loadLinksOut },
+    misc: { deps: ["main"], fn: () => Promise.all(background.map(x => x())) }
 }
 
 const compile = async () => {

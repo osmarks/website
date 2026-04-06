@@ -7,7 +7,7 @@ block content
         h2 See also
         div
             each ref in references
-                div.box.ref
+                div.box.ref(style=generateBoxPattern(ref.url))
                     a.title(href=ref.url)= ref.title
                     div.deemph
                         if ref.author

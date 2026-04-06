@@ -7,7 +7,10 @@ block content
             Read my opinions via the internet.
         div.blog
             each post, i in posts
-                .box.imbox(style=post.accentColor && `--stripe: ${post.accentColor}`)
+                - var styles = []
+                - post.accentColor && styles.push(`--stripe: ${post.accentColor}`)
+                - generateBoxPattern(post.slug) && styles.push(generateBoxPattern(post.slug))
+                .box.imbox(style=styles.join(";"))
                     if images.hasOwnProperty(post.slug)
                         +image(images[post.slug])
                     div
@@ -28,7 +31,7 @@ block content
             Various web projects I have put together over many years. Made with at least four different JS frameworks. Some of them are bad.
         div.experiments
             each experiment, i in experiments
-                .box.imbox
+                .box.imbox(style=generateBoxPattern(experiment.slug))
                     if images.hasOwnProperty(experiment.slug)
                         +image(images[experiment.slug])
                     div

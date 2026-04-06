@@ -5250,5 +5250,141 @@
         "date": null,
         "website": "GitHub",
         "auto": true
+    },
+    "https://github.com/triton-lang/triton/pull/7298": {
+        "excerpt": "Rewrite the attention kernel to be persistent. This gives better performance at low-contexts. However, fp16 at large context has suffered a bit due to a ptxas instruction scheduling issue in the so...",
+        "title": "[Gluon][Tutorial] Persistent attention by Mogball · Pull Request #7298 · triton-lang/triton",
+        "author": "Mogball",
+        "date": null,
+        "website": "GitHub",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Euler%27s_critical_load": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Euler's critical load",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2015-11-07T13:46:17Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Young%27s_modulus": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Young's modulus",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2003-05-16T19:22:56Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/London_Clay": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "London Clay",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2004-07-30T05:33:48Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://worksinprogress.co/issue/lab-grown-diamonds/": {
+        "excerpt": "Synthetic diamonds are now purer, more beautiful, and vastly cheaper than mined diamonds. Beating nature took decades of hard graft and millions of pounds of pressure.",
+        "title": "Lab-grown diamonds - Works in Progress Magazine",
+        "author": "Javid Lakha",
+        "date": "2024-08-30T16:00:00+00:00",
+        "website": null,
+        "auto": true
+    },
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8951216/": {
+        "excerpt": "Nowadays, synthetic diamonds are easy to fabricate industrially, and a wide range of methods were developed during the last century. Among them, the high-pressure–high-temperature (HP–HT) process is the most used to prepare diamond compacts for ...",
+        "title": "A Review of Binderless Polycrystalline Diamonds: Focus on the High-Pressure–High-Temperature Sintering Process",
+        "author": null,
+        "date": null,
+        "website": "PubMed Central (PMC)",
+        "auto": true
+    },
+    "https://nanosyste.ms/": {
+        "excerpt": "Written by a leading researcher in the field and one of its founders, Nanosystems is the first technical introduction to molecular nanotechnology. 'Devices enormously smaller than before will remodel engineering, chemistry, medicine, and computer technology. How can we understand machines that are so small? Nanosystems covers it all: power and strength, friction and wear, thermal noise and quantum uncertainty. This is the book for starting the next century of engineering.' - Marvin Minsky",
+        "title": "Nanosystems by K. Eric Drexler",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Coefficient_of_performance": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Coefficient of performance",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2004-03-21T17:19:43Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/High_Speed_2": {
+        "excerpt": "The planned extent of HS2 as of October 2023",
+        "title": "High Speed 2",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2007-06-23T13:57:16Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://richmondcanoeclub.com/members/flow/kingston/": {
+        "excerpt": "Other stations:",
+        "title": "River Thames Flow at Kingston Bridge – Richmond Canoe Club",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Canals_of_the_United_Kingdom": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Canals of the United Kingdom",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2004-08-23T10:53:06Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://www.gem.wiki/POSCO_Gwangyang_steel_plant": {
+        "excerpt": "POSCO Gwangyang steel plant, also known as Pohang Iron & Steel Gwangyang, is a steel plant in Gwangyang, South Jeolla, South Korea that operates blast furnace (BF), basic oxygen furnace (BOF), direct reduced iron (DRI), and electric arc furnace (EAF) technology.",
+        "title": "POSCO Gwangyang steel plant - Global Energy Monitor",
+        "author": "Global Energy Monitor",
+        "date": "2026-03-30T18:00:25Z",
+        "website": "Global Energy Monitor",
+        "auto": true
+    },
+    "https://newsroom.posco.com/en/posco-steelworks-create-forests-from-within/": {
+        "excerpt": "Posco Newsroom",
+        "title": "POSCO Steelworks Create Forests from Within",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Doggerland": {
+        "excerpt": "Doggerland was a large area of land in Northern Europe, now submerged beneath the southern North Sea. This region was repeatedly exposed at various times during the Pleistocene epoch due to the lowering of sea levels during glacial periods. However, the term \"Doggerland\" is generally specifically used for this region during the Late Pleistocene and Early Holocene. During the early Holocene following the glacial retreat at the end of the Last Glacial Period, the exposed land area of Doggerland stretched across the region between what is now the east coast of Great Britain, northern France, Belgium, the Netherlands, north-western Germany, and the Danish peninsula of Jutland. Between 10,000 and 7,000 years ago, Doggerland was inundated by rising sea levels, disintegrating initially into a series of low-lying islands before submerging completely.[1][2] The impact of the tsunami generated by the Storegga underwater landslide c. 8,200 years ago on Doggerland is controversial.[1] The flooded land is known as the Dogger Littoral.[3]",
+        "title": "Doggerland",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2007-01-03T20:41:11Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://www.engineeringtoolbox.com/sizing-ducts-d_207.html": {
+        "excerpt": "The velocity reduction method can be used when sizing air ducts.",
+        "title": "Ducts Sizing - the Velocity Reduction Method",
+        "author": "Editor Engineeringtoolbox",
+        "date": "2003-02-16T04:25:03Z",
+        "website": null,
+        "auto": true
+    },
+    "https://www.ncbi.nlm.nih.gov/books/NBK219009": {
+        "excerpt": "Although the variety of airplanes operating throughout the world is large, the basic designs of the environmental control systems (ECSs) used on most aircraft in commercial service are remarkably similar. In simplified terms, air is first compressed to high pressure and temperature and then conditioned in an environmental control unit (ECU), where excess moisture is removed and the temperature necessary for heating or cooling the airplane is established. The conditioned air is then delivered to the cabin and cockpit to maintain a comfortable environment.",
+        "title": "Environmental Control Systems on Commercial Passenger Aircraft",
+        "author": null,
+        "date": null,
+        "website": "NCBI Bookshelf",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/The_Concentration_City": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "The Concentration City",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2008-05-08T01:28:18Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
     }
 }

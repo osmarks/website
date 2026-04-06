@@ -7,14 +7,14 @@ slug: otherstuff
 tags: ["fiction", "opinion"]
 ---
 I'm excluding music from this because music preferences seem to be even more varied between the people I interact with than other preferences.
-Obviously this is just material *I* like; you might not like it, which isn't really my concern - this list is primarily made to bring to people's attention media they might like but have not heard of.
-Enjoy the newly reformatted version of this list, with my slightly opaque organizational scheme and manually sorted lists.
+This list is primarily made to bring to people's attention media they might like but have not heard of, assuming they have approximately my preferences, and so may disagree with you.
+Enjoy the ~~newly~~ reformatted version of this list, with its manually sorted lists and organization by media type.
 
 ## Writing
 
 ### 12 Miles Below
 
-[12 Miles Below](https://www.royalroad.com/fiction/42367/12-miles-below/) is an ongoing webserial (I am not fully caught up or close to it yet) with (somewhat) intelligent and well-written characters and a quirky setting. It has more grammar/spelling errors than I would like (I would like none) but most people care about this less than me.
+[12 Miles Below](https://www.royalroad.com/fiction/42367/12-miles-below/) is an ongoing webserial (I am not fully caught up or close to it yet) with a quirky setting with some cool ideas. It has more grammar/spelling errors than I would like (I would like none) but most people care about this less than me.
 
 ### A Hero's War
 
@@ -256,7 +256,7 @@ ATTENTION. DUE TO A SCALE BACK IN COVERAGE, THE MORAL ARC OF THE UNIVERSE NO LON
 You are that which copies your genes into the future. I am that which dissolves the order in certain kinds of complex system. That’s the deep structure of things.
 :::
 
-[Void Star](https://www.goodreads.com/book/show/29939057-void-star) - somewhat strange for a "mainstream" scifi book (it was reviewed by the Guardian) but in good ways. The prose is very... poetic is probably the best word (it contains phrases like "isoclines of commitment and dread", "concentric and innumerable" and "high empyrean")... which I enjoyed, but it is polarizing. The setting seems like a broadly reasonable extrapolation of ongoing trends into the future, although it's unclear exactly *when* it is (some of the book implies 2150 or so, but this seems implausible). The author is a software engineer, so, unlike many other books with computers in them, the computers are not totally wrong.
+[Void Star](https://www.goodreads.com/book/show/29939057-void-star) - somewhat strange for a "mainstream" scifi book (it was reviewed by the Guardian) but in good ways. The prose is (approximately) very poetic (it contains phrases like "isoclines of commitment and dread", "concentric and innumerable" and "high empyrean"), which I enjoyed, but it is polarizing. The setting seems like a broadly reasonable business-as-usual extrapolation of ongoing trends into the future, although it's unclear exactly *when* it is (some of the book implies 2150 or so, but this seems implausible). The author is a software engineer, so, unlike many other books with computers in them, the computers are not totally wrong.
 
 Its most unusual characteristic is that it absolutely does not tell you what's going on ever: an interview I read said it was written out of order, and that makes sense (another fun quirk of it is that the chapters are generally very short). I think I know most of what happens now, but it has taken a while. It has about one big idea in it, but it's written well.
 
@@ -373,9 +373,10 @@ Men have gazed at the stars for millennia, and wondered whether there was a deit
 
 Special mentions (i.e. "I haven't gotten around to reading these but they are well-reviewed and sound interesting") to:
 * [Children of Time](https://www.goodreads.com/book/show/25499718-children-of-time) by Adrian Tchaikovsky.
-* [Codex Alera](https://www.goodreads.com/series/45545-codex-alera) by Jim Butcher.
 * [The Books of Babel](https://www.goodreads.com/series/127130-the-books-of-babel) by Josiah Bancroft.
 * [Singularity Sky](https://www.goodreads.com/book/show/81992.Singularity_Sky) by Charlie Stross.
+* Project Hail Mary by Andy Weir.
+* Worth the Candle by Alexander Wales.
 
 If you want EPUB versions of the free web serials here for your e-reader, there are tools to generate those, or you can contact me for a copy.
 
