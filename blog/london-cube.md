@@ -259,7 +259,7 @@ Britain used to lead the world in technological progress and industrial developm
 
 [^11]: The original source is [Specification for Structural Steel Buildings](/assets/misc/aisc2022.pdf#page=108), I think.
 
-[^12]: It [has recently become possible](https://pmc.ncbi.nlm.nih.gov/articles/PMC8951216/) to produce them without these binders.
+[^12]: It [has recently become possible](https://pmc.ncbi.nlm.nih.gov/articles/PMC8951216/) to produce it without these binders.
 
 [^13]: While construction is progressing, it is massively overbudget and behind schedule, and has been descoped.
 
