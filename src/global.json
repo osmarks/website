@@ -100,7 +100,10 @@
         ["rhombic_dodecahedron.gif", "https://en.wikipedia.org/wiki/Rhombic_dodecahedron"],
         ["zeroptr.gif", "https://zptr.cc/88x31/"],
         ["haskell.gif", "https://haskell.org"],
-        ["merging.gif", "https://merge.moe/"]
+        ["merging.gif", "https://merge.moe/"],
+        ["aacs.png", "https://en.wikipedia.org/wiki/Illegal_number"],
+        ["dhmo.gif", "https://www.dhmo.org/"],
+        ["kiwix.gif", "https://a.osmarks.net"]
     ],
     "mycorrhiza": "https://docs.osmarks.net",
     "tagColors": {
