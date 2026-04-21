@@ -212,7 +212,7 @@ const renderContainer = (tokens, idx) => {
             return out
         } else if (blockType === "emphasis") {
             const style = generateBoxPattern(interior) && ` style="${generateBoxPattern(interior)}"`
-            return `<div class="emphasis box${style || ""}>`
+            return `<div class="emphasis box"${style || ""}>`
         }
     } else {
         if (blockType === "captioned") {

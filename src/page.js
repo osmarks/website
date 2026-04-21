@@ -191,7 +191,7 @@ window.points = (async () => {
         ttt4Win: {
             title: "Shape Rotator",
             conditions: "Win 4D Tic-Tac-Toe",
-            description: "You won a game of 4D Tic-Tac-Toe against our highly advanced artificial intelligence, showing your utter comprehension of 4D space.",
+            description: "You won a game of 4D Tic-Tac-Toe against our highly advanced artificial intelligence, showing your amazing comprehension of 4D space.",
             points: 37.9
         }
     }
