@@ -5386,5 +5386,77 @@
         "date": "2008-05-08T01:28:18Z",
         "website": "Wikimedia Foundation, Inc.",
         "auto": true
+    },
+    "https://niplav.site/will.html": {
+        "excerpt": "author: niplav, created: 2025-02-27, modified: 2025-03-21, language: english, status: notes, importance: 1, confidence: joke",
+        "title": "niplav",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Free_will_theorem": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Free will theorem",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2005-11-22T16:41:13Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://gregegan.net/PERMUTATION/FAQ/FAQ.html": {
+        "excerpt": "Illustrations for Permutation City by Greg Egan",
+        "title": "Dust Theory FAQ — Greg Egan",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://www.cold-takes.com/how-digital-people-could-change-the-world/": {
+        "excerpt": "Audio also available by searching Stitcher, Spotify, Google Podcasts, etc. for\n\"Cold Takes Audio\"Today’s worldTransformative AIDigital peopleWorld ofMisaligned\nAIWorld run bySomething elseoror Stable, galaxy-widecivilization > This is the\nthird post in a series explaining my view that we could be in the most important\ncentury of all time. (Here's the roadmap for this series.\n[https://www.cold-takes.com/roadmap-for-the-most-important-century-series/]) * \n   The first piece\n   [https://www.cold-ta",
+        "title": "Digital People Would Be An Even Bigger Deal",
+        "author": "Holden Karnofsky",
+        "date": "2021-07-27T17:24:19.000Z",
+        "website": "Cold Takes",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Risk_of_astronomical_suffering": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Risk of astronomical suffering",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2021-02-10T18:35:32Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/God_is_dead": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "God is dead",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2004-08-13T08:50:47Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Mathematical_universe_hypothesis": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Mathematical universe hypothesis",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2005-07-01T05:50:58Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Ought_implies_can": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Ought implies can",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2011-12-04T17:49:42Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://intelligence.org/2017/04/07/decisions-are-for-making-bad-outcomes-inconsistent/": {
+        "excerpt": "Nate Soares' recent decision theory paper with Ben Levinstein, \"Cheating Death in Damascus,\" prompted some valuable questions and comments from an",
+        "title": "Decisions are for making bad outcomes inconsistent - Machine Intelligence Research Institute",
+        "author": "Rob Bensinger",
+        "date": "2017-04-07T15:02:13-07:00",
+        "website": "Machine Intelligence Research Institute",
+        "auto": true
     }
 }
