@@ -66,7 +66,8 @@
         "Entropic Thoughts": "https://entropicthoughts.com/feed",
         "phils web site": "https://phils-web-site.net/rss.xml",
         "Sixty Degrees North": "https://sixtydegreesnorth.substack.com/feed.xml",
-        "astrid dot tech": "https://astrid.tech/feed"
+        "astrid dot tech": "https://astrid.tech/feed",
+        "Stanichor": "https://stanichor.net/feed.xml"
     },
     "dateFormat": "YYYY-MM-DD",
     "microblogSource": "https://b.osmarks.net/outbox",

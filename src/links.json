@@ -831,5 +831,14 @@
     "https://assets.publishing.service.gov.uk/media/67d2bb074702aacd2251cb94/Approved_Document_B_volume_1_Dwellings_2019_edition_incorporating_2020_2022_and_2025_amendments_collated_with_2026_and_2029_amendments.pdf": {
         title: "The Building Regulations 2010 Approved Document B",
         date: "2025"
+    },
+    "https://stanichor.net/earring/": {
+        title: "Towards the Earring",
+        date: "2026-01-01",
+        author: "Stanichor",
+        referenceIn: {
+            "aic": ""
+        },
+        description: "Scott argues that the earring is dangerous because, although it delivers a perfect life, it gradually erodes free will. But free will is overrated."
     }
 }
