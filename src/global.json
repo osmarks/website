@@ -70,7 +70,7 @@
         "Stanichor": "https://stanichor.net/feed.xml"
     },
     "dateFormat": "YYYY-MM-DD",
-    "microblogSource": "https://b.osmarks.net/outbox",
+    "microblogSource": "https://b.osmarks.net/@o/feed.rss?min_id=0&limit=4000",
     "buttons": [
         ["arch_btw.png", "https://archlinux.org/"],
         ["nginx.png", "https://nginx.org/"],

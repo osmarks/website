@@ -540,6 +540,17 @@ const DESC_CUT_LEN = 256
 
 const cutDesc = desc => desc.length > DESC_CUT_LEN ? `${desc.slice(0, DESC_CUT_LEN)}...` : desc
 
+const processEntry = (entry, feed, feedName) => {
+    entry.published = Date.parse(entry.published)
+    if (isNaN(entry.published)) {
+        entry.published = Date.parse(feed.published)
+    }
+    entry.title = fts.stripHTML(entry.title)
+    entry.published = dayjs(entry.published)
+    entry.content = cutDesc(fts.stripHTML(entry.description))
+    entry.feedName = feedName
+}
+
 const fetchMicroblog = async () => {
     const cached = readCache("microblog", 60*60*1000)
     if (cached) {
@@ -549,28 +560,29 @@ const fetchMicroblog = async () => {
         // We have a server patch which removes the 20-post hardcoded limit.
         // For some exciting reason microblog.pub does not expose pagination in the *API* components.
         // This is a workaround.
-        const posts = (await axiosInst({ url: globalData.microblogSource, headers: { "Accept": 'application/ld+json; profile="https://www.w3.org/ns/activitystreams"' } })).data.orderedItems
+        const posts = (await axiosInst(globalData.microblogSource)).data.items
         writeCache("microblog", posts)
         globalData.microblog = posts
     }
 
     for (const post of globalData.microblog) {
-        if (!post.object.content) { continue }
-        const desc = fts.stripHTML(post.object.content)
+        if (!post.description) { continue }
+        const desc = fts.stripHTML(post.content_html)
         fts.pushEntry("microblog", {
-            url: post.object.id,
-            timestamp: dayjs(post.object.published),
-            html: post.object.content,
+            url: post.url,
+            timestamp: dayjs(post.date_published),
+            html: post.content_html,
             description: cutDesc(desc),
             ignoreDescription: true
         })
+        processEntry(post, {}, null)
     }
 
     globalData.microblog = globalData.microblog.slice(0, 10).map((post, i) => minifyHTML(globalData.templates.activitypub({
         ...globalData,
-        permalink: post.object.id,
-        date: dayjs(post.object.published),
-        content: post.object.content,
+        permalink: post.url,
+        date: dayjs(post.date_published),
+        content: post.content_html,
         i
     })))
 }
@@ -616,15 +628,8 @@ const fetchFeeds = async () => {
             console.log(chalk.red("Entry missing for"), name)
             continue
         }
-        entry.published = Date.parse(entry.published)
-        if (isNaN(entry.published)) {
-            entry.published = Date.parse(feed.published)
-        }
-        entry.title = fts.stripHTML(entry.title)
-        entry.published = dayjs(entry.published)
-        entry.content = cutDesc(fts.stripHTML(entry.description))
+        processEntry(entry, feed, name)
         entries.push(entry)
-        entry.feedName = name
     }
     entries.sort((a, b) => b.published - a.published)
 
