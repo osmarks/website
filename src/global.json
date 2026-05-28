@@ -49,7 +49,7 @@
         "Factorio": "https://www.factorio.com/blog/rss",
         "The Eldraeverse": "https://eldraeverse.com/rss/",
         "ServeTheHome": "https://www.servethehome.com/feed/",
-        "Graphcore Research": "https://graphcore-research.github.io/feed.xml",
+        "Graphcore Research": "https://graphcore-research.github.io/feed_rss_updated.xml",
         "ToughSF": "https://toughsf.blogspot.com/rss.xml",
         "Fernando Borretti": "https://borretti.me/feed.xml",
         "Cameron Harwick": "https://cameronharwick.com/feed/",
@@ -67,7 +67,8 @@
         "phils web site": "https://phils-web-site.net/rss.xml",
         "Sixty Degrees North": "https://sixtydegreesnorth.substack.com/feed.xml",
         "astrid dot tech": "https://astrid.tech/feed",
-        "Stanichor": "https://stanichor.net/feed.xml"
+        "Stanichor": "https://stanichor.net/feed.xml",
+        "Mariven": "https://mariven.substack.com/feed"
     },
     "dateFormat": "YYYY-MM-DD",
     "microblogSource": "https://b.osmarks.net/@o/feed.rss?min_id=0&limit=4000",

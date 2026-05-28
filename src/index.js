@@ -560,7 +560,7 @@ const fetchMicroblog = async () => {
         // We have a server patch which removes the 20-post hardcoded limit.
         // For some exciting reason microblog.pub does not expose pagination in the *API* components.
         // This is a workaround.
-        const posts = (await axiosInst(globalData.microblogSource)).data.items
+        const posts = R.sortBy(x => -Date.parse(x.date_published), (await axiosInst(globalData.microblogSource)).data.items)
         writeCache("microblog", posts)
         globalData.microblog = posts
     }

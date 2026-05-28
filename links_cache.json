@@ -5458,5 +5458,22 @@
         "date": "2017-04-07T15:02:13-07:00",
         "website": "Machine Intelligence Research Institute",
         "auto": true
+    },
+    "https://tuesdaybornwhale.github.io/posts/learning_from_superhumanai/": {
+        "excerpt": "Graph showing a drop in the gap between human experts and AI in Go since AI. From Shin et al. (2021) As AI continues to improve at writing and math-based tasks, it seems plausible that it either has or soon will surpass domain experts in some of these tasks. This post aims to explore to what extent superhuman AI in a domain can instruct and empower humans to improve for themselves.",
+        "title": "Can superhuman AI help us improve?",
+        "author": null,
+        "date": "2025-09-13T22:47:46+02:00",
+        "website": "TuesdayBornWhale",
+        "auto": true
+    },
+    "https://web.archive.org/web/20260218132513/https://andymasley.substack.com/p/stories-of-ai-turning-users-delusional": {
+        "inline": true,
+        "excerpt": "A lot of people using AI have bad mental health, because a lot of people have bad mental health, and a lot of people are using AI",
+        "title": "Stories of AI turning users delusional don't make sense when you look at the numbers",
+        "author": "Andy Masley",
+        "date": null,
+        "website": null,
+        "auto": true
     }
 }

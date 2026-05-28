@@ -74,7 +74,7 @@ The majority of seen numbers are seen very few times. I think the straight trend
 We can also look at properties of the numbers themselves, rather than just their frequencies, since they're less opaque than words. The most obvious one is their size (absolute value). Below $10^0$ (1), the results are somewhat unreliable, because percentages are parsed but not other units or fractions or scientific notation. Regardless:
 
 ::: captioned src=/assets/images/number_size_histogram.png
-I am not sure what causes the spikiness - possibly numerical issues.
+I am not sure what causes the spikiness - possibly ~~numerical issues~~ salient powers of ten.
 :::
 
 By sorting the numbers, I also determined that the median number is 7, plus or minus some roundoff error (conversion to 64-bit floating points loses some precision over arbitrarily long decimal strings). I also have the frequency of small integers (0 to 100) and some plausible year numbers.

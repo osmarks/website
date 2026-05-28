@@ -4,13 +4,13 @@ const offlinePage = "/assets/offline.html"
 const cacheName = `${siteVersion}-v1`
 const precache = [
     offlinePage,
-    "/index.html",
+    "/",
     "/assets/images/logo256.png",
-    //"/assets/images/icon.png",
     "/assets/js/page.js",
-    "/points/index.html",
-    "/points/index.js",
-    "/assets/js/mithril.js"
+    "/assets/osmarks-primary-semibold.woff2",
+    "/assets/osmarks-primary-italic.woff2",
+    "/assets/osmarks-primary.woff2",
+    "/assets/osmarks-mono.woff2"
 ]
 
 // Preload important things
