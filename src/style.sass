@@ -8,11 +8,11 @@ $navbar-width: 20rem
 
 :root
     // worth considering: #d9facc?
-    --box-bg: #d0faab
-    --box-border: black
+    --box-bg: #fff
+    --box-border: #000
     // xkcd bluegreen
-    --link: #017a79
-    --visited-link: #013c7a
+    --link: #048600
+    --visited-link: #006e2b
     --block-lightness: 85%
     --overlay-opacity: 0.8
 
@@ -83,11 +83,13 @@ nav
 
     padding: 1rem
     margin-bottom: 0.5em
-    background: black
+    border: 1px solid var(--box-border)
     overflow-x: auto
     font-size: 1.25em
 
     font-family: $headers
+
+    color: var(--link)
 
     .logo
         width: 1.5rem
@@ -99,16 +101,16 @@ nav
         display: flex
         align-items: center
         font-style: italic
-        color: white
 
     a, img, picture
         margin-right: 0.5em
 
     a
         margin-left: 0.5em
+        color: var(--link)
 
-    .nav-a
-        color: #6dedfd
+    a:visited
+        color: var(--link)
 
 h1, h2, h3, h4, h5, h6
     margin: 0
@@ -201,8 +203,8 @@ button, select, input, textarea, .textarea
         image-rendering: pixelated
 
 .caption
-    background: lightgray
-    border: 1px solid black
+    background: var(--box-bg)
+    border: 1px solid var(--box-border)
     padding: 1em
     margin-bottom: 16px
     margin-top: 16px
@@ -316,23 +318,17 @@ $hl-border: 3px
         color: white
 
     nav
-        background: #333
-
-    .ring .art
-        background: #444
+        background: #000
 
     .achievement
         color: black
 
-    .caption
-        background: #333
-
     :root
-        --box-bg: #001009
-        --box-border: #004020
+        --box-bg: #000
+        --box-border: #888
         // bright teal
-        --link: #01f9c6
-        --visited-link: #01f9f9
+        --link: #6fff6c
+        --visited-link: #60e394
         --block-lightness: 20%
         --overlay-opacity: 0.5
 

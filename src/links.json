@@ -839,13 +839,13 @@
         referenceIn: {
             "aic": ""
         },
-        description: "Scott argues that the earring is dangerous because, although it delivers a perfect life, it gradually erodes free will. But free will is overrated."
+        excerpt: "Scott argues that the earring is dangerous because, although it delivers a perfect life, it gradually erodes free will. But free will is overrated."
     },
     "https://mariven.substack.com/p/possible-principles-of-superagency": {
         title: "Possible Principles of Superagency",
         date: "2026-01-10",
         author: "Mariven",
-        description: "Prior to the era of superintelligent actors, we’re likely to see a brief era of superagentic actors—actors who are capable of setting and achieving goals in the pursuit of a given end with significantly greater efficiency and reliability than any single human.",
+        excerpt: "Prior to the era of superintelligent actors, we’re likely to see a brief era of superagentic actors—actors who are capable of setting and achieving goals in the pursuit of a given end with significantly greater efficiency and reliability than any single human.",
         referenceIn: { "asi": "" }
     }
 }

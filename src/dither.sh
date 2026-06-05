@@ -4,7 +4,7 @@ tmp2=$(mktemp /tmp/tmp.XXXXXXXXXX.png)
 tmp3=$(mktemp /tmp/tmp.XXXXXXXXXX.png)
 magick "$2" -resize "$1" "$tmp1"
 #dither "$file" "$3" -c 12e193
-dither "$tmp1" "$tmp2" -c B2D2FF
+dither "$tmp1" "$tmp2" -c FFFFFF
 magick "$tmp2" -transparent black "$tmp3"
 pngquant --force --strip --speed 1 "$tmp3" -o "$3"
 rm "$tmp1"

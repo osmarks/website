@@ -68,7 +68,8 @@
         "Sixty Degrees North": "https://sixtydegreesnorth.substack.com/feed.xml",
         "astrid dot tech": "https://astrid.tech/feed",
         "Stanichor": "https://stanichor.net/feed.xml",
-        "Mariven": "https://mariven.substack.com/feed"
+        "Mariven": "https://mariven.substack.com/feed",
+        "Pylon of the Month": "https://pylonofthemonth.org/feed/"
     },
     "dateFormat": "YYYY-MM-DD",
     "microblogSource": "https://b.osmarks.net/@o/feed.rss?min_id=0&limit=4000",
