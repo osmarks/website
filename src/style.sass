@@ -152,7 +152,7 @@ main
         flex: 1 1 20%
 
 .microblog > div
-    flex: 1 1 30%
+    flex: 1 1 50%
 
 ul
     list-style-type: square
@@ -346,6 +346,9 @@ $hl-border: 3px
         img, picture
             background: transparent
 
+    .discord-embed .box
+        --box-border: #333
+
 .sidenotes img, .footnotes img
     width: 100%
     max-width: 15em
@@ -518,3 +521,14 @@ textarea.squiggle
 
 .header
     border-top: solid 6px var(--stripe, transparent)
+
+.discord-embed, .feed-entry
+    word-break: break-word
+    img
+        max-width: 100%
+    .icon
+        width: 1em
+        height: 1em
+        vertical-align: center
+    .box
+        --box-border: #666

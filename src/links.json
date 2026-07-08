@@ -847,5 +847,54 @@
         author: "Mariven",
         excerpt: "Prior to the era of superintelligent actors, we’re likely to see a brief era of superagentic actors—actors who are capable of setting and achieving goals in the pursuit of a given end with significantly greater efficiency and reliability than any single human.",
         referenceIn: { "asi": "" }
+    },
+    "https://gwern.net/drug-heuristic": {
+        title: "The Algernon Argument",
+        date: "2018-06-03",
+        author: "gwern"
+    },
+    "https://www.pnas.org/doi/10.1073/pnas.1201895109": {
+        title: "The remarkable, yet not extraordinary, human brain as a scaled-up primate brain and its associated cost",
+        date: "2012-06-22",
+        author: "Suzana Herculano-Houzel"
+    },
+    "https://www.reuters.com/legal/government/telehealth-startup-had-plan-adhd-drugs-now-two-executives-face-criminal-trial-2025-10-10/": {
+        title: "A telehealth startup had a plan for ADHD drugs. Now two executives face a criminal trial",
+        date: "2025-10-10",
+        author: "Jenna Greene"
+    },
+    "https://www.nytimes.com/2022/05/13/well/mind/cerebral-adhd-medication-tiktok.html": {
+        title: "The Hazards of Prescribing A.D.H.D. Drugs Online",
+        excerpt: "Buzzy start-ups promising easy access to mental health medication found an eager market on social media. Should anyone be looking for treatment on TikTok, though?",
+        author: "Dani Blum",
+        date: "2022-05-13"
+    },
+    "https://gwern.net/nootropic/nootropics": {
+        title: "Nootropics",
+        author: "gwern",
+        date: "2018-12-20"
+    },
+    "https://www.nejm.org/doi/full/10.1056/NEJM199607043350101": {
+        title: "The Effects of Supraphysiologic Doses of Testosterone on Muscle Size and Strength in Normal Men",
+        author: ["Shalender Bhasin", "Thomas W. Storer", "Nancy Berman", "Carlos Callegari", "Brenda Clevenger", "Jeffrey Phillips", "Thomas J. Bunnell", "Ray Tricker", "Aida Shirazi", "Richard Casaburi"],
+        date: "1996-07-04",
+        excerpt: "Supraphysiologic doses of testosterone, especially when combined with strength training, increase fat-free mass and muscle size and strength in normal men."
+    },
+    "https://www.science.org/doi/10.1126/sciadv.add4165": {
+        title: "Not so smart? “Smart” drugs increase the level but decrease the quality of cognitive effort",
+        date: "2023-06-14",
+        author: ["Elizabeth Bowman", "David Coghill", "Carsten Murawski", "Peter Bossaerts"],
+        excerpt: "Our findings suggest that “smart drugs” increase motivation, but a reduction in quality of effort, crucial to solve complex problems, annuls this effect."
+    },
+    "https://www.nejm.org/doi/full/10.1056/NEJMoa2215025": {
+        title: "Cardiovascular Safety of Testosterone-Replacement Therapy",
+        date: "2023-06-16",
+        author: ["A. Michael Lincoff","Shalender Bhasin","Panagiotis Flevaris","Lisa M. Mitchell","Shehzad Basaria","William E. Boden","Glenn R. Cunningham","Christopher B. Granger","Mohit Khera","Ian M. Thompson, Jr.","Qiuqing Wang","Kathy Wolski","Deborah Davey","Vidyasagar Kalahasti","Nader Khan","Michael G. Miller","Michael C. Snabes","Anna Chan","Elena Dubcenco","Xue Li","Tingting Yi","Bidan Huang","Karol M. Pencina","Thomas G. Travison","Steven E. Nissen"],
+        excerpt: "In men with hypogonadism and preexisting or a high risk of cardiovascular disease, testosterone-replacement therapy was noninferior to placebo with respect to the incidence of major adverse cardiac events."
+    },
+    "https://academic.oup.com/eurheartj/article/41/24/2313/5735221": {
+        title: "Low-density lipoproteins cause atherosclerotic cardiovascular disease: pathophysiological, genetic, and therapeutic insights: a consensus statement from the European Atherosclerosis Society Consensus Panel",
+        date: "2020-02-13",
+        author: ["Jan Borén","M John Chapman","Ronald M Krauss","Chris J Packard","Jacob F Bentzon","Christoph J Binder","Mat J Daemen","Linda L Demer","Robert A Hegele","Stephen J Nicholls, Børge G Nordestgaard","Gerald F Watts","Eric Bruckert","Sergio Fazio","Brian A Ference","Ian Graham","Jay D Horton","Ulf Landmesser","Ulrich Laufs","Luis Masana","Gerard Pasterkamp","Frederick J Raal","Kausik K Ray","Heribert Schunkert","Marja-Riitta Taskinen","Bart van de Sluis","Olov Wiklund","Lale Tokgozoglu","Alberico L Catapano","Henry N Ginsberg"]
     }
 }

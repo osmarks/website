@@ -75,7 +75,6 @@
     "microblogSource": "https://b.osmarks.net/@o/feed.rss?min_id=0&limit=4000",
     "buttons": [
         ["arch_btw.png", "https://archlinux.org/"],
-        ["nginx.png", "https://nginx.org/"],
         ["dyson_sphere.png", "https://www.schlockmercenary.com/2001-07-02"],
         ["accursed_js.png", "https://github.com/osmarks/website/blob/master/src/index.js"],
         ["nvidia.png", "/mlrig/"],

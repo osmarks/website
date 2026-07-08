@@ -1,5 +1,5 @@
 ---
-title: About Me
+title: About me
 description: "osmarks"
 internal: true
 slug: me
