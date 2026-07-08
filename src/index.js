@@ -65,7 +65,7 @@ const buildID = nanoid()
 globalData.buildID = buildID
 
 const randomPick = xs => xs[Math.floor(Math.random() * xs.length)]
-globalData.siteDescription = randomPick(globalData.taglines)
+globalData.siteDescription = `<!--SSI:tagline-->`
 
 const links = {}
 
@@ -519,6 +519,7 @@ const writeBuildID = () => fsp.writeFile(path.join(outDir, "buildID.txt"), build
 const index = async () => {
     const index = globalData.templates.index({ ...globalData, title: "Index", posts: globalData.blog, description: globalData.siteDescription, path: "/" })
     await fsp.writeFile(path.join(outDir, "index.html"), index)
+    await fsp.writeFile(path.join(outDir, "taglines.txt"), globalData.taglines.join("\n"))
 }
 
 const cache = sqlite("cache.sqlite3")
