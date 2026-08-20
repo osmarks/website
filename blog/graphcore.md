@@ -4,6 +4,8 @@ created: 23/02/2026
 description: Trying exotic parallel processing hardware which is dead for fairly good reasons.
 slug: graphcore
 tags: ["hardware", "ai"]
+series: graphcore
+series_index: 1
 ---
 ::: epigraph attribution=@softminus link=https://x.com/softminus/status/1933747679315833356
 The farther you get away from the flops in the physical register file; the longer the wires get, the less bandwidth there is; and with those the microarchitecture's magic fades, its power and abstractions decay, and you are left with the mundane, real, and slow.
