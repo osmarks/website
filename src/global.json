@@ -42,7 +42,6 @@
         "Things Of Interest":"https://qntm.org/rss.php",
         "Chips and Cheese": "https://chipsandcheese.com/feed",
         "BOFH": "https://www.theregister.com/offbeat/bofh/headlines.atom",
-        "Don't Worry About the Vase": "https://thezvi.substack.com/feed",
         "KGOnTech": "https://kguttag.com/feed/",
         "Overcoming Bias": "https://www.overcomingbias.com/feed",
         "Construction Physics": "https://www.construction-physics.com/feed",
@@ -69,10 +68,21 @@
         "astrid dot tech": "https://astrid.tech/feed",
         "Stanichor": "https://stanichor.net/feed.xml",
         "Mariven": "https://mariven.substack.com/feed",
-        "Pylon of the Month": "https://pylonofthemonth.org/feed/"
+        "Pylon of the Month": "https://pylonofthemonth.org/feed/",
+        "benjojo blog": "https://blog.benjojo.co.uk/rss.xml",
+        "The Linchpin": "https://linch.substack.com/feed",
+        "BLDGBLOG": "https://bldgblog.com/feed/",
+        "Metal Ivy": "https://ivy0.substack.com/feed",
+        "Nanofactory Project": "https://nanofactory.substack.com/feed",
+        "Nick vs Networking": "https://nickvsnetworking.com/feed/",
+        "Nicole Kornher-Stace": "http://nicolekornherstace.com/feed/",
+        "Igor's Blog": "https://igor-blue.github.io/feed.xml",
+        "Jay Carlson": "https://jaycarlson.net/feed",
+        "Libertarian Development": "https://developmentalism.substack.com/feed",
+        "The Electric Grandma": "https://meredithangwin.substack.com/feed"
     },
     "dateFormat": "YYYY-MM-DD",
-    "microblogSource": "https://b.osmarks.net/@o/feed.rss?min_id=0&limit=4000",
+    "microblogSource": "http://osmarks.net/feed/jsonfeed.json",
     "buttons": [
         ["arch_btw.png", "https://archlinux.org/"],
         ["dyson_sphere.png", "https://www.schlockmercenary.com/2001-07-02"],
@@ -105,7 +115,8 @@
         ["merging.gif", "https://merge.moe/"],
         ["aacs.png", "https://en.wikipedia.org/wiki/Illegal_number"],
         ["dhmo.gif", "https://www.dhmo.org/"],
-        ["kiwix.gif", "https://a.osmarks.net"]
+        ["kiwix.gif", "https://a.osmarks.net"],
+        ["philpxa.gif", "https://philpax.me/"]
     ],
     "mycorrhiza": "https://docs.osmarks.net",
     "tagColors": {

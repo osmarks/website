@@ -3,10 +3,10 @@ extends layout.pug
 block content
     div.content.blog-post!= content
 
-    if references.length > 0
+    if extraReferences.length > 0
         h2 See also
         div
-            each ref in references
+            each ref in extraReferences
                 div.box.ref(style=generateBoxPattern(ref.url))
                     a.title(href=ref.url)= ref.title
                     div.deemph

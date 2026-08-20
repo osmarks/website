@@ -99,6 +99,7 @@ const fetchLinksOut = async () => {
             if (!url.endsWith(".pdf")) {
                 try {
                     // I don't know why, but without the timeout race configured here
+                    // What was that comment meant to say?
                     const response = await Promise.race([
                         axiosInst({ url }),
                         new Promise((_, reject) =>
@@ -114,7 +115,7 @@ const fetchLinksOut = async () => {
                     console.warn(chalk.red(`Failed to fetch ${url}: ${e.message}`))
                 }
             }
-            if (article && article.title) {
+            if (article && article.title && !article.title.includes("Checking your browser")) {
                 meta.excerpt = article.excerpt
                 meta.title = article.title
                 meta.author = article.byline && article.byline.split("\n")[0]
@@ -382,7 +383,7 @@ const processExperiments = async () => {
                 fts.pushEntry("experiment", {
                     url: "/" + page.data.slug,
                     title: page.data.title,
-                    description: page.data.description,
+                    description: fts.stripHTML(page.data.description),
                     html: page.content,
                     timestamp: dayjs(await fsp.stat(path.join(subdirectory, "index.html")).then(x => x.mtimeMs))
                 })
@@ -406,24 +407,28 @@ const processBlog = async () => {
         processTags(meta)
         const [html, urls] = renderMarkdown(page.content)
         meta.content = html
-        meta.references = []
+        meta.extraReferences = []
         meta.sourceFile = file
         meta.markdownAlt = `/${meta.slug}/index.md`
+        meta.references = []
 
         for (const url of urls) {
             try {
-                const parsed = new URL(url)
-                if (parsed.protocol === "http:" || parsed.protocol === "https:") {
-                    parsed.hash = "" // TODO handle this more cleanly
-                    if (!links[parsed]) {
-                        links[parsed] = {
-                            inline: true
-                        }
-                        links[parsed].references = links[parsed].references ?? []
-                        links[parsed].references.push(meta.slug)
+                var parsed = new URL(url)
+            } catch (e) {
+                var parsed = url
+            }
+            if (parsed.protocol === "http:" || parsed.protocol === "https:") {
+                parsed.hash = "" // TODO handle this more cleanly
+                if (!links[parsed]) {
+                    links[parsed] = {
+                        inline: true
                     }
                 }
-            } catch (e) {}
+                links[parsed].references = links[parsed].references ?? []
+                links[parsed].references.push(meta.slug)
+                meta.references.push(links[parsed])
+            }
         }
 
         // this is quite inefficient but we don't have many links so whatever
@@ -431,7 +436,7 @@ const processBlog = async () => {
             if (umeta.referenceIn) {
                 const refText = umeta.referenceIn[meta.slug]
                 if (refText !== undefined) {
-                    meta.references.push({
+                    meta.extraReferences.push({
                         description: refText,
                         ...links[url]
                     })
@@ -548,7 +553,7 @@ const processEntry = (entry, feed, feedName) => {
     }
     entry.title = fts.stripHTML(entry.title)
     entry.published = dayjs(entry.published)
-    entry.content = cutDesc(fts.stripHTML(entry.description))
+    entry.content = cutDesc(fts.stripHTML(entry.content_html || entry.description))
     entry.feedName = feedName
 }
 
@@ -567,7 +572,6 @@ const fetchMicroblog = async () => {
     }
 
     for (const post of globalData.microblog) {
-        if (!post.description) { continue }
         const desc = fts.stripHTML(post.content_html)
         fts.pushEntry("microblog", {
             url: post.url,
@@ -802,6 +806,7 @@ const buildFTS = async () => {
     console.log(chalk.yellow("Building full-text search index"))
     const blob = fts.build()
     await fsp.writeFile(path.join(outDir, "fts.bin"), blob)
+    await childProcess.spawn("gzip", ["-f", "--", path.join(outDir, "fts.bin")])
 }
 
 const tasks = {
