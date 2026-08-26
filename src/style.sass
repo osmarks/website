@@ -10,6 +10,8 @@ $navbar-width: 20rem
     // worth considering: #d9facc?
     --box-bg: #fff
     --box-border: #000
+    --text: #000
+    --background: #fff
     // xkcd bluegreen
     --link: #048600
     --visited-link: #006e2b
@@ -101,6 +103,7 @@ nav
         display: flex
         align-items: center
         font-style: italic
+        color: var(--text)
 
     a, img, picture
         margin-right: 0.5em
@@ -120,6 +123,8 @@ h1, h2, h3, h4, h5, h6
     a
         color: inherit !important
         text-decoration: none !important
+
+    text-shadow: 0.06em 0.06em var(--stripe)
 
 summary h1, summary h2
     display: inline
@@ -163,7 +168,7 @@ ul
 
 button, select, input, textarea, .textarea
     border-radius: 0 !important
-    border: 1px solid gray
+    border: 1px solid var(--box-border)
     box-shadow: none !important
 
 .achievements
@@ -218,7 +223,7 @@ button, select, input, textarea, .textarea
 
 blockquote
     padding-left: 0.6rem
-    border-left: 6px solid black
+    border-left: 6px solid var(--text)
     margin-left: 0.2rem
 
 .wider, pre
@@ -312,35 +317,28 @@ $hl-border: 3px
     border-bottom: solid $hl-border var(--box-border)
     margin-top: -$hl-border
 
+body
+    background: var(--background)
+    color: var(--text)
+
 @media (prefers-color-scheme: dark)
-    body
-        background: black
-        color: white
-
-    nav
-        background: #000
-
     .achievement
         color: black
 
     :root
         --box-bg: #000
         --box-border: #888
+        --text: #fff
+        --background: #000
         // bright teal
         --link: #6fff6c
         --visited-link: #60e394
         --block-lightness: 20%
         --overlay-opacity: 0.5
 
-    nav .logocont
-        color: white
-
-    blockquote
-        border-left: 6px solid white
-
     button, select, input, textarea, .textarea
         background: #333
-        color: white
+        color: var(--text)
 
     .imbox
         img, picture
@@ -494,8 +492,8 @@ textarea.squiggle
     .cite-this-post
         display: none
 
-    img
-        max-width: 60% !important
+    .caption
+        max-width: 80%
 
     nav
         display: none

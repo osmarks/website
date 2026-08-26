@@ -44,6 +44,10 @@ Friend me on [Project Euler](https://projecteuler.net/friends)! My code is `1997
 * Bench press: 90kg (3RM).
 * Nigh-omniscient knowledge of and concern for English grammar.
 
+## Browser tabs
+
+<!--SSI:tab_history-->
+
 ::: buttons
 
 :::
