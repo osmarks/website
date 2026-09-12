@@ -895,6 +895,210 @@
     "https://academic.oup.com/eurheartj/article/41/24/2313/5735221": {
         title: "Low-density lipoproteins cause atherosclerotic cardiovascular disease: pathophysiological, genetic, and therapeutic insights: a consensus statement from the European Atherosclerosis Society Consensus Panel",
         date: "2020-02-13",
-        author: ["Jan Borén","M John Chapman","Ronald M Krauss","Chris J Packard","Jacob F Bentzon","Christoph J Binder","Mat J Daemen","Linda L Demer","Robert A Hegele","Stephen J Nicholls, Børge G Nordestgaard","Gerald F Watts","Eric Bruckert","Sergio Fazio","Brian A Ference","Ian Graham","Jay D Horton","Ulf Landmesser","Ulrich Laufs","Luis Masana","Gerard Pasterkamp","Frederick J Raal","Kausik K Ray","Heribert Schunkert","Marja-Riitta Taskinen","Bart van de Sluis","Olov Wiklund","Lale Tokgozoglu","Alberico L Catapano","Henry N Ginsberg"]
+        author: ["Jan Borén","M John Chapman","Ronald M Krauss","Chris J Packard","Jacob F Bentzon","Christoph J Binder","Mat J Daemen","Linda L Demer","Robert A Hegele","Stephen J Nicholls", "Børge G Nordestgaard","Gerald F Watts","Eric Bruckert","Sergio Fazio","Brian A Ference","Ian Graham","Jay D Horton","Ulf Landmesser","Ulrich Laufs","Luis Masana","Gerard Pasterkamp","Frederick J Raal","Kausik K Ray","Heribert Schunkert","Marja-Riitta Taskinen","Bart van de Sluis","Olov Wiklund","Lale Tokgozoglu","Alberico L Catapano","Henry N Ginsberg"]
+    },
+    "https://journals.physiology.org/doi/full/10.1152/ajpendo.2001.281.6.E1172": {
+        title: "Testosterone dose-response relationships in healthy young men",
+        date: "2001-12-01",
+        author: ["Shalender Bhasin", "Linda Woodhouse", "Richard Casaburi", "Atam B. Singh", "Dimple Bhasin", "Nancy Berman", "Xianghong Chen", "Kevin E. Yarasheski", "Lynne Magliano", "Connie Dzekov", "Jeanne Dzekov", "Rachelle Bross", "Jeffrey Phillips", "Indrani Sinha-Hikim", "Ruoquing Shen", "Thomas W. Storer"]
+    },
+    "https://jamanetwork.com/journals/jama/fullarticle/2816584": {
+        title: "Mortality Among Users of Anabolic Steroids",
+        date: "2024-03-14",
+        author: ["Josefine Windfeld-Mathiasen", "Ida M. Heerfordt", "Kim Peder Dalhoff", "Jon Trærup Andersen", "Henrik Horwitz"]
+    },
+    "https://onlinelibrary.wiley.com/doi/10.1111/joim.12850": {
+        title: "Health consequences of androgenic anabolic steroid use",
+        date: "2018-11-20",
+        author: ["H. Horowitz", "J. T. Andersen", "K. P. Dalhoff"]
+    },
+    "https://academic.oup.com/eurheartj/article/46/30/3006/8131432": {
+        title: "Mortality in male bodybuilding athletes",
+        author: ["Marco Vecchiato", "Andrea Ermolao", "Marco Da Col, Andrea Aghi", "Giampaolo Berton", "Stefano Palermi", "Francesca Battista", "Sandro Savino", "Jonathan Drezner", "Alessandro Zorzi", "Josef Niebauer", "Daniel Neunhaeuserer"],
+        date: "2025-05-20"
+    },
+    "https://www.rpthjournal.org/article/s2475-0379(22)01995-1/fulltext": {
+        title: "Hematocrit and incidence of venous thromboembolism",
+        date: "2020-03-01",
+        author: ["Aaron R. Folsom", "Wendy Wang", "Romil Parikh", "Pamela L. Lutsey", "Joan D. Beckman", "Mary Cushman"]
+    },
+    "https://www.sciencedirect.com/science/article/pii/S3050620426000448": {
+        title: "Need for NAMs: A systematic evidence synthesis revealing over half a century of drug development failure",
+        date: "2026-06-16",
+        author: ["Dilyana Filipova", "Wolfgang Boomgaarden", "Leyla Fox", "Andrew Knight", "Bettina Lickiss", "Christian Maass", "Gaby Neumann", "Justine Watkins", "Kathrin Herrmann", "Lorna Ewart", "Matthias Gossmann", "Merel Ritskes-Hoitinga", "Tamara Zietek"]
+    },
+    "https://clinicaltrials.gov/study/NCT02578095?tab=history": {
+        title: "Acute Hip Fracture Study in Patients 65 Years or Greater",
+        date: "2025-12-29",
+        author: "Viking Therapeutics, Inc."
+    },
+    "https://academic.oup.com/jcem/article/103/9/3215/5047294": {
+        title: "GSK2881078, a SARM, Produces Dose-Dependent Increases in Lean Mass in Healthy Older Men and Women",
+        date: "2018-07-02",
+        author: ["David Neil", "Richard V Clark", "Mindy Magee", "Julia Billiard", "Ann Chan", "Zhengyu Xue", "Alan Russell"]
+    },
+    "https://www.reddit.com/r/NooTopics/comments/1ipd52p/acd856_and_usmarapride_everychem_agenda_part_2/": {
+        title: "ACD856 and Usmarapride | Everychem Agenda Part 2",
+        date: "2025-02-14",
+        author: "sirsadalot"
+    },
+    "https://clinicaltrials.gov/study/NCT05616013": {
+        title: "Safety and Efficacy of Bimagrumab and Semaglutide in Adults Who Are Overweight or Obese",
+        date: "2026-07-08",
+        author: "Eli Lilly and Company"
+    },
+    "https://pubs.acs.org/jmcmar/article/64/20/14930/467472/Discovery-of-Reldesemtiv-a-Fast-Skeletal-Muscle": {
+        title: "Discovery of Reldesemtiv, a Fast Skeletal Muscle Troponin Activator for the Treatment of Impaired Muscle Function",
+        date: "2021-10-12",
+        author: ["Scott E. Collibee", "Gustave Bergnes", "Chihyuan Chuang", "Luke Ashcraft", "Jeffrey Gardina", "Marc Garard", "Chris R. Jamison", "Kevin Lu", "Pu-Ping Lu", "Alexander Muci", "Antonio Romero", "Ellen Valkevich", "Wenyue Wang", "Jeffrey Warrington", "Bing Yao", "Nickie Durham", "James Hartman", "Anna Marquez", "Aaron Hinken", "Julia Schaletzky", "Donghong Xu", "Darren T. Hwee", "David Morgans", "Fady I. Malik", "Bradley P. Morgan"]
+    },
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6681065/": {
+        title: "CK‐2127107 amplifies skeletal muscle response to nerve activation in humans",
+        date: "2017-12-11",
+        author: ["Jinsy A Andrews", "Timothy M Miller", "Vipin Vijayakumar", "Randall Stoltz", "Joyce K James", "Lisa Meng", "Andrew A Wolff", "Fady I Malik"]
+    },
+    "https://www.tandfonline.com/doi/full/10.1080/21678421.2019.1612922": {
+        title: "A phase III trial of tirasemtiv as a potential treatment for amyotrophic lateral sclerosis",
+        date: "2019-05-13",
+        author: ["Jeremy M. Shefner", "Merit E. Cudkowicz", "Orla Hardiman", "Bettina M. Cockroft", "Jacqueline H. Lee", "Fady I. Malik", "Lisa Meng", "Stacy A. Rudnicki", "Andrew A. Wolff", "Jinsy A. Andrews"]
+    },
+    "https://jamanetwork.com/journals/jamaneurology/fullarticle/2831901": {
+        title: "Reldesemtiv in Amyotrophic Lateral Sclerosis",
+        subtitle: "Results From the COURAGE-ALS Randomized Clinical Trial",
+        date: "2025-03-24",
+        author: ["Jeremy M. Shefner", "Merit E. Cudkowicz", "Angela Genge", "Orla Hardiman", "Ammar Al-Chalabi", "Jinsy A. Andrews", "Adriano Chio", "Philippe Corcia", "Philippe Couratier", "Mamede de Carvalho", "Terry Heiman-Patterson", "Robert D. Henderson", "Caroline Ingre", "Wendy Johnston", "Albert Ludolph", "Nicholas J. Maragakis", "Timothy M. Miller", "Jesus S. Mora", "Susanne Petri", "Zachary Simmons", "Leonard H. van den Berg", "Lorne Zinman", "Stuart Kupfer", "Fady I. Malik", "Lisa Meng", "Tyrell J. Simkins", "Jenny Wei", "Andrew A. Wolff", "Stacy A. Rudnicki"]
+    },
+    "https://www.biophytis.com/wp-content/uploads/2019/02/Biophytis-2019-Oral-presentation-at-ICFSR-February-20-22-2019-Dilda-et-al.pdf": {
+        title: "SARCONEOS (API BIO101) targets Mas receptor within the protective arm of the renin angiotensin system and proves efficacy in various models of muscle wasting",
+        author: ["P. Dilda", "M. Latil", "M. Serova", "B. Didry-Barca", "S. On", "S. Veillet", "R. Lafont"],
+        date: "2019-02-20"
+    },
+    "https://onlinelibrary.wiley.com/doi/10.1002/jcsm.13750": {
+        title: "BIO101 in Sarcopenic Seniors at Risk of Mobility Disability: Results of a Double-Blind Randomised Interventional Phase 2b Trial",
+        author: ["Roger A. Fielding", "Michael M. Dao", "Kevin Cannon", "Moise Desvarieux", "Sam S. Miller", "Michael Paul Gimness", "Donald M. Brandon", "Dennis T. Villareal", "Olivier Bruyere", "Ivan Bautmans", "Kyle Rickner", "Robert Perry", "Stephen B. Kritchevsky", "Nicolas Musi", "Joe M. Chehade", "Judith L. Kirstein", "Evelien Gielen", "Paul Pickrell", "Pierre Dilda", "Rene Lafont", "Carole Margalef", "Yves Rolland", "Susanna Del Signore", "Jean Mariani", "Samuel Agus", "Cendrine Tourette", "Waly Dioh", "Rob van Maanen", "Stanislas Veillet"],
+        date: "2025-03-03"
+    },
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4929828": {
+        title: "Espindolol for the treatment and prevention of cachexia in patients with stage III/IV non‐small cell lung cancer or colorectal cancer: a randomized, double‐blind, placebo‐controlled, international multicentre phase II study (the ACT‐ONE trial)",
+        date: "2016-07-01",
+        author: ["Andrew J Stewart Coats", "Gwo Fuang Ho", "Kumar Prabhash", "Stephan von Haehling", "Julia Tilson", "Richard Brown", "John Beadle", "Stefan D Anker"]
+    },
+    "https://www.youtube.com/watch?v=axJX3vuVm8A&t=11m57s": {
+        title: "APS-BioAge Webinar: BGE-105, Apelin Receptor Agonist for the Prevention of Muscle Aging",
+        date: "2022-04-29",
+        website: "YouTube",
+        author: "American Physiological Society"
+    },
+    "https://academic.oup.com/ejendo/article/195/Supplement_1/lvag096.1123/8755256": {
+        title: "EP739 - ECE_3957 - A novel secreted protein, JUV-161, reverses structural and functional muscle decline in Sarcopenia",
+        date: "2026-08-10",
+        author: ["Ashil Koranne", "Hee Ju Kim", "Ritwik Datta", "Vengadeshprabhu Karuppagounder", "Han Song", "Zhihua Li", "Thach Mai", "Banmeet Anand", "Colin Hislop", "Priya Handa", "Hanadie Yousef", "Jeremy O'connell"]
+    },
+    "https://clinicaltrials.gov/study/NCT06918925": {
+        title: "First-In-Human Study to Evaluate Single and Multiple Ascending Doses of JUV-161 in Healthy Adult Volunteers",
+        date: "2026-08-10",
+        author: "Juvena Therapeutics"
+    },
+    "https://clinicaltrials.gov/study/NCT07397468": {
+        title: "To studyJUV-161 Administered to Healthy Volunteers Undergoing Unilateral Lower Limb Immobilization (ULLI)",
+        date: "2026-04-20",
+        author: "Juvena Therapeutics"
+    },
+    "https://journals.physiology.org/doi/full/10.1152/physiol.00004.2005": {
+        title: "Mechanical Signals, IGF-I Gene Splicing, and Muscle Adaptation",
+        author: "Geoffrey Goldspink",
+        date: "2005-08-01"
+    },
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5209754/": {
+        title: "Effects of Testosterone Treatment in Older Men",
+        author: ["PJ Snyder", "S Bhasin", "GR Cunningham", "AM Matsumoto", "AJ Stephens-Shields", "JA Cauley", "TM Gill", "E Barrett-Connor", "RS Swerdloff", "C Wang", "KE Ensrud", "CE Lewis", "JT Farrar", "D Cella", "RC Rosen", "M Pahor", "JP Crandall", "ME Molitch", "D Cifelli", "D Dougar", "L Fluharty", "SM Resnick", "TW Storer", "S Anton", "S Basaria", "SJ Diem", "X Hou", "ER Mohler III", "JK Parsons", "NK Wenger", "B Zeldow", "JR Landis", "SS Ellenberg"],
+        date: "2017-01-04"
+    },
+    "https://onlinelibrary.wiley.com/doi/10.1111/dar.13656": {
+        title: "‘My mind pretty much went to mush’: A qualitative exploration of trenbolone in the performance and image enhancing drug community",
+        date: "2023-03-29",
+        author: ["Timothy M. Piatkowski", "David L. Neumann", "Matthew Dunn"]
+    },
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13112052/": {
+        title: "The Trenbolo(g)ne Sandwich: An International Study Comparing Health Harms Among Men Who Use Anabolic‐Androgenic Steroids With and Without Trenbolone",
+        author: ["Benjamin Bonenti", "Bahareh Ahmadinejad", "Cheneal Puljević", "Jason Ferris", "Adam Winstock", "Kyle T Ganson", "Jason M Nagata", "Adam Bradshaw", "Timothy Piatkowski"],
+        date: "2026-04-27"
+    },
+    "https://thinksteroids.com/articles/trenbolone-aggression-anxiety-sleep-problems/": {
+        title: "What Are the Real Problems Associated with Trenbolone Use?",
+        date: "2015-03-02",
+        author: "Bill Roberts"
+    },
+    "https://www.tandfonline.com/doi/full/10.1080/16066359.2024.2352092": {
+        title: "“I go back to it every f**king time”: the normalization of problematic Trenbolone use in online anabolic-androgenic steroid communities",
+        date: "2023-12-09",
+        author: ["Harry Lamb", "Matthew Dunn", "Ingrid Amalia Havnes", "Timothy Piatkowski"]
+    },
+    "https://www.sciencedirect.com/science/article/pii/S2451902221000197": {
+        title: "Long-term Anabolic–Androgenic Steroid Use Is Associated With Deviant Brain Aging",
+        date: "2021-05-01",
+        author: ["Astrid Bjørnebekk", "Tobias Kaufmann", "Lisa E. Hauger", "Sandra Klonteig", "Ingunn R. Hullstein", "Lars T. Westlye"]
+    },
+    "https://www.youtube.com/watch?v=hK6hs2LBr8E": {
+        title: "Testosterone Damages the Brain? | Supraphysiological Testosterone is Neurotoxic / Toxic?",
+        author: "Nicholas Downey",
+        date: "2023-03-30"
+    },
+    "https://gwern.net/scaling-hypothesis": {
+        title: "The Scaling Hypothesis",
+        author: "gwern",
+        date: "2022-01-02"
+    },
+    "https://rchatgpt-pulse.github.io/": {
+        title: "Keeping a pulse on r/ChatGPT",
+        date: "2026-06-04",
+        author: ["Jessica Dai", "Sean Garcia", "Emma Pierson", "Benjamin Recht", "Nika Haghtalab"]
+    },
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10827157/": {
+        title: "Viroid-like colonists of human microbiomes",
+        date: "2024-01-21",
+        author: ["Ivan N Zheludev", "Robert C Edgar", "Maria Jose Lopez-Galiano", "Marcos de la Peña", "Artem Babaian", "Ami S Bhatt", "Andrew Z Fire"]
+    },
+    "https://gwern.net/doc/psychology/cognitive-bias/illusion-of-depth/abstract": {
+        title: "The Illusion of Depth",
+        author: "gwern",
+        date: "2021-09-06"
+    },
+    "https://openai.com/index/where-the-goblins-came-from/": {
+        title: "Where the goblins came from",
+        website: "OpenAI",
+        date: "2026-04-29"
+    },
+    "https://programasweights.com/claudish": {
+        title: "English ↔ Claudish translator"
+    },
+    "https://www.google.com/search?q=taste+is+the+bottleneck": {
+        title: "taste is the bottleneck – Google Search"
+    },
+    "https://thinksteroids.com/articles/anabolic-steroids-muscle-memory/": {
+        title: "Anabolic Steroids and Muscle Memory",
+        author: "Peter Bond",
+        date: "2021-11-17"
+    },
+    "https://web.archive.org/web/20240415111440if_/https://www.dshs-koeln.de/fileadmin/redaktion/Institute/Biochemie/PDF/Proceedings/Proceedings_2/2_81-92.pdf": {
+        date: "1995",
+        author: "C. Ayotte",
+        title: "Determination of Free Methyltestosterone in Plasma Samples"
+    },
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10762557/": {
+        title: "Sex steroid levels in corresponding cerebrospinal fluid and serum samples quantified by mass spectrometry in men",
+        date: "2023-12-14",
+        author: ["Henrik Ryberg", "Anna-Karin Norlén", "Andreas Landin", "Per Johansson", "Zeinab Salman", "Anders Wallin", "Johan Svensson", "Claes Ohlsson"]
+    },
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10057866/": {
+        title: "Misadventures in Toxicology: Concentration Matters for Testosterone-Induced Neurotoxicity",
+        author: "Cyril Wilson",
+        date: "2023-03-10"
+    },
+    "https://jamanetwork.com/journals/jamapsychiatry/fullarticle/481717": {
+        title: "Cerebrospinal Fluid and Behavioral Changes After Methyltestosterone Administration",
+        subtitle: "Cerebrospinal Fluid and Behavioral Changes After Methyltestosterone Administration",
+        date: "2001-02-01",
+        author: ["Robert C. Daly", "Tung-Ping Su", "Peter J. Schmidt", "David Pickar", "Dennis L. Murphy", "David R. Rubinow"]
     }
 }

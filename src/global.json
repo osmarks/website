@@ -116,7 +116,9 @@
         ["aacs.png", "https://en.wikipedia.org/wiki/Illegal_number"],
         ["dhmo.gif", "https://www.dhmo.org/"],
         ["kiwix.gif", "https://a.osmarks.net"],
-        ["philpax.png", "https://philpax.me/"]
+        ["philpax.png", "https://philpax.me/"],
+        ["iczelia.gif", "https://iczelia.net/webring/"],
+        ["tom_scott.webp", "https://www.youtube.com/@TomScottGo/videos"]
     ],
     "mycorrhiza": "https://docs.osmarks.net",
     "tagColors": {

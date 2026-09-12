@@ -201,7 +201,7 @@ const renderContainer = (tokens, idx) => {
 
     if (opening) {
         if (blockType === "captioned") {
-            const link = `<a href="${md.utils.escapeHtml(options.src)}">`
+            const link = `<a href="${md.utils.escapeHtml(typeof options.link === "string" ? options.link : options.src)}">`
             return `${options.wide ? "<div class=wider>" : ""}<div class=caption>${options.link ? link : ""}<img src="${md.utils.escapeHtml(options.src)}">${options.link ? "</a>" : ""}`
         } else if (blockType === "epigraph") {
             return `<div class="epigraph"><div>`

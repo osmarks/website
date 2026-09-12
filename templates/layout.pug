@@ -54,8 +54,8 @@ html(lang="en")
                 +nav-item(`#`, "Search", "#12E193")
                 block nav-items
         .sidenotes-container
-            main(class=!haveSidenotes ? "fullwidth" : "")
-                .header(style=accentColor ? `--stripe: ${accentColor}` : "")
+            main(class=!haveSidenotes ? "fullwidth" : "", style=accentColor ? `--stripe: ${accentColor}` : "")
+                .header
                     h1.page-title= title
                     block under-title
                     if !internal
