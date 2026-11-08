@@ -484,7 +484,8 @@ if (sidenotes && footnotes) {
                 const link = article.querySelector(`#${item.id.replace(/^fn/, "fnref")}`)
                 const linkRect = link.getBoundingClientRect()
                 item.style.position = "absolute"
-                item.style.display = "list-item"
+                item.style.display = link.checkVisibility() ? "list-item" : "none"
+                item.value = item.id.replace(/^fn/, "")
                 item.style.width = null
                 item.style.left = getComputedStyle(sidenotes).paddingLeft
                 item.style.paddingBottom = item.style.paddingTop = item.style.paddingRight = `${BORDER / 2}px`

@@ -3,8 +3,6 @@ extends layout.pug
 block content
     div.content
         h2.section-header Writing
-        p.
-            Read my opinions via the internet.
         div.blog
             each post, i in posts
                 - var styles = []
@@ -20,13 +18,9 @@ block content
                         div.description!= post.description
 
         h2.section-header Microblog
-        p.
-            Short-form observations.
         <!--SSI:ublog_feed-->
 
         h2.section-header Experiments
-        p.
-            Various web projects I have put together over many years. Made with at least four different JS frameworks. Some of them are bad.
         div.experiments
             each experiment, i in experiments
                 .box.imbox(style=generateBoxPattern(experiment.slug))

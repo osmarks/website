@@ -940,7 +940,8 @@
     "https://www.reddit.com/r/NooTopics/comments/1ipd52p/acd856_and_usmarapride_everychem_agenda_part_2/": {
         title: "ACD856 and Usmarapride | Everychem Agenda Part 2",
         date: "2025-02-14",
-        author: "sirsadalot"
+        author: "sirsadalot",
+        website: "Reddit"
     },
     "https://clinicaltrials.gov/study/NCT05616013": {
         title: "Safety and Efficacy of Bimagrumab and Semaglutide in Adults Who Are Overweight or Obese",
@@ -1100,5 +1101,84 @@
         subtitle: "Cerebrospinal Fluid and Behavioral Changes After Methyltestosterone Administration",
         date: "2001-02-01",
         author: ["Robert C. Daly", "Tung-Ping Su", "Peter J. Schmidt", "David Pickar", "Dennis L. Murphy", "David R. Rubinow"]
+    },
+    "https://www.independent.org/pdf/tir/tir_05_1_tabarrok.pdf": {
+        author: "Alexander T. Tabarrok",
+        date: "2000",
+        title: "Assessing the FDA via the Anomaly of Off-Label Drug Prescribing"
+    },
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC1779871/": {
+        title: "What have we learnt from Vioxx?",
+        date: "2007-01-20",
+        author: ["Harln M Krumholz", "Joseph S Ross", "Amos H Presler", "David S Egilman"]
+    },
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5010762/": {
+        title: "A critical review of the long-term disability outcomes following hip fracture",
+        date: "2016-09-02",
+        author: ["Suzanne M Dyer", "Maria Crotty", "Nicola Fairhall", "Jay Magaziner", "Lauren A Beaupre", "Ian D Cameron", "Catherine Sherrington"]
+    },
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13375528/": {
+        title: "Apitegromab for lean mass preservation during tirzepatide-induced weight loss: a randomized, double-blind, placebo-controlled phase 2 trial",
+        date: "2026-06-08",
+        author: ["Richard E Pratley", "Douglas Scott Denham", "Rupal Trivedi", "Elaine Watkins", "Lisa Connery", "Jennifer Barnes", "Dongzi Yu", "Janet Hong", "Christopher Simard", "Kimberly Umans", "Lan Liu", "Giridhar S Tirucherai", "Jing L Marantz"]
+    },
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10787703/": {
+        title: "The Clinical Development of Taldefgrobep Alfa: An Anti-Myostatin Adnectin for the Treatment of Duchenne Muscular Dystrophy",
+        date: "2024-01-08",
+        author: ["Francesco Muntoni", "Barry J Byrne", "Hugh J McMillan", "Monique M Ryan", "Brenda L Wong", "Juergen Dukart", "Amita Bansal", "Valerie Cosson", "Roxana Dreghici", "Maitea Guridi", "Michael Rabbia", "Hannah Staunton", "Giridhar S Tirucherai", "Karl Yen", "Xiling Yuan", "Kathryn R Wagner"]
+    },
+    "https://archive.ph/dJ7Px": {
+        title: "The hidden history of BPC-157, a favorite MAHA peptide",
+        date: "2026-06-01",
+        author: "Sara Talpos"
+    },
+    "https://www.reddit.com/r/Nootropics/comments/5bqrpm/i_figured_out_prl853s_mechanism_of_action/": {
+        title: "I figured out PRL-8-53’s Mechanism of Action",
+        date: "2016-11-08",
+        website: "Reddit"
+    },
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10319809/": {
+        title: "Chronic UCN2 treatment desensitizes CRHR2 and improves insulin sensitivity",
+        date: "2023-07-04",
+        author: ["Stephen E Flaherty III", "Olivier Bezy", "Wei Zheng", "Dong Yan", "Xiangping Li", "Srinath Jagarlapudi", "Bina Albuquerque", "Ryan M Esquejo", "Matthew Peloquin", "Meriem Semache", "Arturo Mancini", "Liya Kang", "Doreen Drujan", "Susanne B Breitkopf", "John D Griffin", "Pierre M Jean Beltran", "Liang Xue", "John Stansfield", "Evanthia Pashos", "Quazi Shakey", "Christian Pehm\u00f8ller", "Mara Monetti", "Morris J Birnbaum", "Jean-Philippe Fortin", "Zhidan Wu"]
+    },
+    "https://clinicaltrials.gov/study/NCT07702890": {
+        title: "A Three-part First-in-human Trial to Assess Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of GUB-UCN2 in Healthy Lean and Obese Participants and Participants With T2D",
+        date: "2026-09-10",
+        author: "Gubra A/S"
+    },
+    "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2641547": {
+        title: ["Leah Isakov", "Andrew W. Lo", "Vahid Montazerhodjat"],
+        date: "2015-08-11",
+        title: "Is the FDA Too Conservative or Too Aggressive?: A Bayesian Decision Analysis of Clinical Trial Design"
+    },
+    "https://clinicaltrials.gov/": {
+        title: "ClinicalTrials.gov"
+    },
+    "https://gwern.net/blog/2024/outsourcing": {
+        title: "Useful Outsourcing Is Hard",
+        author: "gwern",
+        date: "2026-06-02",
+        referenceIn: {
+            "complement": ""
+        },
+        excerpt: "Asking ‘what if I tried to use an amnesiac natural general intelligence to solve this… using only emails’ is a good defamiliarizing trick for thinking about AI workflows and the difficulty of outsourcing of white-collar work or your life."
+    },
+    "https://atelfo.substack.com/p/actions-per-minute": {
+        title: "Actions per minute",
+        author: "Alex Telford",
+        date: "2025-05-23",
+        referenceIn: {
+            "complement": ""
+        },
+        excerpt: "There’s perhaps another type of organizational design that is viable in a world of many cheap and ‘good enough’ agents that prioritizes increasing the number of actions. We could see a bifurcation in how companies operate, based on whether they want to optimize for number of actions or average action quality."
+    },
+    "https://kguttag.com/2026/10/23/ar-in-2026-year-in-review-presentation-part-1-ar-challenges/": {
+        title: "AR in 2026 Year In Review Presentation (Part 1: AR Challenges)",
+        author: "Karl Guttag",
+        date: "2026-10-23",
+        referenceIn: {
+            "glass": ""
+        }
     }
 }

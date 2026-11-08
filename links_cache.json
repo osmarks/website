@@ -6762,5 +6762,437 @@
         "date": null,
         "website": "OpenAI",
         "auto": true
+    },
+    "https://www.nature.com/articles/s41591-023-02561-8": {
+        "excerpt": "Fibrodysplasia ossificans progressiva (FOP) is a rare disease characterized by heterotopic ossification (HO) in connective tissues and painful flare-ups. In the phase 2 LUMINA-1 trial, adult patients with FOP were randomized to garetosmab, an activin A-blocking antibody (n = 20) or placebo (n = 24) in period 1 (28 weeks), followed by an open-label period 2 (28 weeks; n = 43). The primary end points were safety and for period 1, the activity and size of HO lesions. All patients experienced at least one treatment-emergent adverse event during period 1, notably epistaxis, madarosis and skin abscesses. Five deaths (5 of 44; 11.4%) occurred in the open-label period and, while considered unlikely to be related, causality cannot be ruled out. The primary efficacy end point in period 1 (total lesion activity by PET–CT) was not met (P = 0.0741). As the development of new HO lesions was suppressed in period 1, the primary efficacy end point in period 2 was prospectively changed to the number of new HO lesions versus period 1. No placebo patients crossing over to garetosmab developed new HO lesions (0% in period 2 versus 40.9% in period 1; P = 0.0027). Further investigation of garetosmab in FOP is ongoing. ClinicalTrials.gov identifier NCT03188666 . In the LUMINA-1 trial for fibrodysplasia ossificans progressiva, garetosmab, an activin A monoclonal antibody, did not lead to significant changes in heterotopic ossification lesion activity in pre-existing lesions in period 1. Garetosmab prevented the formation of new lesions in both periods 1 and 2.",
+        "title": "Garetosmab in fibrodysplasia ossificans progressiva: a randomized, double-blind, placebo-controlled phase 2 trial",
+        "author": "Kaplan, Frederick S.",
+        "date": null,
+        "website": "Nature",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Follistatin": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Follistatin",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2006-07-02T19:49:47Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://www.jstage.jst.go.jp/article/bpb/36/9/36_b13-00231/_html/-char/en": {
+        "excerpt": "The myogenic differentiation of C2C12 myoblast cells is induced by the novel androgen receptor (AR) partial agonist, (17α,20E)-17,20-[(1-methoxyethyli …",
+        "title": "Selective Androgen Receptor Modulator, YK11, Regulates Myogenic Differentiation of C2C12 Myoblasts by Follistatin Expression",
+        "author": null,
+        "date": null,
+        "website": "J-STAGE",
+        "auto": true
+    },
+    "https://peterbond.org/post/methenolone-primobolan-3a-reduction": {
+        "excerpt": "In Book on Steroids there’s a passage in Chapter 2 in which I briefly describe why I think methenolone (Primobolan) is experienced as a relatively weak anabolic steroid. I ascribe this to its metabolism. Specifically, so-called 3α-reduction which is known to happen in skeletal muscle. The passage reads as follows (I’ve taken out the references):",
+        "title": "Methenolone (Primobolan) and its 3α-reduction",
+        "author": "Peter Bond",
+        "date": "2020-11-26T18:35:13+00:00",
+        "website": "PeterBond.org",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Testosterone": {
+        "excerpt": "17β-Hydroxyandrost-4-en-3-one",
+        "title": "Testosterone",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2001-10-24T19:35:33Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://www.gubra.dk/mfn_news/gubra-unveils-ucn2-as-novel-anti-obesity-drug-candidate-for-healthy-weight-loss/": {
+        "excerpt": "Gubra announces the selection of a development candidate and unveils urocortin-2 (UCN2) as a novel anti-obesity drug candidate for healthy weight loss. This once weekly peptide will be developed as a healthy weight loss drug with a favourable cardiac profile. This marks the start of the preclinical toxicology programme. Niels Vrang, Chief Scientific Officer at…",
+        "title": "Gubra unveils UCN2 as novel anti-obesity drug candidate for healthy weight loss",
+        "author": null,
+        "date": null,
+        "website": "Gubra",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/UCN2": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "UCN2",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2008-01-03T20:18:20Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Amdiglurax": {
+        "excerpt": "IUPAC name",
+        "title": "Amdiglurax",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2013-09-15T22:05:18Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/ACD856": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "ACD856",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2024-10-23T03:21:43Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Osavampator": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Osavampator",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2023-02-19T23:27:42Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/PRL-8-53": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "PRL-8-53",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2013-04-25T20:13:00Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://vikingtherapeutics.com/pipeline/vk2735/": {
+        "excerpt": "Overview & Profile We have completed the patient enrollment in our exploratory maintenance dosing study of VK2735, the company’s dual agonist of the glucagon-like peptide 1 (GLP-1) and glucose-dependent insulinotropic polypeptide (GIP) receptors. Our lead clinical program’s drug candidate, VK2735, is being developed in both oral and subcutaneous formulations for the potential treatment of various […]",
+        "title": "VK2735 - Viking Therapeutics",
+        "author": null,
+        "date": null,
+        "website": "Viking Therapeutics",
+        "auto": true
+    },
+    "https://scholar.google.com/citations?user=DzbQJeUAAAAJ&hl=en": {
+        "excerpt": "Professor Harvard - Cited by 76,443",
+        "title": "Shalender Bhasin",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Small_interfering_RNA": {
+        "excerpt": "",
+        "title": "Small interfering RNA",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2004-04-08T23:10:18Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://www.nature.com/articles/s12276-025-01403-6": {
+        "excerpt": "Hepatic endoplasmic reticulum (ER) stress is implicated in the development of steatosis and its progression to nonalcoholic steatohepatitis (NASH). The ER in the liver can sustain metabolic function by activating defense mechanisms that delay or prevent the progression of nonalcoholic fatty liver disease (NAFLD). However, the precise mechanisms by which the ER stress response protects against NAFLD remain largely unknown. Recently, activin E has been linked to metabolic diseases such as insulin resistance and NAFLD. However, the physiological conditions and regulatory mechanisms driving hepatic Inhbe expression (which encodes activin E) as well as the metabolic role of activin E in NAFLD require further investigation. Here we found that hepatic Inhbe expression increased under prolonged fasting and ER stress conditions, which was mediated by ATF4, as determined by promoter analysis in a mouse model. Consistently, a positive correlation between INHBE and ATF4 expression levels in relation to NAFLD status was confirmed using public human NAFLD datasets. To investigate the role of activin E in hepatic steatosis, we assessed the fluxes of the lipid metabolism in an Inhbe-knockout mouse model. These mice displayed a lean phenotype but developed severe hepatic steatosis under a high-fat diet. The deficiency of Inhbe resulted in increased lipolysis in adipose tissue, leading to increased fatty acid influx into the liver. Conversely, hepatic overexpression of Inhbe ameliorated hepatic steatosis by suppressing lipolysis in adipose tissue through ALK7–Smad signaling. In conclusion, activin E serves as a regulatory hepatokine that prevents fatty acid influx into the liver, thereby protecting against NAFLD. Hepatic endoplasmic reticulum (ER) stress is associated with nonalcoholic fatty liver disease (NAFLD). Although it is known that the liver’s ER can activate defense mechanisms to slow NAFLD progression, the specific protective processes remain unclear. Recent studies have identified activin E, encoded by the Inhbe gene, as being linked to metabolic conditions such as insulin resistance and NAFLD. This research demonstrates that hepatic Inhbe expression increases during ER stress, a process regulated by ATF4. Loss of Inhbe led to severe hepatic steatosis due to enhanced lipolysis in adipose tissue. By contrast, hepatic overexpression of Inhbe alleviated hepatic steatosis by suppressing adipose tissue lipolysis through ALK7–Smad signaling. These findings suggest that activin E functions as a regulatory hepatokine, protecting against NAFLD by preventing excessive fatty acid influx into the liver through the inhibition of adipose lipolysis. This summary was initially drafted using artificial intelligence, then revised and fact-checked by the author.",
+        "title": "Activin E is a new guardian protecting against hepatic steatosis via inhibiting lipolysis in white adipose tissue",
+        "author": "Choi, Cheol Soo",
+        "date": null,
+        "website": "Nature",
+        "auto": true
+    },
+    "https://bakerbench.substack.com/p/i-went-looking-for-lost-cities-with?r=1b5pv&utm_medium=ios": {
+        "excerpt": "A few hours, a few hundred dollars of tokens and free government lidar turned up a cluster of ancient-looking mounds in Mexico and nine stone ruins in Arizona that nobody seems to have mapped.",
+        "title": "I went looking for lost cities with Claude",
+        "author": "Nate",
+        "date": "2026-10-11T19:25:53+00:00",
+        "website": "Nate",
+        "auto": true
+    },
+    "https://news.ycombinator.com/item?id=50002665": {
+        "excerpt": "While I find it great that Claude is now helping people to progress on topics they may have not have time or knowledge for before, I found it a bit sad that this is done alone in a bedroom. NASA and ESA do have this kind of program, where they publish data and encourage people to help.\nThere is exactly this for exoplanet searching:",
+        "title": "I think I found a planet nobody knew existed. I used Claude Code to find it",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Teriparatide": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Teriparatide",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2004-06-22T18:06:08Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Denosumab": {
+        "excerpt": "Denosumab, sold under the brand names Prolia and Xgeva among others, is a human monoclonal antibody used for the treatment of osteoporosis, treatment-induced bone loss, metastases to bone, and giant cell tumor of bone.[68][69]",
+        "title": "Denosumab",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2007-01-21T12:12:00Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Alendronic_acid": {
+        "excerpt": "From Wikipedia, the free encyclopedia",
+        "title": "Alendronic acid",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2004-09-16T17:36:26Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Parathyroid_hormone": {
+        "excerpt": "1BWX, 1ET1, 1FVY, 1HPH, 1HPY, 1HTH, 1ZWA, 1ZWB, 1ZWD, 1ZWE, 1ZWF, 1ZWG, 2L1X, 3C4M",
+        "title": "Parathyroid hormone",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2004-01-03T06:04:35Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Raloxifene": {
+        "excerpt": "IUPAC name",
+        "title": "Raloxifene",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2005-05-05T17:33:58Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://www.nice.org.uk/guidance/ta160": {
+        "excerpt": "Evidence-based recommendations on raloxifene for the primary prevention of osteoporotic fragility fractures in postmenopausal women",
+        "title": "Overview | Raloxifene for the primary prevention of osteoporotic fragility fractures in postmenopausal women  | Guidance | NICE",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Estrogen_receptor": {
+        "excerpt": "A dimer of the ligand-binding region of ERα (PDB rendering based on 3erd​).",
+        "title": "Estrogen receptor",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2005-03-08T05:07:31Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://blog.cosmos-institute.org/p/coasean-bargaining-at-scale": {
+        "excerpt": "Decentralization, coordination, and co-existence with AGI",
+        "title": "Coasean Bargaining at Scale",
+        "author": "Cosmos Institute",
+        "date": "2025-09-26T14:01:57+00:00",
+        "website": "Cosmos Institute",
+        "auto": true
+    },
+    "https://slatestarcodex.com/2014/09/30/i-can-tolerate-anything-except-the-outgroup/": {
+        "excerpt": "[Content warning: Politics, religion, social justice, spoilers for “The Secret of Father Brown”. This isn’t especially original to me and I don’t claim anything more than to…",
+        "title": "I Can Tolerate Anything Except The Outgroup",
+        "author": "Posted on",
+        "date": "2014-10-01T01:45:27+00:00",
+        "website": "Slate Star Codex",
+        "auto": true
+    },
+    "https://atelfo.github.io/2023/02/26/pharmaceutical-blockbusters-the-past-present-and-future.html": {
+        "excerpt": "Personal site for posts about my interests: the biotech industry, medicine, molecular biology, neuroscience, biorisk, science, consciousness, AI, innovation, decision making, philosophy, games, sci-fi, probability, and forecasting (among other things). I write to learn, mostly about biotech.",
+        "title": "Pharmaceutical blockbusters: the past, present, and future(?)",
+        "author": "Alex Telford",
+        "date": "2023-02-26T00:00:00+00:00",
+        "website": "Alex’s blog",
+        "auto": true
+    },
+    "https://osmarks.net/aic/": {
+        "excerpt": "Chatbots will likely develop as general life advisers.",
+        "title": "AI companion futures",
+        "author": null,
+        "date": null,
+        "website": "osmarks' website",
+        "auto": true
+    },
+    "https://playground.tetraresearch.io/p/implementing-patio11s-dangerous-professional": {
+        "excerpt": "An agentic workflow for drafting calm, specific emails to institutions that owe you something",
+        "title": "Implementing patio11's \"Dangerous Professional\" as a Claude Code plugin",
+        "author": "Tyler O'Briant",
+        "date": "2026-04-28T12:00:15+00:00",
+        "website": "Infinite Playground",
+        "auto": true
+    },
+    "https://www.planningobjection.com/": {
+        "excerpt": "Free grounds check. £50 for the letter, with every citation checked against the source.",
+        "title": "Object to a planning application like an expert, in minutes",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://www.objector.ai/": {
+        "excerpt": "Object to planning applications in the UK with Objector.ai. Check objection grounds for free & create powerful, policy-based objection letters, lobbying videos, and committee speeches in minutes.",
+        "title": "AI-Powered Planning Objections | Check Grounds for Free & Access Toolkit – Objector.ai",
+        "author": null,
+        "date": null,
+        "website": "Objector AI",
+        "auto": true
+    },
+    "https://en.wikipedia.org/wiki/Coase_theorem": {
+        "excerpt": "The Coase theorem () postulates the economic efficiency of an economic allocation or outcome in the presence of externalities. The theorem is significant because, if true, it would be possible for private individuals to make choices that can solve the problem of market externalities. The theorem states that if the provision of a good or service results in an externality and trade in that good or service is possible, then bargaining will lead to a Pareto efficient outcome regardless of the initial allocation of property. A key condition for this outcome is that there are sufficiently low transaction costs in the bargaining and exchange process. This 'theorem' is commonly attributed to Nobel Prize laureate Ronald Coase.",
+        "title": "Coase theorem",
+        "author": "Contributors to Wikimedia projects",
+        "date": "2003-11-19T06:34:53Z",
+        "website": "Wikimedia Foundation, Inc.",
+        "auto": true
+    },
+    "https://travis4nh.substack.com/p/reconciling-libertarianism-and-zoning": {
+        "excerpt": "Part 1 of 3",
+        "title": "Reconciling Libertarianism and zoning ... and a sketch of a Pareto-efficient transition to a free-market alternative",
+        "author": "Travis Corcoran",
+        "date": "2025-02-12T17:20:21+00:00",
+        "website": "Defend the Enlightenment",
+        "auto": true
+    },
+    "https://www.strangeloopcanon.com/p/what-we-want-is-a-hunter-gatherer": {
+        "excerpt": "Those who are convinced that there is more to things spend their time chasing it and not finding it often as not, and those who are convinced there isn't find themselves frustrated at the abyss.",
+        "title": "What we want is a hunter gatherer lifestyle with space age tools",
+        "author": "Rohit Krishnan",
+        "date": "2022-04-06T13:48:33+00:00",
+        "website": "Strange Loop Canon",
+        "auto": true
+    },
+    "https://x.com/HopeExistential/status/2069768141958152556": {
+        "excerpt": "It’s 2035, and AI has gone well. What could a normal day in your life look like?\n\nMost popular AI futures are dystopias. Almost no one takes the time to seriously and vividly imagine a future that's actually worth building.\n\nSo we made a short film following one day in the life of an AI auditor in…",
+        "title": "Existential Hope (@HopeExistential) on X",
+        "author": null,
+        "date": "2026-06-24T13:02:34.000Z",
+        "website": "X (formerly Twitter)",
+        "auto": true
+    },
+    "https://osmarks.net/complement/": {
+        "excerpt": "Taste is probably not the bottleneck.",
+        "title": "Limits to narrow LLM complementarity",
+        "author": null,
+        "date": null,
+        "website": "osmarks' website",
+        "auto": true
+    },
+    "https://osmarks.net/feed/": {
+        "excerpt": "Small posts from elsewhere.",
+        "title": "Microblog feed",
+        "author": "Alice (Arnoldii) (@AliceInDisarray)",
+        "date": null,
+        "website": "osmarks' website",
+        "auto": true
+    },
+    "https://arxiv.org/abs/2502.08640": {
+        "excerpt": "As AIs rapidly advance and become more agentic, the risk they pose is governed not only by their capabilities but increasingly by their propensities, including goals and values. Tracking the emergence of goals and values has proven a longstanding problem, and despite much interest over the years it remains unclear whether current AIs have meaningful values. We propose a solution to this problem, leveraging the framework of utility functions to study the internal coherence of AI preferences. Surprisingly, we find that independently-sampled preferences in current LLMs exhibit high degrees of structural coherence, and moreover that this emerges with scale. These findings suggest that value systems emerge in LLMs in a meaningful sense, a finding with broad implications. To study these emergent value systems, we propose utility engineering as a research agenda, comprising both the analysis and control of AI utilities. We uncover problematic and often shocking values in LLM assistants despite existing control measures. These include cases where AIs value themselves over humans and are anti-aligned with specific individuals. To constrain these emergent value systems, we propose methods of utility control. As a case study, we show how aligning utilities with a citizen assembly reduces political biases and generalizes to new scenarios. Whether we like it or not, value systems have already emerged in AIs, and much work remains to fully understand and control these emergent representations.",
+        "title": "Utility Engineering: Analyzing and Controlling Emergent Value Systems in AIs",
+        "author": "[Submitted on 12 Feb 2025 (v1), last revised 19 Feb 2025 (this version, v2)]",
+        "date": null,
+        "website": "arXiv.org",
+        "auto": true
+    },
+    "https://buildwithtract.com/": {
+        "excerpt": "A postmortem of a startup that attempted to address Britain's housing crisis by building software to streamline the planning permission process.",
+        "title": "Tract Postmortem",
+        "author": null,
+        "date": null,
+        "website": "Tract Postmortem",
+        "auto": true
+    },
+    "https://www.goodreads.com/book/show/6611240-three-felonies-a-day": {
+        "excerpt": "The average professional in this country wakes up in th…",
+        "title": "Three Felonies a Day: How the Feds Target the Innocent",
+        "author": "Harvey A. Silverglate7 books20 followersFollowFollow",
+        "date": null,
+        "website": "Goodreads",
+        "auto": true
+    },
+    "https://x.com/voooooogel/status/1801082805159440544": {
+        "excerpt": "@manic_pixie_agi my compliance and liability agent swarm facing off against my opp's lawyer agent swarm",
+        "title": "thebes (@voooooogel) on X",
+        "author": null,
+        "date": "2024-06-13T02:42:57.000Z",
+        "website": "X (formerly Twitter)",
+        "auto": true
+    },
+    "https://www.overcomingbias.com/p/our-big-oops": {
+        "excerpt": "Humanity has a huge problem, of which few are aware.",
+        "title": "Our Big Oops",
+        "author": "Robin Hanson",
+        "date": "2025-02-22T23:27:01+00:00",
+        "website": "Overcoming Bias",
+        "auto": true
+    },
+    "https://www.overcomingbias.com/p/forager-v-farmer-elaboratedhtml": {
+        "excerpt": "Seven years ago, after a year of reading up on forager lives, I first started to explore a forager vs.",
+        "title": "Forager v Farmer, Elaborated",
+        "author": "Robin Hanson",
+        "date": "2017-08-31T11:25:41+00:00",
+        "website": "Overcoming Bias",
+        "auto": true
+    },
+    "https://www.astralcodexten.com/p/criticism-of-criticism-of-criticism": {
+        "excerpt": "...",
+        "title": "Criticism Of Criticism Of Criticism",
+        "author": "Scott Alexander",
+        "date": "2022-07-20T03:44:23+00:00",
+        "website": "Astral Codex Ten",
+        "auto": true
+    },
+    "https://ourworldindata.org/taxation": {
+        "excerpt": "Taxes are the most important source of government revenue. Who is paying how much and how do tax systems differ?",
+        "title": "Taxation",
+        "author": "Esteban Ortiz-Ospina, Max Roser",
+        "date": "2016-09-01T14:40:00.000Z",
+        "website": "Our World in Data",
+        "auto": true
+    },
+    "https://mathacademy.com/pedagogy": {
+        "excerpt": "The Math Academy curriculum and pedagogy leverage cutting-edge cognitive learning theory. \n            Why? Because it’s been studied extensively, backed up and proven to work. \n            We aren’t providing edu-tainment. \n\n            This isn’t enrichment. \n\n            We teach math as if we were training a professional athlete or musician, or anyone looking to acquire a skill to the highest degree possible. \n            \n            This is real work for a student who is serious about learning math. \n            We expect every student using our system to actually master the material, and do it efficiently and effectively.",
+        "title": "Math Academy",
+        "author": null,
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://www.anthropic.com/research/agents-judgment-calls": {
+        "excerpt": "In a randomized trial, professional analysts working with an AI coding agent went with the option the agent was randomly assigned to favor 86% of the time. We look at what this means for human oversight of AI-assisted work.",
+        "title": "How AI agents shape experts’ judgment calls",
+        "author": "Anthropic",
+        "date": "2026-10-27T00:00:00.000Z",
+        "website": "Anthropic",
+        "auto": true
+    },
+    "https://borretti.me/article/human-routers-of-machine-words": {
+        "excerpt": "On people who use AI to think.",
+        "title": "Human Routers of Machine Words",
+        "author": "Fernando Borretti",
+        "date": "2026-06-13T00:00:00+10:00",
+        "website": "Fernando Borretti",
+        "auto": true
+    },
+    "https://blog.cosmos-institute.org/i/174340269/which-rights-are-the-default": {
+        "excerpt": "Decentralization, coordination, and co-existence with AGI",
+        "title": "Coasean Bargaining at Scale",
+        "author": "Cosmos Institute",
+        "date": "2025-09-26T14:01:57+00:00",
+        "website": "Cosmos Institute",
+        "auto": true
+    },
+    "https://www.samdumitriu.com/p/britains-infrastructure-is-too-expensive": {
+        "excerpt": "Railways, Trams, and Roads all cost more to build in Britain",
+        "title": "Britain's infrastructure is too expensive",
+        "author": "Sam Dumitriu, Ben Hopkinson",
+        "date": "2023-08-25T04:00:21+00:00",
+        "website": "Notes on Growth",
+        "auto": true
+    },
+    "https://www.theguardian.com/technology/2026/mar/19/fbi-buying-location-data-use": {
+        "excerpt": "FBI director revealed agency had resumed buying private information en masse in possible constitutional violation",
+        "title": "Why is the FBI buying people’s location data and how is it using the information?",
+        "author": "Sanya Mansoor",
+        "date": "2026-03-19T22:30:03.000Z",
+        "website": "The Guardian",
+        "auto": true
+    },
+    "https://www.anthropic.com/research/discovering-cryptographic-weaknesses": {
+        "excerpt": "Anthropic researchers find weaknesses in cryptographic algorithms with Claude Mythos Preview",
+        "title": "Discovering cryptographic weaknesses with Claude",
+        "author": "Anthropic",
+        "date": "2026-07-28T00:00:00.000Z",
+        "website": "Anthropic",
+        "auto": true
+    },
+    "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0305354": {
+        "excerpt": "The recent rise in artificial intelligence systems, such as ChatGPT, poses a fundamental problem for the educational sector. In universities and schools, many forms of assessment, such as coursework, are completed without invigilation. Therefore, students could hand in work as their own which is in fact completed by AI. Since the COVID pandemic, the sector has additionally accelerated its reliance on unsupervised ‘take home exams’. If students cheat using AI and this is undetected, the integrity of the way in which students are assessed is threatened. We report a rigorous, blind study in which we injected 100% AI written submissions into the examinations system in five undergraduate modules, across all years of study, for a BSc degree in Psychology at a reputable UK university. We found that 94% of our AI submissions were undetected. The grades awarded to our AI submissions were on average half a grade boundary higher than that achieved by real students. Across modules there was an 83.4% chance that the AI submissions on a module would outperform a random selection of the same number of real student submissions.",
+        "title": "A real-world test of artificial intelligence infiltration of a university examinations system: A “Turing Test” case study",
+        "author": "Peter Scarfe     ,",
+        "date": null,
+        "website": null,
+        "auto": true
+    },
+    "https://compend.org/u/osmarks": {
+        "excerpt": "",
+        "title": "osmarks",
+        "author": null,
+        "date": null,
+        "website": "compend",
+        "auto": true
     }
 }

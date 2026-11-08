@@ -29,7 +29,7 @@ As for the importance of proprietary data, such as internal statistical datasets
 
 [^3]: To the best of my knowledge: this is not publicly documented either way by any closed AI company.
 
-[^4]: For example, in 2024 a [new form of life](https://pmc.ncbi.nlm.nih.gov/articles/PMC10827157/) present in ~10% of human microbiomes which had apparently avoided all previous detection was discovered by reprocessing old sequence data. [This work](https://rchatgpt-pulse.github.io/) apparently could have detected the GPT-4o problem much earlier, though of course it is post-hoc. [Dreamer 4](https://arxiv.org/abs/2509.24527) was able to learn enough about Minecraft to obtain diamonds without any online training.
+[^4]: For example, in 2024 a [new form of life](https://pmc.ncbi.nlm.nih.gov/articles/PMC10827157/) present in ~10% of human microbiomes which had apparently avoided all previous detection was discovered by reprocessing old sequence data. [This work](https://rchatgpt-pulse.github.io/) apparently could have detected the GPT-4o problem much earlier, though of course it is post-hoc. [Dreamer 4](https://arxiv.org/abs/2509.24527) was able to learn enough about Minecraft to obtain diamonds without any online training. More recently, [lost Mexican cities](https://bakerbench.substack.com/p/i-went-looking-for-lost-cities-with?r=1b5pv&utm_medium=ios) and [exoplanets](https://news.ycombinator.com/item?id=50002665).
 
 [^5]: Roughly all but 10<sup>-6</sup>.
 

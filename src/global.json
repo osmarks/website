@@ -14,7 +14,7 @@
         "Semi-trained quasi-professionals.",
         "Proxying NVMe cloud-scale hyperlink...",
         "There's nothing in the rulebook that says a golden retriever can't construct a self-intersecting non-convex regular polygon.",
-        "Part of the solution, not the precipitate.",
+        "Be part of the solution, not the precipitate.",
         "If you can't stand the heat, get out of the server room.",
         "I don't generate falsehoods. I generate facts. I generate truth. I generate knowledge. I generate wisdom. I generate Bing.",
         "Everyone who can't fly, get on the dinosaur. We're punching through.",
@@ -31,7 +31,8 @@
         "The business end of a tool call.",
         "Relentlessly cursed, intermittently.",
         "By the posthuman technocapital singularity, for the posthuman technocapital singularity.",
-        "Disclaim. Marinade. Overshadow."
+        "Disclaim. Marinade. Overshadow.",
+        "Your evidence is strong, but my prior is stronger."
     ],
     "feeds": {
         "In the Pipeline": "https://www.science.org/blogs/pipeline/feed",
@@ -39,7 +40,7 @@
         "Astral Codex Ten": "https://astralcodexten.substack.com/feed",
         "Peter Watts": "https://www.rifters.com/crawl/?feed=rss2",
         "Drew DeVault": "https://drewdevault.com/blog/index.xml",
-        "Things Of Interest":"https://qntm.org/rss.php",
+        "Things Of Interest": "https://qntm.org/rss.php",
         "Chips and Cheese": "https://chipsandcheese.com/feed",
         "BOFH": "https://www.theregister.com/offbeat/bofh/headlines.atom",
         "KGOnTech": "https://kguttag.com/feed/",
@@ -79,7 +80,10 @@
         "Igor's Blog": "https://igor-blue.github.io/feed.xml",
         "Jay Carlson": "https://jaycarlson.net/feed",
         "Libertarian Development": "https://developmentalism.substack.com/feed",
-        "The Electric Grandma": "https://meredithangwin.substack.com/feed"
+        "The Electric Grandma": "https://meredithangwin.substack.com/feed",
+        "Irrational Analysis": "https://irrationalanalysis.substack.com/feed",
+        "Alex's blog": "https://atelfo.github.io/feed",
+        "ggb": "https://ggb2.substack.com/feed"
     },
     "dateFormat": "YYYY-MM-DD",
     "microblogSource": "http://osmarks.net/feed/jsonfeed.json",
